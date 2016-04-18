@@ -50,7 +50,4 @@ SimpleForm.setup do |config|
       label
     end
   end
-
-  # Don't use html5 validations... yet :)
-  config.browser_validations = false
 end
