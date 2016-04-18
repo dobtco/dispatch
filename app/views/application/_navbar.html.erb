@@ -1,6 +1,7 @@
-<navbar id='navbar'>
+<navbar class='navbar'>
   <h1>Beacon</h1>
-  <ul>
+
+  <ul class='navbar_links'>
     <li>
       <a href='#'>Browse opportunities</a>
     </li>
@@ -24,9 +25,12 @@
     <% end %>
   </ul>
 
-  <% if signed_in? %>
-    <a href='<%= destroy_user_session_path %>' data-method='delete'>Sign out</a>
-  <% else %>
-    <a href='<%= new_user_session_path %>'>Sign in</a>
-  <% end %>
+  <div class='navbar_user'>
+    <% if signed_in? %>
+      <span>Signed in as <%= current_user.name %>.</span>
+      <a href='<%= destroy_user_session_path %>' data-method='delete'>Sign out</a>
+    <% else %>
+      <a href='<%= new_user_session_path %>'>Sign in</a>
+    <% end %>
+  </div>
 </navbar>

@@ -30,6 +30,7 @@
 
 FactoryGirl.define do
   factory :user do
+    name 'Joe Demo'
     sequence(:email) { |i| "user-#{i}@example.com" }
     password 'password'
     confirmed_at { Time.now }

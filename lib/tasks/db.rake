@@ -4,6 +4,7 @@ namespace :db do
     task example: :environment do
       FactoryGirl.create(
         :user,
+        name: 'Demo User',
         email: 'admin@example.com',
         permission_level: 'admin',
         confirmed_at: Time.now

@@ -46,6 +46,8 @@ class User < ActiveRecord::Base
 
   enum permission_level: [:user, :staff, :approver, :admin]
 
+  validates :name, presence: true
+
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
