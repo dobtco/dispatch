@@ -1,9 +1,4 @@
 class ApplicationController < ActionController::Base
-  include DobtAuth::Controller
-  include DobtAuth::UrlHelper
-
-  helper DobtAuth::UrlHelper
-
   layout false
 
   # Prevent CSRF attacks by raising an exception.

@@ -33,7 +33,6 @@ class Views::Layouts::Application < Views::Base
         title calculated_page_title
         stylesheets
         javascripts
-        rawtext include_dobt_auth_header
         meta_tags
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->'
       }
@@ -42,14 +41,19 @@ class Views::Layouts::Application < Views::Base
         class: parameterized_controller_and_action,
         'data-page-key' => parameterized_controller_and_action
       ) {
-        widget Dvl::Core::Views::Flashes.new(flash: flash)
+        widget Dvl::Core::Views::Flashes.new(flash: flash_with_devise_mappings)
+
+        if signed_in?
+          a 'Sign out', href: destroy_user_session_path, 'data-method' => 'delete'
+        else
+          a 'Sign in', href: new_user_session_path
+        end
 
         main
 
         widget Dvl::Core::Views::Footer.new(application_name: 'Beacon')
         render_widgets(:modals)
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->'
-        rawtext include_dobt_auth_footer
       }
     }
   end
@@ -84,5 +88,18 @@ class Views::Layouts::Application < Views::Base
 
   def parameterized_controller_and_action
     self.class.name.gsub('Views::', '').downcase.gsub('::', '-')
+  end
+
+  # Workaround for https://github.com/plataformatec/devise/issues/3748
+  def flash_with_devise_mappings
+    devise_flash_key_mappings = {
+      'notice' => 'success',
+      'alert' => 'error'
+    }
+
+    flash.
+      to_h.
+      map { |k, v| { (devise_flash_key_mappings[k.to_s] || k) => v } }.
+      reduce(&:merge) || {}
   end
 end

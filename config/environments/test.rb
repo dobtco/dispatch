@@ -27,8 +27,6 @@ Rails.application.configure do
 
   config.x.ssl = false
   config.x.base_domain = 'www.example.com'
-
-  config.middleware.use DobtAuth::BackDoor
 end
 
 require_relative '_shared'

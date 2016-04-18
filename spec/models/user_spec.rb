@@ -27,17 +27,9 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-class User < ActiveRecord::Base
-  devise :database_authenticatable,
-         :confirmable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :trackable,
-         :validatable
+require 'spec_helper'
 
-  # https://github.com/plataformatec/devise/#activejob-integration
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
+describe User do
+  subject { build(:user) }
+  it { should be_valid }
 end

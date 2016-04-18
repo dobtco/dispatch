@@ -4,7 +4,7 @@ gem 'rails'
 
 gem 'bugsnag'
 gem 'coffee-rails'
-gem 'dobt_auth', git: 'https://bcb8624628cb9c2da4cb7f1be7a1c2d04887bfaf:x-oauth-basic@github.com/dobtco/auth.git'
+gem 'devise'
 gem 'execjs'
 gem 'factory_girl_rails'
 gem 'font-awesome-rails'

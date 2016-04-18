@@ -8,6 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Screendoor
   class Application < Rails::Application
+    config.x.email_notification_from_address = 'noreply@dobt.co'
+
     # Autoload /lib classes
     config.autoload_paths << Rails.root.join('lib')
 
@@ -19,6 +21,7 @@ module Screendoor
 
     config.assets.precompile += %w(
       .svg .eot .woff .ttf
+      mailer.css
     )
 
     # Dump as SQL since we use some Postgres-specific db features
