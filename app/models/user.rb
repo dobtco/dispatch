@@ -18,7 +18,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
-#  admin_roles            :text             default([]), is an Array
+#  permission_level       :integer          default(0), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -44,26 +44,14 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
+  enum permission_level: [:user, :staff, :approver, :admin]
+
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  ## Admin roles
-
-  def self.admin_roles
-    @admin_roles ||= LiteEnum.new(:staff, :approver, :admin)
-  end
-
-  def staff?
-    admin_roles.include?(self.class.admin_roles[:staff].to_s)
-  end
-
-  def approver?
-    admin_roles.include?(self.class.admin_roles[:approver].to_s)
-  end
-
-  def admin?
-    admin_roles.include?(self.class.admin_roles[:admin].to_s)
+  def permission_level_is_at_least?(x)
+    User.permission_levels[permission_level] >= User.permission_levels[x]
   end
 end

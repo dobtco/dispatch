@@ -5,7 +5,7 @@ namespace :db do
       FactoryGirl.create(
         :user,
         email: 'admin@example.com',
-        admin_roles: User.admin_roles.values,
+        permission_level: 'admin',
         confirmed_at: Time.now
       )
     end

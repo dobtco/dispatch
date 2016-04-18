@@ -309,7 +309,7 @@ CREATE TABLE users (
     confirmed_at timestamp without time zone,
     confirmation_sent_at timestamp without time zone,
     unconfirmed_email character varying,
-    admin_roles text[] DEFAULT '{}'::text[],
+    permission_level integer DEFAULT 0 NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );

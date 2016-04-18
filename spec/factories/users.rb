@@ -35,15 +35,15 @@ FactoryGirl.define do
     confirmed_at { Time.now }
 
     trait :staff do
-      admin_roles { [User.admin_roles[:staff]] }
+      permission_level 'staff'
     end
 
     trait :approver do
-      admin_roles { [User.admin_roles[:approver]] }
+      permission_level 'approver'
     end
 
     trait :admin do
-      admin_roles { [User.admin_roles[:admin]] }
+      permission_level 'admin'
     end
   end
 end

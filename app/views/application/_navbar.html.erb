@@ -1,11 +1,25 @@
 <navbar id='navbar'>
   <h1>Beacon</h1>
   <ul>
+    <li>
+      <a href='#'>Browse opportunities</a>
+    </li>
+
+    <% if policy(:opportunity).post? %>
+      <li>
+        <a href='#'>Post opportunity</a>
+      </li>
+    <% end %>
+
     <% if policy(:opportunity).approve? %>
       <li>
-        <a href='#'>
-          Approve opportunities (<%= Opportunity.not_approved.count %>)
-        </a>
+        <a href='#'>Approve opportunities (<%= Opportunity.not_approved.count %>)</a>
+      </li>
+    <% end %>
+
+    <% if current_user.try(:admin?) %>
+      <li>
+        <a href='<%= admin_root_path %>'>Admin</a>
       </li>
     <% end %>
   </ul>

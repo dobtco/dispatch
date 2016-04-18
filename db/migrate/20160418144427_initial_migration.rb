@@ -27,7 +27,7 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
-      t.text :admin_roles, array: true, default: []
+      t.integer :permission_level, default: 0, null: false
 
       t.timestamps null: false
     end

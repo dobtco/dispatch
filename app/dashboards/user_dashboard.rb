@@ -25,7 +25,7 @@ class UserDashboard < Administrate::BaseDashboard
     confirmed_at: Field::DateTime,
     confirmation_sent_at: Field::DateTime,
     unconfirmed_email: Field::String,
-    admin_roles: Field::Text,
+    permission_level: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -61,7 +61,7 @@ class UserDashboard < Administrate::BaseDashboard
     :confirmed_at,
     :confirmation_sent_at,
     :unconfirmed_email,
-    :admin_roles,
+    :permission_level,
     :created_at,
     :updated_at,
   ]
@@ -86,7 +86,7 @@ class UserDashboard < Administrate::BaseDashboard
     :confirmed_at,
     :confirmation_sent_at,
     :unconfirmed_email,
-    :admin_roles,
+    :permission_level,
   ]
 
   # Overwrite this method to customize how users are displayed
