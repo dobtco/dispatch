@@ -18,6 +18,8 @@
 #  enable_questions       :boolean          default(FALSE), not null
 #  questions_open_at      :datetime
 #  questions_close_at     :datetime
+#  approved_at            :datetime
+#  approved_by_user_id    :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -28,5 +30,14 @@
 
 class Opportunity < ActiveRecord::Base
   belongs_to :created_by_user, class_name: 'User'
+  belongs_to :approved_by_user, class_name: 'User'
   belongs_to :department
+
+  scope :not_approved, -> {
+    where('approved_at IS NULL')
+  }
+
+  scope :approved, -> {
+    where('approved_at IS NOT NULL')
+  }
 end

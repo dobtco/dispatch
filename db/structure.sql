@@ -207,6 +207,8 @@ CREATE TABLE opportunities (
     enable_questions boolean DEFAULT false NOT NULL,
     questions_open_at timestamp without time zone,
     questions_close_at timestamp without time zone,
+    approved_at timestamp without time zone,
+    approved_by_user_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -572,6 +574,14 @@ ALTER TABLE ONLY questions
 
 ALTER TABLE ONLY questions
     ADD CONSTRAINT fk_rails_bde1c0831e FOREIGN KEY (opportunity_id) REFERENCES opportunities(id);
+
+
+--
+-- Name: fk_rails_c2511f979b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY opportunities
+    ADD CONSTRAINT fk_rails_c2511f979b FOREIGN KEY (approved_by_user_id) REFERENCES users(id);
 
 
 --

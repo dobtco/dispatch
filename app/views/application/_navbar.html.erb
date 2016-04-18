@@ -1,5 +1,18 @@
-<% if signed_in? %>
-  <a href='<%= destroy_user_session_path %>' data-method='delete'>Sign out</a>
-<% else %>
-  <a href='<%= new_user_session_path %>'>Sign in</a>
-<% end %>
+<navbar id='navbar'>
+  <h1>Beacon</h1>
+  <ul>
+    <% if policy(:opportunity).approve? %>
+      <li>
+        <a href='#'>
+          Approve opportunities (<%= Opportunity.not_approved.count %>)
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if signed_in? %>
+    <a href='<%= destroy_user_session_path %>' data-method='delete'>Sign out</a>
+  <% else %>
+    <a href='<%= new_user_session_path %>'>Sign in</a>
+  <% end %>
+</navbar>

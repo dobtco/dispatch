@@ -9,6 +9,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     created_by_user: Field::BelongsTo.with_options(class_name: "User"),
+    approved_by_user: Field::BelongsTo.with_options(class_name: "User"),
+    approved_at: Field::DateTime,
     department: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
@@ -34,9 +36,9 @@ class OpportunityDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :created_by_user,
-    :department,
-    :id
+    :id,
+    :title,
+    :department
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -60,6 +62,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :questions_close_at,
     :created_at,
     :updated_at,
+    :approved_by_user,
+    :approved_at
   ]
 
   # FORM_ATTRIBUTES
@@ -81,6 +85,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :enable_questions,
     :questions_open_at,
     :questions_close_at,
+    :approved_by_user,
+    :approved_at
   ]
 
   # Overwrite this method to customize how opportunities are displayed

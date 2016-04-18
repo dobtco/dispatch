@@ -71,10 +71,14 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :questions_open_at
       t.datetime :questions_close_at
 
+      t.datetime :approved_at
+      t.integer :approved_by_user_id
+
       t.timestamps null: false
     end
 
     add_foreign_key :opportunities, :users, column: :created_by_user_id
+    add_foreign_key :opportunities, :users, column: :approved_by_user_id
 
     create_table :attachments do |t|
       t.references :opportunity, index: true, foreign_key: true

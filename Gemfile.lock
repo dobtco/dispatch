@@ -210,6 +210,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -360,6 +362,7 @@ DEPENDENCIES
   pg
   premailer-rails
   pry
+  pundit
   rails
   rails-assets-jquery!
   rails-assets-jquery-ujs!
