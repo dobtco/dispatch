@@ -11,7 +11,6 @@ class OpportunityDashboard < Administrate::BaseDashboard
     created_by_user: Field::BelongsTo.with_options(class_name: "User"),
     department: Field::BelongsTo,
     id: Field::Number,
-    created_by_user_id: Field::Number,
     title: Field::String,
     description: Field::Text,
     contact_name: Field::String,
@@ -37,8 +36,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :created_by_user,
     :department,
-    :id,
-    :created_by_user_id,
+    :id
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -47,7 +45,6 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :created_by_user,
     :department,
     :id,
-    :created_by_user_id,
     :title,
     :description,
     :contact_name,
@@ -71,7 +68,6 @@ class OpportunityDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :created_by_user,
     :department,
-    :created_by_user_id,
     :title,
     :description,
     :contact_name,
