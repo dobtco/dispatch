@@ -16,6 +16,8 @@ Then, run `script/bootstrap` to install gems and seed your database.
 
 Run `script/server` and navigate to http://localhost:3000.
 
+We automatically generate a dummy user account. You can login as `admin@example.com` with the password `password`.
+
 ## Testing
 
 Make sure you have a test database by running `rake db:test:prepare`. Then, either use `bundle exec guard`, which will watch for changes and run tests automatically, or run `rspec` directly.
