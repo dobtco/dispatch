@@ -46,7 +46,21 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
+  ## Admin roles
+
   def self.admin_roles
     @admin_roles ||= LiteEnum.new(:staff, :approver, :admin)
+  end
+
+  def staff?
+    admin_roles.include?(self.class.admin_roles[:staff].to_s)
+  end
+
+  def approver?
+    admin_roles.include?(self.class.admin_roles[:approver].to_s)
+  end
+
+  def admin?
+    admin_roles.include?(self.class.admin_roles[:admin].to_s)
   end
 end

@@ -33,4 +33,23 @@ require 'spec_helper'
 describe User do
   subject { build(:user) }
   it { should be_valid }
+
+  describe 'Admin roles' do
+    it { should_not be_staff }
+    it { should_not be_approver }
+    it { should_not be_admin }
+
+    context 'with admin roles' do
+      before do
+        subject.admin_roles = [
+          described_class.admin_roles[:staff],
+          described_class.admin_roles[:approver]
+        ]
+      end
+
+      it { should be_staff }
+      it { should be_approver }
+      it { should_not be_admin }
+    end
+  end
 end
