@@ -8,8 +8,6 @@ gem 'devise'
 gem 'execjs'
 gem 'factory_girl_rails'
 gem 'font-awesome-rails'
-gem 'fortitude', github: 'ajb/fortitude', branch: 'cacheing'
-gem 'jquery-turbolinks'
 gem 'newrelic_rpm'
 gem 'pg'
 gem 'premailer-rails'
@@ -20,15 +18,11 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'simple_form_legend'
 gem 'sprockets-rails'
-gem 'turbolinks'
 gem 'uglifier'
 gem 'utf8-cleaner'
 
-# Assets
-gem 'dvl-core', github: 'dobtco/dvl-core'
-gem 'dvl-kaminari-views'
-
 source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery'
   gem 'rails-assets-jquery-ujs'
   gem 'rails-assets-underscore'
 end

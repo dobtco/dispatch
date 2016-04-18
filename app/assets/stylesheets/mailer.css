@@ -155,12 +155,9 @@ ul li, ol li {
   padding:20px 0 !important;
 }
 
-.site_logo {
-  max-height: 36px;
-}
-
 .site_name {
   margin-top: 10px;
+  color: #fff;
 }
 
 /* Set the padding on the td rather than the div for Outlook compatibility */

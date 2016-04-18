@@ -10,17 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_self
+//= require jquery
 //= require jquery-ujs
-//= require dvl/core
-//= require dvl/components/flashes
-//= require dvl/components/dropdown_select
-//= require dvl/components/navbar
-//= require dvl/components/tabs
-//= require dvl/components/popovers
-//= require dvl/components/confirmations
-//= require dvl/components/modal_helper
-//= require dvl/overrides/rails_allow_action
 //= require_tree .
-
-var App = {};

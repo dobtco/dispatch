@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+  <title><%= calculated_page_title %></title>
+  <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->
+  <%= stylesheet_link_tag('application', media: 'all') %>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= parameterized_controller_and_action %>" data-page-key="<%= parameterized_controller_and_action %>">
+  <%= render('navbar') %>
+  <%= render('flashes') %>
+
+  <%= yield %>
+
+  <%= javascript_include_tag('application') %>
+  <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->
+</body>
+</html>
