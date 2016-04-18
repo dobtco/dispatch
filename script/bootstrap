@@ -1,0 +1,5 @@
+#! /bin/bash
+
+bundle install
+rake db:setup
+rake db:seed:example

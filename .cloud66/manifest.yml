@@ -1,0 +1,12 @@
+# This should be removed once Cloud 66 adds support for .ruby-version
+
+defaults: &defaults
+  rails:
+    configuration:
+      ruby_version: 2.3.0
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,0 +1,32 @@
+defaults: &defaults
+  first_thing:
+    - snippet: cloud66/newrelic
+      target: any
+      execute: true
+      apply_during: build_only
+
+  after_symlink:
+    # Copy static files (404, 500, maintenance, etc.) to our app
+    - command: "cd $STACK_PATH && curl http://dobt-misc.s3.amazonaws.com/static/copy_static_files_to_rails_app.sh | sudo sh"
+      target: rails
+      run_on: all_servers
+
+  last_thing:
+    # Track Bugsnag deploy
+    - command: "cd $STACK_PATH && bundle exec rake bugsnag:deploy BUGSNAG_REVISION=`git rev-parse HEAD` BUGSNAG_RELEASE_STAGE=$RAILS_ENV"
+      target: rails
+      run_on: single_server
+
+staging:
+  <<: *defaults
+
+  # Using "after checkout" to avoid conflict with *defaults. Ugh, YAML.
+  after_checkout:
+    # Add self-signed staging SSL certificate
+    - command: "sudo wget -P /usr/local/share/ca-certificates http://dobt-misc.s3.amazonaws.com/certs/staging-root.crt; sudo update-ca-certificates;"
+      apply_during: build_only
+      target: rails
+      run_on: all_servers
+
+production:
+  <<: *defaults
