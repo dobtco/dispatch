@@ -1,14 +1,4 @@
 Rails.application.configure do
-  # Use Redis as a cache store.
-  #
-  # Eviction policy must be set to volatile-lru, which will evict only keys
-  # that have a expiration set. This allows us to set a long expiration for
-  # our cache keys (see below), but ensures that resque's keys will never
-  # be evicted.
-  config.cache_store = :redis_store,
-                       "#{ENV['REDIS_URL']}0/cache",
-                       { expires_in: 1.year }
-
   # Rails-y configs
   config.cache_classes = true
   config.eager_load = true

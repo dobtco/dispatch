@@ -27,6 +27,8 @@ Rails.application.configure do
 
   config.x.ssl = false
   config.x.base_domain = 'www.example.com'
+
+  Delayed::Worker.delay_jobs = false
 end
 
 require_relative '_shared'

@@ -32,5 +32,7 @@ module Screendoor
     config.action_dispatch.rescue_responses.merge!(
       'ActionController::ParameterMissing' => :unprocessable_entity
     )
+
+    config.active_job.queue_adapter = :delayed_job
   end
 end
