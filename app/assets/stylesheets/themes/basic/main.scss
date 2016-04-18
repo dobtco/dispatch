@@ -6,19 +6,17 @@
   padding: 0 20px;
   @include cf;
 
-  h1 {
-    padding: 0;
-    margin: 0;
-    font-weight: normal;
+  .navbar_title {
+    font-size: 28px;
   }
 
-  h1,
+  .navbar_title,
   ul > li > a,
   .navbar_user {
     line-height: 50px;
   }
 
-  h1,
+  .navbar_title,
   ul {
     float: left;
   }

@@ -1,0 +1,17 @@
+<h2>
+  <%= t('.title') %>
+  <small><a href='#'><%= t('.browse_all') %></a></small>
+</h2>
+
+<% if @recent_opportunities.present? %>
+  <ul>
+    <% @recent_opportunities.each do |opportunity| %>
+      <li>
+        <a href='#'><%= opportunity.title %></a>
+        <span><%= t('posted_time_ago', time_ago: time_ago_in_words(opportunity.posted_at)) %></span>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No opportunities found</p>
+<% end %>

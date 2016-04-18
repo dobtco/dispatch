@@ -33,11 +33,22 @@ class Opportunity < ActiveRecord::Base
   belongs_to :approved_by_user, class_name: 'User'
   belongs_to :department
 
-  scope :not_approved, -> {
-    where('approved_at IS NULL')
+  scope :not_approved, -> { where('approved_at IS NULL') }
+  scope :approved, -> { where('approved_at IS NOT NULL') }
+
+  scope :published, -> {
+    approved.where('publish_at IS NULL OR publish_at < ?', Time.now)
   }
 
-  scope :approved, -> {
-    where('approved_at IS NOT NULL')
+  scope :order_by_recently_posted, -> {
+    order('GREATEST(publish_at, approved_at) DESC')
   }
+
+
+  def posted_at
+    [
+      publish_at,
+      approved_at
+    ].compact.max
+  end
 end

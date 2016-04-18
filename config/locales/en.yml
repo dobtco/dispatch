@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  posted_time_ago: Posted %{time_ago} ago
+  home:
+    hero:
+      title: Win contracts with the City of Philadelphia
+      hint: Sign up to be notified when new projects are posted
+      cta: Subscribe for business opportunities
+    faq:
+      title: Frequently asked questions
+      content_html: >-
+        <strong>What do I have to do to register?</strong>
+        <p>Simply fill out the form!</p>
+
+        <strong>What do I have to do to register?</strong>
+        <p>Simply fill out the form!</p>
+    recent_opportunities:
+      title: Recent opportunities
+      browse_all: Browse all
