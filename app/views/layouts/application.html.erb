@@ -8,9 +8,11 @@
 </head>
 <body class="<%= parameterized_controller_and_action %>" data-page-key="<%= parameterized_controller_and_action %>">
   <%= render('navbar') %>
-  <%= render('flashes') %>
 
-  <%= yield %>
+  <div class='container'>
+    <%= render('flashes') %>
+    <%= yield %>
+  </div>
 
   <%= javascript_include_tag('application') %>
   <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->

@@ -15,16 +15,16 @@ module ApplicationHelper
     "#{controller_name}-#{action_name}"
   end
 
-  # # Workaround for https://github.com/plataformatec/devise/issues/3748
-  # def flash_with_devise_mappings
-  #   devise_flash_key_mappings = {
-  #     'notice' => 'success',
-  #     'alert' => 'error'
-  #   }
-  #
-  #   flash.
-  #     to_h.
-  #     map { |k, v| { (devise_flash_key_mappings[k.to_s] || k) => v } }.
-  #     reduce(&:merge) || {}
-  # end
+  # Workaround for https://github.com/plataformatec/devise/issues/3748
+  def flahses_with_consistent_keys
+    devise_flash_key_mappings = {
+      'notice' => 'success',
+      'alert' => 'error'
+    }
+
+    flash.
+      to_h.
+      map { |k, v| { (devise_flash_key_mappings[k.to_s] || k) => v } }.
+      reduce(&:merge) || {}
+  end
 end

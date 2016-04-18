@@ -2,24 +2,24 @@
   <h1>Beacon</h1>
 
   <ul class='navbar_links'>
-    <li>
+    <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
       <a href='#'>Browse opportunities</a>
     </li>
 
     <% if policy(:opportunity).post? %>
-      <li>
+      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
         <a href='#'>Post opportunity</a>
       </li>
     <% end %>
 
     <% if policy(:opportunity).approve? %>
-      <li>
+      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
         <a href='#'>Approve opportunities (<%= Opportunity.not_approved.count %>)</a>
       </li>
     <% end %>
 
     <% if current_user.try(:admin?) %>
-      <li>
+      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
         <a href='<%= admin_root_path %>'>Admin</a>
       </li>
     <% end %>

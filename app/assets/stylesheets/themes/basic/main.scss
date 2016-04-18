@@ -1,0 +1,72 @@
+@import 'includes';
+
+.navbar {
+  display: block;
+  background-color: #eee;
+  padding: 0 20px;
+  @include cf;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  h1,
+  ul > li > a,
+  .navbar_user {
+    line-height: 50px;
+  }
+
+  h1,
+  ul {
+    float: left;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: inline;
+
+      &.active a {
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      &:last-child a {
+        margin-right: 0;
+      }
+
+      a {
+        display: inline-block;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.navbar_user {
+  float: right;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto 0;
+}
+
+.flash {
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.flash-error {
+  background-color: #ffcfce;
+}
+
+.flash-success {
+  background-color: #e4fdda;
+}
