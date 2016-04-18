@@ -49,9 +49,10 @@ class Views::Layouts::Application < Views::Base
           a 'Sign in', href: new_user_session_path
         end
 
-        main
+        div(class: 'main_content') {
+          main
+        }
 
-        widget Dvl::Core::Views::Footer.new(application_name: 'Beacon')
         render_widgets(:modals)
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->'
       }
