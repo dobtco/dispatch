@@ -17,6 +17,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  admin_roles            :text             default([]), is an Array
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -28,6 +29,10 @@
 #
 
 class User < ActiveRecord::Base
+  # Used for subscriptions
+  has_and_belongs_to_many :opportunities
+  has_and_belongs_to_many :categories
+
   devise :database_authenticatable,
          :confirmable,
          :registerable,
@@ -39,5 +44,9 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.admin_roles
+    @admin_roles ||= LiteEnum.new(:staff, :approver, :admin)
   end
 end
