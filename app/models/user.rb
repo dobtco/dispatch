@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
+#  name                   :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
@@ -32,6 +33,8 @@ class User < ActiveRecord::Base
   # Used for subscriptions
   has_and_belongs_to_many :opportunities
   has_and_belongs_to_many :categories
+
+  has_and_belongs_to_many :vendors
 
   devise :database_authenticatable,
          :confirmable,

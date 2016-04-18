@@ -1,6 +1,8 @@
 class InitialMigration < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.string :name
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -33,6 +35,17 @@ class InitialMigration < ActiveRecord::Migration
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
+
+    create_table :vendors do |t|
+      t.string :name
+      t.text :data
+      t.timestamps null: false
+    end
+
+    create_table :users_vendors, id: false do |t|
+      t.references :user, null: false
+      t.references :vendor, null: false
+    end
 
     create_table :departments do |t|
       t.string :name

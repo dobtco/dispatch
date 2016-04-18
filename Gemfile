@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
+gem 'administrate'
+gem 'autoprefixer-rails', github: 'ajb/autoprefixer-rails', branch: 'bundle-process'
 gem 'bugsnag'
 gem 'coffee-rails'
 gem 'delayed_job_active_record'

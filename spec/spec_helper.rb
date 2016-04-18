@@ -7,6 +7,8 @@ require 'capybara/rspec'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 ActiveRecord::Migration.maintain_test_schema!
 
+Warden.test_mode!
+
 RSpec.configure do |c|
   c.infer_spec_type_from_file_location!
   c.use_transactional_fixtures = false
@@ -14,6 +16,7 @@ RSpec.configure do |c|
 
   c.include FactoryGirl::Syntax::Methods
   c.include AbstractController::Translation
+  c.include Warden::Test::Helpers
 end
 
 Capybara.javascript_driver = :webkit

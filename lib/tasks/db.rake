@@ -2,6 +2,12 @@ namespace :db do
   namespace :seed do
     desc "seed example data"
     task example: :environment do
+      FactoryGirl.create(
+        :user,
+        email: 'admin@example.com',
+        admin_roles: User.admin_roles.values,
+        confirmed_at: Time.now
+      )
     end
   end
 

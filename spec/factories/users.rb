@@ -33,5 +33,17 @@ FactoryGirl.define do
     sequence(:email) { |i| "user-#{i}@example.com" }
     password 'password'
     confirmed_at { Time.now }
+
+    trait :staff do
+      admin_roles { [User.admin_roles[:staff]] }
+    end
+
+    trait :approver do
+      admin_roles { [User.admin_roles[:approver]] }
+    end
+
+    trait :admin do
+      admin_roles { [User.admin_roles[:admin]] }
+    end
   end
 end

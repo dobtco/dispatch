@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module Screendoor
+module Beacon
   class Application < Rails::Application
     config.x.email_notification_from_address = 'noreply@dobt.co'
 

@@ -292,6 +292,7 @@ CREATE TABLE schema_migrations (
 
 CREATE TABLE users (
     id integer NOT NULL,
+    name character varying,
     email character varying DEFAULT ''::character varying NOT NULL,
     encrypted_password character varying DEFAULT ''::character varying NOT NULL,
     reset_password_token character varying,
@@ -329,6 +330,48 @@ CREATE SEQUENCE users_id_seq
 --
 
 ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: users_vendors; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE users_vendors (
+    user_id integer NOT NULL,
+    vendor_id integer NOT NULL
+);
+
+
+--
+-- Name: vendors; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE vendors (
+    id integer NOT NULL,
+    name character varying,
+    data text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: vendors_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE vendors_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: vendors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE vendors_id_seq OWNED BY vendors.id;
 
 
 --
@@ -378,6 +421,13 @@ ALTER TABLE ONLY questions ALTER COLUMN id SET DEFAULT nextval('questions_id_seq
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY vendors ALTER COLUMN id SET DEFAULT nextval('vendors_id_seq'::regclass);
 
 
 --
@@ -434,6 +484,14 @@ ALTER TABLE ONLY questions
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: vendors_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY vendors
+    ADD CONSTRAINT vendors_pkey PRIMARY KEY (id);
 
 
 --
