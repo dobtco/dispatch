@@ -18,6 +18,8 @@
 #  enable_questions       :boolean          default(FALSE), not null
 #  questions_open_at      :datetime
 #  questions_close_at     :datetime
+#  approved_at            :datetime
+#  approved_by_user_id    :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -39,5 +41,14 @@ FactoryGirl.define do
       forms. This pilot is part of a larger project where we will be working
       with multiple departments throughout the City organization.
     }.squish
+
+    trait :published do
+      publish_at { Time.now - 1.day }
+    end
+
+    trait :approved do
+      association :approved_by_user, factory: :user
+      approved_at { Time.now }
+    end
   end
 end

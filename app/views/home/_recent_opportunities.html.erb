@@ -7,7 +7,7 @@
   <ul>
     <% @recent_opportunities.each do |opportunity| %>
       <li>
-        <a href='#'><%= opportunity.title %></a>
+        <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
         <span><%= t('posted_time_ago', time_ago: time_ago_in_words(opportunity.posted_at)) %></span>
       </li>
     <% end %>

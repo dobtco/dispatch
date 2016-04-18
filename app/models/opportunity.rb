@@ -35,15 +35,14 @@ class Opportunity < ActiveRecord::Base
 
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }
-
   scope :published, -> {
-    approved.where('publish_at IS NULL OR publish_at < ?', Time.now)
+    where('publish_at IS NULL OR publish_at < ?', Time.now)
   }
+  scope :posted, -> { approved.published }
 
   scope :order_by_recently_posted, -> {
     order('GREATEST(publish_at, approved_at) DESC')
   }
-
 
   def posted_at
     [

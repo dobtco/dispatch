@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @recent_opportunities = Opportunity.
-                              published.
+                              posted.
                               order_by_recently_posted.
                               limit(5)
   end
