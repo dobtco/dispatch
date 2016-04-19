@@ -12,7 +12,6 @@ class CategoryDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    group_name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -36,7 +35,6 @@ class CategoryDashboard < Administrate::BaseDashboard
     :users,
     :id,
     :name,
-    :group_name,
     :created_at,
     :updated_at,
   ]
@@ -48,7 +46,6 @@ class CategoryDashboard < Administrate::BaseDashboard
     :opportunities,
     :users,
     :name,
-    :group_name,
   ]
 
   # Overwrite this method to customize how categories are displayed

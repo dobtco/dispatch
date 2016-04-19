@@ -71,7 +71,6 @@ ALTER SEQUENCE attachments_id_seq OWNED BY attachments.id;
 CREATE TABLE categories (
     id integer NOT NULL,
     name character varying,
-    group_name character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
