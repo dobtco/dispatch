@@ -9,6 +9,9 @@ Bundler.require(:default, Rails.env)
 module Beacon
   class Application < Rails::Application
     config.x.email_notification_from_address = 'noreply@dobt.co'
+    config.x.staff_domains = [
+      'beacon.gov'
+    ]
 
     # Autoload /lib classes
     config.autoload_paths << Rails.root.join('lib')

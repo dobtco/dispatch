@@ -41,4 +41,16 @@ describe User do
       expect(subject.permission_level_is_at_least?('approver')).to eq false
     end
   end
+
+  describe 'automatic staff permissions' do
+    context 'when user email matches a staff domain' do
+      before { subject.update(email: 'foo@beacon.gov') }
+      it { should be_staff }
+    end
+
+    context 'when user email does not match a staff domain' do
+      before { subject.update(email: 'foo@a-beacon.gov') }
+      it { should_not be_staff }
+    end
+  end
 end

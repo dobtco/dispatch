@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
+  before_create :set_staff_if_email_matches_staff_domain
+
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -55,5 +57,17 @@ class User < ActiveRecord::Base
 
   def permission_level_is_at_least?(x)
     User.permission_levels[permission_level] >= User.permission_levels[x]
+  end
+
+  private
+
+  def set_staff_if_email_matches_staff_domain
+    if email_domain.in?(Rails.configuration.x.staff_domains)
+      self.permission_level = 'staff'
+    end
+  end
+
+  def email_domain
+    email.split('@').last
   end
 end
