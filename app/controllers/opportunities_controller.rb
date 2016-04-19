@@ -1,8 +1,51 @@
 class OpportunitiesController < ApplicationController
+  include OpportunitiesHelper
+
   before_action :set_opportunity
 
   def index
     @opportunities = Opportunity.posted.filter(params)
+  end
+
+  def new
+    authorize_staff
+    @opportunity = Opportunity.new
+  end
+
+  def create
+    authorize_staff
+
+    @opportunity = Opportunity.new(opportunity_params.merge(
+      created_by_user: current_user
+    ))
+
+    if @opportunity.save
+      redirect_to edit_opportunity_path(@opportunity, step: 'description')
+    else
+      render :new
+    end
+  end
+
+  def edit
+    unless params[:step].in?(edit_opportunity_steps)
+      params[:step] = edit_opportunity_steps.first
+    end
+
+    authorize @opportunity, :edit?
+  end
+
+  def update
+    authorize @opportunity, :edit?
+
+    if @opportunity.update(opportunity_params)
+      if next_step
+        redirect_to edit_opportunity_path(@opportunity, step: next_step)
+      else
+        redirect_to opportunity_path(@opportunity)
+      end
+    else
+      render :edit
+    end
   end
 
   def show
@@ -36,8 +79,8 @@ class OpportunitiesController < ApplicationController
   def submit
     authorize @opportunity, :submit?
 
-    if @opportunity.submission_adapter.submission_page
-      render "submission_adapters/#{@opportunity.submission_adapter.to_param}"
+    if @opportunity.submission_page
+      render "submission_adapters/#{@opportunity.submission_adapter.to_param}/submit"
     else
       redirect_to opportunity_path
     end
@@ -55,5 +98,32 @@ class OpportunitiesController < ApplicationController
                     status: :moved_permanently
       end
     end
+  end
+
+  def opportunity_params
+    params.require(:opportunity).permit(
+      :title,
+      :description,
+      :department_id,
+      :contact_name,
+      :contact_email,
+      :contact_phone,
+      :submission_adapter_name,
+      :publish_at,
+      :submissions_open_at,
+      :submissions_close_at,
+      :enable_questions,
+      :questions_open_at,
+      :questions_close_at,
+    ).tap do |h|
+      # Allow all
+      if (x = params[:opportunity][:submission_adapter_data]).present?
+        h[:submission_adapter_data] = x
+      end
+    end
+  end
+
+  def next_step
+    edit_opportunity_steps[edit_opportunity_steps.index(params[:step]) + 1]
   end
 end

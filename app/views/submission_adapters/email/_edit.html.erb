@@ -1,0 +1,2 @@
+<%= f.input :name, required: true, input_html: { value: f.object.name || current_user.name } %>
+<%= f.input :email, required: true, input_html: { value: f.object.email || current_user.email } %>

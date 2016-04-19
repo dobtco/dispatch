@@ -21,6 +21,15 @@
 
 en:
   posted_time_ago: Posted %{time_ago} ago
+  edit_opportunity_steps:
+    title:
+      title: Title
+    description:
+      title: Description
+    questions:
+      title: Questions
+    submissions:
+      title: Submissions
   opportunity_status:
     posted: This opportunity is posted and viewable to the public.
     waiting_for_publish_date: This opportunity will be posted at %{publish_at}.

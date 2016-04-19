@@ -1,4 +1,4 @@
-module OpportunityHelper
+module OpportunitiesHelper
   def is_filtered?
     @opportunities.filterer.params[:text].present? ||
     @opportunities.filterer.params[:status] != 'open' ||
@@ -15,5 +15,14 @@ module OpportunityHelper
     else
       t('opportunity_status.not_approved')
     end
+  end
+
+  def edit_opportunity_steps
+    %w(
+      title
+      description
+      questions
+      submissions
+    )
   end
 end

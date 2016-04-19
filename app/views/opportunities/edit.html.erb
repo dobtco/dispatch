@@ -1,0 +1,17 @@
+<h2>Edit opportunity "<%= @opportunity.title %>"</h2>
+
+<ul>
+  <% edit_opportunity_steps.each do |x| %>
+    <li<% if params[:step] == x %> class='active'<% end %>>
+      <a href='<%= url_for(step: x) %>'><%= t("edit_opportunity_steps.#{x}.title") %></a>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for @opportunity do |f| %>
+  <input type='hidden' name='step' value='<%= params[:step] %>' />
+
+  <%= render partial: "opportunities/edit/#{params[:step]}", locals: { f: f } %>
+
+  <%= f.button :button, 'Next &rarr;'.html_safe %>
+<% end %>

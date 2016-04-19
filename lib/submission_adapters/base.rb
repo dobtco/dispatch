@@ -21,7 +21,21 @@ class SubmissionAdapters::Base
   def submit_proposals_instructions
   end
 
+  def has_submission_method?
+    submission_page ||
+    submit_proposals_url ||
+    submit_proposals_instructions
+  end
+
+  def self.to_adapter_name
+    name.split('::').last
+  end
+
+  def self.to_param
+    to_adapter_name.parameterize.underscore
+  end
+
   def to_param
-    self.class.name.split('::').last.parameterize.underscore
+    self.class.to_param
   end
 end

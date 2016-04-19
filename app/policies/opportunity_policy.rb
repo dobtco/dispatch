@@ -18,6 +18,7 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
 
   def submit?
     # Allow admins to see what their submission form will look like
+    opportunity.has_submission_method? &&
     (opportunity_admin? || opportunity.open_for_submissions?)
   end
 
@@ -39,8 +40,8 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
   def review_submissions?
     opportunity_admin? &&
     (
-      opportunity.submission_adapter.view_proposals_url ||
-      opportunity.submission_adapter.view_proposals_instructions
+      opportunity.view_proposals_url ||
+      opportunity.view_proposals_instructions
     )
   end
 

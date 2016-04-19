@@ -70,7 +70,18 @@ class Opportunity < ActiveRecord::Base
   }
 
   validates :title, presence: true
-  validates :department, presence: true
+  validates :created_by_user, presence: true
+
+  delegate :submission_page,
+           :view_proposals_url,
+           :view_proposals_instructions,
+           :submit_proposals_url,
+           :submit_proposals_instructions,
+           :has_submission_method?,
+           to: :submission_adapter
+
+  before_create :set_default_submission_adapter_name,
+                :set_default_contact_info
 
   def posted?
     approved? && published?
@@ -129,5 +140,16 @@ class Opportunity < ActiveRecord::Base
 
   def default_submission_adapter
     SubmissionAdapters::None.new(self)
+  end
+
+  def set_default_submission_adapter_name
+    self.submission_adapter_name ||= default_submission_adapter.
+                                      class.
+                                      to_adapter_name
+  end
+
+  def set_default_contact_info
+    self.contact_name ||= created_by_user.name
+    self.contact_email ||= created_by_user.email
   end
 end

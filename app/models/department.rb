@@ -10,4 +10,6 @@
 
 class Department < ActiveRecord::Base
   has_many :opportunities
+
+  default_scope -> { order('LOWER(name)') }
 end

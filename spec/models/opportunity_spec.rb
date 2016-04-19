@@ -85,6 +85,13 @@ describe Opportunity do
     its(:posted_at) { should eq subject.publish_at }
   end
 
+  describe '#submission_adapter_name' do
+    context 'by default' do
+      before { subject.save }
+      its(:submission_adapter_name) { should eq 'None' }
+    end
+  end
+
   describe '#submission_adapter' do
     context 'by default' do
       its(:submission_adapter) { should be_a(SubmissionAdapters::None) }
