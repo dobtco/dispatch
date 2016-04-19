@@ -1,6 +1,6 @@
 <% if policy(@opportunity).ask_question? %>
   <li>
-    <a href='#'>Ask a question</a>
+    <a href='#new_question'>Ask a question</a>
   </li>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).ask_question? %>
   <li>
