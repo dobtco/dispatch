@@ -20,5 +20,7 @@ Rails.application.routes.draw do
       post 'approve'
       post 'subscribe'
     end
+
+    resources :questions, only: [:create, :update, :destroy]
   end
 end

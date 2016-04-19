@@ -26,6 +26,11 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
     opportunity.open_for_questions?
   end
 
+  def answer_questions?
+    opportunity.enable_questions? &&
+    opportunity_admin?
+  end
+
   def subscribe?
     show? &&
     user
@@ -37,11 +42,6 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
       opportunity.submission_adapter.view_proposals_url ||
       opportunity.submission_adapter.view_proposals_instructions
     )
-  end
-
-  def answer_questions?
-    opportunity.enable_questions? &&
-    opportunity_admin?
   end
 
   private

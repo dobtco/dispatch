@@ -1,7 +1,9 @@
-<div>
-  <% if @opportunity.description.present? %>
-    <%= @opportunity.description %>
-  <% else %>
-    No description
-  <% end %>
-</div>
+<h3>Description</h3>
+
+<% if @opportunity.description.present? %>
+  <%= @opportunity.description %>
+<% else %>
+  No description
+<% end %>
+
+<p>@todo render attachments here</p>

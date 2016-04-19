@@ -1,0 +1,24 @@
+<div>
+  <div><%= question.question_text %></div>
+
+  <% if policy(@opportunity).answer_questions? %>
+    <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
+      <%= f.input :answer_text %>
+      <%= f.button :button %>
+    <% end %>
+  <% end %>
+
+  <% if question.answered? %>
+    <div data-toggle='edit-answer-<%= question.id %>'><%= question.answer_text %></div>
+  <% end %>
+
+  <% if policy(@opportunity).answer_questions? %>
+    <ul>
+      <% if question.answered? %>
+        <li><a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>Edit answer</a></li>
+      <% end %>
+
+      <li><a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='Are you sure?'>Delete question</a></li>
+    </ul>
+  <% end %>
+</div>

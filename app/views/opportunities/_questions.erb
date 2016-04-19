@@ -1,0 +1,8 @@
+<h3>Questions</h3>
+
+<%= render @opportunity.questions.unanswered_first %>
+
+<%= simple_form_for [@opportunity, @opportunity.questions.build] do |f| %>
+  <%= f.input :question_text %>
+  <%= f.button :button %>
+<% end %>

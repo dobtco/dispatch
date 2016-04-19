@@ -21,4 +21,18 @@ class Question < ActiveRecord::Base
   belongs_to :opportunity
   belongs_to :asked_by_user, class_name: 'User'
   belongs_to :answered_by_user, class_name: 'User'
+
+  scope :unanswered, -> { where('answered_at IS NULL') }
+  scope :answered, -> { where('answered_at IS NOT NULL') }
+
+  scope :unanswered_first, -> {
+    order('CASE WHEN answered_at IS NULL THEN 0 ELSE 1 END')
+  }
+
+  validates :asked_by_user, presence: true
+  validates :question_text, presence: true
+
+  def answered?
+    answered_at.present?
+  end
 end
