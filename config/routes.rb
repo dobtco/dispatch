@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     end
 
     resources :questions, only: [:create, :update, :destroy]
+    resources :attachments, only: [:create, :destroy]
   end
 end

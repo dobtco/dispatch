@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery-ujs
+//= require jquery-form
+//= require inline_file_upload
 //= require_tree .

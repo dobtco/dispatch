@@ -9,6 +9,7 @@ You'll need to first install the following:
 - Bundler
 - node.js
 - Postgres
+- imagemagick
 
 Then, run `script/bootstrap` to install gems and seed your database.
 

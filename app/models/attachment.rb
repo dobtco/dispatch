@@ -21,4 +21,7 @@ class Attachment < ActiveRecord::Base
   belongs_to :opportunity
 
   has_storage_unit
+
+  mount_uploader :upload, AttachmentUploader
+  validates :upload, presence: true
 end

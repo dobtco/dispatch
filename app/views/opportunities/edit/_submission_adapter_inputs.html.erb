@@ -1,6 +1,6 @@
 <% all_submission_adapters.each do |x| %>
   <% if lookup_context.exists?(submission_adapter_edit_partial(x), nil, true) %>
-    <div data-show-if-selected='#opportunity_submission_adapter_name|<%= x.to_adapter_name %>' <% unless f.object.submission_adapter_name == x.to_adapter_name %>style='display:none'<% end %>>
+    <div data-adapter-name='<%= x.to_adapter_name %>' <% unless f.object.submission_adapter_name == x.to_adapter_name %>style='display:none'<% end %>>
       <%= f.simple_fields_for :submission_adapter_data, OpenStruct.new(f.object.submission_adapter_data) do |f| %>
         <%= render(partial: submission_adapter_edit_partial(x), locals: { f: f }) %>
       <% end %>

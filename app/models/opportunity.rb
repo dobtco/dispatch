@@ -41,7 +41,8 @@ class Opportunity < ActiveRecord::Base
   belongs_to :department
 
   has_and_belongs_to_many :categories
-  has_many :questions
+  has_many :questions, dependent: :destroy
+  has_many :attachments, dependent: :destroy
 
   serialize :submission_adapter_data, Hash
 

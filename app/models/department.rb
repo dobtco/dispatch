@@ -9,7 +9,7 @@
 #
 
 class Department < ActiveRecord::Base
-  has_many :opportunities
+  has_many :opportunities, dependent: :nullify
 
   default_scope -> { order('LOWER(name)') }
 end
