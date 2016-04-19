@@ -1,0 +1,16 @@
+<% if @opportunity.attachments.present? %>
+  <h3>Attachments</h3>
+
+  <ul>
+    <% @opportunity.attachments.each do |attachment| %>
+      <li>
+        <a href='<%= attachment.upload.download_url %>'><%= attachment.upload.raw_filename %></a>
+        <span><%= attachment.file_size_bytes %> bytes</span>
+        <span><%= attachment.upload.friendly_file_type %></span>
+        <% if attachment.has_thumbnail? %>
+          <img src='<%= attachment.upload.thumb.url %>' />
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

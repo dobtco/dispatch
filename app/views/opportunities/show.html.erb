@@ -9,9 +9,7 @@
   </div>
   <div class='content'>
     <%= render('description') %>
-
-    <% if @opportunity.enable_questions? %>
-      <%= render('questions') %>
-    <% end %>
+    <%= render('attachments') %>
+    <%= render('questions') if @opportunity.enable_questions? %>
   </div>
 </div>
