@@ -58,16 +58,4 @@ module ApplicationHelper
       end
     end
   end
-
-  def all_submission_adapters
-    [
-      SubmissionAdapters::None,
-      SubmissionAdapters::Screendoor,
-      SubmissionAdapters::Email
-    ]
-  end
-
-  def submission_adapter_edit_partial(adapter_class)
-    "submission_adapters/#{adapter_class.to_param}/edit"
-  end
 end

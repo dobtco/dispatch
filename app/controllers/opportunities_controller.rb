@@ -114,7 +114,7 @@ class OpportunitiesController < ApplicationController
       :submissions_close_at,
       :enable_questions,
       :questions_open_at,
-      :questions_close_at,
+      :questions_close_at
     ).tap do |h|
       # Allow all
       if (x = params[:opportunity][:submission_adapter_data]).present?
@@ -126,4 +126,4 @@ class OpportunitiesController < ApplicationController
   def next_step
     edit_opportunity_steps[edit_opportunity_steps.index(params[:step]) + 1]
   end
-end
+  end

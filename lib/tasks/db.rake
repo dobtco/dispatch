@@ -12,6 +12,8 @@ namespace :db do
 
       department = FactoryGirl.create(:department)
 
+      FactoryGirl.create(:category)
+
       FactoryGirl.create(
         :opportunity,
         :published,
