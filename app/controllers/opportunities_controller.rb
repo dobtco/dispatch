@@ -7,6 +7,18 @@ class OpportunitiesController < ApplicationController
     @opportunities = Opportunity.posted.filter(params)
   end
 
+  def pending
+    authorize_staff
+
+    @pending_approval_opportunities = Opportunity.not_approved.select do |opp|
+      policy(opp).show?
+    end
+
+    @pending_publish_opportunities = Opportunity.not_published.approved.select do |opp|
+      policy(opp).show?
+    end
+  end
+
   def new
     authorize_staff
     @opportunity = Opportunity.new

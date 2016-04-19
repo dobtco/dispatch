@@ -1,0 +1,22 @@
+<% if @pending_approval_opportunities.present? %>
+  <h2>Opportunities awaiting approval (<%= @pending_approval_opportunities.length %>)</h2>
+
+  <ul>
+    <% @pending_approval_opportunities.each do |opportunity| %>
+      <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Pending opportunities</h2>
+<p>The following opportunities have been approved, and will be posted after their publish_date.</p>
+
+<% if @pending_publish_opportunities %>
+  <ul>
+    <% @pending_publish_opportunities.each do |opportunity| %>
+      <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No pending opportunities.</p>
+<% end %>

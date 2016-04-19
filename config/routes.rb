@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :opportunities do
+    collection do
+      get 'pending'
+    end
+
     member do
       get 'submit'
       post 'approve'

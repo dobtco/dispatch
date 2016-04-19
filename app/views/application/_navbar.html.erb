@@ -12,9 +12,15 @@
       </li>
     <% end %>
 
-    <% if policy(:opportunity).approve? %>
-      <li <% if parameterized_controller_and_action == 'awaiting_approval' %>class='active'<% end %>>
-        <a href='#'>Approve opportunities (<%= Opportunity.not_approved.count %>)</a>
+    <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
+      <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
+        <a href='<%= pending_opportunities_path %>'>
+          <% if policy(:opportunity).approve? %>
+            Approve opportunities (<%= Opportunity.not_approved.count %>)
+          <% else %>
+            Pending opportunities
+          <% end %>
+        </a>
       </li>
     <% end %>
 

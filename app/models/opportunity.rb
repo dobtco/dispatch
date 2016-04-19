@@ -29,7 +29,10 @@
 #
 
 class Opportunity < ActiveRecord::Base
+  # Currently using this to manage permissions. Eventually we could switch
+  # to a 1-many
   belongs_to :created_by_user, class_name: 'User'
+
   belongs_to :approved_by_user, class_name: 'User'
   belongs_to :department
 
@@ -40,24 +43,34 @@ class Opportunity < ActiveRecord::Base
 
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }
-  scope :published, -> {
+
+  scope :published, -> do
     where('publish_at IS NULL OR publish_at < ?', Time.now)
-  }
+  end
+
+  scope :not_published, -> do
+    where('publish_at IS NOT NULL AND publish_at > ?', Time.now)
+  end
+
   scope :posted, -> { approved.published }
 
-  scope :order_by_recently_posted, -> {
+  scope :not_posted, -> do
+    where('(publish_at IS NOT NULL AND publish_at > ?) || approved_at IS NULL')
+  end
+
+  scope :order_by_recently_posted, -> do
     order('GREATEST(publish_at, approved_at) DESC')
-  }
+  end
 
-  scope :submissions_open, -> {
+  scope :submissions_open, -> do
     where('submissions_close_at IS NULL OR submissions_close_at > ?', Time.now)
-  }
+  end
 
-  scope :submissions_closed, -> {
+  scope :submissions_closed, -> do
     where('submissions_close_at IS NOT NULL AND submissions_close_at < ?', Time.now)
-  }
+  end
 
-  scope :with_category, -> (category_id) {
+  scope :with_category, -> (category_id) do
     return unless category_id.to_s.match(/\A[0-9]+\Z/)
 
     where(%Q{
@@ -67,7 +80,7 @@ class Opportunity < ActiveRecord::Base
       AND categories_opportunities.category_id = ?
       LIMIT 1) IS NOT NULL
     }, category_id)
-  }
+  end
 
   validates :title, presence: true
   validates :created_by_user, presence: true
