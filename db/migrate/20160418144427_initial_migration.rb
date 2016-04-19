@@ -76,6 +76,8 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :approved_at
       t.integer :approved_by_user_id
 
+      t.datetime :deleted_at
+
       t.timestamps null: false
     end
 
@@ -88,6 +90,7 @@ class InitialMigration < ActiveRecord::Migration
       t.string :content_type
       t.integer :file_size_bytes
       t.boolean :has_thumbnail, null: false, default: false
+      t.datetime :deleted_at
       t.timestamps null: false
     end
 
@@ -98,6 +101,7 @@ class InitialMigration < ActiveRecord::Migration
       t.text :question_text
       t.text :answer_text
       t.datetime :answered_at
+      t.datetime :deleted_at
       t.timestamps null: false
     end
 

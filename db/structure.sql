@@ -40,6 +40,7 @@ CREATE TABLE attachments (
     content_type character varying,
     file_size_bytes integer,
     has_thumbnail boolean DEFAULT false NOT NULL,
+    deleted_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -209,6 +210,7 @@ CREATE TABLE opportunities (
     submitted_at timestamp without time zone,
     approved_at timestamp without time zone,
     approved_by_user_id integer,
+    deleted_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -255,6 +257,7 @@ CREATE TABLE questions (
     question_text text,
     answer_text text,
     answered_at timestamp without time zone,
+    deleted_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );

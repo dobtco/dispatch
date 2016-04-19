@@ -62,7 +62,7 @@ class OpportunitiesController < ApplicationController
 
   def destroy
     authorize @opportunity, :destroy?
-    @opportunity.destroy
+    @opportunity.trash!
     redirect_to root_path
   end
 

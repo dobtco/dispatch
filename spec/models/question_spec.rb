@@ -9,6 +9,7 @@
 #  question_text       :text
 #  answer_text         :text
 #  answered_at         :datetime
+#  deleted_at          :datetime
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

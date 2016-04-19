@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     authorize @opportunity, :answer_questions?
-    @question.destroy
+    @question.trash!
     redirect_to :back
   end
 

@@ -21,6 +21,7 @@
 #  submitted_at            :datetime
 #  approved_at             :datetime
 #  approved_by_user_id     :integer
+#  deleted_at              :datetime
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #

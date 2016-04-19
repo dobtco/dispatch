@@ -14,6 +14,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     content_type: Field::String,
     file_size_bytes: Field::Number,
     has_thumbnail: Field::Boolean,
+    deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -39,6 +40,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :content_type,
     :file_size_bytes,
     :has_thumbnail,
+    :deleted_at,
     :created_at,
     :updated_at,
   ]
@@ -52,6 +54,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :content_type,
     :file_size_bytes,
     :has_thumbnail,
+    :deleted_at
   ]
 
   # Overwrite this method to customize how attachments are displayed

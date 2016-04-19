@@ -9,6 +9,7 @@
 #  question_text       :text
 #  answer_text         :text
 #  answered_at         :datetime
+#  deleted_at          :datetime
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
@@ -18,6 +19,8 @@
 #
 
 class Question < ActiveRecord::Base
+  has_storage_unit
+
   belongs_to :opportunity
   belongs_to :asked_by_user, class_name: 'User'
   belongs_to :answered_by_user, class_name: 'User'

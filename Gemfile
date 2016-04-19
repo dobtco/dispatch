@@ -22,6 +22,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'simple_form_legend'
 gem 'sprockets-rails'
+gem 'storage_unit'
 gem 'uglifier'
 gem 'utf8-cleaner'
 

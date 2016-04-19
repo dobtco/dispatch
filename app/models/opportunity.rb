@@ -21,6 +21,7 @@
 #  submitted_at            :datetime
 #  approved_at             :datetime
 #  approved_by_user_id     :integer
+#  deleted_at              :datetime
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #
@@ -30,6 +31,8 @@
 #
 
 class Opportunity < ActiveRecord::Base
+  has_storage_unit
+
   # Currently using this to manage permissions. Eventually we could switch
   # to a 1-many
   belongs_to :created_by_user, class_name: 'User'

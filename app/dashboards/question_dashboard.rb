@@ -17,6 +17,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     question_text: Field::Text,
     answer_text: Field::Text,
     answered_at: Field::DateTime,
+    deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -45,6 +46,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :question_text,
     :answer_text,
     :answered_at,
+    :deleted_at,
     :created_at,
     :updated_at,
   ]
@@ -61,6 +63,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :question_text,
     :answer_text,
     :answered_at,
+    :deleted_at
   ]
 
   # Overwrite this method to customize how questions are displayed

@@ -8,6 +8,7 @@
 #  content_type    :string
 #  file_size_bytes :integer
 #  has_thumbnail   :boolean          default(FALSE), not null
+#  deleted_at      :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -18,4 +19,6 @@
 
 class Attachment < ActiveRecord::Base
   belongs_to :opportunity
+
+  has_storage_unit
 end

@@ -27,6 +27,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     enable_questions: Field::Boolean,
     questions_open_at: Field::DateTime,
     questions_close_at: Field::DateTime,
+    deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -65,7 +66,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :updated_at,
     :approved_by_user,
     :approved_at,
-    :submitted_at
+    :submitted_at,
+    :deleted_at
   ]
 
   # FORM_ATTRIBUTES
@@ -89,7 +91,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :questions_close_at,
     :approved_by_user,
     :approved_at,
-    :submitted_at
+    :submitted_at,
+    :deleted_at
   ]
 
   # Overwrite this method to customize how opportunities are displayed
