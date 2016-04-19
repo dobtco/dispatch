@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  confirm_alert: Are you sure?
   posted_time_ago: Posted %{time_ago} ago
   edit_opportunity_steps:
     title:

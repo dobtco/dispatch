@@ -11,6 +11,12 @@
           </a>
         </li>
       <% end %>
+
+      <% if policy(@opportunity).destroy? %>
+        <li>
+          <a href='<%= opportunity_path %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'>Destroy</a>
+        </li>
+      <% end %>
     </span>
   </div>
 <% end %>

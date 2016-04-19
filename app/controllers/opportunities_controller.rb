@@ -60,6 +60,12 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+  def destroy
+    authorize @opportunity, :destroy?
+    @opportunity.destroy
+    redirect_to root_path
+  end
+
   def show
     authorize @opportunity, :show?
   end

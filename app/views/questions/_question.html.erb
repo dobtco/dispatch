@@ -18,7 +18,7 @@
         <li><a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>Edit answer</a></li>
       <% end %>
 
-      <li><a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='Are you sure?'>Delete question</a></li>
+      <li><a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'>Delete question</a></li>
     </ul>
   <% end %>
 </div>

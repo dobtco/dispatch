@@ -8,6 +8,10 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
     opportunity_admin?
   end
 
+  def destroy?
+    user && user.permission_level_is_at_least?('admin')
+  end
+
   def create?
     user && user.permission_level_is_at_least?('staff')
   end
