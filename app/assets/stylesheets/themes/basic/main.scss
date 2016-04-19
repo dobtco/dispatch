@@ -70,3 +70,30 @@
 .flash-success {
   background-color: #e4fdda;
 }
+
+.layout_with_sidebar_left {
+  .content {
+    margin-left: 320px;
+  }
+
+  .sidebar {
+    float: left;
+    width: 300px;
+  }
+}
+
+.layout_with_sidebar_right {
+  .content {
+    margin-right: 320px;
+  }
+
+  .sidebar {
+    float: right;
+    width: 300px;
+  }
+}
+
+.opportunity_filter_form {
+  background-color: #eee;
+  padding: 20px;
+}

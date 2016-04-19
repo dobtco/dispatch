@@ -1,0 +1,34 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= sortable_table_header @opportunities, 'title', 'Title' %></th>
+      <th><%= sortable_table_header @opportunities, 'department', 'Department' %></th>
+      <th><%= sortable_table_header @opportunities, 'submissions_close_at', 'Deadline' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @opportunities.present? %>
+      <% @opportunities.each do |opportunity| %>
+        <tr>
+          <td>
+            <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
+          </td>
+          <td><%= opportunity.department.name %></td>
+          <td>
+            <% if opportunity.submissions_close_at %>
+              <%= opportunity.submissions_close_at %>
+            <% else %>
+              No deadline
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan='3'>No results</td>
+      </td>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @opportunities %>

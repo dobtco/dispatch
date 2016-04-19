@@ -25,7 +25,7 @@ class UserDashboard < Administrate::BaseDashboard
     confirmed_at: Field::DateTime,
     confirmation_sent_at: Field::DateTime,
     unconfirmed_email: Field::String,
-    permission_level: Field::String,
+    permission_level: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }

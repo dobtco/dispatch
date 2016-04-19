@@ -1,3 +1,18 @@
 <%= content_for(:active_nav, 'browse_opps') %>
 
-Showb
+<h2><%= @opportunity.title %></h2>
+
+<div class='layout_with_sidebar_right'>
+  <div class='sidebar'>
+    yo
+  </div>
+  <div class='content'>
+    <div>
+      <% if @opportunity.description.present? %>
+        <%= @opportunity.description %>
+      <% else %>
+        No description
+      <% end %>
+    </div>
+  </div>
+</div>

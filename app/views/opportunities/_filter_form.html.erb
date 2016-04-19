@@ -1,0 +1,30 @@
+<form class='opportunity_filter_form'>
+  <input type='hidden' name='sort' value='<%= @opportunities.filterer.sort %>' />
+  <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
+
+  <div>
+    <label for='text'>Title, description, attachments</label>
+    <input type='text' name='text' id='text' value="<%= @opportunities.filterer.params[:text] %>" />
+  </div>
+
+  <div>
+    <label for='status'>Status</label>
+    <select name='status' id='status'>
+      <%= options_for_select([['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], @opportunities.filterer.params[:status]) %>
+    </select>
+  </div>
+
+  <div>
+    <label for='category_id'>Category</label>
+    <select name='category_id' id='category_id'>
+      <option>All</option>
+      <%= options_from_collection_for_select(Category.all, :id, :name, @opportunities.filterer.params[:category_id]) %>
+    </select>
+  </div>
+
+  <button>Filter opportunities</button>
+
+  <% if is_filtered? %>
+    <a href='<%= url_for(pick(params, :sort, :direction)) %>'>Clear filters</a>
+  <% end %>
+</form>
