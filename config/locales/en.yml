@@ -21,6 +21,10 @@
 
 en:
   posted_time_ago: Posted %{time_ago} ago
+  opportunity_status:
+    posted: This opportunity is posted and viewable to the public.
+    waiting_for_publish_date: This opportunity will be posted at %{publish_at}.
+    not_approved: This opportunity has not been approved for publishing.
   home:
     hero:
       title: Win contracts with the City of Philadelphia

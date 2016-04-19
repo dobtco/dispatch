@@ -2,26 +2,26 @@
 #
 # Table name: opportunities
 #
-#  id                     :integer          not null, primary key
-#  created_by_user_id     :integer
-#  title                  :string
-#  description            :text
-#  department_id          :integer
-#  contact_name           :string
-#  contact_email          :string
-#  contact_phone          :string
-#  submission_method      :string
-#  submission_method_data :text
-#  publish_at             :datetime
-#  submissions_open_at    :datetime
-#  submissions_close_at   :datetime
-#  enable_questions       :boolean          default(FALSE), not null
-#  questions_open_at      :datetime
-#  questions_close_at     :datetime
-#  approved_at            :datetime
-#  approved_by_user_id    :integer
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id                      :integer          not null, primary key
+#  created_by_user_id      :integer
+#  title                   :string
+#  description             :text
+#  department_id           :integer
+#  contact_name            :string
+#  contact_email           :string
+#  contact_phone           :string
+#  submission_adapter_name :string
+#  submission_adapter_data :text
+#  publish_at              :datetime
+#  submissions_open_at     :datetime
+#  submissions_close_at    :datetime
+#  enable_questions        :boolean          default(FALSE), not null
+#  questions_open_at       :datetime
+#  questions_close_at      :datetime
+#  approved_at             :datetime
+#  approved_by_user_id     :integer
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 # Indexes
 #
@@ -34,6 +34,8 @@ class Opportunity < ActiveRecord::Base
   belongs_to :department
 
   has_and_belongs_to_many :categories
+
+  serialize :submission_adapter_data, Hash
 
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }
@@ -77,6 +79,14 @@ class Opportunity < ActiveRecord::Base
     approved_at.present?
   end
 
+  def approve!
+    update approved_at: Time.now
+  end
+
+  def unapprove!
+    update approved_at: nil
+  end
+
   def published?
     !publish_at ||
     publish_at < Time.now
@@ -91,5 +101,32 @@ class Opportunity < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title.parameterize}"
+  end
+
+  def submission_adapter
+    if submission_adapter_name.present?
+      "SubmissionAdapters::#{submission_adapter_name}".constantize.new(self)
+    else
+      default_submission_adapter
+    end
+  rescue
+    default_submission_adapter
+  end
+
+  def open_for_submissions?
+    (!submissions_open_at || submissions_open_at < Time.now) &&
+    (!submissions_close_at || submissions_close_at > Time.now)
+  end
+
+  def open_for_questions?
+    enable_questions? &&
+    (!questions_open_at || questions_open_at < Time.now) &&
+    (!questions_close_at || questions_close_at > Time.now)
+  end
+
+  private
+
+  def default_submission_adapter
+    SubmissionAdapters::None.new(self)
   end
 end

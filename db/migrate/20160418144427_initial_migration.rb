@@ -60,8 +60,8 @@ class InitialMigration < ActiveRecord::Migration
       t.string :contact_name
       t.string :contact_email
       t.string :contact_phone
-      t.string :submission_method
-      t.text :submission_method_data
+      t.string :submission_adapter_name
+      t.text :submission_adapter_data
 
       t.datetime :publish_at
       t.datetime :submissions_open_at

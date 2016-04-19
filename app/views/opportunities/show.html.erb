@@ -2,17 +2,13 @@
 
 <h2><%= @opportunity.title %></h2>
 
+<%= render('admin_status') %>
+
 <div class='layout_with_sidebar_right'>
   <div class='sidebar'>
-    yo
+    <%= render('actions') %>
   </div>
   <div class='content'>
-    <div>
-      <% if @opportunity.description.present? %>
-        <%= @opportunity.description %>
-      <% else %>
-        No description
-      <% end %>
-    </div>
+    <%= render('description') %>
   </div>
 </div>

@@ -1,0 +1,16 @@
+<% if policy(@opportunity).edit? %>
+  <div>
+    <span><%= opportunity_status_text %></span>
+    <ul>
+      <li><a href='<%= edit_opportunity_path %>'>Edit</a></li>
+
+      <% if policy(@opportunity).approve? %>
+        <li>
+          <a href='<%= approve_opportunity_path %>' data-method='post'>
+            <% if @opportunity.approved? %>Un-approve<% else %>Approve<% end %>
+          </a>
+        </li>
+      <% end %>
+    </span>
+  </div>
+<% end %>

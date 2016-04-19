@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
 
-  resources :opportunities
+  resources :opportunities do
+    member do
+      get 'submit'
+      post 'approve'
+      post 'subscribe'
+    end
+  end
 end

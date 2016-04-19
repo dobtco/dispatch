@@ -6,7 +6,7 @@
       <a href='<%= opportunities_path %>'>Browse opportunities</a>
     </li>
 
-    <% if policy(:opportunity).post? %>
+    <% if policy(:opportunity).create? %>
       <li <% if content_for(:active_nav) == 'post_opp' %>class='active'<% end %>>
         <a href='<%= new_opportunity_path %>'>Post opportunity</a>
       </li>

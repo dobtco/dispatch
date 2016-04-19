@@ -1,0 +1,9 @@
+<% if policy(@opportunity).subscribe? %>
+  <a href='<%= subscribe_opportunity_path %>' data-method='post'>
+    <% if current_user.opportunities.include?(@opportunity) %>
+      Subscribed to updates
+    <% else %>
+      Subscribe to updates
+    <% end %>
+  </a>
+<% end %>
