@@ -12,6 +12,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     approved_by_user: Field::BelongsTo.with_options(class_name: "User"),
     approved_at: Field::DateTime,
     department: Field::BelongsTo,
+    categories: Field::HasMany,
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
@@ -46,6 +47,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :created_by_user,
     :department,
+    :categories,
     :id,
     :title,
     :description,
@@ -72,6 +74,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :created_by_user,
     :department,
+    :categories,
     :title,
     :description,
     :contact_name,
@@ -92,7 +95,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how opportunities are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(opportunity)
-  #   "Opportunity ##{opportunity.id}"
-  # end
+  def display_resource(opportunity)
+    "#{opportunity.title} (##{opportunity.id})"
+  end
 end

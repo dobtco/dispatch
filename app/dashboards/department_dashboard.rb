@@ -48,7 +48,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how departments are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(department)
-  #   "Department ##{department.id}"
-  # end
+  def display_resource(department)
+    "#{department.name} (##{department.id})"
+  end
 end

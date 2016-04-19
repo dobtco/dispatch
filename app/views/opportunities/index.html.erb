@@ -1,0 +1,66 @@
+<%= content_for(:active_nav, 'browse_opps') %>
+
+<div class='layout_with_sidebar'>
+  <div class='sidebar'>
+    <form>
+      <input type='hidden' name='sort' value='<%= @opportunities.filterer.sort %>' />
+      <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
+
+      <label for='text'>Title, description, attachments</label>
+      <input type='text' name='text' id='text' value="<%= @opportunities.filterer.params[:text] %>" />
+
+      <label for='status'>Status</label>
+      <select name='status' id='status'>
+        <%= options_for_select([['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], @opportunities.filterer.params[:status]) %>
+      </select>
+
+      <label for='category_id'>Category</label>
+      <select name='category_id' id='category_id'>
+        <option>All</option>
+        <%= options_from_collection_for_select(Category.all, :id, :name, @opportunities.filterer.params[:category_id]) %>
+      </select>
+
+      <button>Filter opportunities</button>
+
+      <% if is_filtered? %>
+        <a href='<%= url_for(pick(params, :sort, :direction)) %>'>Clear filters</a>
+      <% end %>
+    </form>
+  </div>
+  <div class='content'>
+    <table>
+      <thead>
+        <tr>
+          <th><%= sortable_table_header @opportunities, 'title', 'Title' %></th>
+          <th><%= sortable_table_header @opportunities, 'department', 'Department' %></th>
+          <th><%= sortable_table_header @opportunities, 'submissions_close_at', 'Deadline' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @opportunities.present? %>
+          <% @opportunities.each do |opportunity| %>
+            <tr>
+              <td>
+                <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
+              </td>
+              <td><%= opportunity.department.name %></td>
+              <td>
+                <% if opportunity.submissions_close_at %>
+                  <%= opportunity.submissions_close_at %>
+                <% else %>
+                  No deadline
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan='3'>No results</td>
+          </td>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @opportunities %>
+  </div>
+</div>

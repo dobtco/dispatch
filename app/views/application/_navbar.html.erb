@@ -1,25 +1,25 @@
 <navbar class='navbar'>
-  <span class='navbar_title'>Beacon</span>
+  <a class='navbar_title' href='<%= root_path %>'>Beacon</a>
 
   <ul class='navbar_links'>
-    <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
-      <a href='#'>Browse opportunities</a>
+    <li <% if content_for(:active_nav) == 'browse_opps' %>class='active'<% end %>>
+      <a href='<%= opportunities_path %>'>Browse opportunities</a>
     </li>
 
     <% if policy(:opportunity).post? %>
-      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
-        <a href='#'>Post opportunity</a>
+      <li <% if content_for(:active_nav) == 'post_opp' %>class='active'<% end %>>
+        <a href='<%= new_opportunity_path %>'>Post opportunity</a>
       </li>
     <% end %>
 
     <% if policy(:opportunity).approve? %>
-      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
+      <li <% if content_for(:active_nav) == 'approve_opps' %>class='active'<% end %>>
         <a href='#'>Approve opportunities (<%= Opportunity.not_approved.count %>)</a>
       </li>
     <% end %>
 
     <% if current_user.try(:admin?) %>
-      <li <% if content_for(:active_nav) == 'browse' %>class='active'<% end %>>
+      <li>
         <a href='<%= admin_root_path %>'>Admin</a>
       </li>
     <% end %>
