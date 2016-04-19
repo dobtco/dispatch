@@ -25,6 +25,10 @@ en:
     posted: This opportunity is posted and viewable to the public.
     waiting_for_publish_date: This opportunity will be posted at %{publish_at}.
     not_approved: This opportunity has not been approved for publishing.
+  unanswered_questions:
+    none: No unanswered questions
+    one: 1 unanswered question
+    other: "%{count} unanswered questions"
   home:
     hero:
       title: Win contracts with the City of Philadelphia

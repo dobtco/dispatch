@@ -32,7 +32,11 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
   end
 
   def review_submissions?
-    opportunity_admin?
+    opportunity_admin? &&
+    (
+      opportunity.submission_adapter.view_proposals_url ||
+      opportunity.submission_adapter.view_proposals_instructions
+    )
   end
 
   def answer_questions?

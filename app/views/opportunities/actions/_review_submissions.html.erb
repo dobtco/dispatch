@@ -1,9 +1,11 @@
 <% if policy(@opportunity).review_submissions? %>
-  <% if @opportunity.submission_adapter.view_proposals_url %>
-    <a href='<%= @opportunity.submission_adapter.view_proposals_url %>'>View proposals</a>
-  <% end %>
+  <li>
+    <% if @opportunity.submission_adapter.view_proposals_url %>
+      <a href='<%= @opportunity.submission_adapter.view_proposals_url %>'>View proposals</a>
+    <% end %>
 
-  <% if @opportunity.submission_adapter.view_proposals_instructions %>
-    <p><%= @opportunity.submission_adapter.view_proposals_instructions %></p>
-  <% end %>
+    <% if @opportunity.submission_adapter.view_proposals_instructions %>
+      <p><%= @opportunity.submission_adapter.view_proposals_instructions %></p>
+    <% end %>
+  </li>
 <% end %>

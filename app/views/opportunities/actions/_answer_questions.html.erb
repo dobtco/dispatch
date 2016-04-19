@@ -1,3 +1,7 @@
 <% if policy(@opportunity).answer_questions? %>
-  <a href='#'>2 unanswered questions / No unanswered questions</a>
+  <li>
+    <a href='#'>
+      <%= t('unanswered_questions', count: @opportunity.questions.unanswered.count) %>
+    </a>
+  </li>
 <% end %>

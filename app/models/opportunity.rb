@@ -34,6 +34,7 @@ class Opportunity < ActiveRecord::Base
   belongs_to :department
 
   has_and_belongs_to_many :categories
+  has_many :questions
 
   serialize :submission_adapter_data, Hash
 

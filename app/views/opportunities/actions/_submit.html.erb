@@ -1,11 +1,13 @@
 <% if policy(@opportunity).submit? %>
-  <% if @opportunity.submission_adapter.submission_page %>
-    <a href='<%= submit_opportunity_path %>'>Submit proposal</a>
-  <% elsif @opportunity.submission_adapter.submit_proposals_url %>
-    <a href='<%= @opportunity.submission_adapter.submit_proposals_url %>'>Submit proposal</a>
-  <% end %>
+  <li>
+    <% if @opportunity.submission_adapter.submission_page %>
+      <a href='<%= submit_opportunity_path %>'>Submit proposal</a>
+    <% elsif @opportunity.submission_adapter.submit_proposals_url %>
+      <a href='<%= @opportunity.submission_adapter.submit_proposals_url %>'>Submit proposal</a>
+    <% end %>
 
-  <% if @opportunity.submission_adapter.submit_proposals_instructions %>
-    <p><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
-  <% end %>
+    <% if @opportunity.submission_adapter.submit_proposals_instructions %>
+      <p><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
+    <% end %>
+  </li>
 <% end %>
