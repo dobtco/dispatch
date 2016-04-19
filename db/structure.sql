@@ -206,6 +206,7 @@ CREATE TABLE opportunities (
     enable_questions boolean DEFAULT false NOT NULL,
     questions_open_at timestamp without time zone,
     questions_close_at timestamp without time zone,
+    submitted_at timestamp without time zone,
     approved_at timestamp without time zone,
     approved_by_user_id integer,
     created_at timestamp without time zone NOT NULL,

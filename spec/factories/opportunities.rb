@@ -2,26 +2,27 @@
 #
 # Table name: opportunities
 #
-#  id                     :integer          not null, primary key
-#  created_by_user_id     :integer
-#  title                  :string
-#  description            :text
-#  department_id          :integer
-#  contact_name           :string
-#  contact_email          :string
-#  contact_phone          :string
-#  submission_method      :string
-#  submission_method_data :text
-#  publish_at             :datetime
-#  submissions_open_at    :datetime
-#  submissions_close_at   :datetime
-#  enable_questions       :boolean          default(FALSE), not null
-#  questions_open_at      :datetime
-#  questions_close_at     :datetime
-#  approved_at            :datetime
-#  approved_by_user_id    :integer
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id                      :integer          not null, primary key
+#  created_by_user_id      :integer
+#  title                   :string
+#  description             :text
+#  department_id           :integer
+#  contact_name            :string
+#  contact_email           :string
+#  contact_phone           :string
+#  submission_adapter_name :string
+#  submission_adapter_data :text
+#  publish_at              :datetime
+#  submissions_open_at     :datetime
+#  submissions_close_at    :datetime
+#  enable_questions        :boolean          default(FALSE), not null
+#  questions_open_at       :datetime
+#  questions_close_at      :datetime
+#  submitted_at            :datetime
+#  approved_at             :datetime
+#  approved_by_user_id     :integer
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 # Indexes
 #

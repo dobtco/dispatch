@@ -11,6 +11,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     created_by_user: Field::BelongsTo.with_options(class_name: "User"),
     approved_by_user: Field::BelongsTo.with_options(class_name: "User"),
     approved_at: Field::DateTime,
+    submitted_at: Field::DateTime,
     department: Field::BelongsTo,
     categories: Field::HasMany,
     id: Field::Number,
@@ -63,7 +64,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :approved_by_user,
-    :approved_at
+    :approved_at,
+    :submitted_at
   ]
 
   # FORM_ATTRIBUTES
@@ -86,7 +88,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :questions_open_at,
     :questions_close_at,
     :approved_by_user,
-    :approved_at
+    :approved_at,
+    :submitted_at
   ]
 
   # Overwrite this method to customize how opportunities are displayed

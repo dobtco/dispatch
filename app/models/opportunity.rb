@@ -18,6 +18,7 @@
 #  enable_questions        :boolean          default(FALSE), not null
 #  questions_open_at       :datetime
 #  questions_close_at      :datetime
+#  submitted_at            :datetime
 #  approved_at             :datetime
 #  approved_by_user_id     :integer
 #  created_at              :datetime         not null

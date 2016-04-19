@@ -71,6 +71,8 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :questions_open_at
       t.datetime :questions_close_at
 
+      t.datetime :submitted_at
+
       t.datetime :approved_at
       t.integer :approved_by_user_id
 
