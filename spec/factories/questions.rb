@@ -19,11 +19,11 @@
 
 FactoryGirl.define do
   factory :question do
-    association :asked_by_user_id, factory: :user
+    association :asked_by_user, factory: :user
     question_text 'Are you coding language agnostic?'
 
     trait :answered do
-      association :answered_by_user_id, factory: :user
+      association :answered_by_user, factory: :user
       answer_text 'Yes. coding language agnostic.'
       answered_at { Time.now }
     end
