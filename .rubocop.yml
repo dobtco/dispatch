@@ -50,5 +50,9 @@ AbcSize:
 ClassLength:
   Enabled: false
 
+# https://github.com/bbatsov/ruby-style-guide/issues/270 kinda sums it up
+Lambda:
+  Enabled: false
+
 DotPosition:
   EnforcedStyle: trailing

@@ -49,36 +49,36 @@ class Opportunity < ActiveRecord::Base
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }
 
-  scope :published, lambda do
+  scope :published, -> do
     where('publish_at IS NULL OR publish_at < ?', Time.now)
   end
 
-  scope :not_published, lambda do
+  scope :not_published, -> do
     where('publish_at IS NOT NULL AND publish_at > ?', Time.now)
   end
 
   scope :posted, -> { approved.published }
 
-  scope :not_posted, lambda do
+  scope :not_posted, -> do
     where('(publish_at IS NOT NULL AND publish_at > ?) || approved_at IS NULL')
   end
 
-  scope :order_by_recently_posted, lambda do
+  scope :order_by_recently_posted, -> do
     order('GREATEST(publish_at, approved_at) DESC')
   end
 
-  scope :submissions_open, lambda do
+  scope :submissions_open, -> do
     where('submissions_close_at IS NULL OR submissions_close_at > ?', Time.now)
   end
 
-  scope :submissions_closed, lambda do
+  scope :submissions_closed, -> do
     where(
       'submissions_close_at IS NOT NULL AND submissions_close_at < ?',
       Time.now
     )
   end
 
-  scope :with_category, lambda do |category_id|
+  def self.with_category(category_id)
     return unless category_id.to_s =~ /\A[0-9]+\Z/
 
     where(
