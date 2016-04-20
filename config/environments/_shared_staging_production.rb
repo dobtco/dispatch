@@ -30,13 +30,6 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
-  # Send logs to Papertrail
-  config.logger = RemoteSyslogLogger.new(
-    'logs.papertrailapp.com',
-    13521,
-    program: config.x.program_name
-  )
 end
 
 require_relative '_smtp_env_vars'
