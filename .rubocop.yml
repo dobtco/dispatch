@@ -14,10 +14,6 @@ IfUnlessModifier:
 RedundantMerge:
   Enabled: false
 
-# Behavior is changing in Ruby 3, let's just leave this alone for now
-MutableConstant:
-  Enabled: false
-
 StructInheritance:
   Enabled: false
 

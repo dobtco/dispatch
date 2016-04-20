@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  SALES_PAGE_URL = 'https://www.dobt.co'
+  SALES_PAGE_URL = 'https://www.dobt.co'.freeze
 
   def index
     @recent_opportunities = Opportunity.

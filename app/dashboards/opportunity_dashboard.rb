@@ -30,7 +30,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -41,7 +41,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :department
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -68,7 +68,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :approved_at,
     :submitted_at,
     :deleted_at
-  ]
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -93,7 +93,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     :approved_at,
     :submitted_at,
     :deleted_at
-  ]
+  ].freeze
 
   # Overwrite this method to customize how opportunities are displayed
   # across all pages of the admin dashboard.

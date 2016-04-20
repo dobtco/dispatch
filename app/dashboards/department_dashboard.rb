@@ -13,7 +13,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -25,7 +25,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :created_at
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -35,7 +35,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
     :name,
     :created_at,
     :updated_at
-  ]
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -43,7 +43,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :opportunities,
     :name
-  ]
+  ].freeze
 
   # Overwrite this method to customize how departments are displayed
   # across all pages of the admin dashboard.

@@ -28,7 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
     permission_level: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -39,7 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :name
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -64,7 +64,7 @@ class UserDashboard < Administrate::BaseDashboard
     :permission_level,
     :created_at,
     :updated_at
-  ]
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -87,7 +87,7 @@ class UserDashboard < Administrate::BaseDashboard
     :confirmation_sent_at,
     :unconfirmed_email,
     :permission_level
-  ]
+  ].freeze
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.

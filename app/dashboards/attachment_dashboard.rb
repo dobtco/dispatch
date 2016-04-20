@@ -17,7 +17,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -29,7 +29,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :id,
     :upload,
     :content_type
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -43,7 +43,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :deleted_at,
     :created_at,
     :updated_at
-  ]
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -55,7 +55,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :file_size_bytes,
     :has_thumbnail,
     :deleted_at
-  ]
+  ].freeze
 
   # Overwrite this method to customize how attachments are displayed
   # across all pages of the admin dashboard.

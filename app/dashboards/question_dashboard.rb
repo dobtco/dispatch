@@ -20,7 +20,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -32,7 +32,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :asked_by_user,
     :answered_by_user,
     :id
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -49,7 +49,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :deleted_at,
     :created_at,
     :updated_at
-  ]
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -64,7 +64,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :answer_text,
     :answered_at,
     :deleted_at
-  ]
+  ].freeze
 
   # Overwrite this method to customize how questions are displayed
   # across all pages of the admin dashboard.
