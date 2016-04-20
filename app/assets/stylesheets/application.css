@@ -12,3 +12,8 @@
  *= require font-awesome
  *= require ./themes/basic
  */
+
+/* Prevent unstyled flash while Selectize loads */
+select[multiple] {
+  display: none;
+}

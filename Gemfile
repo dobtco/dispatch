@@ -36,6 +36,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
   gem 'rails-assets-jquery-form'
   gem 'rails-assets-jquery-ujs'
+  gem 'rails-assets-selectize'
   gem 'rails-assets-underscore'
 end
 

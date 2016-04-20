@@ -288,6 +288,12 @@ GEM
       rails-assets-jquery (>= 1.5)
     rails-assets-jquery-ujs (1.2.1)
       rails-assets-jquery (> 1.8)
+    rails-assets-microplugin (0.0.3)
+    rails-assets-selectize (0.12.1)
+      rails-assets-jquery (>= 1.7.0)
+      rails-assets-microplugin (~> 0.0.0)
+      rails-assets-sifter (~> 0.4.0)
+    rails-assets-sifter (0.4.5)
     rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -467,6 +473,7 @@ DEPENDENCIES
   rails-assets-jquery!
   rails-assets-jquery-form!
   rails-assets-jquery-ujs!
+  rails-assets-selectize!
   rails-assets-underscore!
   rails_oneline_logging
   remote_syslog_logger
