@@ -1,6 +1,8 @@
 <h2>Vendor sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <input type='hidden' name='type' value='vendor' />
+
   <%= f.error_notification %>
 
   <h3>1. Tell us about your business</h3>

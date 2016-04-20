@@ -3,6 +3,8 @@
 <p>To post opportunities, you must have an email account that ends with <strong><%= Rails.configuration.x.staff_domains.map { |x| "@#{x}" }.to_sentence(last_word_connector: ', or ') %></strong>.</p>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <input type='hidden' name='type' value='staff' />
+
   <%= f.error_notification %>
 
   <h3>1. Create a login</h3>

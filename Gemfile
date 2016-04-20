@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
+  gem 'brakeman', require: false
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'database_cleaner'

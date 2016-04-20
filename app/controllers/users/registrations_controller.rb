@@ -15,10 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_signup_type
-    params[:type] = 'vendor' unless params[:type].in?(%w(vendor staff))
+    @signup_type = params[:type] == 'staff' ? :staff : :vendor
   end
 
   def set_edit_type
-    params[:type] = 'account' unless params[:type].in?(%w(account password))
+    @edit_type = params[:type] == 'password' ? :password : :account
   end
 end

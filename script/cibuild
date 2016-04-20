@@ -3,3 +3,4 @@
 set -e
 export RAILS_ENV=test
 bundle exec rspec
+bundle exec brakeman -z
