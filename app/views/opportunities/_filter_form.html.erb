@@ -7,8 +7,12 @@
   <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true } %>
 
   <%= f.button :button, t('filter_opportunities') %>
+<% end %>
 
-  <% if filtered? %>
-    <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
-  <% end %>
+<% if filtered? %>
+  <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
+  <br />
+  <a href='<%= feed_opportunities_path(params.merge(format: :xml)) %>'>RSS Feed for this search</a>
+  <br />
+  <a href='#'>Save this search</a>
 <% end %>

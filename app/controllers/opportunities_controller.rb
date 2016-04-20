@@ -4,8 +4,15 @@ class OpportunitiesController < ApplicationController
   before_action :set_opportunity
 
   def index
+    @opportunities = Opportunity.posted.filter(filter_params)
+  end
+
+  def feed
     @opportunities = Opportunity.posted.filter(
-      params.merge(params[:opportunity_filters] || {})
+      filter_params.merge(
+        sort: 'updated_at',
+        direction: 'desc'
+      )
     )
   end
 
@@ -145,5 +152,9 @@ class OpportunitiesController < ApplicationController
 
   def next_step
     edit_opportunity_steps[edit_opportunity_steps.index(params[:step]) + 1]
+  end
+
+  def filter_params
+    params.merge(params[:opportunity_filters] || {})
   end
 end

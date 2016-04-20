@@ -2,6 +2,7 @@ class OpportunityFilterer < Filterer::Base
   sort_option 'title', 'LOWER(title)', default: true
   sort_option 'department', 'LOWER(departments.name)'
   sort_option 'submissions_close_at'
+  sort_option 'updated_at'
 
   def param_text(x)
     results.full_text(x)

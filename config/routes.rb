@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :opportunities do
     collection do
+      get 'feed'
       get 'pending'
     end
 
