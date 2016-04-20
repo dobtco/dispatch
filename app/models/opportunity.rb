@@ -31,6 +31,8 @@
 #
 
 class Opportunity < ActiveRecord::Base
+  include PgSearch
+
   has_storage_unit
 
   # Currently using this to manage permissions. Eventually we could switch
@@ -77,6 +79,28 @@ class Opportunity < ActiveRecord::Base
       Time.now
     )
   end
+
+  pg_search_scope(
+    :full_text,
+    against: [
+      :title,
+      :description,
+      :contact_name,
+      :contact_email,
+      :contact_phone
+    ],
+    associated_against: {
+      questions: [:question_text, :answer_text],
+      attachments: [:upload],
+      department: [:name]
+    },
+    using: {
+      tsearch: {
+        prefix: true
+      }
+    }
+  )
+
 
   def self.with_any_category(category_ids)
     where(

@@ -3,9 +3,9 @@ class OpportunityFilterer < Filterer::Base
   sort_option 'department', 'LOWER(departments.name)'
   sort_option 'submissions_close_at'
 
-  # def param_text
-  # @todo
-  # end
+  def param_text(x)
+    results.full_text(x)
+  end
 
   def param_status(x)
     if x == 'open'
