@@ -1,0 +1,32 @@
+Documentation:
+  Enabled: false
+
+IfUnlessModifier:
+  Enabled: false
+
+# Causes issues with Rails' #update method
+RedundantMerge:
+  Enabled: false
+
+# Behavior is changing in Ruby 3, let's just leave this alone for now
+MutableConstant:
+  Enabled: false
+
+StructInheritance:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+# We'll use CodeClimate or another tool to track this...
+MethodLength:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
+
+AbcSize:
+  Enabled: false
+
+DotPosition:
+  EnforcedStyle: trailing

@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'rails'
 
 gem 'administrate'
-gem 'autoprefixer-rails', github: 'ajb/autoprefixer-rails', branch: 'bundle-process'
+gem 'autoprefixer-rails',
+    github: 'ajb/autoprefixer-rails',
+    branch: 'bundle-process'
 gem 'bugsnag'
 gem 'carrierwave'
 gem 'carrierwave-aws'
@@ -55,6 +57,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rspec-its'
+  gem 'rubocop', require: false
   gem 'simplecov', require: false
 end
 
