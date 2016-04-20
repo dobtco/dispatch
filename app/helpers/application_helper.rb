@@ -1,13 +1,9 @@
 module ApplicationHelper
-  def site_title
-    'Beacon'
-  end
-
   def calculated_page_title
     if content_for(:page_title).present?
-      "#{content_for(:page_title)} - #{site_title}"
+      "#{content_for(:page_title)} - #{Rails.configuration.x.site_title}"
     else
-      site_title
+      Rails.configuration.x.site_title
     end
   end
 

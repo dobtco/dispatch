@@ -63,7 +63,7 @@ en:
         hint: The following opportunities have been approved, and will be posted after their publish_date.
         none: No pending opportunities
   mailer:
-    footer: This email was sent by %{site_name}.
+    footer: This email was sent by %{site_title}.
   edit_opportunity_steps:
     title:
       title: Title
