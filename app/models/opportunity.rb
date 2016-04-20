@@ -78,18 +78,16 @@ class Opportunity < ActiveRecord::Base
     )
   end
 
-  def self.with_category(category_id)
-    return unless category_id.to_s =~ /\A[0-9]+\Z/
-
+  def self.with_any_category(category_ids)
     where(
       %(
         (SELECT categories_opportunities.category_id
         FROM categories_opportunities
         WHERE categories_opportunities.opportunity_id = opportunities.id
-        AND categories_opportunities.category_id = ?
+        AND categories_opportunities.category_id IN (?)
         LIMIT 1) IS NOT NULL
       ).squish,
-      category_id
+      category_ids
     )
   end
 

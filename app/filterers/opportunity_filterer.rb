@@ -4,6 +4,7 @@ class OpportunityFilterer < Filterer::Base
   sort_option 'submissions_close_at'
 
   # def param_text
+  # @todo
   # end
 
   def param_status(x)
@@ -16,8 +17,16 @@ class OpportunityFilterer < Filterer::Base
     end
   end
 
-  def param_category_id(x)
-    results.with_category(x)
+  def param_category_ids(x)
+    category_ids = x.
+                    select { |category_id| category_id.to_s =~ /\A[0-9]+\Z/ }.
+                    compact
+
+    if category_ids.present?
+      results.with_any_category(category_ids)
+    else
+      results
+    end
   end
 
   def defaults
