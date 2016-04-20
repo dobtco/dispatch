@@ -23,6 +23,13 @@ en:
   access_denied: Sorry, you are not allowed to access that page.
   confirm_alert: Are you sure?
   posted_time_ago: Posted %{time_ago} ago
+  subscribe: Subscribe to updates
+  subscribed: Subscribed to updates
+  submit_proposal: Submit proposal
+  edit: Edit
+  unapprove: Un-approve
+  approve: Approve
+  destroy: Destroy
   edit_opportunity_steps:
     title:
       title: Title
