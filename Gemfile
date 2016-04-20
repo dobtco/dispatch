@@ -56,9 +56,9 @@ group :test do
   gem 'brakeman', require: false
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'rspec-its'
-  gem 'simplecov', require: false
 end
 
 group :development, :test do

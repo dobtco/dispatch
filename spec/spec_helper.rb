@@ -1,16 +1,11 @@
-require 'simplecov'
-
-# Save coverage to CircleCI's "artifacts" directory
-if ENV['CIRCLE_ARTIFACTS']
-  SimpleCov.coverage_dir(
-    File.join('../../..', ENV['CIRCLE_ARTIFACTS'], 'coverage')
-  )
-end
-
-SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 
 SimpleCov.start 'rails' do
-  add_filter 'views'
+  formatter SimpleCov::Formatter::MultiFormatter.new([
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+  ])
 end
 
 ENV['RAILS_ENV'] = 'test'
