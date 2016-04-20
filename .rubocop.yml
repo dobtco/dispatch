@@ -5,6 +5,13 @@ AllCops:
     - db/**/*
     - config/initializers/**/*
 
+## Setting some preferences...
+
+DotPosition:
+  EnforcedStyle: trailing
+
+## Disabling some cops:
+
 Documentation:
   Enabled: false
 
@@ -31,7 +38,12 @@ MultilineOperationIndentation:
 GuardClause:
   Enabled: false
 
-# We'll use CodeClimate or another tool to track this...
+# https://github.com/bbatsov/ruby-style-guide/issues/270 kinda sums it up
+Lambda:
+  Enabled: false
+
+## We'll use CodeClimate or another tool to track the following:
+
 MethodLength:
   Enabled: false
 
@@ -43,10 +55,3 @@ AbcSize:
 
 ClassLength:
   Enabled: false
-
-# https://github.com/bbatsov/ruby-style-guide/issues/270 kinda sums it up
-Lambda:
-  Enabled: false
-
-DotPosition:
-  EnforcedStyle: trailing
