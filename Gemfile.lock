@@ -181,6 +181,9 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-rubocop (1.2.0)
+      guard (~> 2.0)
+      rubocop (~> 0.20)
     haml (4.0.7)
       tilt
     highline (1.7.8)
@@ -427,6 +430,7 @@ DEPENDENCIES
   font-awesome-rails
   guard-livereload
   guard-rspec
+  guard-rubocop
   kaminari
   launchy
   letter_opener

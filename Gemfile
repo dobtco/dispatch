@@ -45,10 +45,12 @@ group :development do
   gem 'binding_of_caller'
   gem 'guard-livereload', require: false
   gem 'guard-rspec'
+  gem 'guard-rubocop'
   gem 'launchy'
   gem 'letter_opener'
-  gem 'spring'
+  gem 'rubocop', require: false
   gem 'spring-commands-rspec'
+  gem 'spring'
 end
 
 group :test do
@@ -57,7 +59,6 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rspec-its'
-  gem 'rubocop', require: false
   gem 'simplecov', require: false
 end
 
