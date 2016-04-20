@@ -35,7 +35,7 @@ FactoryGirl.define do
     association :created_by_user, factory: :user
     department
 
-    title 'Form Management Platform RFP'
+    sequence(:title) { |i| "Form Management Platform RFP ##{i}" }
     description %{
       The Office of Innovation & Technology (OIT) is seeking proposals to
       provide a form management platform for a 3-month pilot project involving
