@@ -4,7 +4,8 @@ AllCops:
     - bin/**/*
     - db/**/*
     - config/initializers/**/*
-    - bundler/**/*
+    - vendor/**/*
+    - tmp/**/*
 
 ## Setting some preferences...
 
