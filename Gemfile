@@ -48,7 +48,6 @@ group :development do
   gem 'guard-rubocop'
   gem 'launchy'
   gem 'letter_opener'
-  gem 'rubocop', require: false
   gem 'spring-commands-rspec'
   gem 'spring'
 end
@@ -66,6 +65,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
   gem 'thin', require: false
 end
 

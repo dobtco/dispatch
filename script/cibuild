@@ -4,3 +4,4 @@ set -e
 export RAILS_ENV=test
 bundle exec brakeman -z
 bundle exec rspec
+bundle exec rubocop
