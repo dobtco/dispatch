@@ -15,5 +15,6 @@
 //= require jquery-form
 //= require inline_file_upload
 //= require selectize/standalone/selectize
-//= require rome
+//= require moment
+//= require rome/rome.standalone.js
 //= require_tree .
