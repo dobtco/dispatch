@@ -54,6 +54,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rspec-its'
+  gem 'simplecov', require: false
 end
 
 group :development, :test do

@@ -1,3 +1,16 @@
+require 'simplecov'
+
+# Save coverage to CircleCI's "artifacts" directory
+if ENV['CIRCLE_ARTIFACTS']
+  SimpleCov.coverage_dir(File.join("../../..", ENV['CIRCLE_ARTIFACTS'], "coverage"))
+end
+
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+
+SimpleCov.start 'rails' do
+  add_filter 'views'
+end
+
 ENV["RAILS_ENV"] = 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
