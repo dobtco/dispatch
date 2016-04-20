@@ -101,7 +101,6 @@ class Opportunity < ActiveRecord::Base
     }
   )
 
-
   def self.with_any_category(category_ids)
     where(
       %(
