@@ -21,9 +21,6 @@ MutableConstant:
 StructInheritance:
   Enabled: false
 
-ClassAndModuleChildren:
-  Enabled: false
-
 MultilineMethodCallIndentation:
   Enabled: false
 
