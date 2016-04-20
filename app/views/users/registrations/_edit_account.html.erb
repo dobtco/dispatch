@@ -13,7 +13,5 @@
 
   <a href='<%= edit_user_registration_path(type: 'password') %>'>Change password</a>
 
-  <%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
-
   <%= f.button :button %>
 <% end %>

@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
         :password,
         :business_name,
         :business_data,
-        category_ids: []
+        subscribe_to_category_ids: []
       )
     end
 
@@ -56,8 +56,7 @@ class ApplicationController < ActionController::Base
         :password_confirmation,
         :current_password,
         :business_name,
-        :business_data,
-        category_ids: []
+        :business_data
       )
     end
   end

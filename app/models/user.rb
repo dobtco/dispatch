@@ -32,9 +32,10 @@
 #
 
 class User < ActiveRecord::Base
-  # Used for subscriptions
+  # Used for "Subscribe to this opportunity"
   has_and_belongs_to_many :opportunities
-  has_and_belongs_to_many :categories
+
+  has_many :saved_searches, dependent: :destroy
 
   devise :database_authenticatable,
          :confirmable,
@@ -51,6 +52,9 @@ class User < ActiveRecord::Base
   serialize :business_data, Hash
 
   before_create :set_staff_if_email_matches_staff_domain
+
+  attr_accessor :subscribe_to_category_ids
+  after_create :create_saved_search_from_category_ids
 
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
@@ -71,5 +75,16 @@ class User < ActiveRecord::Base
 
   def email_domain
     email.split('@').last
+  end
+
+  def create_saved_search_from_category_ids
+    sanitized_ids = Array(subscribe_to_category_ids).
+                      select { |category_id| category_id.to_s =~ /\A[0-9]+\Z/ }.
+                      map(&:to_i).
+                      compact
+
+    if sanitized_ids.present?
+      saved_searches.create(search_params: { 'category_ids' => sanitized_ids })
+    end
   end
 end

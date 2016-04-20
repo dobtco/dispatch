@@ -14,7 +14,7 @@
   <%= f.input :password, required: true %>
 
   <h3>3. Choose notifications</h3>
-  <%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
+  <%= f.input :subscribe_to_category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
 
   <h3>4. Confirm your email address</h3>
   After you submit this form, we'll send you an email address with a link. You must click that link to access the system.</p>

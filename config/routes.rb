@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :departments
     resources :opportunities
     resources :questions
+    resources :saved_searches
 
     root to: 'users#index'
   end

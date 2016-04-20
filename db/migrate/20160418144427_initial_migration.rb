@@ -43,6 +43,12 @@ class InitialMigration < ActiveRecord::Migration
       t.timestamps null: false
     end
 
+    create_table :saved_searches do |t|
+      t.references :user, index: true
+      t.text :search_params
+      t.timestamps null: false
+    end
+
     create_table :opportunities do |t|
       t.integer :created_by_user_id
       t.string :title
@@ -107,11 +113,6 @@ class InitialMigration < ActiveRecord::Migration
     create_table :categories_opportunities, id: false do |t|
       t.references :category, null: false
       t.references :opportunity, null: false
-    end
-
-    create_table :categories_users, id: false do |t|
-      t.references :category, null: false
-      t.references :user, null: false
     end
 
     create_table :opportunities_users, id: false do |t|

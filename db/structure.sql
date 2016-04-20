@@ -107,16 +107,6 @@ CREATE TABLE categories_opportunities (
 
 
 --
--- Name: categories_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE categories_users (
-    category_id integer NOT NULL,
-    user_id integer NOT NULL
-);
-
-
---
 -- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -283,6 +273,38 @@ ALTER SEQUENCE questions_id_seq OWNED BY questions.id;
 
 
 --
+-- Name: saved_searches; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE saved_searches (
+    id integer NOT NULL,
+    user_id integer,
+    search_params text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: saved_searches_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE saved_searches_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: saved_searches_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE saved_searches_id_seq OWNED BY saved_searches.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -385,6 +407,13 @@ ALTER TABLE ONLY questions ALTER COLUMN id SET DEFAULT nextval('questions_id_seq
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY saved_searches ALTER COLUMN id SET DEFAULT nextval('saved_searches_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
@@ -437,6 +466,14 @@ ALTER TABLE ONLY questions
 
 
 --
+-- Name: saved_searches_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY saved_searches
+    ADD CONSTRAINT saved_searches_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -470,6 +507,13 @@ CREATE INDEX index_opportunities_on_department_id ON opportunities USING btree (
 --
 
 CREATE INDEX index_questions_on_opportunity_id ON questions USING btree (opportunity_id);
+
+
+--
+-- Name: index_saved_searches_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_saved_searches_on_user_id ON saved_searches USING btree (user_id);
 
 
 --

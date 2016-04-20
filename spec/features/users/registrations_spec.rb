@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe 'Users' do
+  let!(:category) { create(:category) }
   let!(:user) { create(:user) }
+
+  def created_user
+    User.order('id').last
+  end
 
   describe 'Signing up' do
     context 'as a vendor' do
@@ -13,6 +18,7 @@ describe 'Users' do
         fill_in :user_name, with: 'Joe Shmo'
         fill_in :user_email, with: 'joe@foobar.biz'
         fill_in :user_password, with: 'pass'
+        select category.name, from: :user_subscribe_to_category_ids
         find('#new_user button').click
         expect(page).to have_text 'too short'
 
@@ -21,6 +27,11 @@ describe 'Users' do
         find('#new_user button').click
         expect(page).to have_text(
           t('devise.registrations.signed_up_but_unconfirmed')
+        )
+
+        # Creates a saved search
+        expect(created_user.saved_searches.first.search_params).to eq(
+          'category_ids' => [category.id]
         )
       end
     end
