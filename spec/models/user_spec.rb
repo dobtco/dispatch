@@ -19,6 +19,8 @@
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
 #  permission_level       :integer          default(0), not null
+#  business_name          :string
+#  business_data          :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #

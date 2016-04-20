@@ -28,6 +28,8 @@ class InitialMigration < ActiveRecord::Migration
       t.string   :unconfirmed_email # Only if using reconfirmable
 
       t.integer :permission_level, default: 0, null: false
+      t.string :business_name
+      t.string :business_data
 
       t.timestamps null: false
     end
@@ -35,17 +37,6 @@ class InitialMigration < ActiveRecord::Migration
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
-
-    create_table :vendors do |t|
-      t.string :name
-      t.text :data
-      t.timestamps null: false
-    end
-
-    create_table :users_vendors, id: false do |t|
-      t.references :user, null: false
-      t.references :vendor, null: false
-    end
 
     create_table :departments do |t|
       t.string :name

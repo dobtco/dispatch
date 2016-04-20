@@ -6,12 +6,17 @@ Rails.application.routes.draw do
     resources :departments
     resources :opportunities
     resources :questions
-    resources :vendors
 
     root to: 'users#index'
   end
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
+  }
+
   root to: 'home#index'
 
   resources :opportunities do

@@ -19,6 +19,8 @@
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
 #  permission_level       :integer          default(0), not null
+#  business_name          :string
+#  business_data          :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -34,8 +36,6 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :opportunities
   has_and_belongs_to_many :categories
 
-  has_and_belongs_to_many :vendors
-
   devise :database_authenticatable,
          :confirmable,
          :registerable,
@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
   enum permission_level: [:user, :staff, :approver, :admin]
 
   validates :name, presence: true
+
+  serialize :business_data, Hash
 
   before_create :set_staff_if_email_matches_staff_domain
 

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   include Pundit
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -31,6 +33,21 @@ class ApplicationController < ActionController::Base
   def authorize_staff
     unless current_user.try(:permission_level_is_at_least?, 'staff')
       deny_access
+    end
+  end
+
+  private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(
+        :email,
+        :name,
+        :password,
+        :business_name,
+        :business_data,
+        category_ids: []
+      )
     end
   end
 end
