@@ -1,9 +1,9 @@
 <table>
   <thead>
     <tr>
-      <th><%= sortable_table_header @opportunities, 'title', 'Title' %></th>
-      <th><%= sortable_table_header @opportunities, 'department', 'Department' %></th>
-      <th><%= sortable_table_header @opportunities, 'submissions_close_at', 'Deadline' %></th>
+      <th><%= sortable_table_header @opportunities, 'title', t('title') %></th>
+      <th><%= sortable_table_header @opportunities, 'department', t('department') %></th>
+      <th><%= sortable_table_header @opportunities, 'submissions_close_at', t('deadline') %></th>
     </tr>
   </thead>
   <tbody>
@@ -18,14 +18,14 @@
             <% if opportunity.submissions_close_at %>
               <%= opportunity.submissions_close_at %>
             <% else %>
-              No deadline
+              <%= t('no_deadline') %>
             <% end %>
           </td>
         </tr>
       <% end %>
     <% else %>
       <tr>
-        <td colspan='3'>No results</td>
+        <td colspan='3'><%= t('no_results') %></td>
       </td>
     <% end %>
   </tbody>

@@ -15,7 +15,7 @@
   <% if policy(@opportunity).answer_questions? %>
     <ul>
       <% if question.answered? %>
-        <li><a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>Edit answer</a></li>
+        <li><a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'><%= t('edit_answer') %></a></li>
       <% end %>
 
       <li>

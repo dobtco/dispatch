@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  edit_answer: Edit answer
+  browse_opportunities: Browse opportunities
+  post_opportunity: Post opportunity
+  approve_opportunities: Approve opportunities
+  pending_opportunities: Pending opportunities
+  signed_in_as_user_html: Signed in as <a href='%{href}'>%{user}</a>.
+  sign_out: Sign out
+  sign_in: Sign in
+  no_opportunities_found: No opportunities found
+  admin: Admin
   access_denied: Sorry, you are not allowed to access that page.
   confirm_alert: Are you sure?
   posted_time_ago: Posted %{time_ago} ago
@@ -32,6 +42,28 @@ en:
   destroy: Destroy
   questions: Questions
   ask_question: Ask question
+  ask_question: Ask question
+  view_proposals: View proposals
+  attachments: Attachments
+  description: Description
+  no_description: No description
+  filter_opportunities: Filter opportunities
+  clear_filters: Clear filters
+  no_results: No results
+  no_deadline: No deadline
+  title: Title
+  department: Department
+  deadline: Deadline
+  opportunities:
+    pending:
+      pending_approval:
+        title: Opportunities awaiting approval
+      pending_publish:
+        title: Pending opportunities
+        hint: The following opportunities have been approved, and will be posted after their publish_date.
+        none: No pending opportunities
+  mailer:
+    footer: This email was sent by %{site_name}.
   edit_opportunity_steps:
     title:
       title: Title

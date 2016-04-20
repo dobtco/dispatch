@@ -1,5 +1,5 @@
 <% if @opportunity.attachments.present? %>
-  <h3>Attachments</h3>
+  <h3><%= t('attachments') %></h3>
 
   <ul>
     <% @opportunity.attachments.each do |attachment| %>

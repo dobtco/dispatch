@@ -1,14 +1,14 @@
 <navbar class='navbar'>
-  <a class='navbar_title' href='<%= root_path %>'>Beacon</a>
+  <a class='navbar_title' href='<%= root_path %>'><%= Rails.configuration.x.site_title %></a>
 
   <ul class='navbar_links'>
     <li <% if parameterized_controller_and_action == 'opportunities-index' %>class='active'<% end %>>
-      <a href='<%= opportunities_path %>'>Browse opportunities</a>
+      <a href='<%= opportunities_path %>'><%= t('browse_opportunities') %></a>
     </li>
 
     <% if policy(:opportunity).create? %>
       <li <% if parameterized_controller_and_action == 'opportunities-new' %>class='active'<% end %>>
-        <a href='<%= new_opportunity_path %>'>Post opportunity</a>
+        <a href='<%= new_opportunity_path %>'><%= t('post_opportunity') %></a>
       </li>
     <% end %>
 
@@ -16,9 +16,9 @@
       <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
         <a href='<%= pending_opportunities_path %>'>
           <% if policy(:opportunity).approve? %>
-            Approve opportunities (<%= Opportunity.not_approved.count %>)
+            <%= t('approve_opportunities') %> (<%= Opportunity.not_approved.count %>)
           <% else %>
-            Pending opportunities
+            <%= t('pending_opportunities') %>
           <% end %>
         </a>
       </li>
@@ -26,17 +26,17 @@
 
     <% if current_user.try(:admin?) %>
       <li>
-        <a href='<%= admin_root_path %>'>Admin</a>
+        <a href='<%= admin_root_path %>'><%= t('admin') %></a>
       </li>
     <% end %>
   </ul>
 
   <div class='navbar_user'>
     <% if signed_in? %>
-      <span>Signed in as <a href='<%= edit_user_registration_path %>'><%= current_user.name %></a>.</span>
-      <a href='<%= destroy_user_session_path %>' data-method='delete'>Sign out</a>
+      <span><%= t('signed_in_as_user_html', user: current_user.name, href: edit_user_registration_path) %></span>
+      <a href='<%= destroy_user_session_path %>' data-method='delete'><%= t('sign_out') %></a>
     <% else %>
-      <a href='<%= new_user_session_path %>'>Sign in</a>
+      <a href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
     <% end %>
   </div>
 </navbar>

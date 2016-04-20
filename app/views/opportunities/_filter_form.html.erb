@@ -22,9 +22,9 @@
     </select>
   </div>
 
-  <button>Filter opportunities</button>
+  <button><%= t('filter_opportunities') %></button>
 
   <% if filtered? %>
-    <a href='<%= url_for(pick(params, :sort, :direction)) %>'>Clear filters</a>
+    <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
   <% end %>
 </form>

@@ -8,6 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module Beacon
   class Application < Rails::Application
+    config.x.site_title = 'Beacon'
     config.x.carrierwave_storage = :file
     config.x.email_notification_from_address = 'noreply@dobt.co'
     config.x.staff_domains = [

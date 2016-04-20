@@ -11,7 +11,7 @@
     <tr>
       <td></td>
       <td class='header_container'>
-        <h1 class='site_name'>Beacon</h1>
+        <h1 class='site_name'><%= Rails.configuration.x.site_name %></h1>
       </td>
       <td></td>
     </tr>
@@ -40,7 +40,7 @@
           <table>
             <tr>
               <td align='center'>
-                This email was sent by Beacon.
+                <%= t('mailer.footer', site_name: Rails.configuration.x.site_name) %>
               </td>
             </tr>
           </table>

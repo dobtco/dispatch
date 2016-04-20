@@ -1,9 +1,10 @@
 <% if policy(@opportunity).ask_question? %>
   <li>
-    <a href='#new_question'>Ask a question</a>
+    <a href='#new_question'><%= t('ask_question') %></a>
   </li>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).ask_question? %>
   <li>
-    <a href='#'>Ask a question</a> (sign in)
+    <% # @todo redirect %>
+    <a href='<%= new_user_session_path %>'><%= t('ask_question') %></a>
   </li>
 <% end %>
