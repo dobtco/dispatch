@@ -1,6 +1,6 @@
 namespace :db do
   namespace :seed do
-    desc "seed example data"
+    desc 'seed example data'
     task example: :environment do
       user = FactoryGirl.create(
         :user,

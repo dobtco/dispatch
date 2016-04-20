@@ -76,9 +76,9 @@ class Opportunity < ActiveRecord::Base
   end
 
   scope :with_category, -> (category_id) do
-    return unless category_id.to_s.match(/\A[0-9]+\Z/)
+    return unless category_id.to_s =~ /\A[0-9]+\Z/
 
-    where(%Q{
+    where(%{
       (SELECT categories_opportunities.category_id
       FROM categories_opportunities
       WHERE categories_opportunities.opportunity_id = opportunities.id

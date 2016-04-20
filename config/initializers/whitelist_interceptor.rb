@@ -24,10 +24,10 @@ class WhitelistInterceptor
       end
     end
 
-    if redirected
-      message.subject = "(#{original_to} #{Rails.env}) " + message.subject
-    else
-      message.subject = "(#{Rails.env}) " + message.subject
+    message.subject = if redirected
+                        "(#{original_to} #{Rails.env}) " + message.subject
+                      else
+                        "(#{Rails.env}) " + message.subject
     end
   end
 end

@@ -28,7 +28,7 @@ class Question < ActiveRecord::Base
   scope :unanswered, -> { where('answered_at IS NULL') }
   scope :answered, -> { where('answered_at IS NOT NULL') }
 
-  scope :unanswered_first, -> {
+  scope :unanswered_first, lambda {
     order('CASE WHEN answered_at IS NULL THEN 0 ELSE 1 END')
   }
 

@@ -43,7 +43,7 @@ SimpleForm.setup do |config|
   # Don't wrap checkboxes/radios *again*
   config.item_wrapper_tag = false
 
-  config.label_text = -> (label, required, _) do
+  config.label_text = lambda do |label, required, _|
     if required.present?
       "#{ERB::Util.h(label)}&nbsp;#{required}".html_safe
     else

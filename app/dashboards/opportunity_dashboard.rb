@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class OpportunityDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -8,8 +8,8 @@ class OpportunityDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    created_by_user: Field::BelongsTo.with_options(class_name: "User"),
-    approved_by_user: Field::BelongsTo.with_options(class_name: "User"),
+    created_by_user: Field::BelongsTo.with_options(class_name: 'User'),
+    approved_by_user: Field::BelongsTo.with_options(class_name: 'User'),
     approved_at: Field::DateTime,
     submitted_at: Field::DateTime,
     department: Field::BelongsTo,
@@ -29,7 +29,7 @@ class OpportunityDashboard < Administrate::BaseDashboard
     questions_close_at: Field::DateTime,
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES

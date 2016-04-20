@@ -48,8 +48,6 @@ class QuestionsController < ApplicationController
     ).tap do |h|
       h[:answered_at] = if h[:answer_text].present?
                           @question.answered_at || Time.now
-                        else
-                          nil
                         end
     end
   end

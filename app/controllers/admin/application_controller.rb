@@ -22,7 +22,7 @@ module Admin
       render locals: {
         resources: resources,
         search_term: search_term,
-        page: page,
+        page: page
       }
     end
 

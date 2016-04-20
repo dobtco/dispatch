@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class QuestionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -9,8 +9,8 @@ class QuestionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     opportunity: Field::BelongsTo,
-    asked_by_user: Field::BelongsTo.with_options(class_name: "User"),
-    answered_by_user: Field::BelongsTo.with_options(class_name: "User"),
+    asked_by_user: Field::BelongsTo.with_options(class_name: 'User'),
+    answered_by_user: Field::BelongsTo.with_options(class_name: 'User'),
     id: Field::Number,
     asked_by_user_id: Field::Number,
     answered_by_user_id: Field::Number,
@@ -19,7 +19,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     answered_at: Field::DateTime,
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -31,7 +31,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :opportunity,
     :asked_by_user,
     :answered_by_user,
-    :id,
+    :id
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -48,7 +48,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     :answered_at,
     :deleted_at,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES

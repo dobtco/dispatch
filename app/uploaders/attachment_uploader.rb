@@ -36,7 +36,7 @@ class AttachmentUploader < BaseUploader
     model.has_thumbnail = true
 
     # See https://github.com/carrierwaveuploader/carrierwave/issues/617
-    self.file.instance_variable_set(:@content_type, 'image/png')
+    file.instance_variable_set(:@content_type, 'image/png')
 
   # Using exceptions for control flow is hacky, this could be refactored:
   # see https://github.com/dobtco/screendoor-v2/commit/8691546fea20fbae0929a0564784bef8c9180aad

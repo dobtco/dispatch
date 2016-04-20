@@ -24,6 +24,10 @@ MultilineMethodCallIndentation:
 MultilineOperationIndentation:
   Enabled: false
 
+# Causes issues with things like port numbers
+NumericLiterals:
+  Enabled: false
+
 # We'll use CodeClimate or another tool to track this...
 MethodLength:
   Enabled: false

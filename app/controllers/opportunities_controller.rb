@@ -27,9 +27,9 @@ class OpportunitiesController < ApplicationController
   def create
     authorize_staff
 
-    @opportunity = Opportunity.new(opportunity_params.merge(
-      created_by_user: current_user
-    ))
+    @opportunity = Opportunity.new(
+      opportunity_params.merge(created_by_user: current_user)
+    )
 
     if @opportunity.save
       redirect_to edit_opportunity_path(@opportunity, step: 'description')

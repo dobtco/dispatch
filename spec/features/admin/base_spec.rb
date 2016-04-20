@@ -13,9 +13,7 @@ describe 'Admin' do
     it 'visits each page' do
       visit admin_root_path
 
-      links = all('.sidebar__link')[1..-1].map do |node|
-        node.text
-      end
+      links = all('.sidebar__link')[1..-1].map(&:text)
 
       links.each do |link|
         find('.sidebar__link', text: link).click

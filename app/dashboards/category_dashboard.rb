@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,7 +13,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +25,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     :opportunities,
     :users,
     :id,
-    :name,
+    :name
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +36,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES
@@ -45,7 +45,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :opportunities,
     :users,
-    :name,
+    :name
   ]
 
   # Overwrite this method to customize how categories are displayed

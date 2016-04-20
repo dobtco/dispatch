@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError,
               with: :deny_access
 
-  def not_found(e = nil)
+  def not_found(_e = nil)
     raise ActionController::RoutingError.new('Not Found')
   end
 

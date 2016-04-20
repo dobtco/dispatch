@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class AttachmentDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -16,7 +16,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     has_thumbnail: Field::Boolean,
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +28,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :opportunity,
     :id,
     :upload,
-    :content_type,
+    :content_type
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class AttachmentDashboard < Administrate::BaseDashboard
     :has_thumbnail,
     :deleted_at,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # FORM_ATTRIBUTES

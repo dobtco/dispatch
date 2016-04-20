@@ -31,14 +31,14 @@ module ApplicationHelper
   def sortable_table_header(objects, key, name)
     filterer = objects.filterer
 
-    content_tag(:a, href: url_for(params.merge(sort: key, page: nil, direction: (filterer.sort == key && filterer.direction == 'asc') ? 'desc' : 'asc'))) {
+    content_tag(:a, href: url_for(params.merge(sort: key, page: nil, direction: (filterer.sort == key && filterer.direction == 'asc') ? 'desc' : 'asc'))) do
       (name +
       (if filterer.sort == key
-        " #{tag :i, class: filterer.direction == 'asc' ? 'fa fa-caret-up' : 'fa fa-caret-down'}"
-      else
-        ''
+         " #{tag :i, class: filterer.direction == 'asc' ? 'fa fa-caret-up' : 'fa fa-caret-down'}"
+       else
+         ''
       end)).html_safe
-    }
+    end
   end
 
   def pick(obj, *keys)

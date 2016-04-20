@@ -9,11 +9,11 @@ describe 'Home' do
       visit root_path
 
       expect(page).to have_selector(
-        %{[href="#{opportunity_path(visible_opportunity)}"]}
+        %([href="#{opportunity_path(visible_opportunity)}"])
       )
 
       expect(page).to_not have_selector(
-        %{[href="#{opportunity_path(not_visible_opportunity)}"]}
+        %([href="#{opportunity_path(not_visible_opportunity)}"])
       )
     end
   end
