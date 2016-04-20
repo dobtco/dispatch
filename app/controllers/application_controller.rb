@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
         if signed_in?
           redirect_to root_path, error: t('flash.error.access_denied')
         else
-          redirect_to new_user_session_path # @todo redirect back to prev page
+          redirect_to new_user_session_path
         end
       end
     end
