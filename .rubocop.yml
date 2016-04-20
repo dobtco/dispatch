@@ -18,6 +18,12 @@ StructInheritance:
 ClassAndModuleChildren:
   Enabled: false
 
+MultilineMethodCallIndentation:
+  Enabled: false
+
+MultilineOperationIndentation:
+  Enabled: false
+
 # We'll use CodeClimate or another tool to track this...
 MethodLength:
   Enabled: false
@@ -26,6 +32,9 @@ PerceivedComplexity:
   Enabled: false
 
 AbcSize:
+  Enabled: false
+
+ClassLength:
   Enabled: false
 
 DotPosition:
