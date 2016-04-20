@@ -4,9 +4,7 @@
 <%= f.input :contact_email %>
 <%= f.input :contact_phone %>
 <%= f.input :publish_at %>
-
-<% # @todo category ids %>
-
+<%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
 
 <%= f.input :attachments do %>
   <ul class='js-attachments-list'>

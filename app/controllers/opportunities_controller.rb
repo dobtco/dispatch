@@ -132,7 +132,8 @@ class OpportunitiesController < ApplicationController
       :submissions_close_at,
       :enable_questions,
       :questions_open_at,
-      :questions_close_at
+      :questions_close_at,
+      category_ids: []
     ).tap do |h|
       # Allow all
       if (x = params[:opportunity][:submission_adapter_data]).present?
