@@ -30,6 +30,8 @@ en:
   unapprove: Un-approve
   approve: Approve
   destroy: Destroy
+  questions: Questions
+  ask_question: Ask question
   edit_opportunity_steps:
     title:
       title: Title
