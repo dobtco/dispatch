@@ -1,6 +1,6 @@
 <%= f.input :enable_questions, as: :boolean %>
 
 <div data-show-if-checked='opportunity[enable_questions]' <% unless f.object.enable_questions? %>style='display:none'<% end %>>
-  <%= f.input :questions_open_at %>
-  <%= f.input :questions_close_at %>
+  <%= f.input :questions_open_at, as: :datetime_picker %>
+  <%= f.input :questions_close_at, as: :datetime_picker %>
 </div>

@@ -289,6 +289,7 @@ GEM
     rails-assets-jquery-ujs (1.2.1)
       rails-assets-jquery (> 1.8)
     rails-assets-microplugin (0.0.3)
+    rails-assets-rome (2.1.22)
     rails-assets-selectize (0.12.1)
       rails-assets-jquery (>= 1.7.0)
       rails-assets-microplugin (~> 0.0.0)
@@ -473,6 +474,7 @@ DEPENDENCIES
   rails-assets-jquery!
   rails-assets-jquery-form!
   rails-assets-jquery-ujs!
+  rails-assets-rome!
   rails-assets-selectize!
   rails-assets-underscore!
   rails_oneline_logging

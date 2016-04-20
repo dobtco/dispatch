@@ -1,4 +1,4 @@
 <%= f.input :submission_adapter_name, as: :select, collection: all_submission_adapters, include_blank: false, value_method: :to_adapter_name %>
 <%= render partial: 'opportunities/edit/submission_adapter_inputs', locals: { f: f } %>
-<%= f.input :submissions_open_at %>
-<%= f.input :submissions_close_at %>
+<%= f.input :submissions_open_at, as: :datetime_picker %>
+<%= f.input :submissions_close_at, as: :datetime_picker %>
