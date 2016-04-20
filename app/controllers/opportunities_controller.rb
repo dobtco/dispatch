@@ -4,7 +4,9 @@ class OpportunitiesController < ApplicationController
   before_action :set_opportunity
 
   def index
-    @opportunities = Opportunity.posted.filter(params)
+    @opportunities = Opportunity.posted.filter(
+      params.merge(params[:opportunity_filters] || {})
+    )
   end
 
   def pending

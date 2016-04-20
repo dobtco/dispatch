@@ -1,30 +1,14 @@
-<form class='opportunity_filter_form'>
+<%= simple_form_for :opportunity_filters, action: url_for, method: :get do |f| %>
   <input type='hidden' name='sort' value='<%= @opportunities.filterer.sort %>' />
   <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
 
-  <div>
-    <label for='text'>Title, description, attachments</label>
-    <input type='text' name='text' id='text' value="<%= @opportunities.filterer.params[:text] %>" />
-  </div>
+  <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
+  <%= f.input :status, required: false, as: :select, collection: [['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status] %>
+  <%= f.input :category_id, required: false, as: :select, collection: Category.all, include_blank: true, selected: @opportunities.filterer.params[:category_id] %>
 
-  <div>
-    <label for='status'>Status</label>
-    <select name='status' id='status'>
-      <%= options_for_select([['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], @opportunities.filterer.params[:status]) %>
-    </select>
-  </div>
-
-  <div>
-    <label for='category_id'>Category</label>
-    <select name='category_id' id='category_id'>
-      <option>All</option>
-      <%= options_from_collection_for_select(Category.all, :id, :name, @opportunities.filterer.params[:category_id]) %>
-    </select>
-  </div>
-
-  <button><%= t('filter_opportunities') %></button>
+  <%= f.button :button, t('filter_opportunities') %>
 
   <% if filtered? %>
     <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
   <% end %>
-</form>
+<% end %>
