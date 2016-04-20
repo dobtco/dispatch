@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       format.any(:js, :json, :xml) { head :unauthorized }
       format.any do
         if signed_in?
-          redirect_to root_path, error: t('flash.error.access_denied')
+          redirect_to root_path, error: t('access_denied')
         else
           redirect_to new_user_session_path
         end
