@@ -24,7 +24,7 @@
 
   <button>Filter opportunities</button>
 
-  <% if is_filtered? %>
+  <% if filtered? %>
     <a href='<%= url_for(pick(params, :sort, :direction)) %>'>Clear filters</a>
   <% end %>
 </form>

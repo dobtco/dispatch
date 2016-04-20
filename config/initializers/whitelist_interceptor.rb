@@ -13,7 +13,11 @@ class WhitelistInterceptor
 
       WhitelistInterceptor::WHITELIST.each do |whitelisted_address|
         break if whitelisted
-        whitelisted = whitelisted_address.is_a?(Regexp) ? whitelisted_address.match(address) : whitelisted_address == address
+        whitelisted = if whitelisted_address.is_a?(Regexp)
+                        whitelisted_address.match(address)
+                      else
+                        whitelisted_address == address
+                      end
       end
 
       if whitelisted
@@ -28,7 +32,7 @@ class WhitelistInterceptor
                         "(#{original_to} #{Rails.env}) " + message.subject
                       else
                         "(#{Rails.env}) " + message.subject
-    end
+                      end
   end
 end
 

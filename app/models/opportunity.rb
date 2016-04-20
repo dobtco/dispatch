@@ -49,42 +49,48 @@ class Opportunity < ActiveRecord::Base
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }
 
-  scope :published, -> do
+  scope :published, lambda do
     where('publish_at IS NULL OR publish_at < ?', Time.now)
   end
 
-  scope :not_published, -> do
+  scope :not_published, lambda do
     where('publish_at IS NOT NULL AND publish_at > ?', Time.now)
   end
 
   scope :posted, -> { approved.published }
 
-  scope :not_posted, -> do
+  scope :not_posted, lambda do
     where('(publish_at IS NOT NULL AND publish_at > ?) || approved_at IS NULL')
   end
 
-  scope :order_by_recently_posted, -> do
+  scope :order_by_recently_posted, lambda do
     order('GREATEST(publish_at, approved_at) DESC')
   end
 
-  scope :submissions_open, -> do
+  scope :submissions_open, lambda do
     where('submissions_close_at IS NULL OR submissions_close_at > ?', Time.now)
   end
 
-  scope :submissions_closed, -> do
-    where('submissions_close_at IS NOT NULL AND submissions_close_at < ?', Time.now)
+  scope :submissions_closed, lambda do
+    where(
+      'submissions_close_at IS NOT NULL AND submissions_close_at < ?',
+      Time.now
+    )
   end
 
-  scope :with_category, -> (category_id) do
+  scope :with_category, lambda do |category_id|
     return unless category_id.to_s =~ /\A[0-9]+\Z/
 
-    where(%{
-      (SELECT categories_opportunities.category_id
-      FROM categories_opportunities
-      WHERE categories_opportunities.opportunity_id = opportunities.id
-      AND categories_opportunities.category_id = ?
-      LIMIT 1) IS NOT NULL
-    }, category_id)
+    where(
+      %(
+        (SELECT categories_opportunities.category_id
+        FROM categories_opportunities
+        WHERE categories_opportunities.opportunity_id = opportunities.id
+        AND categories_opportunities.category_id = ?
+        LIMIT 1) IS NOT NULL
+      ).squish,
+      category_id
+    )
   end
 
   validates :title, presence: true
@@ -95,7 +101,7 @@ class Opportunity < ActiveRecord::Base
            :view_proposals_instructions,
            :submit_proposals_url,
            :submit_proposals_instructions,
-           :has_submission_method?,
+           :submittable?,
            to: :submission_adapter
 
   before_create :set_default_submission_adapter_name,

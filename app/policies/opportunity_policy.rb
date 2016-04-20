@@ -22,7 +22,7 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
 
   def submit?
     # Allow admins to see what their submission form will look like
-    opportunity.has_submission_method? &&
+    opportunity.submittable? &&
     (opportunity_admin? || opportunity.open_for_submissions?)
   end
 

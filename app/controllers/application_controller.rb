@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
               with: :deny_access
 
   def not_found(_e = nil)
-    raise ActionController::RoutingError.new('Not Found')
+    raise ActionController::RoutingError, 'Not Found'
   end
 
   def deny_access(*)
@@ -31,9 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_staff
-    unless current_user.try(:permission_level_is_at_least?, 'staff')
-      deny_access
-    end
+    deny_access unless current_user.try(:permission_level_is_at_least?, 'staff')
   end
 
   private

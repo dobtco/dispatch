@@ -10,13 +10,14 @@ class OpportunitiesController < ApplicationController
   def pending
     authorize_staff
 
-    @pending_approval_opportunities = Opportunity.not_approved.select do |opp|
-      policy(opp).show?
-    end
+    @pending_approval_opportunities = Opportunity.
+                                        not_approved.
+                                        select { |opp| policy(opp).show? }
 
-    @pending_publish_opportunities = Opportunity.not_published.approved.select do |opp|
-      policy(opp).show?
-    end
+    @pending_publish_opportunities = Opportunity.
+                                      not_published.
+                                      approved.
+                                      select { |opp| policy(opp).show? }
   end
 
   def new
@@ -98,7 +99,8 @@ class OpportunitiesController < ApplicationController
     authorize @opportunity, :submit?
 
     if @opportunity.submission_page
-      render "submission_adapters/#{@opportunity.submission_adapter.to_param}/submit"
+      render "submission_adapters/#{@opportunity.submission_adapter.to_param}" \
+      '/submit'
     else
       redirect_to opportunity_path
     end
@@ -145,4 +147,4 @@ class OpportunitiesController < ApplicationController
   def next_step
     edit_opportunity_steps[edit_opportunity_steps.index(params[:step]) + 1]
   end
-  end
+end

@@ -21,7 +21,7 @@ class SubmissionAdapters::Base
   def submit_proposals_instructions
   end
 
-  def has_submission_method?
+  def submittable?
     submission_page ||
     submit_proposals_url ||
     submit_proposals_instructions
