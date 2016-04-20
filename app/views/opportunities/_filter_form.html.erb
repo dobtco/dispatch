@@ -14,5 +14,5 @@
   <br />
   <a href='<%= feed_opportunities_path(params.merge(format: :xml)) %>'>RSS Feed for this search</a>
   <br />
-  <a href='#'>Save this search</a>
+  <a href='<%= saved_searches_path(pick(@opportunities.filterer.params, *SavedSearch::PERMITTED_SEARCH_PARAMS)) %>' data-method='post'>Save this search</a>
 <% end %>

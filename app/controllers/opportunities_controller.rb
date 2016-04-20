@@ -4,12 +4,12 @@ class OpportunitiesController < ApplicationController
   before_action :set_opportunity
 
   def index
-    @opportunities = Opportunity.posted.filter(filter_params)
+    @opportunities = Opportunity.posted.filter(opportunity_filter_params)
   end
 
   def feed
     @opportunities = Opportunity.posted.filter(
-      filter_params.merge(
+      opportunity_filter_params.merge(
         sort: 'updated_at',
         direction: 'desc'
       )
@@ -154,7 +154,10 @@ class OpportunitiesController < ApplicationController
     edit_opportunity_steps[edit_opportunity_steps.index(params[:step]) + 1]
   end
 
-  def filter_params
-    params.merge(params[:opportunity_filters] || {})
+  def opportunity_filter_params
+    params.merge(params[:opportunity_filters] || {}).tap do |h|
+      # Selectize sends us an array that includes an empty element
+      h[:category_ids].reject!(&:blank?) if h[:category_ids]
+    end
   end
 end

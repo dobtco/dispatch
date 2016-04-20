@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  resources :saved_searches, only: [:create, :destroy]
+
   resources :opportunities do
     collection do
       get 'feed'

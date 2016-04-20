@@ -15,3 +15,17 @@
 
   <%= f.button :button %>
 <% end %>
+
+<h3><%= t('saved_searches') %></h3>
+<% if current_user.saved_searches.present? %>
+  <ul>
+    <% current_user.saved_searches.each do |saved_search| %>
+      <li>
+        <%= saved_search.id %>
+        <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t('no_saved_searches') %></p>
+<% end %>

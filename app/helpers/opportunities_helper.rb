@@ -2,7 +2,7 @@ module OpportunitiesHelper
   def filtered?
     @opportunities.filterer.params[:text].present? ||
     @opportunities.filterer.params[:status] != 'open' ||
-    @opportunities.filterer.params[:category_id].present?
+    @opportunities.filterer.params[:category_ids].present?
   end
 
   def opportunity_status_text

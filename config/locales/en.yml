@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  saved_searches: Saved searches
+  no_saved_searches: No saved searches
+  search_saved: This search has been saved. We'll email you with any new results.
   edit_answer: Edit answer
   browse_opportunities: Browse opportunities
   post_opportunity: Post opportunity

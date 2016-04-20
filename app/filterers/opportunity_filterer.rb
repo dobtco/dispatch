@@ -19,7 +19,7 @@ class OpportunityFilterer < Filterer::Base
   end
 
   def param_category_ids(x)
-    category_ids = x.
+    category_ids = Array(x).
                     select { |category_id| category_id.to_s =~ /\A[0-9]+\Z/ }.
                     compact
 

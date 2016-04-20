@@ -16,4 +16,10 @@
 class SavedSearch < ActiveRecord::Base
   belongs_to :user
   serialize :search_params, Hash
+
+  PERMITTED_SEARCH_PARAMS = [
+    :text,
+    :status,
+    :category_ids
+  ].freeze
 end
