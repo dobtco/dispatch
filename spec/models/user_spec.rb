@@ -46,12 +46,20 @@ describe User do
 
   describe 'automatic staff permissions' do
     context 'when user email matches a staff domain' do
-      before { subject.update(email: 'foo@beacon.gov') }
+      before do
+        subject.email = 'foo@beacon.gov'
+        subject.save
+      end
+
       it { should be_staff }
     end
 
     context 'when user email does not match a staff domain' do
-      before { subject.update(email: 'foo@a-beacon.gov') }
+      before do
+        subject.email = 'foo@a-beacon.gov'
+        subject.save
+      end
+
       it { should_not be_staff }
     end
   end

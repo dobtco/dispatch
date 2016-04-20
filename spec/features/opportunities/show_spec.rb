@@ -7,9 +7,21 @@ describe 'Opportunities - Show' do
     create(:opportunity, :approved, created_by_user: admin)
   end
 
+  it 'shows the list of opportunities' do
+    visit opportunities_path
+    expect(page).to have_link opportunity.title
+  end
+
   it 'shows an opportunity' do
     visit opportunity_path(opportunity)
     expect(page).to have_text opportunity.title
+  end
+
+  context 'when the slug is incorrect' do
+    it 'redirects to the correct slug' do
+      visit opportunity_path(id: opportunity.to_param + 'asdf')
+      expect(current_path).to eq opportunity_path(opportunity)
+    end
   end
 
   it 'can subscribe and unsubscribe to the opportunity' do

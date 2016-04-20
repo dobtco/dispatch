@@ -1,4 +1,4 @@
 <li>
   <%= attachment.upload.raw_filename %>
-  <a href='<%= opportunity_attachment_path(@opportunity, attachment) %>' data-method='delete' data-remote class='js-remove-attachment'>Destroy</a>
+  <a href='<%= opportunity_attachment_path(@opportunity, attachment) %>' data-method='delete' data-remote class='js-remove-attachment'><%= t('destroy') %></a>
 </li>
