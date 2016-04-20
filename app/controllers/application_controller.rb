@@ -49,5 +49,18 @@ class ApplicationController < ActionController::Base
         category_ids: []
       )
     end
+
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(
+        :email,
+        :name,
+        :password,
+        :password_confirmation,
+        :current_password,
+        :business_name,
+        :business_data,
+        category_ids: []
+      )
+    end
   end
 end

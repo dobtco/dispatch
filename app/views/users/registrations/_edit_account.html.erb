@@ -1,0 +1,19 @@
+<h2>Your account</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <input type='hidden' name='type' value='account' />
+
+  <%= f.error_notification %>
+
+  <% unless current_user.permission_level_is_at_least?('staff') %>
+    <%= f.input :business_name, required: true %>
+  <% end %>
+
+  <%= f.input :name %>
+  <%= f.input :email, required: true %>
+
+  <a href='<%= edit_user_registration_path(type: 'password') %>'>Change password</a>
+
+  <%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
+
+  <%= f.button :button %>
+<% end %>
