@@ -4,17 +4,17 @@
 
 Copy `config.yml.example` to `config.yml` and go wild!
 
-### Customizing the color scheme
+### Customizing the default color scheme
 
-Edit variables?
+- [x] Edit variables in the dvl-core theme.
 
 ### Adding your logo
 
-[x] Override assets in `theme/` directory.
+- [x] Override assets in `theme/` directory.
 
 ### Adding custom JS/CSS
 
-[x] Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
+- [x] Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
 
 ### Changing CSS class names
 
@@ -27,7 +27,7 @@ Edit variables?
 
 ### Adding new submission adapters
 
-Add adapters to `theme/` directory.
+- [x] Add adapters to `theme/` directory.
 
 ### Adding fields to vendor registration
 

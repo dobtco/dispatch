@@ -12,3 +12,7 @@ Rails.configuration.assets.paths =
 
 Rails.configuration.i18n.load_path +=
   Dir[BeaconConfiguration.theme_path.join('locales/**/*')]
+
+Dir[BeaconConfiguration.theme_path.join('submission_adapters/**/*')].each do |f|
+  require f
+end
