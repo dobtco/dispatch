@@ -21,7 +21,8 @@
   <ul>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <%= saved_search.id %>
+        <%= t('search_saved_at_time', time: saved_search.created_at) %>
+        <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_search') %></a>
         <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
       </li>
     <% end %>
