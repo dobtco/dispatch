@@ -16,6 +16,11 @@ Override assets in `theme/` directory.
 
 Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
 
+### Changing CSS class names
+
+- [ ] Override templates.
+- [x] Override `simple_form` configuration.
+
 ### Editing site language
 
 Override translations in `theme/` directory.

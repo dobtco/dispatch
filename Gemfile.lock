@@ -7,6 +7,15 @@ GIT
       execjs
       json
 
+GIT
+  remote: git://github.com/dobtco/dvl-core.git
+  revision: 0cb09faef758f72494ca539db998ffc962a11fdd
+  specs:
+    dvl-core (0.1.0)
+      activesupport
+      coffee-script
+      sass
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -453,6 +462,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record
   devise
+  dvl-core!
   execjs
   factory_girl_rails
   filterer

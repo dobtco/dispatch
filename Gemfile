@@ -33,6 +33,8 @@ gem 'uglifier'
 gem 'utf8-cleaner'
 gem 'whenever', require: false
 
+gem 'dvl-core', github: 'dobtco/dvl-core'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-inline_file_upload'
   gem 'rails-assets-jquery'

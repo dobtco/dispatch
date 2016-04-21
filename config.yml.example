@@ -1,6 +1,9 @@
 # What is the site called?
 site_title: Beacon
 
+# This name should correspond to a subdirectory in the themes/ directory
+theme: dvl-core
+
 # Valid options: file, aws
 upload_storage: file
 

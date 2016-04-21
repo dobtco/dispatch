@@ -1,5 +1,9 @@
 module BeaconConfiguration
   class << self
+    def theme_path
+      Rails.root.join("themes/#{theme}")
+    end
+
     def method_missing(name)
       read_configuration[name.to_s.downcase]
     end
