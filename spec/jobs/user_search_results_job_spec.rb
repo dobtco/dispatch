@@ -22,4 +22,11 @@ describe UserSearchResultsJob do
       described_class.perform_now(user)
     end
   end
+
+  context 'without saved searches' do
+    it 'does not send a mailer' do
+      expect_any_instance_of(Mailer).to_not receive(:search_results)
+      described_class.perform_now(create(:user))
+    end
+  end
 end

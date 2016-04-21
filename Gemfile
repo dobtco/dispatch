@@ -31,6 +31,7 @@ gem 'sprockets-rails'
 gem 'storage_unit'
 gem 'uglifier'
 gem 'utf8-cleaner'
+gem 'whenever', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-inline_file_upload'
