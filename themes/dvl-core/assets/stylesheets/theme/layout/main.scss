@@ -4,6 +4,10 @@
   @include container;
 }
 
+.main_container {
+  padding-top: $rhythm * 3;
+}
+
 .hero {
   @include hero_color(#09152f,#ba9270,0.6,#0085fa,0.3);
 }

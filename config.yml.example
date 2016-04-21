@@ -1,6 +1,8 @@
 # What is the site called?
 site_title: Dispatch
 
+agency_name: The City of Philadelphia
+
 # This name should correspond to a subdirectory in the themes/ directory
 theme: dvl-core
 

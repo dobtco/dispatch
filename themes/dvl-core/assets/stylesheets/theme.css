@@ -2,4 +2,5 @@
 *= require theme/dvl_core
 *= require_tree ./theme/layout
 *= require_tree ./theme/components
+*= require_tree ./theme/overrides
  */

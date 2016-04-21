@@ -1,4 +1,5 @@
-<div class='container'>
-  <%= render('flashes') %>
+<%= yield(:before_container) %>
+
+<div class='container main_container'>
   <%= yield %>
 </div>

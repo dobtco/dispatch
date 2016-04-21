@@ -1,2 +1,12 @@
-<%= render('hero') %>
-<%= render('recent_opportunities') %>
+<% content_for(:before_container) do %>
+  <%= render('hero') %>
+<% end %>
+
+<div class='grid'>
+  <div class='item lap_six_columns'>
+    <%= render('recent_opportunities') %>
+  </div>
+  <div class='item lap_six_columns'>
+    <%= render('about') %>
+  </div>
+</div>

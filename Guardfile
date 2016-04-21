@@ -8,8 +8,9 @@ guard :rspec, all_on_start: false, all_after_pass: false, failed_mode: :focus, c
 end
 
 guard :livereload do
-  watch(%r{app/views/.+\.(rb)$})
-  watch(%r{(app|vendor)(/assets/\w+/(.+)\.(scss))}) { |m| "/assets/#{m[3]}.css" }
+  watch(%r{app/views/.+\.(erb)$})
+  watch(%r{themes/(.+)/assets/\w+/(.+)\.(scss)})
+  watch(%r{(app|vendor)(/assets/\w+/(.+)\.(scss))})
 end
 
 guard :rubocop, all_on_start: false do

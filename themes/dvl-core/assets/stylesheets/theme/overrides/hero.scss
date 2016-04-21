@@ -1,0 +1,14 @@
+@import 'theme/includes';
+
+.hero {
+  text-align: center;
+
+  p {
+    margin: 0 auto;
+    max-width: none;
+
+    &:first-of-type {
+      margin-bottom: $rhythm * 2;
+    }
+  }
+}
