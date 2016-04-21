@@ -28,11 +28,6 @@ en:
       title: Title
   filter_opportunities: Filter opportunities
   home:
-    faq:
-      content_html: |-
-        <strong>What do I have to do to register?</strong> <p>Simply fill out the form!</p>
-        <strong>What do I have to do to register?</strong> <p>Simply fill out the form!</p>
-      title: Frequently asked questions
     hero:
       cta: Subscribe for business opportunities
       hint: Sign up to be notified when new projects are posted
