@@ -1,114 +1,90 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  rss_for_search: RSS Feed for this search
-  save_search: Save this search
-  sign_up_to_save_search: Sign up to save this search
-  view_search: View search
-  search_saved_at_time: Search saved at %{time}
-  saved_searches: Saved searches
-  no_saved_searches: No saved searches
-  search_saved: This search has been saved. We'll email you with any new results.
-  edit_answer: Edit answer
-  browse_opportunities: Browse opportunities
-  post_opportunity: Post opportunity
-  approve_opportunities: Approve opportunities
-  pending_opportunities: Pending opportunities
-  signed_in_as_user_html: Signed in as <a href='%{href}'>%{user}</a>.
-  sign_out: Sign out
-  sign_in: Sign in
-  no_opportunities_found: No opportunities found
-  admin: Admin
   access_denied: Sorry, you are not allowed to access that page.
-  confirm_alert: Are you sure?
-  posted_time_ago: Posted %{time_ago} ago
-  subscribe: Subscribe to updates
-  subscribed: Subscribed to updates
-  submit_proposal: Submit proposal
-  edit: Edit
-  unapprove: Un-approve
+  admin: Admin
   approve: Approve
-  destroy: Destroy
-  questions: Questions
+  approve_opportunities: Approve opportunities
   ask_question: Ask question
-  ask_question: Ask question
-  view_proposals: View proposals
   attachments: Attachments
-  description: Description
-  no_description: No description
-  filter_opportunities: Filter opportunities
+  browse_opportunities: Browse opportunities
   clear_filters: Clear filters
-  no_results: No results
-  no_deadline: No deadline
-  title: Title
-  department: Department
+  confirm_alert: Are you sure?
   deadline: Deadline
-  opportunities:
-    pending:
-      pending_approval:
-        title: Opportunities awaiting approval
-      pending_publish:
-        title: Pending opportunities
-        hint: The following opportunities have been approved, and will be posted after their publish_date.
-        none: No pending opportunities
-  mailer:
-    footer: This email was sent by %{site_title}.
-    subscription_preferences: Change subscription preferences
-    search_results:
-      subject: New search results on %{site_title}
-    question_asked:
-      subject: New question on %{site_title}
-    question_answered:
-      subject: New answer to your question on %{site_title}
+  department: Department
+  description: Description
+  destroy: Destroy
+  edit: Edit
+  edit_answer: Edit answer
   edit_opportunity_steps:
-    title:
-      title: Title
     description:
       title: Description
     questions:
       title: Questions
     submissions:
       title: Submissions
+    title:
+      title: Title
+  filter_opportunities: Filter opportunities
+  home:
+    faq:
+      content_html: |-
+        <strong>What do I have to do to register?</strong> <p>Simply fill out the form!</p>
+        <strong>What do I have to do to register?</strong> <p>Simply fill out the form!</p>
+      title: Frequently asked questions
+    hero:
+      cta: Subscribe for business opportunities
+      hint: Sign up to be notified when new projects are posted
+      title: Win contracts with the City of Philadelphia
+    recent_opportunities:
+      browse_all: Browse all
+      title: Recent opportunities
+  mailer:
+    footer: This email was sent by %{site_title}.
+    question_answered:
+      subject: New answer to your question on %{site_title}
+    question_asked:
+      subject: New question on %{site_title}
+    search_results:
+      subject: New search results on %{site_title}
+    subscription_preferences: Change subscription preferences
+  no_deadline: No deadline
+  no_description: No description
+  no_opportunities_found: No opportunities found
+  no_results: No results
+  no_saved_searches: No saved searches
+  opportunities:
+    pending:
+      pending_approval:
+        title: Opportunities awaiting approval
+      pending_publish:
+        hint: The following opportunities have been approved, and will be posted after their publish_date.
+        none: No pending opportunities
+        title: Pending opportunities
   opportunity_status:
+    not_approved: This opportunity has not been approved for publishing.
     posted: This opportunity is posted and viewable to the public.
     waiting_for_publish_date: This opportunity will be posted at %{publish_at}.
-    not_approved: This opportunity has not been approved for publishing.
+  pending_opportunities: Pending opportunities
+  post_opportunity: Post opportunity
+  posted_time_ago: Posted %{time_ago} ago
+  questions: Questions
+  rss_for_search: RSS Feed for this search
+  save_search: Save this search
+  saved_searches: Saved searches
+  search_saved: This search has been saved. We'll email you with any new results.
+  search_saved_at_time: Search saved at %{time}
+  sign_in: Sign in
+  sign_out: Sign out
+  sign_up_to_save_search: Sign up to save this search
+  signed_in_as_user_html: Signed in as <a href='%{href}'>%{user}</a>.
+  submit_proposal: Submit proposal
+  subscribe: Subscribe to updates
+  subscribed: Subscribed to updates
+  title: Title
   unanswered_questions:
-    zero: No unanswered questions
     one: 1 unanswered question
     other: "%{count} unanswered questions"
-  home:
-    hero:
-      title: Win contracts with the City of Philadelphia
-      hint: Sign up to be notified when new projects are posted
-      cta: Subscribe for business opportunities
-    faq:
-      title: Frequently asked questions
-      content_html: >-
-        <strong>What do I have to do to register?</strong>
-        <p>Simply fill out the form!</p>
-
-        <strong>What do I have to do to register?</strong>
-        <p>Simply fill out the form!</p>
-    recent_opportunities:
-      title: Recent opportunities
-      browse_all: Browse all
+    zero: No unanswered questions
+  unapprove: Un-approve
+  view_proposals: View proposals
+  view_search: View search
