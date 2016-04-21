@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require font-awesome
- *= require ./themes/basic
+ *= require selectize
+ *= require rome
+ *= require_tree ./application
  */
 
 /* Prevent unstyled flash while Selectize loads */
