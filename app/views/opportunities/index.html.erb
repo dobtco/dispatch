@@ -1,8 +1,12 @@
-<div class='layout_with_sidebar_left'>
-  <div class='sidebar'>
+<div class='page_header'>
+  <h2><%= t('browse_opportunities') %></h2>
+</div>
+
+<div class='grid'>
+  <div class='item lap_four_columns'>
     <%= render 'filter_form' %>
   </div>
-  <div class='content'>
+  <div class='item lap_eight_columns'>
     <%= render 'search_results' %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class OpportunityFilterer < Filterer::Base
   sort_option 'title', 'LOWER(title)', default: true
-  sort_option 'department', 'LOWER(departments.name)'
+  sort_option 'department', 'LOWER(opp_department.name)'
   sort_option 'submissions_close_at'
   sort_option 'updated_at'
 
@@ -37,6 +37,9 @@ class OpportunityFilterer < Filterer::Base
   end
 
   def apply_default_filters
-    results.joins(:department)
+    results.
+      # Workaround for pg_search bullshit
+      joins('JOIN departments as opp_department ON opp_department.id = ' \
+            'opportunities.department_id')
   end
 end

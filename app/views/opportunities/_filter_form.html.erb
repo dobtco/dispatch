@@ -6,17 +6,21 @@
   <%= f.input :status, required: false, as: :select, collection: [['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status] %>
   <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
-  <%= f.button :button, t('filter_opportunities') %>
+  <%= f.button :button, t('filter_opportunities'), class: 'info' %>
 <% end %>
 
+
 <% if filtered? %>
-  <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
-  <br />
-  <a href='<%= feed_opportunities_path(current_filter_params.merge(format: :xml)) %>'><%= t('rss_for_search') %></a>
-  <br />
-  <% if signed_in? %>
-    <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('save_search') %></a>
-  <% else %>
-    <a href='<%= new_user_registration_path %>'><%= t('sign_up_to_save_search') %></a>
-  <% end %>
+  <ul class='sidebar_sub_actions'>
+    <li><a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a></li>
+    <li><a href='<%= feed_opportunities_path(current_filter_params.merge(format: :xml)) %>'><%= t('rss_for_search') %></a></li>
+
+    <li>
+      <% if signed_in? %>
+        <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('save_search') %></a>
+      <% else %>
+        <a href='<%= new_user_registration_path %>'><%= t('sign_up_to_save_search') %></a>
+      <% end %>
+    </li>
+  </ul>
 <% end %>
