@@ -5,5 +5,5 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 
-Rails.application.config.secret_token = DispatchConfiguration.secret_token
-Rails.application.config.secret_key_base = DispatchConfiguration.secret_key_base
+Rails.application.config.secret_token = Configuration.secret_token
+Rails.application.config.secret_key_base = Configuration.secret_key_base

@@ -65,6 +65,6 @@ class ApplicationController < ActionController::Base
   before_filter :prepend_view_paths
 
   def prepend_view_paths
-    prepend_view_path DispatchConfiguration.theme_path.join('views')
+    prepend_view_path Configuration.theme_path.join('views')
   end
 end

@@ -1,6 +1,6 @@
 <h2>City staff sign up</h2>
 
-<p>To post opportunities, you must have an email account that ends with <strong><%= DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(last_word_connector: ', or ') %></strong>.</p>
+<p>To post opportunities, you must have an email account that ends with <strong><%= Configuration.staff_domains.map { |x| "@#{x}" }.to_sentence(last_word_connector: ', or ') %></strong>.</p>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <input type='hidden' name='type' value='staff' />

@@ -9,11 +9,11 @@ describe SendDeadlineRemindersJob do
       enable_questions: true,
       questions_close_at:
         Time.now +
-        DispatchConfiguration.question_deadline_reminder_hours.hours -
+        Configuration.question_deadline_reminder_hours.hours -
         20.minutes,
       submissions_close_at:
         Time.now +
-        DispatchConfiguration.submission_deadline_reminder_hours.hours -
+        Configuration.submission_deadline_reminder_hours.hours -
         20.minutes
     )
   end

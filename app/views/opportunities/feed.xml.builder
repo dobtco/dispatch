@@ -1,8 +1,8 @@
 xml.instruct! :xml, version: "1.0"
 xml.rss version: "2.0" do
   xml.channel do
-    xml.title "Opportunities - #{DispatchConfiguration.site_title}"
-    xml.description "Feed of opportunities posted to #{DispatchConfiguration.site_title}."
+    xml.title "Opportunities - #{Configuration.site_title}"
+    xml.description "Feed of opportunities posted to #{Configuration.site_title}."
     xml.link opportunities_url
 
     for opportunity in @opportunities

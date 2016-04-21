@@ -1,9 +1,9 @@
 module ApplicationHelper
   def calculated_page_title
     if content_for(:page_title).present?
-      "#{content_for(:page_title)} - #{DispatchConfiguration.site_title}"
+      "#{content_for(:page_title)} - #{Configuration.site_title}"
     else
-      DispatchConfiguration.site_title
+      Configuration.site_title
     end
   end
 

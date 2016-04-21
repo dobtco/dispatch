@@ -1,13 +1,13 @@
 CarrierWave.configure do |config|
-  if DispatchConfiguration.upload_storage == 'aws'
+  if Configuration.upload_storage == 'aws'
     config.storage = :aws
     config.cache_dir = Dir.tmpdir
     config.aws_credentials = {
-      access_key_id: DispatchConfiguration.aws_key,
-      secret_access_key: DispatchConfiguration.aws_secret,
-      region: DispatchConfiguration.aws_region
+      access_key_id: Configuration.aws_key,
+      secret_access_key: Configuration.aws_secret,
+      region: Configuration.aws_region
     }
-    config.aws_bucket = DispatchConfiguration.aws_bucket
+    config.aws_bucket = Configuration.aws_bucket
     config.aws_attributes = {
       cache_control: 'max-age=315576000'
     }

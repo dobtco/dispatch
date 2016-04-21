@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
   private
 
   def set_staff_if_email_matches_staff_domain
-    if email_domain.in?(DispatchConfiguration.staff_domains)
+    if email_domain.in?(Configuration.staff_domains)
       self.permission_level = 'staff'
     end
   end

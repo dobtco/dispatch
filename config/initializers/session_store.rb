@@ -2,4 +2,4 @@
 
 Rails.application.config.session_store :cookie_store,
                                        key: '_dispatch_session',
-                                       secure: DispatchConfiguration.ssl
+                                       secure: Configuration.ssl

@@ -1,4 +1,4 @@
-module DispatchConfiguration
+module Configuration
   class << self
     def theme_path
       Rails.root.join("themes/#{theme}")
