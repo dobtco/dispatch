@@ -4,13 +4,29 @@ class QuestionsController < ApplicationController
 
   def create
     authorize @opportunity, :ask_question?
-    @opportunity.questions.create(ask_question_params)
+    @question = @opportunity.questions.build(ask_question_params)
+
+    if @question.save && !asking_about_own_opportunity?
+      Mailer.question_asked(
+        @opportunity.created_by_user,
+        @question
+      ).deliver_later
+    end
+
     redirect_to :back
   end
 
   def update
     authorize @opportunity, :answer_questions?
     @question.update(answer_question_params)
+
+    if @question.answered? && !answering_own_question?
+      Mailer.question_answered(
+        @question.asked_by_user,
+        @question
+      ).deliver_later
+    end
+
     redirect_to :back
   end
 
@@ -50,5 +66,13 @@ class QuestionsController < ApplicationController
                           @question.answered_at || Time.now
                         end
     end
+  end
+
+  def asking_about_own_opportunity?
+    @question.asked_by_user == @opportunity.created_by_user
+  end
+
+  def answering_own_question?
+    @question.asked_by_user == current_user
   end
 end

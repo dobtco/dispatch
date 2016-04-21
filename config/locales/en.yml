@@ -69,6 +69,13 @@ en:
         none: No pending opportunities
   mailer:
     footer: This email was sent by %{site_title}.
+    subscription_preferences: Change subscription preferences
+    search_results:
+      subject: New search results on %{site_title}
+    question_asked:
+      subject: New question on %{site_title}
+    question_answered:
+      subject: New answer to your question on %{site_title}
   edit_opportunity_steps:
     title:
       title: Title
@@ -86,9 +93,6 @@ en:
     zero: No unanswered questions
     one: 1 unanswered question
     other: "%{count} unanswered questions"
-  mailers:
-    search_results:
-      subject: New search results on %{site_title}
   home:
     hero:
       title: Win contracts with the City of Philadelphia

@@ -1,4 +1,4 @@
-<div>
+<div id="<%= dom_id(question) %>">
   <div><%= format_textarea_input(question.question_text) %></div>
 
   <% if policy(@opportunity).answer_questions? %>

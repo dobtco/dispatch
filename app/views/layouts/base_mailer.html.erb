@@ -40,7 +40,14 @@
           <table>
             <tr>
               <td align='center'>
-                <%= t('mailer.footer', site_title: Rails.configuration.x.site_title) %>
+                <p>
+                  <%= t('mailer.footer', site_title: Rails.configuration.x.site_title) %>
+
+                  <% if @include_subscription_preferences_link %>
+                    <br />
+                    <a href='<%= edit_user_registration_url %>'><%= t('mailer.subscription_preferences') %></a>
+                  <% end %>
+                </p>
               </td>
             </tr>
           </table>
