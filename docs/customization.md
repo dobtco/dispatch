@@ -23,7 +23,7 @@ Edit variables?
 
 ### Editing site language
 
-Override translations in `theme/` directory.
+- [x] Override i18n in `theme/` directory.
 
 ### Adding new submission adapters
 
