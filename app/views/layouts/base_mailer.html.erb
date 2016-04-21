@@ -11,7 +11,7 @@
     <tr>
       <td></td>
       <td class='header_container'>
-        <h1 class='site_title'><%= Rails.configuration.x.site_title %></h1>
+        <h1 class='site_title'><%= BeaconConfiguration.site_title %></h1>
       </td>
       <td></td>
     </tr>
@@ -41,7 +41,7 @@
             <tr>
               <td align='center'>
                 <p>
-                  <%= t('mailer.footer', site_title: Rails.configuration.x.site_title) %>
+                  <%= t('mailer.footer', site_title: BeaconConfiguration.site_title) %>
 
                   <% if @include_subscription_preferences_link %>
                     <br />

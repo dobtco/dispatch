@@ -20,9 +20,6 @@ Rails.application.configure do
   config.assets.debug = false
   config.assets.digest = false
 
-  config.x.ssl = false
-  config.x.base_domain = 'localhost:3000'
-
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :letter_opener
 

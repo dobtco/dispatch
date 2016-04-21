@@ -2,7 +2,7 @@
 
 ### Editing configuration settings
 
-YAML?
+YAML
 
 ### Customizing the color scheme
 

@@ -20,6 +20,5 @@ coverage
 # uploads
 public/uploads
 
-# dotenv files
-.env
-!.env.example
+# Site configuration
+config.yml

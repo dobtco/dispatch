@@ -25,9 +25,6 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  config.x.ssl = false
-  config.x.base_domain = 'www.example.com'
-
   Delayed::Worker.delay_jobs = false
 end
 

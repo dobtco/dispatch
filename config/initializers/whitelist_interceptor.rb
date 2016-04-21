@@ -1,8 +1,5 @@
 class WhitelistInterceptor
-  WHITELIST = [
-    /\@dobt\.co$/,
-    /dobtdemo/
-  ]
+  WHITELIST = BeaconConfiguration.staff_domains
 
   def self.delivering_email(message)
     original_to = message.to
@@ -13,18 +10,14 @@ class WhitelistInterceptor
 
       WhitelistInterceptor::WHITELIST.each do |whitelisted_address|
         break if whitelisted
-        whitelisted = if whitelisted_address.is_a?(Regexp)
-                        whitelisted_address.match(address)
-                      else
-                        whitelisted_address == address
-                      end
+        whitelisted = address.ends_with?("@#{whitelisted_address}")
       end
 
       if whitelisted
         address
       else
         redirected = true
-        ENV['REDIRECT_EMAIL_TO'] || 'adam@dobt.co'
+        BeaconConfiguration.redirect_email_to
       end
     end
 

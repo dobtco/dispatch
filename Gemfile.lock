@@ -141,10 +141,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (2.1.1)
-    dotenv-rails (2.1.1)
-      dotenv (= 2.1.1)
-      railties (>= 4.0, < 5.1)
     easy_translate (0.5.0)
       json
       thread
@@ -457,7 +453,6 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record
   devise
-  dotenv-rails
   execjs
   factory_girl_rails
   filterer

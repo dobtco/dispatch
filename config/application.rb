@@ -8,20 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Beacon
   class Application < Rails::Application
-    config.x.site_title = 'Beacon'
-    config.x.carrierwave_storage = :file
-    config.x.email_notification_from_address = 'noreply@dobt.co'
-    config.x.question_deadline_reminder_interval = 2.days
-    config.x.submission_deadline_reminder_interval = 3.days
-    config.x.staff_domains = [
-      'beacon.gov'
-    ]
-
     # Autoload /lib classes
     config.autoload_paths << Rails.root.join('lib')
-
-    # Manually bump assets
-    config.assets.version = 'v1'
 
     # Add fonts to asset pipeline
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')

@@ -137,7 +137,7 @@ class Opportunity < ActiveRecord::Base
     where(question_deadline_reminder_sent: false).
     where(
       'questions_close_at IS NOT NULL and questions_close_at < ?',
-      Time.now + Rails.configuration.x.question_deadline_reminder_interval
+      Time.now + BeaconConfiguration.question_deadline_reminder_hours.hours
     )
   end
 
@@ -146,7 +146,7 @@ class Opportunity < ActiveRecord::Base
     where(submission_deadline_reminder_sent: false).
     where(
       'submissions_close_at IS NOT NULL and submissions_close_at < ?',
-      Time.now + Rails.configuration.x.submission_deadline_reminder_interval
+      Time.now + BeaconConfiguration.submission_deadline_reminder_hours.hours
     )
   end
 

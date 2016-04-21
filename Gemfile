@@ -66,7 +66,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'i18n-tasks'
   gem 'pry'
   gem 'rspec-rails'

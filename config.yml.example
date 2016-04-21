@@ -1,0 +1,51 @@
+# What is the site called?
+site_title: Beacon
+
+# Valid options: file, aws
+upload_storage: file
+
+# AWS requires these settings:
+# aws_key:
+# aws_secret:
+# aws_region:
+# aws_bucket:
+
+# Where do notifications get sent from?
+email_notification_from_address: noreply@dobt.co
+
+# How long before the question deadline should we remind subscribers?
+question_deadline_reminder_hours: 48
+
+# How long before the submission deadline should we remind subscribers?
+submission_deadline_reminder_hours: 72
+
+# Users with an email address that ends in one of these domains will
+# automatically be granted `staff` permission
+staff_domains:
+  - beacon.gov
+
+# Highly recommended in production
+ssl: false
+
+base_domain: localhost:3000
+
+secret_token: this is an insecure value that must...
+secret_key_base: ...be changed in production!
+
+# Use a CDN
+# asset_host:
+
+# In staging, redirect all email that does not match the address whitelist
+# to this user. Used for preventing users from receiving emails sent
+# by a staging server.
+# redirect_email_to: noreply@dobt.co
+
+# SMTP configuration for sending email in deployed environments:
+# smtp_address:
+# smtp_port:
+# smtp_starttls_auto:
+# smtp_user:
+# smtp_password:
+# smtp_authentication:
+# smtp_domain:
+# smtp_ssl:
