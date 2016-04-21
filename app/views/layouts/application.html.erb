@@ -14,12 +14,7 @@
 </head>
 <body class="<%= parameterized_controller_and_action %>" data-page-key="<%= parameterized_controller_and_action %>">
   <%= render('navbar') %>
-
-  <div class='container'>
-    <%= render('flashes') %>
-    <%= yield %>
-  </div>
-
+  <%= render('inner_layout') %>
   <%= javascript_include_tag('application') %>
   <%= yield(:extra_js) %>
   <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->
