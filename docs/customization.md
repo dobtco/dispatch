@@ -16,4 +16,6 @@ Edit variables?
 
 ### Adding new submission adapters
 
+### Adding fields to vendor registration
+
 ### Adding static pages
