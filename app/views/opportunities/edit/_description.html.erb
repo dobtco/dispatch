@@ -4,7 +4,7 @@
 <%= f.input :contact_email %>
 <%= f.input :contact_phone %>
 <%= f.input :publish_at, as: :datetime_picker %>
-<%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true } %>
+<%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
 <%= f.input :attachments do %>
   <ul class='js-attachments-list'>
