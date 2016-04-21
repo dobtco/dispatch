@@ -1,7 +1,13 @@
 <%= render('greeting') %>
 
-<p>An answer was posted to your question on <a href='<%= opportunity_url(@question.opportunity) %>'><%= @question.opportunity.title %></a>.</p>
+<p>
+  <%= t('mailer.question_answered.body_html', href: opportunity_url(@question.opportunity), title: @question.opportunity.title) %>
+</p>
 
 <p class='mailer_additional_text'>
   <%= format_textarea_input(@question.answer_text) %>
+</p>
+
+<p class='centered padding'>
+  <a class='btn-primary' href='<%= opportunity_url(@question.opportunity) %>'><%= t('view_opportunity') %> &rarr;</a>
 </p>

@@ -1,12 +1,11 @@
 <%= render('greeting') %>
 
 <p>
-  <%= @creator.name %> has requested approval for their opportunity,
-  <a href='<%= opportunity_url(@opportunity) %>'><%= @opportunity.title %></a>.
+  <%= t('mailer.approval_request.body_html', creator: @creator.name, href: opportunity_url(@opportunity), title: @opportunity.title) %>
 </p>
 
 <p class='centered padding'>
   <a class='btn-primary' href='<%= opportunity_url(@opportunity) %>'>
-    View opportunity &rarr;
+    <%= t('view_opportunity') %> &rarr;
   </a>
 </p>

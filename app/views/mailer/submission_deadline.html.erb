@@ -1,11 +1,11 @@
 <%= render('greeting') %>
 
 <p>
-  The deadline for submissions to <a href='<%= opportunity_url(@opportunity) %>'><%= @opportunity.title %></a> is coming up.
+  <%= t('mailer.submission_deadline.body_html', href: opportunity_url(@opportunity), title: @opportunity.title) %>
 </p>
 
 <p class='centered padding'>
   <a class='btn-primary' href='<%= opportunity_url(@opportunity) %>'>
-    Submit a proposal &rarr;
+    <%= t('submit_proposal') %> &rarr;
   </a>
 </p>

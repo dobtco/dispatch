@@ -7,6 +7,8 @@ en:
   ask_question: Ask question
   attachments: Attachments
   browse_opportunities: Browse opportunities
+  answer_question: Answer question
+  view_opportunity: View opportunity
   clear_filters: Clear filters
   confirm_alert: Are you sure?
   deadline: Deadline
@@ -39,19 +41,26 @@ en:
       browse_all: Browse all
       title: Recent opportunities
   mailer:
+    greeting: Hi %{name},
     footer: This email was sent by %{site_title}.
     question_answered:
       subject: New answer to your question on %{site_title}
+      body_html: An answer was posted to your question on <a href='%{href}'>%{title}</a>.
     question_asked:
       subject: New question on %{site_title}
+      body_html: A question was posted to <a href='%{href}'>%{title}</a>.
     search_results:
       subject: New search results on %{site_title}
+      body: There are new results that match your saved searches.
     approval_request:
       subject: "%{creator} has requested approval of their opportunity on %{site_title}"
+      body_html: "%{creator} has requested approval for their opportunity, <a href='%{href}'>%{title}</a>."
     question_deadline:
       subject: Deadline reminder for questions about %{opportunity}
+      body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
     submission_deadline:
       subject: Deadline reminder for submissions to %{opportunity}
+      body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
     subscription_preferences: Change subscription preferences
   no_deadline: No deadline
   no_description: No description

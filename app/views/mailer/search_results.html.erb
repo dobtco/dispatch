@@ -1,6 +1,6 @@
 <%= render('greeting') %>
 
-<p>There are new results that match your saved searches.</p>
+<p><%= t('mailer.search_results.body') %></p>
 
 <ul>
   <% @opportunities.each do |opportunity| %>

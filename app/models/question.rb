@@ -32,6 +32,7 @@ class Question < ActiveRecord::Base
     order('CASE WHEN answered_at IS NULL THEN 0 ELSE 1 END')
   }
 
+  validates :opportunity, presence: true
   validates :asked_by_user, presence: true
   validates :question_text, presence: true
 

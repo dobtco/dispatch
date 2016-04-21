@@ -17,7 +17,13 @@ class MailerPreview < ActionMailer::Preview
 
   def question_answered
     question = Question.answered.first ||
-               FactoryGirl.create(:question, :answered)
+               FactoryGirl.create(
+                 :question,
+                 :answered,
+                 opportunity: Opportunity.first,
+                 asked_by_user: User.first,
+                 answered_by_user: User.first
+               )
 
     Mailer.question_answered(
       question.asked_by_user,
