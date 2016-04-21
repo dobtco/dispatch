@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :prepend_view_paths
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -59,5 +60,11 @@ class ApplicationController < ActionController::Base
         :business_data
       )
     end
+  end
+
+  before_filter :prepend_view_paths
+
+  def prepend_view_paths
+    prepend_view_path BeaconConfiguration.theme_path.join('views')
   end
 end

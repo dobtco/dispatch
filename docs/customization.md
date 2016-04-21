@@ -10,15 +10,15 @@ Edit variables?
 
 ### Adding your logo
 
-Override assets in `theme/` directory.
+[x] Override assets in `theme/` directory.
 
 ### Adding custom JS/CSS
 
-Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
+[x] Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
 
 ### Changing CSS class names
 
-- [ ] Override templates.
+- [x] Override templates.
 - [x] Override `simple_form` configuration.
 
 ### Editing site language
