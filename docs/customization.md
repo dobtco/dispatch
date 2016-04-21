@@ -2,7 +2,7 @@
 
 ### Editing configuration settings
 
-YAML
+Copy `config.yml.example` to `config.yml` and go wild!
 
 ### Customizing the color scheme
 
@@ -10,12 +10,24 @@ Edit variables?
 
 ### Adding your logo
 
-### Editing site language
+Override assets in `theme/` directory.
 
 ### Adding custom JS/CSS
 
+Override assets in `theme/` directory. Alternatively, append scripts to the page using the `:extra_js` content block.
+
+### Editing site language
+
+Override translations in `theme/` directory.
+
 ### Adding new submission adapters
+
+Add adapters to `theme/` directory.
 
 ### Adding fields to vendor registration
 
+TBD
+
 ### Adding static pages
+
+TBD
