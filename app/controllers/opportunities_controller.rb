@@ -56,6 +56,14 @@ class OpportunitiesController < ApplicationController
     authorize @opportunity, :edit?
   end
 
+  def request_approval
+    authorize @opportunity, :edit?
+    !@opportunity.submitted_for_approval? || deny_access
+    @opportunity.submit_for_approval!
+    request_approval_from_approvers_and_admins
+    redirect_to :back
+  end
+
   def update
     authorize @opportunity, :edit?
 
@@ -158,6 +166,12 @@ class OpportunitiesController < ApplicationController
     params.merge(params[:opportunity_filters] || {}).tap do |h|
       # Selectize sends us an array that includes an empty element
       h[:category_ids].reject!(&:blank?) if h[:category_ids]
+    end
+  end
+
+  def request_approval_from_approvers_and_admins
+    User.approvers_and_admins.each do |user|
+      Mailer.approval_request(user, @opportunity).deliver_later
     end
   end
 end

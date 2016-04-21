@@ -1,0 +1,12 @@
+<%= render('greeting') %>
+
+<p>
+  <%= @creator.name %> has requested approval for their opportunity,
+  <a href='<%= opportunity_url(@opportunity) %>'><%= @opportunity.title %></a>.
+</p>
+
+<p class='centered padding'>
+  <a class='btn-primary' href='<%= opportunity_url(@opportunity) %>'>
+    View opportunity &rarr;
+  </a>
+</p>

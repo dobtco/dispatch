@@ -181,6 +181,14 @@ class Opportunity < ActiveRecord::Base
     (!questions_close_at || questions_close_at > Time.now)
   end
 
+  def submitted_for_approval?
+    submitted_at.present?
+  end
+
+  def submit_for_approval!
+    update submitted_at: Time.now
+  end
+
   private
 
   def default_submission_adapter

@@ -46,6 +46,8 @@ en:
       subject: New question on %{site_title}
     search_results:
       subject: New search results on %{site_title}
+    approval_request:
+      subject: "%{creator} has requested approval of their opportunity on %{site_title}"
     subscription_preferences: Change subscription preferences
   no_deadline: No deadline
   no_description: No description
@@ -61,13 +63,15 @@ en:
         none: No pending opportunities
         title: Pending opportunities
   opportunity_status:
-    not_approved: This opportunity has not been approved for publishing.
+    not_approved: This opportunity must be approved for publishing.
+    pending_approval: You have requested for this opportunity to be approved for publishing.
     posted: This opportunity is posted and viewable to the public.
     waiting_for_publish_date: This opportunity will be posted at %{publish_at}.
   pending_opportunities: Pending opportunities
   post_opportunity: Post opportunity
   posted_time_ago: Posted %{time_ago} ago
   questions: Questions
+  request_approval: Request approval
   rss_for_search: RSS Feed for this search
   save_search: Save this search
   saved_searches: Saved searches

@@ -48,6 +48,13 @@ class User < ActiveRecord::Base
 
   enum permission_level: [:user, :staff, :approver, :admin]
 
+  scope :approvers_and_admins, -> do
+    where(
+      # This syntax should be better in Rails 5
+      permission_level: User.permission_levels.slice(:approver, :admin).values
+    )
+  end
+
   validates :name, presence: true
 
   serialize :business_data, Hash

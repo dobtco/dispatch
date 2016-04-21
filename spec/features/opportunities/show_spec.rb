@@ -78,4 +78,32 @@ describe 'Opportunities - Show' do
       expect(opportunity.reload).to be_trashed
     end
   end
+
+  context 'when logged in as staff' do
+    let!(:staff) { create(:user, :staff) }
+
+    before do
+      opportunity.update(created_by_user: staff)
+      login_as staff
+    end
+
+    it 'can edit the opportunity' do
+      visit opportunity_path(opportunity)
+      expect(page).to have_link t('edit')
+      expect(page).to_not have_link t('request_approval')
+    end
+
+    context 'when opportunity is not approved' do
+      before { opportunity.unapprove! }
+
+      it 'can request approval' do
+        visit opportunity_path(opportunity)
+        expect(Mailer).to receive(:approval_request).with(
+          admin, opportunity
+        ).and_return(OpenStruct.new(perform: nil))
+        click_link t('request_approval')
+        expect(page).to have_text t('opportunity_status.pending_approval')
+      end
+    end
+  end
 end

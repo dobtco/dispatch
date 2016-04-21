@@ -1,7 +1,7 @@
 class MailerPreview < ActionMailer::Preview
   def search_results
     Mailer.search_results(
-      User.first || FactoryGirl.create(:user),
+      User.first,
       Opportunity.limit(3)
     )
   end
@@ -22,6 +22,13 @@ class MailerPreview < ActionMailer::Preview
     Mailer.question_answered(
       question.asked_by_user,
       question
+    )
+  end
+
+  def approval_request
+    Mailer.approval_request(
+      User.first,
+      Opportunity.first
     )
   end
 end

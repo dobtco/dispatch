@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       get 'submit'
       post 'approve'
       post 'subscribe'
+      post 'request_approval'
     end
 
     resources :questions, only: [:create, :update, :destroy]

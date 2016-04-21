@@ -50,6 +50,23 @@ class Mailer < ActionMailer::Base
     )
   end
 
+  def approval_request(user, opportunity)
+    @user = user
+    @opportunity = opportunity
+    @creator = opportunity.created_by_user
+
+    mail(
+      from: default_from_address,
+      reply_to: @creator.email,
+      to: build_email_address(user.email, user.name),
+      subject: t(
+        'mailer.approval_request.subject',
+        creator: @creator.name,
+        site_title: Rails.configuration.x.site_title
+      )
+    )
+  end
+
   private
 
   def default_from_address
