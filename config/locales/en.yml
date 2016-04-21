@@ -88,6 +88,8 @@ en:
   submit_proposal: Submit proposal
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates
+  subscribed_hint: You will be reminded of deadlines for this opportunity
+  subscribe_hint: Subscribe to be reminded of deadlines for this opportunity
   title: Title
   unanswered_questions:
     one: 1 unanswered question

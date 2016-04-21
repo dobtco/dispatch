@@ -7,10 +7,19 @@
         <%= t('subscribe') %>
       <% end %>
     </a>
+
+    <p>
+      <% if current_user.opportunities.include?(@opportunity) %>
+        <%= t('subscribed_hint') %>
+      <% else %>
+        <%= t('subscribe_hint') %>
+      <% end %>
+    </p>
   </li>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).subscribe? %>
   <li>
     <% # @todo redirect after login %>
     <a href='<%= new_user_session_path %>'><%= t('subscribe') %></a>
+    <p><%= t('subscribe_hint') %></p>
   </li>
 <% end %>
