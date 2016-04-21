@@ -6,7 +6,6 @@ gem 'administrate'
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',
     branch: 'bundle-process'
-gem 'bugsnag'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'coffee-rails'
