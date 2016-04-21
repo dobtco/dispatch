@@ -1,7 +1,12 @@
 <div class="hero">
   <div class="container">
     <h1><%= t('.title') %></h1>
-    <p><%= t('.hint') %></p>
-    <a href='#' class='button large white'><%= t('.cta') %></a>
+    <% if signed_in? %>
+      <p><%= t('.hint_signed_in') %></p>
+      <a href='<%= opportunities_path %>' class='button large white'><%= t('browse_opportunities') %> &rarr;</a>
+    <% else %>
+      <p><%= t('.hint') %></p>
+      <a href='<%= new_user_registration_path %>' class='button large white'><%= t('.cta') %></a>
+    <% end %>
   </div>
 </div>

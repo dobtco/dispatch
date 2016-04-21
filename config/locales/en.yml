@@ -31,6 +31,7 @@ en:
     hero:
       cta: Subscribe for business opportunities
       hint: Sign up to be notified when new projects are posted
+      hint_signed_in: New opportunities are being added every day!
       title: Win contracts with the City of Philadelphia
     recent_opportunities:
       browse_all: Browse all
