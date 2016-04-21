@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: beacon_development
+  database: dispatch_development
   port: <%= ENV["BOXEN_POSTGRESQL_PORT"] || 5432 %>
   host: localhost
 
 test:
   adapter: postgresql
-  database: beacon_test
+  database: dispatch_test
   port: <%= ENV["BOXEN_POSTGRESQL_PORT"] || 5432 %>
   host: localhost

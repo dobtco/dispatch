@@ -1,4 +1,4 @@
-module BeaconConfiguration
+module DispatchConfiguration
   class << self
     def theme_path
       Rails.root.join("themes/#{theme}")

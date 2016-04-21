@@ -1,5 +1,5 @@
 class WhitelistInterceptor
-  WHITELIST = BeaconConfiguration.staff_domains
+  WHITELIST = DispatchConfiguration.staff_domains
 
   def self.delivering_email(message)
     original_to = message.to
@@ -17,7 +17,7 @@ class WhitelistInterceptor
         address
       else
         redirected = true
-        BeaconConfiguration.redirect_email_to
+        DispatchConfiguration.redirect_email_to
       end
     end
 

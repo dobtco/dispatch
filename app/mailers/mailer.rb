@@ -33,7 +33,7 @@ class Mailer < ActionMailer::Base
       subject: t(
         'mailer.approval_request.subject',
         creator: @creator.name,
-        site_title: BeaconConfiguration.site_title
+        site_title: DispatchConfiguration.site_title
       ),
       reply_to: opportunity.created_by_user.email
     )
@@ -76,14 +76,14 @@ class Mailer < ActionMailer::Base
   def calculate_subject
     t(
       "mailer.#{action_name}.subject",
-      site_title: BeaconConfiguration.site_title
+      site_title: DispatchConfiguration.site_title
     )
   end
 
   def default_from_address
     build_email_address(
-      BeaconConfiguration.email_notification_from_address,
-      BeaconConfiguration.site_title
+      DispatchConfiguration.email_notification_from_address,
+      DispatchConfiguration.site_title
     )
   end
 end

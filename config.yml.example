@@ -1,5 +1,5 @@
 # What is the site called?
-site_title: Beacon
+site_title: Dispatch
 
 # This name should correspond to a subdirectory in the themes/ directory
 theme: dvl-core
@@ -25,7 +25,7 @@ submission_deadline_reminder_hours: 72
 # Users with an email address that ends in one of these domains will
 # automatically be granted `staff` permission
 staff_domains:
-  - beacon.gov
+  - dispatch.gov
 
 # Highly recommended in production
 ssl: false

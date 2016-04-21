@@ -1,4 +1,4 @@
-Beacon [![Circle CI](https://circleci.com/gh/dobtco/beacon-rb.svg?style=shield)](https://circleci.com/gh/dobtco/beacon-rb) [![Code Climate](https://codeclimate.com/github/dobtco/beacon-rb/badges/gpa.svg)](https://codeclimate.com/github/dobtco/beacon-rb) [![Test Coverage](https://codeclimate.com/github/dobtco/beacon-rb/badges/coverage.svg)](https://codeclimate.com/github/dobtco/beacon-rb/coverage)
+Dispatch [![Circle CI](https://circleci.com/gh/dobtco/dispatch.svg?style=shield)](https://circleci.com/gh/dobtco/dispatch) [![Code Climate](https://codeclimate.com/github/dobtco/dispatch/badges/gpa.svg)](https://codeclimate.com/github/dobtco/dispatch) [![Test Coverage](https://codeclimate.com/github/dobtco/dispatch/badges/coverage.svg)](https://codeclimate.com/github/dobtco/dispatch/coverage)
 ====
 
 ## Install

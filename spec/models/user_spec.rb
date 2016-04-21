@@ -47,7 +47,7 @@ describe User do
   describe 'automatic staff permissions' do
     context 'when user email matches a staff domain' do
       before do
-        subject.email = 'foo@beacon.gov'
+        subject.email = 'foo@dispatch.gov'
         subject.save
       end
 
@@ -56,7 +56,7 @@ describe User do
 
     context 'when user email does not match a staff domain' do
       before do
-        subject.email = 'foo@a-beacon.gov'
+        subject.email = 'foo@a-dispatch.gov'
         subject.save
       end
 

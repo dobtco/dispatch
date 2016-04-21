@@ -1,5 +1,5 @@
 # Be sure to restart your server when you modify this file.
 
 Rails.application.config.session_store :cookie_store,
-                                       key: '_beacon_session',
-                                       secure: BeaconConfiguration.ssl
+                                       key: '_dispatch_session',
+                                       secure: DispatchConfiguration.ssl
