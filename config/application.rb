@@ -11,6 +11,8 @@ module Beacon
     config.x.site_title = 'Beacon'
     config.x.carrierwave_storage = :file
     config.x.email_notification_from_address = 'noreply@dobt.co'
+    config.x.question_deadline_reminder_interval = 2.days
+    config.x.submission_deadline_reminder_interval = 3.days
     config.x.staff_domains = [
       'beacon.gov'
     ]

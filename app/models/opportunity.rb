@@ -44,6 +44,7 @@ class Opportunity < ActiveRecord::Base
   belongs_to :approved_by_user, class_name: 'User'
   belongs_to :department
 
+  has_and_belongs_to_many :users
   has_and_belongs_to_many :categories
   has_many :questions, dependent: :destroy
   has_many :attachments, dependent: :destroy
@@ -103,19 +104,6 @@ class Opportunity < ActiveRecord::Base
     }
   )
 
-  def self.with_any_category(category_ids)
-    where(
-      %(
-        (SELECT categories_opportunities.category_id
-        FROM categories_opportunities
-        WHERE categories_opportunities.opportunity_id = opportunities.id
-        AND categories_opportunities.category_id IN (?)
-        LIMIT 1) IS NOT NULL
-      ).squish,
-      category_ids
-    )
-  end
-
   validates :title, presence: true
   validates :created_by_user, presence: true
 
@@ -129,6 +117,38 @@ class Opportunity < ActiveRecord::Base
 
   before_create :set_default_submission_adapter_name,
                 :set_default_contact_info
+
+  def self.with_any_category(category_ids)
+    where(
+      %(
+        (SELECT categories_opportunities.category_id
+        FROM categories_opportunities
+        WHERE categories_opportunities.opportunity_id = opportunities.id
+        AND categories_opportunities.category_id IN (?)
+        LIMIT 1) IS NOT NULL
+      ).squish,
+      category_ids
+    )
+  end
+
+  def self.needs_question_deadline_reminders
+    posted.
+    where(enable_questions: true).
+    where(question_deadline_reminder_sent: false).
+    where(
+      'questions_close_at IS NOT NULL and questions_close_at < ?',
+      Time.now + Rails.configuration.x.question_deadline_reminder_interval
+    )
+  end
+
+  def self.needs_submission_deadline_reminders
+    posted.
+    where(submission_deadline_reminder_sent: false).
+    where(
+      'submissions_close_at IS NOT NULL and submissions_close_at < ?',
+      Time.now + Rails.configuration.x.submission_deadline_reminder_interval
+    )
+  end
 
   def posted?
     approved? && published?

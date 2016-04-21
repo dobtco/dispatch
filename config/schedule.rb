@@ -20,9 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.week do
-  rake 'queue_user_search_results'
+  runner 'QueueUserSearchResultsJob.perform_later'
 end
 
 every 1.hour do
-  rake 'send_deadline_reminders:all'
+  runner 'SendDeadlineRemindersJob.perform_later'
 end
