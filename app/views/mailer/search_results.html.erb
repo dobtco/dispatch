@@ -1,0 +1,11 @@
+<p>Hi <%= @user.name %>,</p>
+
+<p>There are new results that match your saved searches.</p>
+
+<ul>
+  <% @opportunities.each do |opportunity| %>
+    <li>
+      <a href='<%= opportunity_url(opportunity) %>'><%= opportunity.title %></a>
+    </li>
+  <% end %>
+</ul>

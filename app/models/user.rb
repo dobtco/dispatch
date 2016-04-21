@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :opportunities
 
   has_many :saved_searches, dependent: :destroy
+  has_many :audits, dependent: :destroy
 
   devise :database_authenticatable,
          :confirmable,

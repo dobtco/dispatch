@@ -66,6 +66,39 @@ ALTER SEQUENCE attachments_id_seq OWNED BY attachments.id;
 
 
 --
+-- Name: audits; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE audits (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    event character varying,
+    data text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: audits_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE audits_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: audits_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE audits_id_seq OWNED BY audits.id;
+
+
+--
 -- Name: categories; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -372,6 +405,13 @@ ALTER TABLE ONLY attachments ALTER COLUMN id SET DEFAULT nextval('attachments_id
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY audits ALTER COLUMN id SET DEFAULT nextval('audits_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY categories ALTER COLUMN id SET DEFAULT nextval('categories_id_seq'::regclass);
 
 
@@ -423,6 +463,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 ALTER TABLE ONLY attachments
     ADD CONSTRAINT attachments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: audits_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY audits
+    ADD CONSTRAINT audits_pkey PRIMARY KEY (id);
 
 
 --
@@ -493,6 +541,27 @@ CREATE INDEX delayed_jobs_priority ON delayed_jobs USING btree (priority, run_at
 --
 
 CREATE INDEX index_attachments_on_opportunity_id ON attachments USING btree (opportunity_id);
+
+
+--
+-- Name: index_audits_on_event; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_audits_on_event ON audits USING btree (event);
+
+
+--
+-- Name: index_audits_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_audits_on_user_id ON audits USING btree (user_id);
+
+
+--
+-- Name: index_audits_on_user_id_and_event; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_audits_on_user_id_and_event ON audits USING btree (user_id, event);
 
 
 --
@@ -574,6 +643,14 @@ ALTER TABLE ONLY questions
 
 ALTER TABLE ONLY opportunities
     ADD CONSTRAINT fk_rails_c2511f979b FOREIGN KEY (approved_by_user_id) REFERENCES users(id);
+
+
+--
+-- Name: fk_rails_e6d7b3fb68; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY audits
+    ADD CONSTRAINT fk_rails_e6d7b3fb68 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --

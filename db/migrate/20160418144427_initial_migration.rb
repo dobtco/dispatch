@@ -119,5 +119,14 @@ class InitialMigration < ActiveRecord::Migration
       t.references :opportunity, null: false
       t.references :user, null: false
     end
+
+    create_table :audits do |t|
+      t.references :user, null: false, index: true, foreign_key: true
+      t.string :event, index: true
+      t.text :data
+      t.timestamps null: false
+    end
+
+    add_index :audits, [:user_id, :event]
   end
 end

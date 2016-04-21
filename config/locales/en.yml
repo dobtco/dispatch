@@ -86,6 +86,9 @@ en:
     zero: No unanswered questions
     one: 1 unanswered question
     other: "%{count} unanswered questions"
+  mailers:
+    search_results:
+      subject: New search results on %{site_title}
   home:
     hero:
       title: Win contracts with the City of Philadelphia
