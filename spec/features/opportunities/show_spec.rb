@@ -7,11 +7,6 @@ describe 'Opportunities - Show' do
     create(:opportunity, :approved, created_by_user: admin)
   end
 
-  it 'shows the list of opportunities' do
-    visit opportunities_path
-    expect(page).to have_link opportunity.title
-  end
-
   it 'shows an opportunity' do
     visit opportunity_path(opportunity)
     expect(page).to have_text opportunity.title

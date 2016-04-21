@@ -12,7 +12,11 @@
 <% if filtered? %>
   <a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a>
   <br />
-  <a href='<%= feed_opportunities_path(params.merge(format: :xml)) %>'>RSS Feed for this search</a>
+  <a href='<%= feed_opportunities_path(current_filter_params.merge(format: :xml)) %>'><%= t('rss_for_search') %></a>
   <br />
-  <a href='<%= saved_searches_path(pick(@opportunities.filterer.params, *SavedSearch::PERMITTED_SEARCH_PARAMS)) %>' data-method='post'>Save this search</a>
+  <% if signed_in? %>
+    <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('save_search') %></a>
+  <% else %>
+    <a href='<%= new_user_registration_path %>'><%= t('sign_up_to_save_search') %></a>
+  <% end %>
 <% end %>

@@ -5,6 +5,10 @@ module OpportunitiesHelper
     @opportunities.filterer.params[:category_ids].present?
   end
 
+  def current_filter_params
+    pick(@opportunities.filterer.params, *SavedSearch::PERMITTED_SEARCH_PARAMS)
+  end
+
   def opportunity_status_text
     if @opportunity.approved?
       if @opportunity.published?

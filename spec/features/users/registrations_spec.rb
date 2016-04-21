@@ -62,6 +62,17 @@ describe 'Users' do
       find('#edit_user button').click
       expect(user.reload.name).to eq 'newname'
     end
+
+    context 'with a saved search' do
+      let!(:saved_search) { create(:saved_search, user: user) }
+
+      it 'allows for deleting the search' do
+        login_as user
+        visit edit_user_registration_path
+        expect { find('.js-destroy-saved-search').click }.
+          to change { user.saved_searches.count }.by(-1)
+      end
+    end
   end
 
   describe 'Changing your password' do
