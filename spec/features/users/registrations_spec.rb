@@ -24,10 +24,8 @@ describe 'Users' do
 
         # Fix errors
         fill_in :user_password, with: 'password'
-        find('#new_user button').click
-        expect(page).to have_text(
-          t('devise.registrations.signed_up_but_unconfirmed')
-        )
+        expect { find('#new_user button').click }.
+          to change { User.count }.by(1)
 
         # Creates a saved search
         expect(created_user.saved_searches.first.search_params).to eq(
@@ -45,10 +43,8 @@ describe 'Users' do
         fill_in :user_name, with: 'Joe Shmo'
         fill_in :user_email, with: 'joe@foobar.biz'
         fill_in :user_password, with: 'password'
-        find('#new_user button').click
-        expect(page).to have_text(
-          t('devise.registrations.signed_up_but_unconfirmed')
-        )
+        expect { find('#new_user button').click }.
+          to change { User.count }.by(1)
       end
     end
   end
@@ -91,7 +87,7 @@ describe 'Users' do
       fill_in :user_password_confirmation, with: 'newpassword'
       fill_in :user_current_password, with: 'password'
       find('#edit_user button').click
-      expect(page).to have_text t('devise.registrations.updated')
+      expect(page.body).to include t('devise.registrations.updated')
     end
   end
 end

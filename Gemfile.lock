@@ -129,6 +129,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     css_parser (1.4.1)
       addressable
     daemons (1.2.3)
@@ -197,6 +199,7 @@ GEM
       rubocop (~> 0.20)
     haml (4.0.7)
       tilt
+    hashdiff (0.3.0)
     highline (1.7.8)
     htmlentities (4.3.4)
     http_parser.rb (0.6.0)
@@ -438,6 +441,10 @@ GEM
       activesupport
     warden (1.2.6)
       rack (>= 1.0)
+    webmock (1.24.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     whenever (0.9.4)
       chronic (>= 0.6.3)
     xpath (2.0.0)
@@ -505,6 +512,7 @@ DEPENDENCIES
   thin
   uglifier
   utf8-cleaner
+  webmock
   whenever
 
 BUNDLED WITH

@@ -9,8 +9,8 @@ describe 'Signing in' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'password'
     click_button 'Log in'
-    expect(page).to have_text 'Signed in successfully'
+    expect(page.body).to include t('devise.sessions.signed_in')
     click_link 'Sign out'
-    expect(page).to have_text 'Signed out successfully'
+    expect(page.body).to include t('devise.sessions.signed_out')
   end
 end

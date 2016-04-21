@@ -18,7 +18,7 @@ describe 'Opportunities - Pending' do
   context 'as a vendor' do
     it 'denies access' do
       visit pending_opportunities_path
-      expect(page).to have_text t('access_denied')
+      expect(current_path).to eq root_path
     end
   end
 

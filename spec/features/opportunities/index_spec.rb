@@ -31,8 +31,8 @@ describe 'Opportunities - Index' do
       visit opportunities_path
       fill_in :opportunity_filters_text, with: 'nothingmatchesthis'
       find('.opportunity_filters button').click
-      click_link t('save_search')
-      expect(page).to have_text t('search_saved')
+      expect { click_link t('save_search') }.
+        to change { vendor.saved_searches.count }.by(1)
     end
   end
 end
