@@ -88,12 +88,10 @@ en:
   sign_in: Sign in
   sign_out: Sign out
   sign_up_to_save_search: Sign up to save this search
-  signed_in_as_user_html: Signed in as <a href='%{href}'>%{user}</a>.
   submit_proposal: Submit proposal
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates
-  subscribed_hint: You will be reminded of deadlines for this opportunity
-  subscribe_hint: Subscribe to be reminded of deadlines for this opportunity
+  subscribed_success: You will be reminded of deadlines for this opportunity
   title: Title
   unanswered_questions:
     one: 1 unanswered question

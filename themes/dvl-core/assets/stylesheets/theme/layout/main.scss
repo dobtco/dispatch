@@ -1,0 +1,5 @@
+@import 'theme/includes';
+
+.container {
+  @include container;
+}

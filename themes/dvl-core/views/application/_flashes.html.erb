@@ -1,0 +1,7 @@
+<% flashes_with_consistent_keys.each do |k, (text, links)| %>
+  <script>
+    $(function(){
+      Dvl.Flash("<%= k %>", "<%= h(text) %>", "<%= escape_javascript(links) %>")
+    })
+  </script>
+<% end %>

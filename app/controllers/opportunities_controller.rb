@@ -107,6 +107,7 @@ class OpportunitiesController < ApplicationController
       current_user.opportunities.destroy(@opportunity)
     else
       current_user.opportunities << @opportunity
+      flash[:success] = t('subscribed_success')
     end
 
     redirect_to :back

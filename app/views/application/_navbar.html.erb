@@ -1,42 +1,60 @@
-<navbar class='navbar'>
-  <a class='navbar_title' href='<%= root_path %>'><%= DispatchConfiguration.site_title %></a>
+<nav class='navbar'>
+  <div class='container'>
+    <div class='navbar_header'>
+      <a class='navbar_brand' href='<%= root_path %>'><%= DispatchConfiguration.site_title %></a>
+      <a class='navbar_toggle'><i class='fa fa-reorder'></i></a>
+    </div>
+    <div class='navbar_content_wrapper'>
+      <div class='navbar_content navbar_content_primary'>
+        <ul>
+          <li <% if parameterized_controller_and_action == 'opportunities-index' %>class='active'<% end %>>
+            <a href='<%= opportunities_path %>'><%= t('browse_opportunities') %></a>
+          </li>
 
-  <ul class='navbar_links'>
-    <li <% if parameterized_controller_and_action == 'opportunities-index' %>class='active'<% end %>>
-      <a href='<%= opportunities_path %>'><%= t('browse_opportunities') %></a>
-    </li>
-
-    <% if policy(:opportunity).create? %>
-      <li <% if parameterized_controller_and_action == 'opportunities-new' %>class='active'<% end %>>
-        <a href='<%= new_opportunity_path %>'><%= t('post_opportunity') %></a>
-      </li>
-    <% end %>
-
-    <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
-      <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
-        <a href='<%= pending_opportunities_path %>'>
-          <% if policy(:opportunity).approve? %>
-            <%= t('approve_opportunities') %> (<%= Opportunity.not_approved.count %>)
-          <% else %>
-            <%= t('pending_opportunities') %>
+          <% if policy(:opportunity).create? %>
+            <li <% if parameterized_controller_and_action == 'opportunities-new' %>class='active'<% end %>>
+              <a href='<%= new_opportunity_path %>'><%= t('post_opportunity') %></a>
+            </li>
           <% end %>
-        </a>
-      </li>
-    <% end %>
 
-    <% if current_user.try(:admin?) %>
-      <li>
-        <a href='<%= admin_root_path %>'><%= t('admin') %></a>
-      </li>
-    <% end %>
-  </ul>
+          <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
+            <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
+              <a href='<%= pending_opportunities_path %>'>
+                <% if policy(:opportunity).approve? %>
+                  <%= t('approve_opportunities') %> (<%= Opportunity.not_approved.count %>)
+                <% else %>
+                  <%= t('pending_opportunities') %>
+                <% end %>
+              </a>
+            </li>
+          <% end %>
 
-  <div class='navbar_user'>
-    <% if signed_in? %>
-      <span><%= t('signed_in_as_user_html', user: current_user.name, href: edit_user_registration_path) %></span>
-      <a href='<%= destroy_user_session_path %>' data-method='delete'><%= t('sign_out') %></a>
-    <% else %>
-      <a href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
-    <% end %>
+          <% if current_user.try(:admin?) %>
+            <li>
+              <a href='<%= admin_root_path %>'><%= t('admin') %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class='navbar_content navbar_content_secondary'>
+        <ul>
+          <% if signed_in? %>
+            <li>
+              <a href='<%= edit_user_registration_path %>'><%= current_user.name %></a>
+            </li>
+            <li>
+              <a href='<%= destroy_user_session_path %>' data-method='delete'><%= t('sign_out') %></a>
+            </li>
+          <% else %>
+            <li>
+              <span>
+                <a class='button small primary' href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
-</navbar>
+</nav>
