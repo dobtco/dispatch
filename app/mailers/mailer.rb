@@ -7,73 +7,43 @@ class Mailer < ActionMailer::Base
   layout 'base_mailer'
 
   def search_results(user, opportunity_ids)
-    @user = user
     @opportunities = Opportunity.
                       where(id: opportunity_ids).
                       order_by_recently_posted
 
-    mail(
-      from: default_from_address,
-      to: build_email_address(user.email, user.name),
-      subject: t(
-        'mailer.search_results.subject',
-        site_title: Rails.configuration.x.site_title
-      )
-    )
+    build_email(user)
   end
 
   def question_asked(user, question)
-    @user = user
     @question = question
-
-    mail(
-      from: default_from_address,
-      to: build_email_address(user.email, user.name),
-      subject: t(
-        'mailer.question_asked.subject',
-        site_title: Rails.configuration.x.site_title
-      )
-    )
+    build_email(user)
   end
 
   def question_answered(user, question)
-    @user = user
     @question = question
-
-    mail(
-      from: default_from_address,
-      to: build_email_address(user.email, user.name),
-      subject: t(
-        'mailer.question_answered.subject',
-        site_title: Rails.configuration.x.site_title
-      )
-    )
+    build_email(user)
   end
 
   def approval_request(user, opportunity)
-    @user = user
     @opportunity = opportunity
     @creator = opportunity.created_by_user
 
-    mail(
-      from: default_from_address,
-      reply_to: @creator.email,
-      to: build_email_address(user.email, user.name),
+    build_email(
+      user,
       subject: t(
         'mailer.approval_request.subject',
         creator: @creator.name,
         site_title: Rails.configuration.x.site_title
-      )
+      ),
+      reply_to: opportunity.created_by_user.email
     )
   end
 
   def question_deadline(user, opportunity)
-    @user = user
     @opportunity = opportunity
 
-    mail(
-      from: default_from_address,
-      to: build_email_address(user.email, user.name),
+    build_email(
+      user,
       subject: t(
         'mailer.question_deadline.subject',
         opportunity: @opportunity.title
@@ -82,12 +52,10 @@ class Mailer < ActionMailer::Base
   end
 
   def submission_deadline(user, opportunity)
-    @user = user
     @opportunity = opportunity
 
-    mail(
-      from: default_from_address,
-      to: build_email_address(user.email, user.name),
+    build_email(
+      user,
       subject: t(
         'mailer.submission_deadline.subject',
         opportunity: @opportunity.title
@@ -96,6 +64,21 @@ class Mailer < ActionMailer::Base
   end
 
   private
+
+  def build_email(user, mail_params = {})
+    @user = user
+    mail_params[:from] ||= default_from_address
+    mail_params[:to] ||= build_email_address(user.email, user.name)
+    mail_params[:subject] ||= calculate_subject
+    mail(mail_params)
+  end
+
+  def calculate_subject
+    t(
+      "mailer.#{action_name}.subject",
+      site_title: Rails.configuration.x.site_title
+    )
+  end
 
   def default_from_address
     build_email_address(
