@@ -67,6 +67,34 @@ class Mailer < ActionMailer::Base
     )
   end
 
+  def question_deadline(user, opportunity)
+    @user = user
+    @opportunity = opportunity
+
+    mail(
+      from: default_from_address,
+      to: build_email_address(user.email, user.name),
+      subject: t(
+        'mailer.question_deadline.subject',
+        opportunity: @opportunity.title
+      )
+    )
+  end
+
+  def submission_deadline(user, opportunity)
+    @user = user
+    @opportunity = opportunity
+
+    mail(
+      from: default_from_address,
+      to: build_email_address(user.email, user.name),
+      subject: t(
+        'mailer.submission_deadline.subject',
+        opportunity: @opportunity.title
+      )
+    )
+  end
+
   private
 
   def default_from_address

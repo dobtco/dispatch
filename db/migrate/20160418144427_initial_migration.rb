@@ -63,10 +63,12 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :publish_at
       t.datetime :submissions_open_at
       t.datetime :submissions_close_at
+      t.boolean :submission_deadline_reminder_sent, null: false, default: false
 
       t.boolean :enable_questions, null: false, default: false
       t.datetime :questions_open_at
       t.datetime :questions_close_at
+      t.boolean :question_deadline_reminder_sent, null: false, default: false
 
       t.datetime :submitted_at
 

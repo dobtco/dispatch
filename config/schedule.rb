@@ -22,3 +22,7 @@
 every 1.week do
   rake 'queue_user_search_results'
 end
+
+every 1.hour do
+  rake 'send_deadline_reminders:all'
+end

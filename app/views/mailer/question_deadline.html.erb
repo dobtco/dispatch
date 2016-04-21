@@ -1,0 +1,11 @@
+<%= render('greeting') %>
+
+<p>
+  The deadline for questions about <a href='<%= opportunity_url(@opportunity) %>'><%= @opportunity.title %></a> is coming up.
+</p>
+
+<p class='centered padding'>
+  <a class='btn-primary' href='<%= opportunity_url(@opportunity) %>'>
+    Ask a question &rarr;
+  </a>
+</p>

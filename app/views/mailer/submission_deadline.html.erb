@@ -1,0 +1,11 @@
+<%= render('greeting') %>
+
+<p>
+  The deadline for submissions to <a href='<%= opportunity_url(@opportunity) %>'><%= @opportunity.title %></a> is coming up.
+</p>
+
+<p class='centered padding'>
+  <a class='btn-primary' href='<%= opportunity_url(@opportunity) %>'>
+    Submit a proposal &rarr;
+  </a>
+</p>

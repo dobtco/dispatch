@@ -48,6 +48,10 @@ en:
       subject: New search results on %{site_title}
     approval_request:
       subject: "%{creator} has requested approval of their opportunity on %{site_title}"
+    question_deadline:
+      subject: Deadline reminder for questions about %{opportunity}
+    submissions_deadline:
+      subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
   no_deadline: No deadline
   no_description: No description

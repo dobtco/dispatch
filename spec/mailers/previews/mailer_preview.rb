@@ -31,4 +31,24 @@ class MailerPreview < ActionMailer::Preview
       Opportunity.first
     )
   end
+
+  def question_deadline
+    opp = Opportunity.first
+    opp.questions_close_at = Time.now + 1.day + 12.hours
+
+    Mailer.question_deadline(
+      User.first,
+      opp
+    )
+  end
+
+  def submission_deadline
+    opp = Opportunity.first
+    opp.submissions_close_at = Time.now + 1.day + 12.hours
+
+    Mailer.submission_deadline(
+      User.first,
+      opp
+    )
+  end
 end
