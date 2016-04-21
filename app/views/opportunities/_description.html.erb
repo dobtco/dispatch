@@ -1,7 +1,7 @@
 <h3><%= t('description') %></h3>
 
 <% if @opportunity.description.present? %>
-  <%= @opportunity.description %>
+  <%= format_textarea_input(@opportunity.description) %>
 <% else %>
   <%= t('no_description') %>
 <% end %>
