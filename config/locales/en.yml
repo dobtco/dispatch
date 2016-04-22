@@ -35,6 +35,7 @@ en:
     title:
       title: Title
   filter_opportunities: Filter opportunities
+  get_started: Get started
   home:
     hero:
       cta: Subscribe for business opportunities
@@ -67,7 +68,6 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
-  name_your_opportunity: Name your opportunity
   no_deadline: No deadline
   no_department: No department
   no_description: No description
@@ -75,6 +75,8 @@ en:
   no_results: No results
   no_saved_searches: No saved searches
   opportunities:
+    new:
+      whats_the_title: What's the title of your opportunity?
     pending:
       pending_approval:
         title: Opportunities awaiting approval
@@ -109,6 +111,9 @@ en:
         email: We'll send a confirmation email to this address before you can log in
         name: Your full name, please!
         password: Make it at least 8 characters
+    placeholders:
+      opportunity:
+        title: RFP for Integrated Library System
   submit_proposal: Submit proposal
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates

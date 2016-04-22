@@ -15,7 +15,7 @@ module Users
       end
     end
 
-    def after_inactive_sign_up_path_for(resource)
+    def after_inactive_sign_up_path_for(_resource)
       flash.delete(:notice) # Don't display a redundant flash
       users_confirm_path
     end
