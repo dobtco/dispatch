@@ -2,7 +2,7 @@
   <div class='alert'>
     <span class='alert_message'><%= opportunity_status_text %></span>
     <span class='alert_buttons'>
-      <a class='button info' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
+      <a class='button primary' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
 
       <% if policy(@opportunity).approve? %>
         <a class='button' href='<%= approve_opportunity_path %>' data-method='post'>

@@ -3,7 +3,7 @@
 
 <div class='page_header'>
   <h2><%= @opportunity.title %></h2>
-  <a class='button info' href='<%= opportunity_path %>'><%= t('view_opportunity') %> &rarr;</a>
+  <a class='button primary' href='<%= opportunity_path %>'><%= t('view_opportunity') %> &rarr;</a>
 </div>
 
 <ul class='tabs'>
@@ -20,6 +20,6 @@
   <%= render partial: "opportunities/edit/#{params[:step]}", locals: { f: f } %>
 
   <div class='form_actions horizontal'>
-    <%= f.button :button, "#{t('save_and_continue')} &rarr;".html_safe, class: 'info' %>
+    <%= f.button :button, "#{t('save_and_continue')} &rarr;".html_safe, class: 'primary' %>
   </div>
 <% end %>

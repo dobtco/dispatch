@@ -11,7 +11,7 @@
   <%= f.input :password, required: false %>
   <%= f.input :remember_me, as: :boolean, label: false, inline_label: 'Keep me logged in for 2 weeks' %>
 
-  <%= f.button :submit, t('sign_in'), class: 'info' %>
+  <%= f.button :submit, t('sign_in'), class: 'primary' %>
 <% end %>
 
 <%= render "users/shared/links" %>

@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/dobtco/dvl-core.git
-  revision: a50b873e8d40a2603d7e72497f37cb4e54c8c99b
+  revision: 43828fd0ba46e648a5903bcd97951a9bacee44c2
   specs:
     dvl-core (0.1.0)
       activesupport

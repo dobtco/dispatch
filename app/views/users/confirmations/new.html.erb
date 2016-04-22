@@ -7,7 +7,7 @@
 <%= simple_form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post } do |f| %>
   <%= f.full_error :confirmation_token %>
   <%= f.input :email, required: true, autofocus: true %>
-  <%= f.button :submit, "Resend confirmation instructions", class: 'info' %>
+  <%= f.button :submit, "Resend confirmation instructions", class: 'primary' %>
 <% end %>
 
 <%= render "users/shared/links" %>

@@ -17,7 +17,7 @@ describe 'Opportunities - Index' do
     fill_in :opportunity_filters_text, with: 'nothingmatchesthis'
     find('.opportunity_filters button').click
     expect(page).to_not have_text opportunity.title
-    expect(page).to have_link t('sign_up_to_save_search')
+    expect(page).to have_link t('save_search'), href: new_user_session_path
 
     # Clear filters
     click_link t('clear_filters')

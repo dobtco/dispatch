@@ -9,7 +9,7 @@
   <%= f.full_error :reset_password_token %>
   <%= f.input :password, label: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
   <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
-  <%= f.button :submit, "Change my password", class: 'info' %>
+  <%= f.button :submit, "Change my password", class: 'primary' %>
 <% end %>
 
 <%= render "users/shared/links" %>
