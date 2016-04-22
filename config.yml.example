@@ -1,6 +1,6 @@
-# What is the site called?
+# What is the site called? What government entity is it being used by?
+# These keys will be used in views and outgoing emails.
 site_title: Dispatch
-
 agency_name: The City of Philadelphia
 
 # This name should correspond to a subdirectory in the themes/ directory
@@ -10,6 +10,7 @@ footer_links:
   - text: Contact us
     href: 'mailto:support@dobt.co'
 
+# Each entry must correspond to a template in views/static/#{path}.html.erb
 static_pages:
   - name: About
     path: about
@@ -37,11 +38,14 @@ submission_deadline_reminder_hours: 72
 staff_domains:
   - dispatch.gov
 
-# Highly recommended in production
+# *Highly* recommended in production
 ssl: false
 
+# The domain of your site, e.g. "www.dispatch.gov". Don't include the `https`
 base_domain: localhost:3000
 
+# Rails cookie-signing secrets. You cangGenerate values with `rake secret`
+# for deployed environments.
 secret_token: this is an insecure value that must...
 secret_key_base: ...be changed in production!
 
@@ -51,9 +55,12 @@ secret_key_base: ...be changed in production!
 # In staging, redirect all email that does not match the address whitelist
 # to this user. Used for preventing users from receiving emails sent
 # by a staging server.
+#
 # redirect_email_to: noreply@dobt.co
 
-# SMTP configuration for sending email in deployed environments:
+# SMTP configuration for sending email in deployed environments. This must be
+# configured in staging and production!
+#
 # smtp_address:
 # smtp_port:
 # smtp_starttls_auto:
