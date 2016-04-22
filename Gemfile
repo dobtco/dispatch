@@ -83,3 +83,7 @@ end
 group :staging, :production do
   gem 'remote_syslog_logger'
 end
+
+group :heroku do
+  gem 'rails_12factor'
+end
