@@ -1,6 +1,11 @@
-<h2>Edit opportunity "<%= @opportunity.title %>"</h2>
+<% content_for(:page_key, 'opportunities-edit') %>
 
-<ul>
+<div class='page_header'>
+  <h2><%= @opportunity.title %></h2>
+  <a class='button info' href='<%= opportunity_path %>'><%= t('view_opportunity') %> &rarr;</a>
+</div>
+
+<ul class='tabs'>
   <% edit_opportunity_steps.each do |x| %>
     <li<% if params[:step] == x %> class='active'<% end %>>
       <a href='<%= url_for(step: x) %>'><%= t("edit_opportunity_steps.#{x}.title") %></a>
@@ -8,10 +13,12 @@
   <% end %>
 </ul>
 
-<%= simple_form_for @opportunity do |f| %>
+<%= simple_form_for @opportunity, wrapper: :horizontal do |f| %>
   <input type='hidden' name='step' value='<%= params[:step] %>' />
 
   <%= render partial: "opportunities/edit/#{params[:step]}", locals: { f: f } %>
 
-  <%= f.button :button, "Next &rarr;".html_safe %>
+  <div class='form_actions horizontal'>
+    <%= f.button :button, "#{t('save_and_continue')} &rarr;".html_safe, class: 'info' %>
+  </div>
 <% end %>

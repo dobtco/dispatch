@@ -19,3 +19,8 @@
 select[multiple] {
   display: none;
 }
+
+/* Fix rome / selectize z-index conflict */
+.rd-container {
+  z-index: 2;
+}

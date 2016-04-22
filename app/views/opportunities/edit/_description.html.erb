@@ -7,14 +7,14 @@
 <%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
 <%= f.input :attachments do %>
-  <ul class='js-attachments-list'>
+  <ul class='js-attachments-list formatted_list'>
     <% @opportunity.attachments.each do |attachment| %>
       <%= render partial: 'edit_attachment', locals: { attachment: attachment } %>
     <% end %>
   </ul>
 
   <div>
-    <label for='attachment_upload'>Upload new attachment</label>
+    <label for='attachment_upload' class='button small'>Upload new attachment</label>
     <input type='file' id='attachment_upload' style='position:fixed;left:-9999px;' data-ifu-options="<%= { action: opportunity_attachments_path(@opportunity), method: :post }.to_json %>" />
   </div>
 <% end %>

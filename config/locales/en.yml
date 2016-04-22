@@ -1,5 +1,8 @@
 ---
 en:
+  allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
+  save_and_continue: Save and continue
+  name_your_opportunity: Name your opportunity
   asked_by_user_at_time: Asked by %{user} at %{time}
   answered_by_user_at_time: Answered by %{user} at %{time}
   access_denied: Sorry, you are not allowed to access that page.

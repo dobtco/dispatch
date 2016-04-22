@@ -5,6 +5,6 @@
 </div>
 
 <%= simple_form_for @opportunity do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, label: t('name_your_opportunity') %>
   <%= f.button :button, class: 'info' %>
 <% end %>
