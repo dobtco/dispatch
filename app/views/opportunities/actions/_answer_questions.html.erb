@@ -1,4 +1,4 @@
-<% if policy(@opportunity).answer_questions? %>
+<% if policy(@opportunity).answer_questions? && @opportunity.questions.unanswered.count > 0 %>
   <li>
     <a href='#questions'>
       <%= t('unanswered_questions', count: @opportunity.questions.unanswered.count) %>

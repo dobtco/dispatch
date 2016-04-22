@@ -109,7 +109,6 @@ en:
   unanswered_questions:
     one: 1 unanswered question
     other: "%{count} unanswered questions"
-    zero: No unanswered questions
   unapprove: Un-approve
   view_opportunity: View opportunity
   view_proposals: View proposals
