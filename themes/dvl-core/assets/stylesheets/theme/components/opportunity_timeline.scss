@@ -1,0 +1,30 @@
+@import 'theme/includes';
+
+.opportunity_timeline {
+  border-left: $rhythm solid $lightGray;
+  padding-left: $rhythm * 3;
+  margin-bottom: $lineHeight;
+
+  > li {
+    font-size: $fontSmall;
+    margin-bottom: $rhythm * 2;
+    position: relative;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: $rhythm;
+      left: - 2.5rem; // horizontally center on timeline
+      border: 1px solid $gray;
+      border-radius: 50%;
+      width: $lineHeight;
+      height: $lineHeight;
+      background: white;
+    }
+  }
+}
+
+.opportunity_timeline_event {
+  font-weight: $weightBold;
+  color: $darkerGray;
+}

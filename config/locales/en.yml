@@ -172,3 +172,9 @@ en:
   view_search: View search
   write_an_answer: Write an answer…
   write_your_question: Write your question…
+  timeline:
+    publish_at: Posted
+    submissions_open_at: Submissions open
+    submissions_close_at: Submissions close
+    questions_open_at: Questions open
+    questions_close_at: Questions close
