@@ -5,7 +5,8 @@ module DispatchConfiguration
     end
 
     def method_missing(name)
-      read_configuration[name.to_s.downcase]
+      ENV[name.to_s.upcase] ||
+      read_configuration[name.to_s.upcase]
     end
 
     private

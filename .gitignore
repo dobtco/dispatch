@@ -19,6 +19,3 @@ coverage
 
 # uploads
 public/uploads
-
-# Site configuration
-config.yml

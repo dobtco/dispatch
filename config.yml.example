@@ -1,71 +1,74 @@
+# Any key that takes a string as its value can be overridden by
+# setting an environment variable of the same name.
+
 # What is the site called? What government entity is it being used by?
 # These keys will be used in views and outgoing emails.
-site_title: Dispatch
-agency_name: The City of Philadelphia
+SITE_TITLE: Dispatch
+AGENCY_NAME: The City of Philadelphia
 
-# This name should correspond to a subdirectory in the themes/ directory
-theme: dvl-core
+# This name must correspond to a subdirectory in the themes/ directory
+THEME: dvl-core
 
-footer_links:
+FOOTER_LINKS:
   - text: Contact us
     href: 'mailto:support@dobt.co'
 
 # Each entry must correspond to a template in views/static/#{path}.html.erb
-static_pages:
+STATIC_PAGES:
   - name: About
     path: about
 
 # Valid options: file, aws
-upload_storage: file
+UPLOAD_STORAGE: file
 
 # AWS requires these settings:
-# aws_key:
-# aws_secret:
-# aws_region:
-# aws_bucket:
+# AWS_KEY:
+# AWS_SECRET:
+# AWS_REGION:
+# AWS_BUCKET:
 
 # Where do notifications get sent from?
-email_notification_from_address: noreply@dobt.co
+EMAIL_NOTIFICATION_FROM_ADDRESS: noreply@dobt.co
 
 # How long before the question deadline should we remind subscribers?
-question_deadline_reminder_hours: 48
+QUESTION_DEADLINE_REMINDER_HOURS: 48
 
 # How long before the submission deadline should we remind subscribers?
-submission_deadline_reminder_hours: 72
+SUBMISSION_DEADLINE_REMINDER_HOURS: 72
 
 # Users with an email address that ends in one of these domains will
 # automatically be granted `staff` permission
-staff_domains:
+STAFF_DOMAINS:
   - dispatch.gov
 
 # *Highly* recommended in production
-ssl: false
+SSL: false
 
 # The domain of your site, e.g. "www.dispatch.gov". Don't include the `https`
-base_domain: localhost:3000
+BASE_DOMAIN: localhost:3000
 
 # Rails cookie-signing secrets. You cangGenerate values with `rake secret`
 # for deployed environments.
-secret_token: this is an insecure value that must...
-secret_key_base: ...be changed in production!
+SECRET_TOKEN: this is an insecure value that must...
+SECRET_KEY_BASE: ...be changed in production!
 
 # Use a CDN
-# asset_host:
+# ASSET_HOST:
 
 # In staging, redirect all email that does not match the address whitelist
 # to this user. Used for preventing users from receiving emails sent
 # by a staging server.
 #
-# redirect_email_to: noreply@dobt.co
+# REDIRECT_EMAIL_TO: noreply@dobt.co
 
 # SMTP configuration for sending email in deployed environments. This must be
 # configured in staging and production!
 #
-# smtp_address:
-# smtp_port:
-# smtp_starttls_auto:
-# smtp_user:
-# smtp_password:
-# smtp_authentication:
-# smtp_domain:
-# smtp_ssl:
+# SMTP_ADDRESS:
+# SMTP_PORT:
+# SMTP_STARTTLS_AUTO:
+# SMTP_USER:
+# SMTP_PASSWORD:
+# SMTP_AUTHENTICATION:
+# SMTP_DOMAIN:
+# SMTP_SSL:
