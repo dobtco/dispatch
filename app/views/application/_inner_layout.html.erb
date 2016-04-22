@@ -1,5 +1,5 @@
 <%= yield(:before_container) %>
 
-<div class='container main_container'>
+<div class='container main_container <%= yield(:main_container_class) %>'>
   <%= yield %>
 </div>

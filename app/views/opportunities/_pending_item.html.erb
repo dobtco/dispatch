@@ -1,3 +1,4 @@
 <li>
-  <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
+  <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a><br />
+  <%= t('created_by_user_at_time', user: opportunity.created_by_user.name, time: opportunity.created_at) %>
 </li>

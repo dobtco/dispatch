@@ -1,5 +1,6 @@
 ---
 en:
+  created_by_user_at_time: Created by %{user} at %{time}
   allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
   save_and_continue: Save and continue
   name_your_opportunity: Name your opportunity
@@ -79,7 +80,7 @@ en:
       pending_approval:
         title: Opportunities awaiting approval
       pending_publish:
-        hint: The following opportunities have been approved, and will be posted after their publish_date.
+        hint: The following opportunities have been approved, and will go live on their publish date.
         none: No pending opportunities
         title: Pending opportunities
   opportunity_status:

@@ -2,6 +2,10 @@
 
 .container {
   @include container;
+
+  &.container_small {
+    max-width: 50rem;
+  }
 }
 
 .main_container {
