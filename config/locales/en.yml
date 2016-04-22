@@ -1,5 +1,6 @@
 ---
 en:
+  ask: Ask
   access_denied: Sorry, you are not allowed to access that page.
   admin: Admin
   allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity

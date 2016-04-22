@@ -16,7 +16,7 @@
     </div>
     <%= simple_form_for [@opportunity, @opportunity.questions.build] do |f| %>
       <%= f.input_field :question_text, placeholder: t('ask_a_question'), 'aria-label' => t('question_text') %>
-      <%= f.button :button %>
+      <%= f.button :button, t('ask'), class: 'primary' %>
     <% end %>
   </div>
 <% end %>
