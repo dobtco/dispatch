@@ -152,6 +152,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dvl-kaminari-views (0.0.3)
+      kaminari (>= 0.13)
     easy_translate (0.5.0)
       json
       thread
@@ -470,6 +472,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   dvl-core!
+  dvl-kaminari-views
   execjs
   factory_girl_rails
   filterer

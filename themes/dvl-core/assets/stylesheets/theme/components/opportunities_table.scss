@@ -1,0 +1,15 @@
+@import 'theme/includes';
+
+.opportunities_table_item {
+  tr:first-child {
+    td {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  tr:last-child {
+    font-size: $fontSmall;
+    color: $darkerGray;
+  }
+}
