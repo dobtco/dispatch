@@ -1,26 +1,21 @@
 ---
 en:
-  created_by_user_at_time: Created by %{user} at %{time}
-  allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
-  save_and_continue: Save and continue
-  name_your_opportunity: Name your opportunity
-  asked_by_user_at_time: Asked by %{user} at %{time}
-  answered_by_user_at_time: Answered by %{user} at %{time}
   access_denied: Sorry, you are not allowed to access that page.
-  answer_text: Answer text
-  ask_a_question: Ask a question…
-  question_text: Question text
-  write_an_answer: Write an answer…
   admin: Admin
+  allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
+  answer_question: Answer question
+  answer_text: Answer text
+  answered_by_user_at_time: Answered by %{user} at %{time}
   approve: Approve
   approve_opportunities: Approve opportunities
+  ask_a_question: Ask a question…
   ask_question: Ask question
+  asked_by_user_at_time: Asked by %{user} at %{time}
   attachments: Attachments
   browse_opportunities: Browse opportunities
-  answer_question: Answer question
-  view_opportunity: View opportunity
   clear_filters: Clear filters
   confirm_alert: Are you sure?
+  created_by_user_at_time: Created by %{user} at %{time}
   deadline: Deadline
   department: Department
   description: Description
@@ -48,27 +43,28 @@ en:
       browse_all: Browse all
       title: Recent opportunities
   mailer:
-    greeting: Hi %{name},
-    footer: This email was sent by %{site_title}.
-    question_answered:
-      subject: New answer to your question on %{site_title}
-      body_html: An answer was posted to your question on <a href='%{href}'>%{title}</a>.
-    question_asked:
-      subject: New question on %{site_title}
-      body_html: A question was posted to <a href='%{href}'>%{title}</a>.
-    search_results:
-      subject: New search results on %{site_title}
-      body: There are new results that match your saved searches.
     approval_request:
-      subject: "%{creator} has requested approval of their opportunity on %{site_title}"
       body_html: "%{creator} has requested approval for their opportunity, <a href='%{href}'>%{title}</a>."
+      subject: "%{creator} has requested approval of their opportunity on %{site_title}"
+    footer: This email was sent by %{site_title}.
+    greeting: Hi %{name},
+    question_answered:
+      body_html: An answer was posted to your question on <a href='%{href}'>%{title}</a>.
+      subject: New answer to your question on %{site_title}
+    question_asked:
+      body_html: A question was posted to <a href='%{href}'>%{title}</a>.
+      subject: New question on %{site_title}
     question_deadline:
-      subject: Deadline reminder for questions about %{opportunity}
       body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
+      subject: Deadline reminder for questions about %{opportunity}
+    search_results:
+      body: There are new results that match your saved searches.
+      subject: New search results on %{site_title}
     submission_deadline:
-      subject: Deadline reminder for submissions to %{opportunity}
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
+      subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
+  name_your_opportunity: Name your opportunity
   no_deadline: No deadline
   no_department: No department
   no_description: No description
@@ -91,9 +87,11 @@ en:
   pending_opportunities: Pending opportunities
   post_opportunity: Post opportunity
   posted_time_ago: Posted %{time_ago}
+  question_text: Question text
   questions: Questions
   request_approval: Request approval
   rss_for_search: RSS Feed for this search
+  save_and_continue: Save and continue
   save_search: Save this search
   saved_searches: Saved searches
   search_saved: This search has been saved. We'll email you with any new results.
@@ -110,5 +108,7 @@ en:
     other: "%{count} unanswered questions"
     zero: No unanswered questions
   unapprove: Un-approve
+  view_opportunity: View opportunity
   view_proposals: View proposals
   view_search: View search
+  write_an_answer: Write an answer…
