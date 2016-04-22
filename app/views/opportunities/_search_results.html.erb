@@ -13,12 +13,18 @@
           <td>
             <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
           </td>
-          <td><%= opportunity.department.name %></td>
+          <td>
+            <% if opportunity.department %>
+              <%= opportunity.department.name %>
+            <% else %>
+              <span class='none'><%= t('no_department') %></span>
+            <% end %>
+          </td>
           <td>
             <% if opportunity.submissions_close_at %>
               <%= opportunity.submissions_close_at %>
             <% else %>
-              <%= t('no_deadline') %>
+              <span class='none'><%= t('no_deadline') %></span>
             <% end %>
           </td>
         </tr>

@@ -39,7 +39,7 @@ class OpportunityFilterer < Filterer::Base
   def apply_default_filters
     results.
       # Workaround for pg_search bullshit
-      joins('JOIN departments as opp_department ON opp_department.id = ' \
+      joins('LEFT JOIN departments as opp_department ON opp_department.id = ' \
             'opportunities.department_id')
   end
 end

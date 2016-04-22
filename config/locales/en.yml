@@ -59,6 +59,7 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
     subscription_preferences: Change subscription preferences
   no_deadline: No deadline
+  no_department: No department
   no_description: No description
   no_opportunities_found: No opportunities found
   no_results: No results
