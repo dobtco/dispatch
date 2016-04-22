@@ -19,7 +19,7 @@
   <%= f.input :name %>
   <%= f.input :email, required: true %>
 
-  <%= f.input :password do %>
+  <%= f.input :password, hint: false do %>
     <a href='<%= edit_user_registration_path(type: 'password') %>'>Change password</a>
   <% end %>
 
