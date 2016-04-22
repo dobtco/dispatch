@@ -1,7 +1,7 @@
 Dispatch [![Circle CI](https://circleci.com/gh/dobtco/dispatch.svg?style=shield)](https://circleci.com/gh/dobtco/dispatch) [![Code Climate](https://codeclimate.com/github/dobtco/dispatch/badges/gpa.svg)](https://codeclimate.com/github/dobtco/dispatch) [![Test Coverage](https://codeclimate.com/github/dobtco/dispatch/badges/coverage.svg)](https://codeclimate.com/github/dobtco/dispatch/coverage)
 ====
 
-Dispatch is an application for cities to advertise their contract opportunities. It was inspired by Beacon, a Code for America 2015 fellowship project, but it has been completely rewritten from the ground-up for solidity and [customizability](docs/customization.md).
+Dispatch is an application for cities to advertise their contract opportunities. It was inspired by Beacon, a Code for America 2015 fellowship project, but it has been completely rewritten from the ground-up for solidity and [customizability](docs/customization.md). Its initial development has been financed by a contract with the City of Philadelphia.
 
 ## Technical overview
 
