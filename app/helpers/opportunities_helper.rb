@@ -15,7 +15,7 @@ module OpportunitiesHelper
         t('opportunity_status.posted')
       else
         t('opportunity_status.waiting_for_publish_date',
-          publish_at: @opportunity.publish_at)
+          publish_at: local_time(@opportunity.publish_at)).html_safe
       end
     elsif @opportunity.submitted_for_approval?
       t('opportunity_status.pending_approval')
