@@ -6,6 +6,10 @@ agency_name: The City of Philadelphia
 # This name should correspond to a subdirectory in the themes/ directory
 theme: dvl-core
 
+footer_links:
+  - text: Contact us
+    href: 'mailto:support@dobt.co'
+
 # Valid options: file, aws
 upload_storage: file
 
