@@ -44,8 +44,8 @@ class ApplicationController < ActionController::Base
         :name,
         :password,
         :business_name,
-        :business_data,
-        subscribe_to_category_ids: []
+        subscribe_to_category_ids: [],
+        business_data: Array(u[:business_data].try(:keys))
       )
     end
 
@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
         :password_confirmation,
         :current_password,
         :business_name,
-        :business_data
+        business_data: Array(u[:business_data].try(:keys))
       )
     end
   end

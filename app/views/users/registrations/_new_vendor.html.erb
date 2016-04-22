@@ -16,6 +16,10 @@
 
   <%= f.input :business_name, required: true %>
 
+  <%= f.simple_fields_for :business_data, OpenStruct.new(f.object.business_data) do |f| %>
+    <%= render partial: 'business_data', locals: { f: f } %>
+  <% end %>
+
   <div class='page_subheader'>
     <h3>2. Create a login</h3>
   </div>

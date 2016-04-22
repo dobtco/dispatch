@@ -31,7 +31,7 @@ Copy `config.yml.example` to `config.yml` and go wild!
 
 ### Adding fields to vendor registration
 
-TBD
+- [x] Override `views/users/registrations/_business_data.html.erb`
 
 ### Adding static pages
 
