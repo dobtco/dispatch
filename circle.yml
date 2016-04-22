@@ -9,16 +9,6 @@ dependencies:
     - "public/assets"
     - "tmp/cache/assets"
 
-# deployment:
-#   staging:
-#     branch: master
-#     commands:
-#       - curl -X POST -d "" https://hooks.cloud66.com/stacks/redeploy/xxx/xxx
-#   production:
-#     branch: production
-#     commands:
-#       - curl -X POST -d "" https://hooks.cloud66.com/stacks/redeploy/xxx/xxx
-
 database:
   override:
     - mv config/database.ci.yml config/database.yml
