@@ -3,9 +3,9 @@
     <h3><%= t('attachments') %></h3>
   </div>
 
-  <ul>
+  <div class='attachment_thumbs'>
     <% @opportunity.attachments.each do |attachment| %>
       <%= render partial: 'view_attachment', locals: { attachment: attachment } %>
     <% end %>
-  </ul>
+  </div>
 <% end %>

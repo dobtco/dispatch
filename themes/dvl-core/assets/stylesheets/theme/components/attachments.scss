@@ -1,0 +1,94 @@
+@import 'theme/includes';
+
+// Match dimensions of .fa.fa-file-o.3x
+
+$attachmentIconWidth: $rhythm * 7;
+$attachmentIconHeight: $rhythm * 8;
+
+.attachment_thumb {
+  display: block;
+  padding: $rhythm * 1.5;
+  border: 1px solid $lightGray;
+  border-radius: $radius;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  width: 15rem;
+  margin-top: $rhythm * 2;
+  img {
+    border: 1px solid rgba(#000,0.2);
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+    .attachment_thumb_name {
+      text-decoration: underline;
+    }
+  }
+  &:focus,
+  &:hover {
+    outline: 0;
+    background: lighten($lightestGray,1%);
+  }
+  &:active {
+    background: $lightestGray;
+  }
+}
+
+.attachment_thumb_img,
+.attachment_thumb_icon {
+  display: block;
+}
+
+.attachment_thumb_img {
+  margin: 0 auto ($rhythm * 1.5);
+}
+
+.attachment_thumb_icon {
+  position: relative;
+  text-align: center;
+  margin: 0 auto $rhythm;
+  width: $attachmentIconWidth;
+  height: $attachmentIconHeight;
+  i {
+    color: $gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  b {
+    position: relative;
+    z-index: 2;
+    color: $darkerGray;
+    width: $attachmentIconWidth;
+    text-align: center;
+    margin-top: $rhythm;
+    line-height: $attachmentIconHeight - $rhythm;
+    @include font_smoothing;
+    text-transform: uppercase;
+    font-size: $fontSmaller;
+    font-weight: $weightBold;
+    letter-spacing: $letterspaceSmaller;
+    display: inline-block;
+  }
+}
+
+.attachment_thumb_body {
+  text-align: center;
+  display: block;
+  @include font_smoothing;
+}
+
+.attachment_thumb_name,
+.attachment_thumb_size {
+  display: block;
+}
+
+.attachment_thumb_name {
+  font-size: $fontSmall;
+  @include ellipses;
+}
+
+.attachment_thumb_size {
+  color: $darkGray;
+  font-size: $fontSmaller;
+}
