@@ -21,7 +21,10 @@
             <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
               <a href='<%= pending_opportunities_path %>'>
                 <% if policy(:opportunity).approve? %>
-                  <%= t('approve_opportunities') %> (<%= Opportunity.not_approved.count %>)
+                  <%= t('approve_opportunities') %>
+                  <% if Opportunity.not_approved.count > 0 %>
+                    <span class='navbar_badge'><%= Opportunity.not_approved.count %></span>
+                  <% end %>
                 <% else %>
                   <%= t('pending_opportunities') %>
                 <% end %>
