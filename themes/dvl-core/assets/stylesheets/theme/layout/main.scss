@@ -6,6 +6,10 @@
   &.container_small {
     max-width: 50rem;
   }
+
+  &.container_tiny {
+    max-width: 40rem;
+  }
 }
 
 .main_container {
@@ -22,4 +26,8 @@
   form {
     max-width: 36rem;
   }
+}
+
+.page_subheader_saved_searches {
+  margin-top: $lineHeight;
 }

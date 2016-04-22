@@ -1,20 +1,33 @@
-<h2>City staff sign up</h2>
+<% content_for(:main_container_class, 'container_tiny') %>
+
+<div class='page_header'>
+  <h2>City staff sign up</h2>
+</div>
 
 <p>To post opportunities, you must have an email account that ends with <strong><%= DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(last_word_connector: ', or ') %></strong>.</p>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
   <input type='hidden' name='type' value='staff' />
 
   <%= f.error_notification %>
 
-  <h3>1. Create a login</h3>
+  <div class='page_subheader'>
+    <h3>1. Create a login</h3>
+  </div>
   <%= f.input :name %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
 
-  <h3>2. Confirm your email address</h3>
-  After you submit this form, we'll send you an email address with a link. You must click that link to access the system.</p>
-  <%= f.button :button %>
+  <div class='page_subheader'>
+    <h3>2. Confirm your email address</h3>
+  </div>
+
+  <p>
+    After you submit this form, we'll send you an email address with a link.
+    You must click that link to access the system.
+  </p>
+
+  <%= f.button :button, class: 'info' %>
 <% end %>
 
 <%= render "users/shared/links" %>
