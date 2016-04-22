@@ -9,7 +9,7 @@ en:
   answered_by_user_at_time: Answered by %{user} at %{time}
   approve: Approve
   approve_opportunities: Approve opportunities
-  ask_a_question: Ask a question…
+  write_your_question: Write your question…
   ask_question: Ask question
   asked_by_user_at_time: Asked by %{user} at %{time}
   attachments: Attachments
