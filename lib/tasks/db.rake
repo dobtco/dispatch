@@ -10,24 +10,30 @@ namespace :db do
         confirmed_at: Time.now
       )
 
-      department = FactoryGirl.create(:department)
+      departments = Array(3).map { FactoryGirl.create(:department) }
 
-      FactoryGirl.create(:category)
+      categories = Array(10).map { FactoryGirl.create(:category) }
 
-      FactoryGirl.create(
+      opp = FactoryGirl.create(
         :opportunity,
         :published,
         :approved,
         created_by_user: user,
-        department: department
+        department: departments.sample,
+        submissions_open_at: Time.now + 1.day,
+        submissions_close_at: Time.now + 1.month
       )
 
-      FactoryGirl.create(
+      opp.categories = categories.sample(2)
+
+      opp_two = FactoryGirl.create(
         :opportunity,
         :published,
         created_by_user: user,
-        department: department
+        department: departments.sample
       )
+
+      opp_two.categories << categories.sample
     end
   end
 

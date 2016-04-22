@@ -10,6 +10,14 @@
 
 FactoryGirl.define do
   factory :department do
-    name 'Office of Management and Budget'
+    sequence(:name) do |i|
+      names = [
+        'Office of Management and Budget',
+        'Office of Technology and Innovation',
+        "Mayor's Office"
+      ]
+
+      names[i % names.length]
+    end
   end
 end

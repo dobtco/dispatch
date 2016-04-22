@@ -10,6 +10,23 @@
 
 FactoryGirl.define do
   factory :category do
-    name 'Custom Computer Programming Services'
+    sequence(:name) do |i|
+      names = [
+        'Business Intelligence & Analytics',
+        'Consulting',
+        'Creative Services',
+        'CRM',
+        'Data Management',
+        'Database',
+        'General',
+        'Mobile Apps',
+        'Process Improvement',
+        'Support',
+        'Web Apps',
+        'Web Design'
+      ]
+
+      names[i % names.length]
+    end
   end
 end

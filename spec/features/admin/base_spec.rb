@@ -25,7 +25,7 @@ describe 'Admin' do
 
       it 'shows resources' do
         visit admin_opportunities_path
-        find('tr', text: deleted_opportunity.title).click_link 'Edit'
+        find('tr a', text: 'Edit').click
         expect(page).to have_text deleted_opportunity.title
       end
     end

@@ -1,6 +1,8 @@
-<div class='sidebar_box'>
-  <ul class='sidebar_button_actions'>
-    <%= render('opportunities/actions/ask_question') %>
-    <%= render('opportunities/actions/submit') %>
-  </ul>
-</div>
+<% if policy(@opportunity).submit? || policy(@opportunity).ask_question? %>
+  <div class='sidebar_box'>
+    <ul class='sidebar_button_actions'>
+      <%= render('opportunities/actions/ask_question') %>
+      <%= render('opportunities/actions/submit') %>
+    </ul>
+  </div>
+<% end %>
