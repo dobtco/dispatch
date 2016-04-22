@@ -1,6 +1,5 @@
 ---
 en:
-  ask: Ask
   access_denied: Sorry, you are not allowed to access that page.
   admin: Admin
   allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
@@ -9,14 +8,14 @@ en:
   answered_by_user_at_time: Answered by %{user} at %{time}
   approve: Approve
   approve_opportunities: Approve opportunities
-  write_your_question: Write your question…
+  ask: Ask
   ask_question: Ask question
   asked_by_user_at_time: Asked by %{user} at %{time}
   attachments: Attachments
-  keep_editing: Keep editing
   browse_opportunities: Browse opportunities
   clear_filters: Clear filters
   confirm_alert: Are you sure?
+  create_account: Create account
   created_by_user_at_time: Created by %{user} at %{time}
   deadline: Deadline
   department: Department
@@ -24,8 +23,8 @@ en:
   destroy: Destroy
   destroy_opportunity: Destroy opportunity
   edit: Edit
-  edit_opportunity: Edit opportunity
   edit_answer: Edit answer
+  edit_opportunity: Edit opportunity
   edit_opportunity_steps:
     description:
       title: Description
@@ -45,6 +44,7 @@ en:
     recent_opportunities:
       browse_all: Browse all
       title: Recent opportunities
+  keep_editing: Keep editing
   mailer:
     approval_request:
       body_html: "%{creator} has requested approval for their opportunity, <a href='%{href}'>%{title}</a>."
@@ -84,9 +84,9 @@ en:
         title: Pending opportunities
   opportunity_status:
     not_approved: If everything looks good, submit this opportunity for approval.
-    submitted_for_approval: You submitted this opportunity for approval on %{date}.
     pending_approval: This opportunity won't go live until you approve it.
     posted: This opportunity is posted and viewable to the public.
+    submitted_for_approval: You submitted this opportunity for approval on %{date}.
     waiting_for_publish_date: This opportunity will be posted at %{date}.
   pending_opportunities: Pending opportunities
   post_opportunity: Post opportunity
@@ -102,6 +102,13 @@ en:
   search_saved_at_time: Search saved at %{time}
   sign_in: Sign in
   sign_out: Sign out
+  simple_form:
+    hints:
+      user:
+        business_name: Leave this blank if it's not relevant to you
+        email: We'll send a confirmation email to this address before you can log in
+        name: Your full name, please!
+        password: Make it at least 8 characters
   submit_proposal: Submit proposal
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates
@@ -111,7 +118,26 @@ en:
     one: 1 unanswered question
     other: "%{count} unanswered questions"
   unapprove: Un-approve
+  users:
+    registrations:
+      confirm:
+        body: |-
+          We sent you an email containing a confirmation link.
+          Please click the link in order to confirm your account.
+        title: Please confirm your account
+      new_staff:
+        email_domain_hint: To post opportunities, you must have an email account that ends with %{domains}.
+        title: City staff sign up
+      new_vendor:
+        business_header: Tell us about your business
+        login_header: Create a login
+        notifications_header: Choose notifications
+        select_categories:
+          hint: We'll send you a weekly digest with results that match these categories.
+          label: What types of opportunities are you interested in?
+        title: Vendor sign up
   view_opportunity: View opportunity
   view_proposals: View proposals
   view_search: View search
   write_an_answer: Write an answer…
+  write_your_question: Write your question…

@@ -1,34 +1,20 @@
-<% content_for(:page_title, 'City staff sign up') %>
+<% content_for(:page_title, t('.title')) %>
 <% content_for(:main_container_class, 'container_tiny') %>
 
 <div class='page_header'>
-  <h2>City staff sign up</h2>
+  <h2><%= t('.title') %></h2>
 </div>
 
-<p>To post opportunities, you must have an email account that ends with <strong><%= DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(last_word_connector: ', or ') %></strong>.</p>
+<p>
+  <%= t('.email_domain_hint', domains: DispatchConfiguration.staff_domains.map { |x| "<strong>@#{x}</strong>" }.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ', or ')).html_safe %>
+</p>
 
 <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
   <input type='hidden' name='type' value='staff' />
 
-  <%= f.error_notification %>
-
-  <div class='page_subheader'>
-    <h3>1. Create a login</h3>
-  </div>
   <%= f.input :name %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
 
-  <div class='page_subheader'>
-    <h3>2. Confirm your email address</h3>
-  </div>
-
-  <p>
-    After you submit this form, we'll send you an email address with a link.
-    You must click that link to access the system.
-  </p>
-
-  <%= f.button :button, class: 'primary' %>
+  <%= f.button :button, t('create_account'), class: 'primary' %>
 <% end %>
-
-<%= render "users/shared/links" %>

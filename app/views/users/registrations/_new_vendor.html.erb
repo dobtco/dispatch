@@ -1,18 +1,14 @@
-<% content_for(:page_title, 'Vendor sign up') %>
+<% content_for(:page_title, t('.title')) %>
 <% content_for(:main_container_class, 'container_tiny') %>
 
 <div class='page_header'>
-  <h2>Vendor sign up</h2>
+  <h2><%= t('.title') %></h2>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <input type='hidden' name='type' value='vendor' />
 
-  <%= f.error_notification %>
-
-  <div class='page_subheader'>
-    <h3>1. Tell us about your business</h3>
-  </div>
+  <div class='page_subheader'><h3><%= t('.business_header') %></h3></div>
 
   <%= f.input :business_name, required: true %>
 
@@ -20,30 +16,15 @@
     <%= render partial: 'business_data', locals: { f: f } %>
   <% end %>
 
-  <div class='page_subheader'>
-    <h3>2. Create a login</h3>
-  </div>
+  <div class='page_subheader'><h3><%= t('.login_header') %></h3></div>
 
   <%= f.input :name %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
 
-  <div class='page_subheader'>
-    <h3>3. Choose notifications</h3>
-  </div>
+  <div class='page_subheader'><h3><%= t('.notifications_header') %></h3></div>
 
-  <%= f.input :subscribe_to_category_ids, as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
+  <%= f.input :subscribe_to_category_ids, label: t('.select_categories.label'), hint: t('.select_categories.hint'), as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
-  <div class='page_subheader'>
-    <h3>4. Confirm your email address</h3>
-  </div>
-
-  <p>
-    After you submit this form, we'll send you an email address with a link.
-    You must click that link to access the system.
-  </p>
-
-  <%= f.button :button, class: 'primary' %>
+  <%= f.button :button, t('create_account'), class: 'primary' %>
 <% end %>
-
-<%= render "users/shared/links" %>

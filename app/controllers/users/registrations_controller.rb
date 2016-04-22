@@ -3,12 +3,21 @@ module Users
     before_filter :set_signup_type, only: [:new, :create]
     before_filter :set_edit_type, only: [:edit, :update]
 
+    def confirm
+      require_no_authentication
+    end
+
     def update_resource(resource, params)
       if params.key?(:current_password)
         super
       else
         resource.update_without_password(params)
       end
+    end
+
+    def after_inactive_sign_up_path_for(resource)
+      flash.delete(:notice) # Don't display a redundant flash
+      users_confirm_path
     end
 
     def after_update_path_for(_resource)

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
+
   namespace :admin do
     resources :users
     resources :attachments
@@ -18,7 +20,9 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
 
-  root to: 'home#index'
+  devise_scope :user do
+    get 'users/confirm' => 'users/registrations#confirm'
+  end
 
   DispatchConfiguration.static_pages.each do |x|
     get x['path'] => "static##{x['path']}"
