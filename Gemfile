@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'simple_form_legend'
 gem 'sprockets-rails'
 gem 'storage_unit'
+gem 'thin', require: false
 gem 'uglifier'
 gem 'utf8-cleaner'
 gem 'whenever', require: false
@@ -75,7 +76,6 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'rubocop', require: false
-  gem 'thin', require: false
 end
 
 group :staging, :production do
