@@ -1,0 +1,5 @@
+<% if policy(@opportunity).approve? && @opportunity.approved? %>
+  <li>
+    <a href='<%= approve_opportunity_path %>' data-method='post'><%= t('unapprove') %></a>
+  </li>
+<% end %>

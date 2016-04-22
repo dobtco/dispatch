@@ -1,15 +1,36 @@
-<% if policy(@opportunity).edit? %>
+<% if @opportunity.approved? %>
   <div class='alert'>
-    <span class='alert_message'><%= opportunity_status_text %></span>
+    <span class='alert_message'>
+      <%= t('opportunity_status.waiting_for_publish_date', date: local_time(@opportunity.publish_at)).html_safe %>
+    </span>
+    <% if policy(@opportunity).edit? %>
+      <span class='alert_buttons'>
+        <a class='button' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
+      </span>
+    <% end %>
+  </div>
+<% elsif policy(@opportunity).approve? %>
+  <div class='alert'>
+    <span class='alert_message'><%= t('opportunity_status.pending_approval') %></span>
     <span class='alert_buttons'>
-      <a class='button primary' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
+      <a class='button' href='<%= edit_opportunity_path %>'><%= t('keep_editing') %></a>
+      <a class='button primary' href='<%= approve_opportunity_path %>' data-method='post'><%= t('approve') %></a>
+    </span>
+  </div>
+<% elsif policy(@opportunity).edit? %>
+  <div class='alert'>
+    <span class='alert_message'>
+      <% if @opportunity.submitted_for_approval? %>
+        <%= t('opportunity_status.submitted_for_approval', date: local_time(@opportunity.submitted_at)).html_safe %>
+      <% else %>
+        <%= t('opportunity_status.not_approved') %>
+      <% end %>
+    </span>
+    <span class='alert_buttons'>
+      <a class='button' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
 
-      <% if policy(@opportunity).approve? %>
-        <a class='button' href='<%= approve_opportunity_path %>' data-method='post'>
-          <%= @opportunity.approved? ? t('unapprove') : t('approve') %>
-        </a>
-      <% elsif !@opportunity.approved? && !@opportunity.submitted_for_approval? %>
-        <a class='button' href='<%= request_approval_opportunity_path %>' data-method='post'><%= t('request_approval') %></a>
+      <% if !@opportunity.submitted_for_approval? %>
+        <a class='button primary' href='<%= request_approval_opportunity_path %>' data-method='post'><%= t('request_approval') %></a>
       <% end %>
     </span>
   </div>

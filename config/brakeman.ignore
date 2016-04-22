@@ -1,0 +1,42 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "42b1c5b0186b73cb18997d8696aeee63947b3f8be66bf613736ed7fd033ca66c",
+      "message": "Unescaped model attribute",
+      "file": "app/views/opportunities/_admin_status.html.erb",
+      "line": 4,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"opportunity_status.waiting_for_publish_date\", :date => local_time(Opportunity.find(params[:id]).publish_at))",
+      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
+      "location": {
+        "type": "template",
+        "template": "opportunities/_admin_status"
+      },
+      "user_input": "Opportunity.find(params[:id]).publish_at",
+      "confidence": "Weak",
+      "note": "datetime"
+    },
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "e8023f8774c544addbd1098c4e7cf0b69baaa79c3f9a4a722846fec14dc0a37f",
+      "message": "Unescaped model attribute",
+      "file": "app/views/opportunities/_admin_status.html.erb",
+      "line": 24,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"opportunity_status.submitted_for_approval\", :date => local_time(Opportunity.find(params[:id]).submitted_at))",
+      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
+      "location": {
+        "type": "template",
+        "template": "opportunities/_admin_status"
+      },
+      "user_input": "Opportunity.find(params[:id]).submitted_at",
+      "confidence": "Weak",
+      "note": "datetime"
+    }
+  ],
+  "updated": "2016-04-22 15:17:56 -0400",
+  "brakeman_version": "3.2.1"
+}

@@ -1,0 +1,5 @@
+<% if policy(@opportunity).edit? && @opportunity.approved? %>
+  <li>
+    <a href='<%= edit_opportunity_path %>'><%= t('edit_opportunity') %></a>
+  </li>
+<% end %>

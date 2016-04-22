@@ -102,7 +102,7 @@ describe 'Opportunities - Show' do
           admin, opportunity
         ).and_return(OpenStruct.new(perform: nil))
         click_link t('request_approval')
-        expect(page).to have_text t('opportunity_status.pending_approval')
+        expect(page).to have_text 'You submitted this opportunity'
       end
     end
   end
