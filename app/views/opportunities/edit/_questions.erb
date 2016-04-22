@@ -1,6 +1,9 @@
 <%= f.input :enable_questions, as: :boolean, inline_label: t('allow_vendors_to_ask_questions') %>
 
 <div data-show-if-checked='opportunity[enable_questions]' <% unless f.object.enable_questions? %>style='display:none'<% end %>>
-  <%= f.input :questions_open_at, as: :datetime_picker %>
-  <%= f.input :questions_close_at, as: :datetime_picker %>
+  <%= f.input :question_dates, wrapper_html: { class: 'date_range' } do %>
+    <%= f.input_field :questions_open_at, as: :datetime_picker %>
+    <span>to</span>
+    <%= f.input_field :questions_close_at, as: :datetime_picker %>
+  <% end %>
 </div>

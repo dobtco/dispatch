@@ -1,0 +1,16 @@
+@import 'theme/includes';
+
+.date_range {
+  input {
+    display: inline;
+    width: 10rem;
+  }
+
+  input, span {
+    margin-right: $rhythm;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -34,6 +34,7 @@ en:
       title: Submissions
     title:
       title: Title
+  email: Email
   filter_opportunities: Filter opportunities
   get_started: Get started
   home:
@@ -68,6 +69,7 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
+  name: Name
   no_deadline: No deadline
   no_department: No department
   no_description: No description
@@ -91,6 +93,7 @@ en:
     submitted_for_approval: You submitted this opportunity for approval on %{date}.
     waiting_for_publish_date: This opportunity will be posted at %{date}.
   pending_opportunities: Pending opportunities
+  phone: Phone
   post_opportunity: Post opportunity
   posted_time_ago: Posted %{time_ago}
   question_text: Question text
@@ -106,11 +109,29 @@ en:
   sign_out: Sign out
   simple_form:
     hints:
+      opportunity:
+        category_ids: |-
+          Vendors who subscribe to these categories will be notified of your opportunity.
+          Choose these carefully!
+        contact_info: This information will be publicly displayed on your opportunity page
+        description: Keep it short and sweet. You can upload your full RFP later.
+        publish_at: Your opportunity will be hidden from the public until this date
+        submission_adapter_data:
+          embed_token: Create a project on Screendoor and paste its embed token here.
       user:
         business_name: Leave this blank if it's not relevant to you
         email: We'll send a confirmation email to this address before you can log in
         name: Your full name, please!
         password: Make it at least 8 characters
+    labels:
+      opportunity:
+        category_ids: Categorize as…
+        publish_at: Publish on…
+        question_dates: Question period from…
+        submission_adapter_data:
+          submit_to: Send proposals to…
+        submission_adapter_name: Accept submissions through…
+        submission_dates: Submission period from…
     placeholders:
       opportunity:
         title: RFP for Integrated Library System

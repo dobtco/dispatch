@@ -1,8 +1,12 @@
 <%= f.input :department_id, as: :select, collection: Department.all %>
 <%= f.input :description %>
-<%= f.input :contact_name %>
-<%= f.input :contact_email %>
-<%= f.input :contact_phone %>
+
+<%= f.input :contact_info do %>
+  <%= f.input :contact_name, label: t('name'), wrapper: :vertical %>
+  <%= f.input :contact_email, label: t('email'), wrapper: :vertical %>
+  <%= f.input :contact_phone, label: t('phone'), wrapper: :vertical %>
+<% end %>
+
 <%= f.input :publish_at, as: :datetime_picker %>
 <%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 

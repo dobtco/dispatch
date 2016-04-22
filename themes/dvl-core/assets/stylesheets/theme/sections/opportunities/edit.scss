@@ -1,3 +1,9 @@
+@import 'theme/includes';
+
 #opportunity_description {
   min-height: 14rem;
+}
+
+.opportunity_contact_name {
+  margin-top: $rhythm;
 }
