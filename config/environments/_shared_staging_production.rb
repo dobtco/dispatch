@@ -6,7 +6,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Nginx serves our assets
-  config.serve_static_files = false
+  config.serve_static_files = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -22,7 +22,7 @@ Rails.application.configure do
   config.assets.version = '1.0'
 
   # Necessary for rails_oneline_logging
-  config.log_level = :warn
+  config.log_level = :info
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
