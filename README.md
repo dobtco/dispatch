@@ -30,3 +30,7 @@ We automatically generate a dummy user account. You can login as `admin@example.
 Make sure you have a test database by running `rake db:test:prepare`. Then, either use `bin/guard`, which will watch for changes and run tests automatically, or run `rspec` directly.
 
 (If you're on Linux, you'll need to [manually run an X server](https://github.com/thoughtbot/capybara-webkit/blob/v1.3.0/README.md#ci) before running javascript-enabled specs.)
+
+## License
+
+[MIT](http://dobtco.mit-license.org)
