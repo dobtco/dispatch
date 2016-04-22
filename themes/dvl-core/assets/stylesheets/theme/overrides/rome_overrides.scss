@@ -1,0 +1,9 @@
+// Eventually, this should become part of dvl-core
+
+@import 'theme/includes';
+
+.rd-container {
+  td {
+    padding: $rhythm;
+  }
+}

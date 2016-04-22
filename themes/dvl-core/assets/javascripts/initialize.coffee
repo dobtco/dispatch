@@ -1,0 +1,3 @@
+$ ->
+  $('body').styledSelect()
+  $('body').styledControls()
