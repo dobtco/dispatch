@@ -1,6 +1,12 @@
 ---
 en:
+  asked_by_user_at_time: Asked by %{user} at %{time}
+  answered_by_user_at_time: Answered by %{user} at %{time}
   access_denied: Sorry, you are not allowed to access that page.
+  answer_text: Answer text
+  ask_a_question: Ask a question…
+  question_text: Question text
+  write_an_answer: Write an answer…
   admin: Admin
   approve: Approve
   approve_opportunities: Approve opportunities

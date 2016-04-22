@@ -1,19 +1,27 @@
-<div id="<%= dom_id(question) %>">
-  <div><%= format_textarea_input(question.question_text) %></div>
+<div id="<%= dom_id(question) %>" class='question'>
+  <div class='question_asked_by'>
+    <%= t('asked_by_user_at_time', user: question.asked_by_user.try(:name) || 'Unknown', time: question.created_at) %>
+  </div>
+  <div class='question_question_text'><%= format_textarea_input(question.question_text) %></div>
 
   <% if policy(@opportunity).answer_questions? %>
     <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
-      <%= f.input :answer_text %>
+      <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_an_answer')  %>
       <%= f.button :button %>
     <% end %>
   <% end %>
 
   <% if question.answered? %>
-    <div data-toggle='edit-answer-<%= question.id %>'><%= format_textarea_input(question.answer_text) %></div>
+    <div class='question_answer' data-toggle='edit-answer-<%= question.id %>'>
+      <div class='question_answered_by'>
+        <%= t('answered_by_user_at_time', user: question.answered_by_user.try(:name) || 'Unknown', time: question.answered_at) %>
+      </div>
+      <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
+    </div>
   <% end %>
 
   <% if policy(@opportunity).answer_questions? %>
-    <ul>
+    <ul class='question_admin_links'>
       <% if question.answered? %>
         <li>
           <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
