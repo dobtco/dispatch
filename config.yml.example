@@ -10,6 +10,10 @@ footer_links:
   - text: Contact us
     href: 'mailto:support@dobt.co'
 
+static_pages:
+  - name: About
+    path: about
+
 # Valid options: file, aws
 upload_storage: file
 

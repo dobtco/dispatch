@@ -35,4 +35,4 @@ TBD
 
 ### Adding static pages
 
-TBD
+Add templates to `views/static`, add keys to `static_pages` configuration.

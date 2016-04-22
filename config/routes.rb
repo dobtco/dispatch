@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  DispatchConfiguration.static_pages.each do |x|
+    get x['path'] => "static##{x['path']}"
+  end
+
   resources :saved_searches, only: [:create, :destroy]
 
   resources :opportunities do
