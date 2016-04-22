@@ -7,18 +7,18 @@
     <div class='navbar_content_wrapper'>
       <div class='navbar_content navbar_content_primary'>
         <ul>
-          <li <% if parameterized_controller_and_action == 'opportunities-index' %>class='active'<% end %>>
+          <li <% if content_for(:page_key) == 'opportunities-index' %>class='active'<% end %>>
             <a href='<%= opportunities_path %>'><%= t('browse_opportunities') %></a>
           </li>
 
           <% if policy(:opportunity).create? %>
-            <li <% if parameterized_controller_and_action == 'opportunities-new' %>class='active'<% end %>>
+            <li <% if content_for(:page_key) == 'opportunities-new' %>class='active'<% end %>>
               <a href='<%= new_opportunity_path %>'><%= t('post_opportunity') %></a>
             </li>
           <% end %>
 
           <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
-            <li <% if parameterized_controller_and_action == 'opportunities-pending' %>class='active'<% end %>>
+            <li <% if content_for(:page_key) == 'opportunities-pending' %>class='active'<% end %>>
               <a href='<%= pending_opportunities_path %>'>
                 <% if policy(:opportunity).approve? %>
                   <%= t('approve_opportunities') %>

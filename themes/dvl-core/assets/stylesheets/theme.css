@@ -3,4 +3,5 @@
 *= require_tree ./theme/layout
 *= require_tree ./theme/components
 *= require_tree ./theme/overrides
+*= require_tree ./theme/sections
  */

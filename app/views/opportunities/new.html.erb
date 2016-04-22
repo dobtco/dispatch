@@ -1,6 +1,10 @@
-<h2>New opportunity</h2>
+<% content_for(:page_key, 'opportunities-new') %>
+
+<div class='page_header'>
+  <h2><%= t('post_opportunity') %></h2>
+</div>
 
 <%= simple_form_for @opportunity do |f| %>
   <%= f.input :title %>
-  <%= f.button :button %>
+  <%= f.button :button, class: 'info' %>
 <% end %>

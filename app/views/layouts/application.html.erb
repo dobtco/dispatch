@@ -12,7 +12,7 @@
   <% end %>
   <script>window.jQuery || document.write('<script src="/non_digest_assets/jquery.js"><\/script>')</script>
 </head>
-<body class="<%= parameterized_controller_and_action %>" data-page-key="<%= parameterized_controller_and_action %>">
+<body class="<%= yield(:page_key) %>" data-page-key="<%= yield(:page_key) %>">
   <%= render('navbar') %>
   <%= render('flashes') %>
   <%= render('inner_layout') %>

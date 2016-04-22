@@ -1,3 +1,5 @@
+<% content_for(:page_key, 'opportunities-pending') %>
+
 <% if @pending_approval_opportunities.present? %>
   <h2><%= t('.pending_approval.title') %> (<%= @pending_approval_opportunities.length %>)</h2>
 

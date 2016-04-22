@@ -7,10 +7,6 @@ module ApplicationHelper
     end
   end
 
-  def parameterized_controller_and_action
-    "#{controller_name}-#{action_name}"
-  end
-
   # Workaround for https://github.com/plataformatec/devise/issues/3748
   def flashes_with_consistent_keys
     devise_flash_key_mappings = {
