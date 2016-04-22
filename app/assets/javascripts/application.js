@@ -10,12 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require jquery-ujs
 //= require jquery-form
+//= require jquery-timeago
 //= require inline_file_upload
 //= require selectize/standalone/selectize
-//= require local_time
 //= require moment
 //= require rome/rome.standalone.js
 //= require theme
 //= require_tree .
+
+var App = {};

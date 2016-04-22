@@ -234,8 +234,6 @@ GEM
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
-    local_time (1.0.3)
-      coffee-rails
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.10)
@@ -302,6 +300,8 @@ GEM
     rails-assets-jquery (2.2.3)
     rails-assets-jquery-form (3.46.0)
       rails-assets-jquery (>= 1.5)
+    rails-assets-jquery-timeago (1.4.1)
+      rails-assets-jquery (>= 1.4)
     rails-assets-jquery-ujs (1.2.1)
       rails-assets-jquery (> 1.8)
     rails-assets-microplugin (0.0.3)
@@ -486,7 +486,6 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
-  local_time
   mini_magick
   newrelic_rpm
   pg
@@ -498,6 +497,7 @@ DEPENDENCIES
   rails-assets-inline_file_upload!
   rails-assets-jquery!
   rails-assets-jquery-form!
+  rails-assets-jquery-timeago!
   rails-assets-jquery-ujs!
   rails-assets-rome!
   rails-assets-selectize!

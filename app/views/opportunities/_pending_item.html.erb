@@ -1,4 +1,4 @@
 <li>
   <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
-  <p class='none'><%= t('created_by_user_at_time', user: opportunity.created_by_user.name, time: local_time(opportunity.created_at)).html_safe %></p>
+  <p class='none'><%= t('created_by_user_at_time', user: opportunity.created_by_user.name, timestamp: long_timestamp(opportunity.created_at)).html_safe %></p>
 </li>

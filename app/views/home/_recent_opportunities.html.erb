@@ -10,7 +10,7 @@
     <% @recent_opportunities.each do |opportunity| %>
       <li>
         <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
-        <div class='none'><%= t('posted_time_ago', time_ago: local_time_ago(opportunity.posted_at)).html_safe %></div>
+        <div class='none'><%= t('posted_time_ago', time_ago: relative_timestamp(opportunity.posted_at)).html_safe %></div>
       </li>
     <% end %>
   </ul>

@@ -8,7 +8,7 @@
       "file": "app/views/opportunities/_admin_status.html.erb",
       "line": 4,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "t(\"opportunity_status.waiting_for_publish_date\", :date => local_time(Opportunity.find(params[:id]).publish_at))",
+      "code": "t(\"opportunity_status.waiting_for_publish_date\", :date => long_timestamp(Opportunity.find(params[:id]).publish_at))",
       "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",
@@ -26,7 +26,7 @@
       "file": "app/views/opportunities/_admin_status.html.erb",
       "line": 24,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "t(\"opportunity_status.submitted_for_approval\", :date => local_time(Opportunity.find(params[:id]).submitted_at))",
+      "code": "t(\"opportunity_status.submitted_for_approval\", :date => long_timestamp(Opportunity.find(params[:id]).submitted_at))",
       "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",

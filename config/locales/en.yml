@@ -5,18 +5,18 @@ en:
   allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user_at_time: Answered by %{user} at %{time}
+  answered_by_user_at_time: Answered by %{user} on %{timestamp}
   approve: Approve
   approve_opportunities: Approve opportunities
   ask: Ask
   ask_question: Ask question
-  asked_by_user_at_time: Asked by %{user} at %{time}
+  asked_by_user_at_time: Asked by %{user} on %{timestamp}
   attachments: Attachments
   browse_opportunities: Browse opportunities
   clear_filters: Clear filters
   confirm_alert: Are you sure?
   create_account: Create account
-  created_by_user_at_time: Created by %{user} at %{time}
+  created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
   department: Department
   description: Description
@@ -90,8 +90,8 @@ en:
     not_approved: If everything looks good, submit this opportunity for approval.
     pending_approval: This opportunity won't go live until you approve it.
     posted: This opportunity is posted and viewable to the public.
-    submitted_for_approval: You submitted this opportunity for approval on %{date}.
-    waiting_for_publish_date: This opportunity will be posted at %{date}.
+    submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
+    waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   pending_opportunities: Pending opportunities
   phone: Phone
   post_opportunity: Post opportunity
@@ -104,7 +104,7 @@ en:
   save_search: Save this search
   saved_searches: Saved searches
   search_saved: This search has been saved. We'll email you with any new results.
-  search_saved_at_time: Search saved at %{time}
+  search_saved_at_time: Search saved on %{timestamp}
   sign_in: Sign in
   sign_out: Sign out
   simple_form:
@@ -139,6 +139,11 @@ en:
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates
   subscribed_success: You will be reminded of deadlines for this opportunity
+  time:
+    formats:
+      long: "%b %-e, %Y at %-l:%M%P"
+      long_no_year: "%b %-e at %-l:%M%P"
+      short: "%-m/%d/%y"
   title: Title
   unanswered_questions:
     one: 1 unanswered question

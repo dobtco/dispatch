@@ -6,7 +6,7 @@
   <ul class='formatted_list'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <%= t('search_saved_at_time', time: local_time(saved_search.created_at)).html_safe %>
+        <%= t('search_saved_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
         <div>
           <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_search') %></a>
           <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
