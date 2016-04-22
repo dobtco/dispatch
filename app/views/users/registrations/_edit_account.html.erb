@@ -8,8 +8,6 @@
 <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f| %>
   <input type='hidden' name='type' value='account' />
 
-  <%= f.error_notification %>
-
   <% unless current_user.permission_level_is_at_least?('staff') %>
     <%= f.input :business_name, required: true %>
   <% end %>
@@ -24,25 +22,4 @@
   <%= f.button :button, class: 'primary' %>
 <% end %>
 
-<div class='page_subheader page_subheader_saved_searches'>
-  <h3><%= t('saved_searches') %></h3>
-</div>
-
-<% if current_user.saved_searches.present? %>
-  <ul class='formatted_list'>
-    <% current_user.saved_searches.each do |saved_search| %>
-      <li>
-        <%= t('search_saved_at_time', time: saved_search.created_at) %>
-        <div>
-          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_search') %></a>
-          <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <div class='blank_slate'>
-    <i class='fa fa-search'></i>
-    <h4><%= t('no_saved_searches') %></h4>
-  </div>
-<% end %>
+<%= render 'account_saved_searches' %>

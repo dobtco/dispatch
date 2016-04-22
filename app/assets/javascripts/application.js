@@ -14,6 +14,7 @@
 //= require jquery-form
 //= require inline_file_upload
 //= require selectize/standalone/selectize
+//= require local_time
 //= require moment
 //= require rome/rome.standalone.js
 //= require theme

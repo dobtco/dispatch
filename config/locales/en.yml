@@ -90,7 +90,7 @@ en:
     waiting_for_publish_date: This opportunity will be posted at %{publish_at}.
   pending_opportunities: Pending opportunities
   post_opportunity: Post opportunity
-  posted_time_ago: Posted %{time_ago} ago
+  posted_time_ago: Posted %{time_ago}
   questions: Questions
   request_approval: Request approval
   rss_for_search: RSS Feed for this search
