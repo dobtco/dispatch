@@ -116,9 +116,6 @@ class OpportunitiesController < ApplicationController
   def submit
     authorize @opportunity, :submit?
     deny_access unless @opportunity.submission_page
-
-    render "submission_adapters/#{@opportunity.submission_adapter.to_param}" \
-           '/submit'
   end
 
   private

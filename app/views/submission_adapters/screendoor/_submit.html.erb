@@ -5,6 +5,7 @@
 <% content_for :extra_js do %>
   <script src="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.js"></script>
   <script>
+    FormRenderer.BUTTON_CLASS = 'button primary';
     new FormRenderer({"project_id":"<%= @opportunity.submission_adapter_data['embed_token'] %>"});
   </script>
 <% end %>
