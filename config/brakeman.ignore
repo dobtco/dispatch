@@ -3,12 +3,12 @@
     {
       "warning_type": "Cross Site Scripting",
       "warning_code": 2,
-      "fingerprint": "42b1c5b0186b73cb18997d8696aeee63947b3f8be66bf613736ed7fd033ca66c",
+      "fingerprint": "8ab69ed685545fe87115821bef49bfdcf5ea5f590dfc0b81d03bc927371a22c6",
       "message": "Unescaped model attribute",
       "file": "app/views/opportunities/_admin_status.html.erb",
       "line": 4,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "t(\"opportunity_status.waiting_for_publish_date\", :date => long_timestamp(Opportunity.find(params[:id]).publish_at))",
+      "code": "t(\"opportunity_status.waiting_for_publish_date\", :timestamp => long_timestamp(Opportunity.find(params[:id]).publish_at))",
       "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",
@@ -16,17 +16,17 @@
       },
       "user_input": "Opportunity.find(params[:id]).publish_at",
       "confidence": "Weak",
-      "note": "datetime"
+      "note": "timestamp"
     },
     {
       "warning_type": "Cross Site Scripting",
       "warning_code": 2,
-      "fingerprint": "e8023f8774c544addbd1098c4e7cf0b69baaa79c3f9a4a722846fec14dc0a37f",
+      "fingerprint": "ed15f74dbd835793e2647c4b23f47f662913927d478d3d48827c4fabbf0040f4",
       "message": "Unescaped model attribute",
       "file": "app/views/opportunities/_admin_status.html.erb",
       "line": 24,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "t(\"opportunity_status.submitted_for_approval\", :date => long_timestamp(Opportunity.find(params[:id]).submitted_at))",
+      "code": "t(\"opportunity_status.submitted_for_approval\", :timestamp => long_timestamp(Opportunity.find(params[:id]).submitted_at))",
       "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",
@@ -34,9 +34,9 @@
       },
       "user_input": "Opportunity.find(params[:id]).submitted_at",
       "confidence": "Weak",
-      "note": "datetime"
+      "note": "timestamp"
     }
   ],
-  "updated": "2016-04-22 15:17:56 -0400",
+  "updated": "2016-04-22 17:16:17 -0400",
   "brakeman_version": "3.2.1"
 }
