@@ -20,13 +20,10 @@
           <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
             <li <% if content_for(:page_key) == 'opportunities-pending' %>class='active'<% end %>>
               <a href='<%= pending_opportunities_path %>'>
-                <% if policy(:opportunity).approve? %>
-                  <%= t('approve_opportunities') %>
-                  <% if Opportunity.not_approved.count > 0 %>
-                    <span class='navbar_badge'><%= Opportunity.not_approved.count %></span>
-                  <% end %>
-                <% else %>
-                  <%= t('pending_opportunities') %>
+                <%= pending_opportunities_page_title %>
+
+                <% if policy(:opportunity).approve? && Opportunity.not_approved.count > 0 %>
+                  <span class='navbar_badge'><%= Opportunity.not_approved.count %></span>
                 <% end %>
               </a>
             </li>

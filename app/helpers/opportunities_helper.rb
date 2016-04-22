@@ -36,4 +36,12 @@ module OpportunitiesHelper
   def submission_adapter_edit_partial(adapter_class)
     "submission_adapters/#{adapter_class.to_param}/edit"
   end
+
+  def pending_opportunities_page_title
+    if policy(:opportunity).approve?
+      t('approve_opportunities')
+    else
+      t('pending_opportunities')
+    end
+  end
 end
