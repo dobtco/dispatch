@@ -8,8 +8,8 @@ module SubmissionAdapters
       "#{@opportunity.submission_adapter_data['embed_token']}/admin"
     end
 
-    def view_proposals_instructions
-      'Submissions can be reviewed on Screendoor.'
+    def view_proposals_link_text
+      'Review submissions on Screendoor'
     end
 
     def submit_proposals_instructions

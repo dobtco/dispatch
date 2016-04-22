@@ -1,6 +1,6 @@
 <% if policy(@opportunity).answer_questions? %>
   <li>
-    <a class='button block' href='#questions'>
+    <a href='#questions'>
       <%= t('unanswered_questions', count: @opportunity.questions.unanswered.count) %>
     </a>
   </li>

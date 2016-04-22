@@ -45,7 +45,7 @@ class OpportunityPolicy < Struct.new(:user, :opportunity)
     opportunity_admin? &&
     (
       opportunity.view_proposals_url ||
-      opportunity.view_proposals_instructions
+      opportunity.view_proposals_link_text
     )
   end
 

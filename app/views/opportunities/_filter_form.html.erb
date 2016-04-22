@@ -3,7 +3,7 @@
   <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
 
   <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
-  <%= f.input :status, required: false, as: :select, collection: [['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status] %>
+  <%= f.input :status, required: false, as: :select, collection: [['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status], input_html: { 'data-width' => 'full' } %>
   <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
   <%= f.button :button, t('filter_opportunities'), class: 'info' %>

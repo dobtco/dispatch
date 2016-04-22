@@ -1,0 +1,7 @@
+<% if policy(@opportunity).destroy? %>
+  <li>
+    <a href='<%= opportunity_path %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'>
+      <%= t('destroy_opportunity') %>
+    </a>
+  </li>
+<% end %>

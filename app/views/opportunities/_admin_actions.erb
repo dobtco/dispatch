@@ -1,8 +1,7 @@
-<% if policy(@opportunity).review_submissions? || policy(@opportunity).answer_questions? %>
-  <div class='sidebar_box'>
-    <ul class='sidebar_button_actions'>
-      <%= render('opportunities/actions/review_submissions') %>
-      <%= render('opportunities/actions/answer_questions') %>
-    </ul>
-  </div>
+<% if policy(@opportunity).review_submissions? || policy(@opportunity).answer_questions? || policy(@opportunity).destroy? %>
+  <ul class='sidebar_sub_actions'>
+    <%= render('opportunities/actions/review_submissions') %>
+    <%= render('opportunities/actions/answer_questions') %>
+    <%= render('opportunities/actions/destroy') %>
+  </ul>
 <% end %>

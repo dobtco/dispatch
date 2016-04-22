@@ -15,6 +15,7 @@ en:
   department: Department
   description: Description
   destroy: Destroy
+  destroy_opportunity: Destroy opportunity
   edit: Edit
   edit_answer: Edit answer
   edit_opportunity_steps:

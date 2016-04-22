@@ -1,9 +1,11 @@
-<div class='page_subheader'>
-  <h3><%= t('description') %></h3>
-</div>
+<div class='opportunity_section'>
+  <div class='page_subheader'>
+    <h4><i class='fa fa-file-text'></i> <%= t('description') %></h4>
+  </div>
 
-<% if @opportunity.description.present? %>
-  <%= format_textarea_input(@opportunity.description) %>
-<% else %>
-  <%= t('no_description') %>
-<% end %>
+  <% if @opportunity.description.present? %>
+    <%= format_textarea_input(@opportunity.description) %>
+  <% else %>
+    <p class='none'><%= t('no_description') %></p>
+  <% end %>
+</div>

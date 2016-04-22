@@ -11,10 +11,6 @@
       <% elsif !@opportunity.approved? && !@opportunity.submitted_for_approval? %>
         <a class='button' href='<%= request_approval_opportunity_path %>' data-method='post'><%= t('request_approval') %></a>
       <% end %>
-
-      <% if policy(@opportunity).destroy? %>
-        <a class='button error' href='<%= opportunity_path %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'><%= t('destroy') %></a>
-      <% end %>
     </span>
   </div>
 <% end %>

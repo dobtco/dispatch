@@ -13,7 +13,7 @@ module SubmissionAdapters
     def view_proposals_url
     end
 
-    def view_proposals_instructions
+    def view_proposals_link_text
     end
 
     def submit_proposals_url

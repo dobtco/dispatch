@@ -109,7 +109,7 @@ class Opportunity < ActiveRecord::Base
 
   delegate :submission_page,
            :view_proposals_url,
-           :view_proposals_instructions,
+           :view_proposals_link_text,
            :submit_proposals_url,
            :submit_proposals_instructions,
            :submittable?,

@@ -4,8 +4,9 @@ module SubmissionAdapters
 
     def submit_proposals_instructions
       %(
-        Look at the opportunity description for details on submitting a proposal.
-      )
+        Look at the opportunity description for details on submitting
+        a proposal.
+      ).squish
     end
   end
 end

@@ -1,11 +1,7 @@
 <% if policy(@opportunity).review_submissions? %>
   <li>
     <% if @opportunity.submission_adapter.view_proposals_url %>
-      <a class='button block' href='<%= @opportunity.submission_adapter.view_proposals_url %>'><%= t('view_proposals') %></a>
-    <% end %>
-
-    <% if @opportunity.submission_adapter.view_proposals_instructions %>
-      <p><%= @opportunity.submission_adapter.view_proposals_instructions %></p>
+      <a href='<%= @opportunity.submission_adapter.view_proposals_url %>'><%= @opportunity.submission_adapter.view_proposals_link_text.presence || t('view_proposals') %></a>
     <% end %>
   </li>
 <% end %>
