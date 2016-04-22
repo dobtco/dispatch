@@ -7,7 +7,7 @@ require_if_exists DispatchConfiguration.theme_path.join('simple_form.rb')
 
 # Add theme assets to the beginning of the sprockets load path
 Rails.configuration.assets.paths =
-  Dir[DispatchConfiguration.theme_path.join("assets/**/*")] +
+  Dir[DispatchConfiguration.theme_path.join("assets/*")] +
   Rails.configuration.assets.paths
 
 # Add theme i18n
