@@ -1,4 +1,6 @@
-<h3><%= t('description') %></h3>
+<div class='page_subheader'>
+  <h3><%= t('description') %></h3>
+</div>
 
 <% if @opportunity.description.present? %>
   <%= format_textarea_input(@opportunity.description) %>

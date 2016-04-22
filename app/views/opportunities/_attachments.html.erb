@@ -1,5 +1,7 @@
 <% if @opportunity.attachments.present? %>
-  <h3><%= t('attachments') %></h3>
+  <div class='page_subheader'>
+    <h3><%= t('attachments') %></h3>
+  </div>
 
   <ul>
     <% @opportunity.attachments.each do |attachment| %>

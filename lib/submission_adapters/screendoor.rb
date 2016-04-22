@@ -13,7 +13,7 @@ module SubmissionAdapters
     end
 
     def submit_proposals_instructions
-      'Submissions for this opportunity are accepted online.'
+      'Submissions are accepted online.'
     end
   end
 end

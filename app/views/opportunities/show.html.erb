@@ -1,15 +1,30 @@
-<h2><%= @opportunity.title %></h2>
+<div class='page_header'>
+  <h2><%= @opportunity.title %></h2>
+
+  <% if policy(@opportunity).subscribe? %>
+    <a class='button info <% if current_user.opportunities.include?(@opportunity) %>disabled<% end %>' href='<%= subscribe_opportunity_path %>' data-method='post'>
+      <% if current_user.opportunities.include?(@opportunity) %>
+        <%= t('subscribed') %>
+      <% else %>
+        <%= t('subscribe') %>
+      <% end %>
+    </a>
+  <% elsif OpportunityPolicy.new(User.new, @opportunity).subscribe? %>
+    <% # @todo redirect after login %>
+    <a class='button info' href='<%= new_user_session_path %>'><%= t('subscribe') %></a>
+  <% end %>
+</div>
 
 <%= render('admin_status') %>
 
-<div class='layout_with_sidebar_right'>
-  <div class='sidebar'>
-    <%= render('actions') %>
-    <%= render('admin_actions') %>
-  </div>
-  <div class='content'>
+<div class='grid'>
+  <div class='item lap_eight_columns'>
     <%= render('description') %>
     <%= render('attachments') %>
     <%= render('questions') if @opportunity.enable_questions? %>
+  </div>
+  <div class='item lap_four_columns'>
+    <%= render('actions') %>
+    <%= render('admin_actions') %>
   </div>
 </div>

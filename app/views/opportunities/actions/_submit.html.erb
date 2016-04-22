@@ -1,9 +1,9 @@
 <% if policy(@opportunity).submit? %>
   <li>
     <% if @opportunity.submission_adapter.submission_page %>
-      <a href='<%= submit_opportunity_path %>'><%= t('submit_proposal') %></a>
+      <a class='button block info' href='<%= submit_opportunity_path %>'><%= t('submit_proposal') %></a>
     <% elsif @opportunity.submission_adapter.submit_proposals_url %>
-      <a href='<%= @opportunity.submission_adapter.submit_proposals_url %>'><%= t('submit_proposal') %></a>
+      <a class='button block info' href='<%= @opportunity.submission_adapter.submit_proposals_url %>'><%= t('submit_proposal') %></a>
     <% end %>
 
     <% if @opportunity.submission_adapter.submit_proposals_instructions %>

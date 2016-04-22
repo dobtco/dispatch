@@ -1,27 +1,19 @@
 <% if policy(@opportunity).edit? %>
-  <div>
-    <span><%= opportunity_status_text %></span>
-    <ul>
-      <li><a href='<%= edit_opportunity_path %>'><%= t('edit') %></a></li>
+  <div class='alert'>
+    <span class='alert_message'><%= opportunity_status_text %></span>
+    <span class='alert_buttons'>
+      <a class='button info' href='<%= edit_opportunity_path %>'><%= t('edit') %></a>
 
       <% if policy(@opportunity).approve? %>
-        <li>
-          <a href='<%= approve_opportunity_path %>' data-method='post'>
-            <%= @opportunity.approved? ? t('unapprove') : t('approve') %>
-          </a>
-        </li>
-      <% end %>
-
-      <% if !policy(@opportunity).approve? && !@opportunity.approved? && !@opportunity.submitted_for_approval? %>
-        <li>
-          <a href='<%= request_approval_opportunity_path %>' data-method='post'><%= t('request_approval') %></a>
-        </li>
+        <a class='button' href='<%= approve_opportunity_path %>' data-method='post'>
+          <%= @opportunity.approved? ? t('unapprove') : t('approve') %>
+        </a>
+      <% elsif !@opportunity.approved? && !@opportunity.submitted_for_approval? %>
+        <a class='button' href='<%= request_approval_opportunity_path %>' data-method='post'><%= t('request_approval') %></a>
       <% end %>
 
       <% if policy(@opportunity).destroy? %>
-        <li>
-          <a href='<%= opportunity_path %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'><%= t('destroy') %></a>
-        </li>
+        <a class='button error' href='<%= opportunity_path %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'><%= t('destroy') %></a>
       <% end %>
     </span>
   </div>

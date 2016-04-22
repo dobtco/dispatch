@@ -1,10 +1,10 @@
 <% if policy(@opportunity).ask_question? %>
   <li>
-    <a href='#new_question'><%= t('ask_question') %></a>
+    <a class='button block' href='#new_question'><%= t('ask_question') %></a>
   </li>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).ask_question? %>
   <li>
     <% # @todo redirect %>
-    <a href='<%= new_user_session_path %>'><%= t('ask_question') %></a>
+    <a class='button block' href='<%= new_user_session_path %>'><%= t('ask_question') %></a>
   </li>
 <% end %>

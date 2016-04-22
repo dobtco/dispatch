@@ -1,12 +1,16 @@
 <% if @opportunity.questions.unanswered_first.present? %>
-  <h3 id='questions'><%= t('questions') %></h3>
+  <div class='page_subheader'>
+    <h3 id='questions'><%= t('questions') %></h3>
+  </div>
   <div class='questions'>
     <%= render @opportunity.questions.unanswered_first %>
   </div>
 <% end %>
 
 <% if policy(@opportunity).ask_question? %>
-  <h3 id='questions'><%= t('ask_question') %></h3>
+  <div class='page_subheader'>
+    <h3><%= t('ask_question') %></h3>
+  </div>
   <%= simple_form_for [@opportunity, @opportunity.questions.build] do |f| %>
     <%= f.input :question_text %>
     <%= f.button :button %>

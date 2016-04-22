@@ -1,0 +1,5 @@
+@import 'theme/includes';
+
+.sidebar_box + .sidebar_box {
+  margin-top: $rhythm * 2;
+}
