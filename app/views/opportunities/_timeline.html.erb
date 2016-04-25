@@ -1,8 +1,10 @@
-<ul class='opportunity_timeline'>
-  <% opportunity_timeline_events.each do |k, v| %>
-    <li<% if v < Time.now %> class='is_past'<% end %>>
-      <div class='opportunity_timeline_event'><%= t("timeline.#{k}") %></div>
-      <div class='opportunity_timeline_ts'><%= long_timestamp(v) %></div>
-    </li>
-  <% end %>
-</ul>
+<% if opportunity_timeline_events.present? %>
+  <ul class='opportunity_timeline'>
+    <% opportunity_timeline_events.each do |k, v| %>
+      <li<% if v < Time.now %> class='is_past'<% end %>>
+        <div class='opportunity_timeline_event'><%= t("timeline.#{k}") %></div>
+        <div class='opportunity_timeline_ts'><%= long_timestamp(v) %></div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
