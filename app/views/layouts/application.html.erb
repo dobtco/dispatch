@@ -9,7 +9,7 @@
   <link rel='alternate' type='application/rss+xml' title='RSS feed' href='<%= feed_opportunities_path(format: :xml) %>' />
   <%= csrf_meta_tags %>
   <% unless Rails.env.test? %>
-    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='//code.jquery.com/jquery-2.2.3.min.js'></script>
   <% end %>
   <script>window.jQuery || document.write('<script src="/non_digest_assets/jquery.js"><\/script>')</script>
 </head>
