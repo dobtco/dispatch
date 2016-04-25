@@ -3,6 +3,7 @@ class SavedSearchesController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_saved_search
+  before_action :skip_authorization
 
   def create
     current_user.saved_searches.create(search_params: saved_search_params)

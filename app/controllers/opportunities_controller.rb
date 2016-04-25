@@ -4,10 +4,12 @@ class OpportunitiesController < ApplicationController
   before_action :set_opportunity
 
   def index
+    skip_authorization
     @opportunities = Opportunity.posted.filter(opportunity_filter_params)
   end
 
   def feed
+    skip_authorization
     @opportunities = Opportunity.posted.filter(
       opportunity_filter_params.merge(
         sort: 'updated_at',
