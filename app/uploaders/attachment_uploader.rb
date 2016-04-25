@@ -1,7 +1,7 @@
 class AttachmentUploader < BaseUploader
   include CarrierWave::MiniMagick
 
-  process :save_content_type_and_size_in_model
+  process :save_attributes_in_model
 
   version :thumb, if: :thumbable? do
     process :make_thumbnail
@@ -46,8 +46,9 @@ class AttachmentUploader < BaseUploader
     )
   end
 
-  def save_content_type_and_size_in_model
+  def save_attributes_in_model
     model.content_type = file.try(:content_type)
     model.file_size_bytes = file.try(:size)
+    model.text_content = Yomu.read :text, file.read
   end
 end

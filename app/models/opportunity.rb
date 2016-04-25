@@ -94,7 +94,7 @@ class Opportunity < ActiveRecord::Base
     ],
     associated_against: {
       questions: [:question_text, :answer_text],
-      attachments: [:upload],
+      attachments: [:upload, :text_content],
       department: [:name]
     },
     using: {

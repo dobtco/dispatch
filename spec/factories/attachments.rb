@@ -21,8 +21,14 @@ FactoryGirl.define do
   factory :attachment do
     opportunity
 
-    upload do
-      File.open(Rails.root.join('spec/fixtures/files/test.txt'))
+    upload { File.open(Rails.root.join('spec/fixtures/files/test.txt')) }
+
+    trait :docx do
+      upload { File.open(Rails.root.join('spec/fixtures/files/test.docx')) }
+    end
+
+    trait :empty do
+      upload { File.open(Rails.root.join('spec/fixtures/files/empty')) }
     end
   end
 end
