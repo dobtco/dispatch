@@ -6,7 +6,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Nginx serves our assets
-  config.serve_static_files = false
+  config.serve_static_files = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
