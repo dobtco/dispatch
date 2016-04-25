@@ -15,6 +15,7 @@ en:
   browse_opportunities: Browse opportunities
   clear_filters: Clear filters
   confirm_alert: Are you sure?
+  contact_info: Contact info
   create_account: Create account
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline

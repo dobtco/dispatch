@@ -211,6 +211,12 @@ class Opportunity < ActiveRecord::Base
     update submitted_at: Time.now
   end
 
+  def contact_info?
+    contact_name.present? ||
+    contact_email.present? ||
+    contact_phone.present?
+  end
+
   private
 
   def default_submission_adapter
