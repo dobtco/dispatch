@@ -54,7 +54,6 @@ module OpportunitiesHelper
       :questions_open_at,
       :questions_close_at
     ).select { |_, v| v.present? }.
-      sort.
-      reverse
+      sort_by(&:last)
   end
 end
