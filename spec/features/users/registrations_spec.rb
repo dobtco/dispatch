@@ -32,6 +32,24 @@ describe 'Users' do
           'category_ids' => [category.id]
         )
       end
+
+      context 'without choosing categories' do
+        it 'does not create a saved search' do
+          visit new_user_registration_path
+
+          fill_in :user_business_name, with: 'Foobar Co'
+          fill_in :user_name, with: 'Joe Shmo'
+          fill_in :user_email, with: 'joe@foobar.biz'
+          fill_in :user_password, with: 'password'
+          fill_in :user_password, with: 'password'
+
+          expect { find('#new_user button').click }.
+            to change { User.count }.by(1)
+
+          # Creates a saved search
+          expect(created_user.saved_searches.count).to eq 0
+        end
+      end
     end
 
     context 'as city staff' do
