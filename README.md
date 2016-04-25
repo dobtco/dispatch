@@ -7,33 +7,35 @@ Dispatch is an application for cities to advertise their contract opportunities.
 
 Dispatch is developed by [The Department of Better Technology](https://www.dobt.co/screendoor/), the creators of [Screendoor](https://www.dobt.co/screendoor/), a cloud-hosted solution for government forms and workflows. Dispatch integrates with Screendoor for proposal review, but this integration is not required in order to use Dispatch.
 
-## Technical overview
+## For governments
+
+Dispatch is a powerful tool that is [proven by the White House and Small Business Administration](https://www.whitehouse.gov/blog/2013/05/15/rfp-ez-delivers-savings-taxpayers-new-opportunities-small-business) to broaden your vendor pool and decrease the cost of your IT procurements. (Dispatch contains a superset of RFP-EZ's functionality.)
+
+It can integrate with your existing procurement system, and will eventually be able to replace costly enterprise contract listing systems.
+
+Contact [hello@dobt.co](mailto:hello@dobt.co) for more information.
+
+## For vendors
+
+If you do work with government, you're probably familiar with contract listing systems that [look like this](https://dobt-captured.s3.amazonaws.com/ajb/Construction_Opportunities__Contracting_Opportunities__City_of_Oakland__California_2016-04-25_11-48-24.png). You're used to a long and bug-ridden registration process, and you probably check these sites multiple times a week to see if any new contracts have been posted, since there's no way to receive an email digest of new results that match a saved search.
+
+Enter Dispatch. Governments using Dispatch will have a modern contracting portal, including easy registration, searching, and email alerts.
+
+Government officials truly want to make it easier for you to do business with them, but sometimes they don't know where to start. Do them a favor and point them to Dispatch.
+
+## For developers
 
 Dispatch is a Rails application, backed by a PostgreSQL database. It does not have any other significant dependencies, which makes it easy to deploy and maintain.
 
-## Installation
+[Read more about developing Dispatch &rarr;](docs/development.md)
 
-You'll need to first install the following:
+## List of Deployments
 
-- Ruby 2.3.0
-- Bundler
-- node.js
-- Postgres
-- imagemagick
+| Name | Link | Repo |
+| --- | --- | --- |
+| Dispatch demo site | https://dispatch-demo.herokuapp.com | You're lookin' at it |
 
-Then, run `script/bootstrap` to install gems and seed your database.
-
-## Development
-
-Run `script/server` and navigate to http://localhost:3000.
-
-We automatically generate a dummy user account. You can login as `admin@example.com` with the password `password`.
-
-## Testing
-
-Make sure you have a test database by running `rake db:test:prepare`. Then, either use `bin/guard`, which will watch for changes and run tests automatically, or run `rspec` directly.
-
-(If you're on Linux, you'll need to [manually run an X server](https://github.com/thoughtbot/capybara-webkit/blob/v1.3.0/README.md#ci) before running javascript-enabled specs.)
+More soon! :wink:
 
 ## License
 
