@@ -22,7 +22,7 @@ Rails.application.configure do
   config.assets.version = '1.0'
 
   # Necessary for rails_oneline_logging
-  config.log_level = :warn
+  config.log_level = :info
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
