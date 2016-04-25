@@ -35,6 +35,7 @@ gem 'thin', require: false
 gem 'uglifier'
 gem 'utf8-cleaner'
 gem 'whenever', require: false
+gem 'yomu'
 
 gem 'dvl-core', github: 'dobtco/dvl-core'
 gem 'dvl-kaminari-views'

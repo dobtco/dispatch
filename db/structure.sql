@@ -42,7 +42,8 @@ CREATE TABLE attachments (
     has_thumbnail boolean DEFAULT false NOT NULL,
     deleted_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    text_content text
 );
 
 
@@ -688,4 +689,6 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20160418144427');
 
 INSERT INTO schema_migrations (version) VALUES ('20160418203004');
+
+INSERT INTO schema_migrations (version) VALUES ('20160425151213');
 
