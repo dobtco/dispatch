@@ -1,7 +1,7 @@
 CarrierWave.configure do |config|
   if DispatchConfiguration.upload_storage == 'aws'
     config.storage = :aws
-    config.cache_dir = Dir.tmpdir
+    config.cache_dir = Rails.root.join('tmp/uploads')
     config.aws_credentials = {
       access_key_id: DispatchConfiguration.aws_key,
       secret_access_key: DispatchConfiguration.aws_secret,
