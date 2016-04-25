@@ -19,3 +19,9 @@ database:
 test:
   override:
     - script/cibuild
+
+deployment:
+  demo:
+    branch: master
+    heroku:
+      appname: dispatch-demo
