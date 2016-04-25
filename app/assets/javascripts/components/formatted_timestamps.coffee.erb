@@ -1,9 +1,9 @@
 # Most of this is from https://github.com/basecamp/local_time
 
-App.timestamps = {}
+config = {}
 
-App.timestamps.weekdays = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split " "
-App.timestamps.months   = "January February March April May June July August September October November December".split " "
+config.weekdays = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split " "
+config.months   = "January February March April May June July August September October November December".split " "
 
 if isNaN Date.parse "2011-01-01T12:00:00-05:00"
   parse = Date.parse
@@ -30,10 +30,10 @@ strftime = (time, formatString) ->
 
   formatString.replace /%\-?([%aAbBcdeHIlmMpPSwyYZ])/g, (str) ->
     switch str.replace('%', '')
-      when 'a'        then App.timestamps.weekdays[day].slice 0, 3
-      when 'A'        then App.timestamps.weekdays[day]
-      when 'b'        then App.timestamps.months[month].slice 0, 3
-      when 'B'        then App.timestamps.months[month]
+      when 'a'        then config.weekdays[day].slice 0, 3
+      when 'A'        then config.weekdays[day]
+      when 'b'        then config.months[month].slice 0, 3
+      when 'B'        then config.months[month]
       when 'c'        then time.toString()
       when 'd'        then pad date
       when 'e', '-e'  then date
@@ -51,9 +51,6 @@ strftime = (time, formatString) ->
       when 'Y'        then year
       when 'Z'        then time.toString().match(/\((\w+)\)$/)?[1] ? ''
 
-App.formatTime = (date, format) ->
-  strftime(date, t("time.formats.#{format}"))
-
 $.fn.extend formattedTimestamps: ->
   $(@).find('[data-formatted-timestamp]').each ->
     return if @hasFormattedTimestamp
@@ -65,5 +62,5 @@ $.fn.extend formattedTimestamps: ->
       return $(@).timeago()
 
     stamp = new Date(Date.parse($(@).attr('datetime')))
-    formatted = App.formatTime stamp, format
+    formatted = strftime stamp, $(@).attr('format')
     $(@).text formatted

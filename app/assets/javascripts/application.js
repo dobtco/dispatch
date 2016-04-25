@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_self
 //= require jquery-ujs
 //= require jquery-form
 //= require jquery-timeago
@@ -20,5 +19,3 @@
 //= require rome/rome.standalone.js
 //= require theme
 //= require_tree .
-
-var App = {};

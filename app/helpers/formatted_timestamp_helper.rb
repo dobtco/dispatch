@@ -25,7 +25,8 @@ module FormattedTimestampHelper
                      time.strftime(I18n.t("time.formats.#{format}"))
                    end
 
-    "<time data-formatted-timestamp='#{format}' datetime='#{time.iso8601}'>" \
+    "<time data-formatted-timestamp='#{format}' datetime='#{time.iso8601}'" \
+    "format='#{I18n.t("time.formats.#{format}")}'>" \
     "#{text_version}</time>".html_safe
   end
 end

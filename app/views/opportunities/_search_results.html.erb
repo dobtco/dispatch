@@ -22,7 +22,7 @@
           </td>
           <td>
             <% if opportunity.submissions_close_at %>
-              <%= opportunity.submissions_close_at %>
+              <%= long_timestamp(opportunity.submissions_close_at) %>
             <% else %>
               <span class='none'><%= t('no_deadline') %></span>
             <% end %>
