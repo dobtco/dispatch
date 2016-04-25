@@ -81,6 +81,6 @@ group :development, :test do
   gem 'rubocop', require: false
 end
 
-group :heroku do
+group :production do
   gem 'rails_12factor'
 end
