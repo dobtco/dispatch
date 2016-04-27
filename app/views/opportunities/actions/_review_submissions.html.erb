@@ -1,7 +1,9 @@
 <% if policy(@opportunity).review_submissions? %>
   <li>
     <% if @opportunity.submission_adapter.view_proposals_url %>
-      <a href='<%= @opportunity.submission_adapter.view_proposals_url %>'><%= @opportunity.submission_adapter.view_proposals_link_text.presence || t('view_proposals') %></a>
+      <a href='<%= @opportunity.submission_adapter.view_proposals_url %>' target='_blank'>
+        <%= @opportunity.submission_adapter.view_proposals_link_text.presence || t('view_proposals') %>
+      </a>
     <% end %>
   </li>
 <% end %>
