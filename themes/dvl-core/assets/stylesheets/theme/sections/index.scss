@@ -8,6 +8,24 @@ body.index {
     left: 0;
     width: 100%;
     @include font_smoothing;
+    .button {
+      margin-left: $rhythm * 2;
+    }
+  }
+  .navbar_content_wrapper {
+    border-radius: $radius;
+    background: $primaryColor;
+    @media screen and (min-width: $deskWidth) {
+      background: transparent;
+    }
+  }
+  .navbar_content > ul > li > a {
+    padding: $rhythm ($rhythm * 2);
+    margin-top: $rhythm;
+    @media screen and (min-width: $deskWidth) {
+      line-height: $lineHeight;
+      border-radius: $lineHeight;
+    }
   }
 }
 

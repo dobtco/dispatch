@@ -5,6 +5,8 @@
   font-size: 2rem;
 }
 
-.navbar .button {
-  margin-left: $rhythm * 2;
+@media screen and (min-width: $deskWidth) {
+  .navbar .button {
+    margin-left: $rhythm * 2;
+  }
 }
