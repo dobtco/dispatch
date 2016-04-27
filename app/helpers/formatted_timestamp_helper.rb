@@ -30,7 +30,7 @@ module FormattedTimestampHelper
                       end
 
     "<time data-formatted-timestamp='#{format}' datetime='#{time.iso8601}' " \
-    "format='#{strftime_format}'>" \
+    "data-format='#{strftime_format}'>" \
     "#{text_version}</time>".html_safe
   end
 end
