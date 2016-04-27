@@ -31,3 +31,8 @@
 .footer {
   margin-top: $lineHeight * 2;
 }
+
+th a {
+  color: $darkerGray;
+  white-space: nowrap;
+}

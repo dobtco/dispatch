@@ -13,7 +13,7 @@ en:
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
-  clear_filters: Clear filters
+  clear: Clear
   confirm_alert: Are you sure?
   contact_info: Contact info
   create_account: Sign up
@@ -34,7 +34,10 @@ en:
     title:
       title: Title
   email: Email
-  filter_opportunities: Filter
+  email_me: Email me with new search results
+  email_subscriptions: Email subscriptions
+  filter: Filter
+  filter_opportunities: Filter opportunities
   get_started: Get started
   home:
     hero:
@@ -62,19 +65,17 @@ en:
       body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for questions about %{opportunity}
     search_results:
-      body: There are new results that match your saved searches.
+      body: There are new results that match your subscriptions.
       subject: New search results on %{site_title}
     submission_deadline:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
   name: Name
-  no_deadline: No deadline
-  no_department: No department
-  no_description: No description
+  no_description: There is no description for this opportunity.
   no_opportunities_found: No opportunities found
   no_results: No results
-  no_saved_searches: No saved searches
+  none: None
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?
@@ -98,13 +99,11 @@ en:
   question_text: Question text
   questions: Questions
   request_approval: Request approval
-  rss_for_search: RSS Feed for this search
+  rss: RSS
   save_and_continue: Save and continue
-  save_search: Save this search
-  saved_searches: Saved searches
   search_for_opportunities: Search for opportunities
-  search_saved: This search has been saved. We'll email you with any new results.
-  search_saved_at_time: Search saved on %{timestamp}
+  filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
+  filter_saved_at_time: Filter saved on %{timestamp}
   sign_in: Sign in
   sign_out: Sign out
   simple_form:
@@ -130,9 +129,9 @@ en:
         submission_adapter_name: Send submissions with...
         submission_dates: Accept submissions between...
       opportunity_filters:
-        text: I'm searching for...
-        status: That are...
-        category_ids: Under the category...
+        text: "I'm looking for:"
+        status: "With the status:"
+        category_ids: "And the categories:"
       user:
         business_name: The name of your business (optional)
         name: Your full name
@@ -142,7 +141,6 @@ en:
         title: RFP for Integrated Library System
       opportunity_filters:
         text: Enter a word or phrase
-        category_ids: Type in a category
   submit_proposal: Submit a proposal
   remind_me: Remind me
   reminded: You'll be reminded

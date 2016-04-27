@@ -20,7 +20,7 @@ describe 'Opportunities - Index' do
     expect(page).to have_link t('save_search'), href: new_user_session_path
 
     # Clear filters
-    click_link t('clear_filters')
+    click_link t('clear')
     expect(page).to have_text opportunity.title
   end
 

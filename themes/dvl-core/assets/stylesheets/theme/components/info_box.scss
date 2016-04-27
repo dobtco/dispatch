@@ -14,6 +14,7 @@
   display: block;
   background: $lightestGray;
   @include border_top_radius($radius);
+  position: relative;
 }
 
 // When header is a link...
@@ -33,6 +34,9 @@ a.info_box_header {
 .info_box_body {
   margin-top: $rhythm;
   font-size: $fontSmall;
+  input {
+    font-size: $fontSmall;
+  }
   p:last-child,
   .input_group {
     margin-bottom: $rhythm;

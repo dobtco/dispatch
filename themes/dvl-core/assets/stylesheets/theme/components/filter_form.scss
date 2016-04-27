@@ -1,0 +1,10 @@
+@import 'theme/includes.scss';
+
+.filter_clear {
+  position: absolute;
+  letter-spacing: $letterspaceSmallest;
+  font-size: $fontSmallest;
+  right: $rhythm * 2;
+  top: $rhythm * 1.5;
+  text-transform: uppercase;
+}
