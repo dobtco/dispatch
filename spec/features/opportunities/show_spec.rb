@@ -58,7 +58,7 @@ describe 'Opportunities - Show' do
 
     it 'renders the email address for submission' do
       visit opportunity_path(opportunity)
-      expect(page).to have_link 'FoobarBaz'
+      expect(page).to have_text 'FoobarBaz'
     end
   end
 

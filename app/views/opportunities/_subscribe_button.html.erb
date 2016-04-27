@@ -8,5 +8,5 @@
   </a>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).subscribe? %>
   <% # @todo redirect after login %>
-  <a class='button primary' href='<%= new_user_session_path %>'><%= t('subscribe') %></a>
+  <a class='button primary' href='<%= new_user_session_path %>'><%= t('remind_me') %></a>
 <% end %>
