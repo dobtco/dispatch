@@ -186,10 +186,10 @@ class Opportunity < ActiveRecord::Base
     if submission_adapter_name.present?
       "SubmissionAdapters::#{submission_adapter_name}".constantize.new(self)
     else
-      default_submission_adapter
+      blank_submission_adapter
     end
   rescue
-    default_submission_adapter
+    blank_submission_adapter
   end
 
   def open_for_submissions?
@@ -219,14 +219,12 @@ class Opportunity < ActiveRecord::Base
 
   private
 
-  def default_submission_adapter
+  def blank_submission_adapter
     SubmissionAdapters::None.new(self)
   end
 
   def set_default_submission_adapter_name
-    self.submission_adapter_name ||= default_submission_adapter.
-                                      class.
-                                      to_adapter_name
+    self.submission_adapter_name ||= 'Email'
   end
 
   def set_default_contact_info

@@ -1,4 +1,12 @@
-<%= f.input :submission_adapter_name, as: :select, collection: SubmissionAdapters.all_adapters, include_blank: false, value_method: :to_adapter_name %>
+<%= f.input :submission_adapter_name do %>
+  <%= f.input_field :submission_adapter_name, as: :select, collection: SubmissionAdapters.all_adapters, include_blank: false, value_method: :to_adapter_name %>
+
+  <div class='no_submission_adapter_warning' data-show-if-selected="#opportunity_submission_adapter_name|None"<% unless f.object.submission_adapter_name == 'None' %> style='display:none'<% end %>>
+    <%= t('no_submission_adapter_warning') %>
+  </div>
+<% end %>
+
+
 <%= render partial: 'opportunities/edit/submission_adapter_inputs', locals: { f: f } %>
 
 <%= f.input :submission_dates, wrapper_html: { class: 'date_range' } do %>

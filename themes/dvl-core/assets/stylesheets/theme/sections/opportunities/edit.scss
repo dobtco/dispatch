@@ -7,3 +7,11 @@
 .opportunity_contact_name {
   margin-top: $rhythm;
 }
+
+.no_submission_adapter_warning {
+  background: $lighterGray;
+  border-radius: $radius;
+  font-size: $fontSmall;
+  margin-top: $rhythm;
+  padding: $rhythm;
+}

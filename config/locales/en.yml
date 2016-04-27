@@ -81,6 +81,9 @@ en:
   no_description: There is no description for this opportunity.
   no_opportunities_found: No opportunities found
   no_results: No results
+  no_submission_adapter_warning: |-
+    Make sure you explain how to submit proposals in your description!
+    Otherwise, vendors won't know how to contact you.
   none: None
   num_results:
     one: 1 result

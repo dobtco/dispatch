@@ -92,13 +92,14 @@ describe Opportunity do
   describe '#submission_adapter_name' do
     context 'by default' do
       before { subject.save }
-      its(:submission_adapter_name) { should eq 'None' }
+      its(:submission_adapter_name) { should eq 'Email' }
     end
   end
 
   describe '#submission_adapter' do
     context 'by default' do
-      its(:submission_adapter) { should be_a(SubmissionAdapters::None) }
+      before { subject.save }
+      its(:submission_adapter) { should be_a(SubmissionAdapters::Email) }
     end
 
     context 'when invalid' do
