@@ -41,7 +41,7 @@
               <a href='<%= destroy_user_session_path %>' data-method='delete'><%= t('sign_out') %></a>
             </li>
           <% else %>
-            <% if content_for(:page_key) != 'signin' %>
+            <% if content_for(:page_key) != 'sign-in' %>
               <li>
                 <span>
                   <a class='button small primary' href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
