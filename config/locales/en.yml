@@ -77,6 +77,9 @@ en:
   no_opportunities_found: No opportunities found
   no_results: No results
   none: None
+  num_results:
+    one: 1 result
+    other: "%{count} results"
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?

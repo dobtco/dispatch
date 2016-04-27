@@ -3,6 +3,7 @@
 
 <div class='page_header'>
   <h2><%= t('browse_opportunities') %></h2>
+  <span class='search_result_count'><%= t('num_results', count: @opportunities.total_count) %></span>
 </div>
 
 <div class='grid'>
