@@ -9,11 +9,7 @@
     margin: 0;
   }
   p {
-    margin: 0 auto;
-    max-width: none;
-
-    &:first-of-type {
-      margin-bottom: $rhythm * 2;
-    }
+    margin: 0 auto $lineHeight;
+    max-width: 30rem;
   }
 }

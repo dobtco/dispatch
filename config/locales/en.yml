@@ -40,8 +40,8 @@ en:
   get_started: Get started
   home:
     hero:
-      cta: Subscribe for business opportunities
-      hint: Sign up to be notified when new projects are posted
+      cta: Sign up today
+      hint: Browse new business opportunities, and get notified when new ones are posted.
       hint_signed_in: New opportunities are being added every day!
       title: Win contracts with the City of Philadelphia
     recent_opportunities:
