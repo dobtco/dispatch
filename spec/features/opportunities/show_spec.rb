@@ -22,9 +22,9 @@ describe 'Opportunities - Show' do
   it 'can subscribe and unsubscribe to the opportunity' do
     login_as vendor
     visit opportunity_path(opportunity)
-    click_link t('subscribe')
-    click_link t('subscribed')
-    expect(page).to have_link t('subscribe')
+    click_link t('remind_me')
+    click_link t('reminded')
+    expect(page).to have_link t('remind_me')
   end
 
   context 'when opportunity is not posted' do

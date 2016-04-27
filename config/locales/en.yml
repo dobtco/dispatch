@@ -22,10 +22,8 @@ en:
   department: Department
   description: Description
   destroy: Delete
-  destroy_opportunity: Delete opportunity
   edit: Edit
   edit_answer: Edit answer
-  edit_opportunity: Edit opportunity
   edit_opportunity_steps:
     description:
       title: Description
@@ -45,7 +43,7 @@ en:
       hint_signed_in: New opportunities are being added every day!
       title: Win contracts with the City of Philadelphia
     recent_opportunities:
-      browse_all: Browse all
+      see_more: See more...
       title: The latest opportunities
   keep_editing: Keep editing
   mailer:
@@ -104,6 +102,7 @@ en:
   save_and_continue: Save and continue
   save_search: Save this search
   saved_searches: Saved searches
+  search_for_opportunities: Search for opportunities
   search_saved: This search has been saved. We'll email you with any new results.
   search_saved_at_time: Search saved on %{timestamp}
   sign_in: Sign in
@@ -128,8 +127,8 @@ en:
         question_dates: Question period from…
         submission_adapter_data:
           submit_to: Send proposals to…
-        submission_adapter_name: Accept submissions through…
-        submission_dates: Submission period from…
+        submission_adapter_name: Send submissions with...
+        submission_dates: Accept submissions between...
       opportunity_filters:
         text: I'm searching for...
         status: That are...
@@ -144,9 +143,9 @@ en:
       opportunity_filters:
         text: Enter a word or phrase
         category_ids: Type in a category
-  submit_proposal: Submit proposal
-  subscribe: Subscribe to updates
-  subscribed: Subscribed to updates
+  submit_proposal: Submit a proposal
+  remind_me: Remind me
+  reminded: You'll be reminded
   subscribed_success: You will be reminded of deadlines for this opportunity
   time:
     formats:
@@ -173,7 +172,7 @@ en:
           hint: We'll send you a weekly digest with results that match these categories.
           label: What types of opportunities are you interested in?
         title: Sign up as a vendor
-  view_opportunity: View opportunity
+  view_opportunity: View
   view_proposals: View proposals
   view_search: View search
   write_an_answer: Write an answer…

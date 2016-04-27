@@ -9,7 +9,7 @@ module SubmissionAdapters
     end
 
     def view_proposals_link_text
-      'Review submissions on Screendoor'
+      "Review submissions&nbsp;&nbsp;<i class='fa fa-external-link'></i>".html_safe
     end
 
     def submit_proposals_instructions
