@@ -13,6 +13,7 @@
       <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
       <%= f.input :status, required: false, as: :select, collection: [['Open for submissions', 'open'], ['Closed for submissions', 'closed'], ['Open or closed', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status], input_html: { 'data-width' => 'full' } %>
       <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
+      <%= f.input :department_id, required: false, as: :select, collection: Department.all, selected: @opportunities.filterer.params[:department_id], include_blank: true %>
 
       <%= f.button :button, t('filter'), class: 'primary' %>
     <% end %>

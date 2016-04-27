@@ -118,8 +118,8 @@ en:
   save_changes: Save changes
   search_for_opportunities: Search for opportunities
   sign_in: Sign in
-  sign_up: Sign up
   sign_out: Sign out
+  sign_up: Sign up
   simple_form:
     hints:
       opportunity:
@@ -143,6 +143,7 @@ en:
         submission_dates: Accept submissions between…
       opportunity_filters:
         category_ids: 'And the categories:'
+        department_id: 'From the department:'
         status: 'With the status:'
         text: 'I''m looking for:'
       user:
