@@ -65,7 +65,7 @@ en:
       body_html: A question was posted to <a href='%{href}'>%{title}</a>.
       subject: New question on %{site_title}
     question_deadline:
-      body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
+      body_html: The deadline for questions about <a href='%{href}'>%{title}<%= t('num_results', count: @opportunities.total_count) %></a> is coming up.
       subject: Deadline reminder for questions about %{opportunity}
     search_results:
       body: There are new results that match your subscriptions.
@@ -76,15 +76,17 @@ en:
     subscription_preferences: Change subscription preferences
   name: Name
   no_description: There is no description for this opportunity.
-  no_opportunities_found: No opportunities found
   no_results: No results
   no_submission_adapter_warning: |-
     Make sure you explain how to submit proposals in your description!
     Otherwise, vendors won't know how to contact you.
   none: None
   num_results:
-    one: 1 result
-    other: "%{count} results"
+    one: 1 search result
+    other: "%{count} search results"
+  num_opportunities:
+    one: 1 opportunity
+    other: "%{count} opportunities"
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?
