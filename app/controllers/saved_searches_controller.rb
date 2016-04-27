@@ -12,7 +12,7 @@ class SavedSearchesController < ApplicationController
 
   def destroy
     @saved_search.destroy
-    head :no_content
+    redirect_to :back, info: t('filter_destroyed')
   end
 
   private

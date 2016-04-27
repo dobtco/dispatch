@@ -9,7 +9,7 @@
         <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
         <div>
           <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_filter') %></a>
-          <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
+          <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('destroy') %></a>
         </div>
       </li>
     <% end %>

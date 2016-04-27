@@ -97,7 +97,7 @@ describe 'Users' do
       it 'allows for deleting the search' do
         login_as user
         visit edit_user_registration_path
-        expect { find('.js-destroy-saved-search').click }.
+        expect { click_link t('destroy') }.
           to change { user.saved_searches.count }.by(-1)
       end
     end
