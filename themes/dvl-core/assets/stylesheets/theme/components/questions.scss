@@ -5,7 +5,7 @@
 .new_question textarea,
 .question_answer,
 .question_question_text {
-  margin-bottom: $rhythm;
+  margin-bottom: $rhythm * 2;
 }
 
 .question {
@@ -22,6 +22,8 @@
   font-weight: $weightBold;
   font-size: $fontSmall;
   color: $darkerGray;
+  @include font_smoothing;
+  margin-bottom: $rhythm;
 }
 
 .question_admin_links {
