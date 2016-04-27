@@ -188,7 +188,6 @@ en:
         name: Your full name
         email: Your %{domain} email address
         password: Create a password
-        email_domain_hint: To post opportunities, you must have an email account that ends with %{domains}.
         title: Sign up as %{agency} staff
       new_vendor:
         name: What's your full name?
