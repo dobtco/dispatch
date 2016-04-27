@@ -18,7 +18,7 @@ en:
   browse_opportunities: Browse opportunities
   business_name: Business name
   clear: Clear
-  confirm_alert: Are you sure?
+  confirm_delete: Are you sure you want to delete this %{thing}?
   contact: Contact
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
@@ -89,6 +89,7 @@ en:
   num_opportunities:
     one: 1 opportunity
     other: "%{count} opportunities"
+  opportunity: opportunity
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?
@@ -112,6 +113,7 @@ en:
   public_contact_info: Public contact information
   publish_your_answer: Publish your answer
   question_destroyed: The question was destroyed.
+  question: question
   question_text: Question text
   questions: Questions
   remind_me: Remind me
