@@ -11,9 +11,5 @@ module SubmissionAdapters
     def view_proposals_link_text
       "Review submissions <i class='fa fa-external-link'></i>".html_safe
     end
-
-    def submit_proposals_instructions
-      'Submissions are accepted online.'
-    end
   end
 end

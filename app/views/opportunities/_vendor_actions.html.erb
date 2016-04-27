@@ -1,4 +1,24 @@
 <% if policy(@opportunity).submit? || policy(@opportunity).ask_question? || @opportunity.contact_info? %>
+
+  <% if policy(@opportunity).submit? || policy(@opportunity).ask_question? %>
+    <ul class='opportunity_actions'>
+      <% if @opportunity.submission_adapter.submission_page || @opportunity.submission_adapter.submit_proposals_url %>
+        <li>
+          <%= render('opportunities/actions/submit') %>
+        </li>
+      <% end %>
+      <% if policy(@opportunity).ask_question? %>
+        <li>
+          <%= render('opportunities/actions/ask_question') %>
+        </li>
+      <% end %>
+    </ul>
+
+    <% if policy(@opportunity).submit? && @opportunity.submission_adapter.submit_proposals_instructions %>
+      <p class='microcopy'><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
+    <% end %>
+  <% end %>
+
   <% if @opportunity.contact_info? %>
     <div class="info_box info_box_contact">
       <div class="info_box_header">
@@ -16,11 +36,4 @@
       </div>
     </div>
   <% end %>
-
-  <div class='sidebar_box'>
-    <ul class='sidebar_button_actions'>
-      <%= render('opportunities/actions/ask_question') %>
-      <%= render('opportunities/actions/submit') %>
-    </ul>
-  </div>
 <% end %>
