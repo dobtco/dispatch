@@ -4,12 +4,14 @@
   <%= render('admin_status') %>
 <% end %>
 
-<div class='page_header'>
+<div class='page_header page_header_action'>
   <h2><%= @opportunity.title %></h2>
 
-  <% if @opportunity.posted? %>
-    <%= render('subscribe_button') %>
-  <% end %>
+  <div class='page_header_action_button'>
+    <% if @opportunity.posted? %>
+      <%= render('subscribe_button') %>
+    <% end %>
+  </div>
 </div>
 
 <div class='grid'>

@@ -1,8 +1,8 @@
-<div class='page_subheader page_subheader_saved_searches'>
-  <h3><%= t('filter_subscriptions') %></h3>
-</div>
-
 <% if current_user.saved_searches.present? %>
+  <div class='page_subheader page_subheader_saved_searches'>
+    <h3><%= t('filter_subscriptions') %></h3>
+  </div>
+
   <ul class='formatted_list'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>

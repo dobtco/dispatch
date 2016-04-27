@@ -1,6 +1,6 @@
 <div class='recent_opps'>
-  <h2><%= t('.title') %></h2>
   <% if @recent_opportunities.present? %>
+    <h2><%= t('.title') %></h2>
     <ul>
       <% @recent_opportunities.each do |opportunity| %>
         <li>
@@ -13,7 +13,5 @@
     </ul>
 
      <p class="recent_opps_more"><a href='<%= opportunities_path %>' class='button_uppercase'><%= t('.see_more') %></a></p>
-  <% else %>
-    <p><%= t('no_opportunities_found') %></p>
   <% end %>
 </div>
