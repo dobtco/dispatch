@@ -25,8 +25,12 @@ module FormattedTimestampHelper
                      time.strftime(I18n.t("time.formats.#{format}"))
                    end
 
-    "<time data-formatted-timestamp='#{format}' datetime='#{time.iso8601}'" \
-    "format='#{I18n.t("time.formats.#{format}")}'>" \
+    strftime_format = unless format == :relative
+                        I18n.t("time.formats.#{format}")
+                      end
+
+    "<time data-formatted-timestamp='#{format}' datetime='#{time.iso8601}' " \
+    "format='#{strftime_format}'>" \
     "#{text_version}</time>".html_safe
   end
 end
