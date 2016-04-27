@@ -3,8 +3,24 @@
 <% content_for(:main_container_class, 'container_small') %>
 
 <div class='page_header'>
-  <h2><%= @opportunity.title %></h2>
-  <a class='button primary' href='<%= opportunity_path %>'><%= t('view_opportunity') %> &rarr;</a>
+  <h2 data-toggle-opportunity-rename>
+    <%= @opportunity.title %>
+    <a class='button subtle mini' title='<%= t('rename') %>' data-toggle-visible='[data-toggle-opportunity-rename]'>
+      <i class='fa fa-pencil'></i>
+    </a>
+  </h2>
+
+  <%= simple_form_for @opportunity, html: { class: 'opportunity_rename_form', style: 'display:none', 'data-toggle-opportunity-rename' => true } do |f| %>
+    <input type='hidden' name='rename' value='1' />
+    <div class='input_group_input'>
+      <%= f.input_field :title %>
+    </div>
+    <div class='input_group_append'>
+      <%= f.button :button, t('rename'), class: 'small' %>
+    </div>
+  <% end %>
+
+  <a class='button primary' href='<%= opportunity_path %>' data-toggle-opportunity-rename><%= t('view_opportunity') %> &rarr;</a>
 </div>
 
 <ul class='tabs'>

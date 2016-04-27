@@ -15,3 +15,11 @@
   margin-top: $rhythm;
   padding: $rhythm;
 }
+
+.opportunity_rename_form {
+  padding-bottom: $rhythm;
+
+  input {
+    margin-top: 0.75rem;
+  }
+}

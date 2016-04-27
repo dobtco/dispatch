@@ -26,7 +26,6 @@ module OpportunitiesHelper
 
   def edit_opportunity_steps
     %w(
-      title
       description
       questions
       submissions

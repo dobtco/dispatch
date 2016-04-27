@@ -70,7 +70,9 @@ class OpportunitiesController < ApplicationController
     authorize @opportunity, :edit?
 
     if @opportunity.update(opportunity_params)
-      if next_step
+      if params[:rename]
+        redirect_to :back
+      elsif next_step
         redirect_to edit_opportunity_path(@opportunity, step: next_step)
       else
         redirect_to opportunity_path(@opportunity)

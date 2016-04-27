@@ -33,8 +33,6 @@ en:
       title: Questions
     submissions:
       title: How to Submit
-    title:
-      title: Title
   email: Email
   email_me: Email me with new search results
   filter: Filter
@@ -114,6 +112,7 @@ en:
   questions: Questions
   remind_me: Remind me
   reminded: You'll be reminded
+  rename: Rename
   request_approval: Request approval
   rss: RSS
   save_and_continue: Save and continue
