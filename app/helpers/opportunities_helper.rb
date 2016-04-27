@@ -39,7 +39,7 @@ module OpportunitiesHelper
 
   def pending_opportunities_page_title
     if policy(:opportunity).approve?
-      t('approve_opportunities')
+      t('approve')
     else
       t('pending_opportunities')
     end

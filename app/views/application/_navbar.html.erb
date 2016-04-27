@@ -8,14 +8,8 @@
       <div class='navbar_content navbar_content_primary'>
         <ul>
           <li <% if content_for(:page_key) == 'opportunities-index' %>class='active'<% end %>>
-            <a href='<%= opportunities_path %>'><%= t('browse_opportunities') %></a>
+            <a href='<%= opportunities_path %>'><%= t('browse') %></a>
           </li>
-
-          <% if policy(:opportunity).create? %>
-            <li <% if content_for(:page_key) == 'opportunities-new' %>class='active'<% end %>>
-              <a href='<%= new_opportunity_path %>'><%= t('post_opportunity') %></a>
-            </li>
-          <% end %>
 
           <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
             <li <% if content_for(:page_key) == 'opportunities-pending' %>class='active'<% end %>>
@@ -54,6 +48,9 @@
             </li>
           <% end %>
         </ul>
+        <% if policy(:opportunity).create? && content_for(:page_key) != 'opportunities-new' %>
+          <a href='<%= new_opportunity_path %>' class='button secondary small'><%= t('post_an_opportunity') %></a>
+        <% end %>
       </div>
     </div>
   </div>

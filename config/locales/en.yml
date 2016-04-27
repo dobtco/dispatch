@@ -7,11 +7,11 @@ en:
   answer_text: Answer text
   answered_by_user_at_time: Answered by %{user} on %{timestamp}
   approve: Approve
-  approve_opportunities: Approve opportunities
   ask: Ask
   ask_question: Ask question
   asked_by_user_at_time: Asked by %{user} on %{timestamp}
   attachments: Attachments
+  browse: Browse
   browse_opportunities: Browse opportunities
   clear_filters: Clear filters
   confirm_alert: Are you sure?
@@ -36,7 +36,7 @@ en:
     title:
       title: Title
   email: Email
-  filter_opportunities: Filter opportunities
+  filter_opportunities: Filter
   get_started: Get started
   home:
     hero:
@@ -95,7 +95,7 @@ en:
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   pending_opportunities: Pending opportunities
   phone: Phone
-  post_opportunity: Post opportunity
+  post_an_opportunity: Post an opportunity
   posted_time_ago: Posted %{time_ago}
   question_text: Question text
   questions: Questions
