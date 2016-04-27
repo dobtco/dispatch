@@ -3,6 +3,6 @@
 
 <%= f.input :submission_dates, wrapper_html: { class: 'date_range' } do %>
   <%= f.input_field :submissions_open_at, as: :datetime_picker %>
-  <span>to</span>
+  <span>and</span>
   <%= f.input_field :submissions_close_at, as: :datetime_picker %>
 <% end %>

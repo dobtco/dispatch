@@ -2,7 +2,7 @@
 en:
   access_denied: Sorry, you are not allowed to access that page.
   admin: Admin
-  allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
+  allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
   answer_question: Answer question
   answer_text: Answer text
   answered_by_user_at_time: Answered by %{user} on %{timestamp}
@@ -100,6 +100,7 @@ en:
   questions: Questions
   request_approval: Request approval
   rss: RSS
+  save_changes: Save changes
   save_and_continue: Save and continue
   search_for_opportunities: Search for opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
@@ -121,9 +122,9 @@ en:
         password: Make it at least 8 characters.
     labels:
       opportunity:
-        category_ids: Categorize as…
+        category_ids: Categories
         publish_at: Publish on…
-        question_dates: Question period from…
+        question_dates: Accept questions between...
         submission_adapter_data:
           submit_to: Send proposals to…
         submission_adapter_name: Send submissions with...
