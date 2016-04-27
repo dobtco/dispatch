@@ -1,26 +1,26 @@
 <% if policy(@opportunity).submit? || policy(@opportunity).ask_question? || @opportunity.contact_info? %>
+  <% if @opportunity.contact_info? %>
+    <div class="info_box info_box_contact">
+      <div class="info_box_header">
+        <h4><%= t('contact') %></h4>
+      </div>
+      <div class="info_box_body">
+        <strong><%= @opportunity.contact_name || @opportunity.contact_email %></strong>
+        <span>
+          <%= @opportunity.contact_email %>
+          <% if @opportunity.contact_phone.present? %>
+            /
+            <%= @opportunity.contact_phone %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+
   <div class='sidebar_box'>
     <ul class='sidebar_button_actions'>
       <%= render('opportunities/actions/ask_question') %>
       <%= render('opportunities/actions/submit') %>
     </ul>
   </div>
-
-    <% if @opportunity.contact_info? %>
-      <div class="info_box info_box_contact">
-        <div class="info_box_header">
-          <h4><%= t('contact') %></h4>
-        </div>
-        <div class="info_box_body">
-          <strong><%= @opportunity.contact_name || @opportunity.contact_email %></strong>
-          <span>
-            <%= @opportunity.contact_email %>
-            <% if @opportunity.contact_phone.present? %>
-              /
-              <%= @opportunity.contact_phone %>
-            <% end %>
-          </span>
-        </div>
-      </div>
-    <% end %>
 <% end %>
