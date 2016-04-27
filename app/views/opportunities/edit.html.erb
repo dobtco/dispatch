@@ -12,11 +12,11 @@
 
   <%= simple_form_for @opportunity, html: { class: 'opportunity_rename_form', style: 'display:none', 'data-toggle-opportunity-rename' => true } do |f| %>
     <input type='hidden' name='rename' value='1' />
-    <div class='input_group_input'>
+    <div class='opportunity_rename_input'>
       <%= f.input_field :title %>
     </div>
-    <div class='input_group_append'>
-      <%= f.button :button, t('rename'), class: 'small' %>
+    <div class='opportunity_rename_button'>
+      <%= f.button :button, t('rename') %>
     </div>
   <% end %>
 

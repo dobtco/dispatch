@@ -13,9 +13,25 @@
 }
 
 .opportunity_rename_form {
-  padding-bottom: $rhythm;
-
-  input {
-    margin-top: 0.75rem;
+  margin-bottom: $rhythm;
+  div {
+    display: table-cell;
+    vertical-align: middle;
   }
+  input {
+    @include fontDisplay;
+    font-size: $fontSizeH2;
+    @include font_smoothing;
+    height: $fontSizeH2 + ($inputPadding * 2);
+    color: $black;
+  }
+}
+
+.opportunity_rename_input {
+  width: 100%;
+}
+
+.opportunity_rename_button {
+  width: 1px;
+  padding-left: $rhythm * 2;
 }
