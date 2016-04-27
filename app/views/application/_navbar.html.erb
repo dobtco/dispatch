@@ -41,11 +41,13 @@
               <a href='<%= destroy_user_session_path %>' data-method='delete'><%= t('sign_out') %></a>
             </li>
           <% else %>
-            <li>
-              <span>
-                <a class='button small primary' href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
-              </span>
-            </li>
+            <% if content_for(:page_key) != 'signin' %>
+              <li>
+                <span>
+                  <a class='button small primary' href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
+                </span>
+              </li>
+            <% end %>
           <% end %>
         </ul>
         <% if policy(:opportunity).create? && content_for(:page_key) != 'opportunities-new' %>

@@ -7,5 +7,6 @@ body.index {
     top: $rhythm;
     left: 0;
     width: 100%;
+    @include font_smoothing;
   }
 }

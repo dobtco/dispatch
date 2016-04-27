@@ -121,9 +121,8 @@ en:
           embed_token: Create a project on Screendoor and paste its embed token here.
       user:
         business_name: Leave this blank if it's not relevant to you
-        email: We'll send a confirmation email to this address before you can log in
         name: Your full name, please!
-        password: Make it at least 8 characters
+        password: Make it at least 8 characters.
     labels:
       opportunity:
         category_ids: Categorize as…
