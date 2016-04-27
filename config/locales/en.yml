@@ -1,6 +1,10 @@
 ---
 en:
   access_denied: Sorry, you are not allowed to access that page.
+  activerecord:
+    errors:
+      messages:
+        invalid_staff_domain: not a valid domain
   admin: Admin
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
   answer_question: Answer question
