@@ -21,8 +21,8 @@ en:
   deadline: Deadline
   department: Department
   description: Description
-  destroy: Destroy
-  destroy_opportunity: Destroy opportunity
+  destroy: Delete
+  destroy_opportunity: Delete opportunity
   edit: Edit
   edit_answer: Edit answer
   edit_opportunity: Edit opportunity
