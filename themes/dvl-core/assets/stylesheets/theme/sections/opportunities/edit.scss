@@ -8,12 +8,8 @@
   margin-top: $rhythm;
 }
 
-.no_submission_adapter_warning {
-  background: $lighterGray;
-  border-radius: $radius;
-  font-size: $fontSmall;
+.styled_select_wrapper + .microcopy {
   margin-top: $rhythm;
-  padding: $rhythm;
 }
 
 .opportunity_rename_form {

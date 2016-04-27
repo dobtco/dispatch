@@ -79,7 +79,7 @@ en:
   no_results: No results
   no_submission_adapter_warning: |-
     Make sure you explain how to submit proposals in your description!
-    Otherwise, vendors won't know how to contact you.
+    Otherwise, vendors won't know&nbsp;how.
   none: None
   num_results:
     one: 1 search result
