@@ -1,7 +1,6 @@
 @import 'theme/includes';
 
 .opportunity_timeline {
-  border-left: $rhythm solid $lightGray;
   padding-left: $rhythm * 3;
   margin-bottom: $lineHeight;
 
@@ -11,7 +10,7 @@
     position: relative;
 
     &:before {
-      content: ' ';
+      content: '';
       position: absolute;
       top: $rhythm;
       left: - 2.5rem; // horizontally center on timeline
@@ -19,7 +18,27 @@
       border-radius: 50%;
       width: $lineHeight;
       height: $lineHeight;
-      background: white;
+      background: #fff;
+      z-index: 2;
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      left: $rhythm * -3.5;
+      height: 100%;
+      top: 75%;
+      width: 1px;
+      background-color: $darkGray;
+    }
+    &:first-child:after {
+      top: 50%;
+      height: 100%;
+    }
+    &:last-child:after {
+      content: none;
+    }
+    &.is_past {
+      opacity: 0.6;
     }
   }
 }
@@ -27,4 +46,5 @@
 .opportunity_timeline_event {
   font-weight: $weightBold;
   color: $darkerGray;
+  font-size: $fontSmaller;
 }

@@ -42,3 +42,16 @@ a.info_box_header {
     margin-bottom: $rhythm;
   }
 }
+
+.info_box_contact {
+  strong, span {
+    display: block;
+  }
+  strong {
+    font-weight: $weightBold;
+  }
+  span {
+    color: $darkerGray;
+    margin-bottom: $rhythm / 2;
+  }
+}

@@ -4,26 +4,23 @@
       <%= render('opportunities/actions/ask_question') %>
       <%= render('opportunities/actions/submit') %>
     </ul>
+  </div>
 
     <% if @opportunity.contact_info? %>
-      <ul class='sidebar_data'>
-        <li>
-          <div class='sidebar_data_icon'><i class='fa fa-user'></i></div>
-          <div class='sidebar_data_text'>
-            <div class='sidebar_data_label'><%= t('contact_info') %></div>
-            <div class='sidebar_data_value'>
-              <%= @opportunity.contact_name || @opportunity.contact_email %>
-            </div>
-            <div class='sidebar_data_details'>
-              <%= @opportunity.contact_email %>
-              <% if @opportunity.contact_phone.present? %>
-                /
-                <%= @opportunity.contact_phone %>
-              <% end %>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="info_box info_box_contact">
+        <div class="info_box_header">
+          <h4><%= t('contact') %></h4>
+        </div>
+        <div class="info_box_body">
+          <strong><%= @opportunity.contact_name || @opportunity.contact_email %></strong>
+          <span>
+            <%= @opportunity.contact_email %>
+            <% if @opportunity.contact_phone.present? %>
+              /
+              <%= @opportunity.contact_phone %>
+            <% end %>
+          </span>
+        </div>
+      </div>
     <% end %>
-  </div>
 <% end %>
