@@ -30,7 +30,7 @@ en:
     questions:
       title: Questions
     submissions:
-      title: Submissions
+      title: How to Submit
     title:
       title: Title
   email: Email
@@ -96,6 +96,7 @@ en:
   phone: Phone
   post_an_opportunity: Post an opportunity
   posted_time_ago: Posted %{time_ago}
+  public_contact_info: Public contact information
   question_text: Question text
   questions: Questions
   request_approval: Request approval
@@ -111,11 +112,10 @@ en:
     hints:
       opportunity:
         category_ids: |-
-          Vendors who subscribe to these categories will be notified of your opportunity.
-          Choose these carefully!
-        contact_info: This information will be publicly displayed on your opportunity page
+          Your choice of categories will affect the vendors that see your opportunity.
+          Try to choose accurately!
         description: Keep it short and sweet. You can upload your full RFP later.
-        publish_at: Your opportunity will be hidden from the public until this date
+        publish_at: We won't show your opportunity in the listings until this date.
         submission_adapter_data:
           embed_token: Create a project on Screendoor and paste its embed token here.
       user:
@@ -127,7 +127,7 @@ en:
         question_dates: Accept questions between...
         submission_adapter_data:
           submit_to: Send proposals to…
-        submission_adapter_name: Send submissions with...
+        submission_adapter_name: Submissions should be sent through...
         submission_dates: Accept submissions between...
       opportunity_filters:
         text: "I'm looking for:"
