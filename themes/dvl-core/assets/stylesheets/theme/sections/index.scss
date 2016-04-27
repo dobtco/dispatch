@@ -1,0 +1,11 @@
+@import 'theme/includes';
+
+body.index {
+  .navbar {
+    background: transparent;
+    position: absolute;
+    top: $rhythm;
+    left: 0;
+    width: 100%;
+  }
+}

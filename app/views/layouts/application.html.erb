@@ -4,6 +4,7 @@
   <title><%= calculated_page_title %></title>
   <!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->
   <%= stylesheet_link_tag('application', media: 'all') %>
+  <link href='https://fonts.googleapis.com/css?family=Passion+One|Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= yield(:extra_css) %>
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <link rel='alternate' type='application/rss+xml' title='RSS feed' href='<%= feed_opportunities_path(format: :xml) %>' />
