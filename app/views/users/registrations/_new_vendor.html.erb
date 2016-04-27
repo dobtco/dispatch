@@ -12,12 +12,10 @@
     <%= render partial: 'business_data', locals: { f: f } %>
   <% end %>
 
-
   <%= f.input :name %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
   <%= f.input :business_name %>
-
 
   <%= f.input :subscribe_to_category_ids, label: t('.select_categories.label'), hint: t('.select_categories.hint'), as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
