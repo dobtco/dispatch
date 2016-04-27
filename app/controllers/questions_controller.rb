@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  include ActionView::RecordIdentifier
+
   before_action :set_opportunity
   before_action :set_question
 
@@ -13,7 +15,7 @@ class QuestionsController < ApplicationController
       ).deliver_later
     end
 
-    redirect_to :back
+    redirect_to opportunity_path(@opportunity) + "##{dom_id(@question)}"
   end
 
   def update
@@ -27,13 +29,13 @@ class QuestionsController < ApplicationController
       ).deliver_later
     end
 
-    redirect_to :back
+    redirect_to opportunity_path(@opportunity) + "##{dom_id(@question)}"
   end
 
   def destroy
     authorize @opportunity, :answer_questions?
     @question.trash!
-    redirect_to :back
+    redirect_to :back, info: t('question_destroyed')
   end
 
   private

@@ -38,8 +38,8 @@ en:
   email: Email
   email_me: Email me with new search results
   filter: Filter
-  filter_opportunities: Filter opportunities
   filter_destroyed: Your filter has been removed.
+  filter_opportunities: Filter opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
   filter_subscribed_at_time: Filter subscribed to on %{timestamp}
   filter_subscriptions: Filter subscriptions
@@ -109,6 +109,7 @@ en:
   post_an_opportunity: Post an opportunity
   public_contact_info: Public contact information
   publish_your_answer: Publish your answer
+  question_destroyed: The question was destroyed.
   question_text: Question text
   questions: Questions
   remind_me: Remind me
