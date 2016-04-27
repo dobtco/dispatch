@@ -3,13 +3,13 @@ en:
   access_denied: Sorry, you are not allowed to access that page.
   admin: Admin
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
+  answered_by_user_at_time: Answered by %{user} at %{timestamp}
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user_at_time: Answered by %{user} on %{timestamp}
   approve: Approve
   ask: Ask
   ask_question: Ask question
-  asked_by_user_at_time: Asked by %{user} on %{timestamp}
+  from_user: "From %{user}:"
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
@@ -35,7 +35,7 @@ en:
       title: Title
   email: Email
   email_me: Email me with new search results
-  email_subscriptions: Email subscriptions
+  filter_subscriptions: Filter subscriptions
   filter: Filter
   filter_opportunities: Filter opportunities
   get_started: Get started
@@ -88,7 +88,7 @@ en:
         title: Pending opportunities
   opportunity_status:
     not_approved: If everything looks good, submit this opportunity for approval.
-    pending_approval: This opportunity won't go live until you approve it.
+    pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
     posted: This opportunity is posted and viewable to the public.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
@@ -97,6 +97,7 @@ en:
   post_an_opportunity: Post an opportunity
   posted_time_ago: Posted %{time_ago}
   public_contact_info: Public contact information
+  publish_your_answer: Publish your answer
   question_text: Question text
   questions: Questions
   request_approval: Request approval
@@ -105,7 +106,7 @@ en:
   save_and_continue: Save and continue
   search_for_opportunities: Search for opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
-  filter_saved_at_time: Filter saved on %{timestamp}
+  filter_subscribed_at_time: Filter subscribed to on %{timestamp}
   sign_in: Sign in
   sign_out: Sign out
   simple_form:
@@ -173,7 +174,7 @@ en:
         title: Sign up as a vendor
   view_opportunity: View
   view_proposals: View proposals
-  view_search: View search
+  view_filter: View filter
   write_an_answer: Write an answer…
   write_your_question: Write your question…
   timeline:

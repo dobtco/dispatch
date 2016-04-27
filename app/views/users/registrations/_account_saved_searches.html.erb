@@ -1,14 +1,14 @@
 <div class='page_subheader page_subheader_saved_searches'>
-  <h3><%= t('email_subscriptions') %></h3>
+  <h3><%= t('filter_subscriptions') %></h3>
 </div>
 
 <% if current_user.saved_searches.present? %>
   <ul class='formatted_list'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <%= t('filter_saved_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
+        <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
         <div>
-          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_search') %></a>
+          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_filter') %></a>
           <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
         </div>
       </li>
