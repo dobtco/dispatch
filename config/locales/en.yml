@@ -65,7 +65,7 @@ en:
       body_html: A question was posted to <a href='%{href}'>%{title}</a>.
       subject: New question on %{site_title}
     question_deadline:
-      body_html: The deadline for questions about <a href='%{href}'>%{title}<%= t('num_results', count: @opportunities.total_count) %></a> is coming up.
+      body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for questions about %{opportunity}
     search_results:
       body: There are new results that match your subscriptions.
