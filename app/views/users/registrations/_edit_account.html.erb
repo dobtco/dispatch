@@ -9,14 +9,14 @@
   <input type='hidden' name='type' value='account' />
 
   <% unless current_user.permission_level_is_at_least?('staff') %>
-    <%= f.input :business_name, required: true %>
+    <%= f.input :business_name, label: t('business_name'), required: true %>
 
     <%= f.simple_fields_for :business_data, OpenStruct.new(f.object.business_data) do |f| %>
       <%= render partial: 'business_data', locals: { f: f } %>
     <% end %>
   <% end %>
 
-  <%= f.input :name %>
+  <%= f.input :name, label: t('full_name') %>
   <%= f.input :email, required: true %>
 
   <%= f.input :password, hint: false do %>

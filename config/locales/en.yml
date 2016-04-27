@@ -4,7 +4,7 @@ en:
   activerecord:
     errors:
       messages:
-        invalid_staff_domain: not a valid domain
+        invalid_staff_domain: Please enter an address with a valid domain.
   admin: Admin
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
   answer_question: Answer question
@@ -16,6 +16,7 @@ en:
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
+  business_name: Business name
   clear: Clear
   confirm_alert: Are you sure?
   contact: Contact
@@ -41,6 +42,7 @@ en:
   filter_subscribed_at_time: Filter subscribed to on %{timestamp}
   filter_subscriptions: Filter subscriptions
   from_user: 'From %{user}:'
+  full_name: Full name
   get_started: Get started
   home:
     hero:
@@ -103,6 +105,7 @@ en:
     posted: This opportunity is posted and viewable to the public.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
+  password_hint: Make it at least 8 characters.
   pending_opportunities: Pending opportunities
   phone: Phone
   post_an_opportunity: Post an opportunity
@@ -132,8 +135,6 @@ en:
         publish_at: We won't show your opportunity in the listings until this date.
         submission_adapter_data:
           embed_token: Create a project on Screendoor and paste its embed token here.
-      user:
-        password: Make it at least 8 characters.
     labels:
       opportunity:
         category_ids: Categories
@@ -149,8 +150,7 @@ en:
         status: 'With the status:'
         text: 'I''m looking for:'
       user:
-        business_name: The name of your business (optional)
-        email: Your email address
+        email: Email address
         name: Your full name
     placeholders:
       opportunity:
@@ -183,11 +183,20 @@ en:
           Please click the link in order to confirm your account.
         title: Please confirm your account
       new_staff:
+        name: Your full name
+        email: Your %{domain} email address
+        password: Create a password
         email_domain_hint: To post opportunities, you must have an email account that ends with %{domains}.
         title: Sign up as %{agency} staff
       new_vendor:
+        name: What's your full name?
+        email: What's your email address?
+        password: Create a password.
+        business_name:
+          hint: Skip this if it doesn't apply.
+          label: What's the name of your business?
         select_categories:
-          hint: We'll send you a weekly digest with results that match these categories.
+          hint: We'll email you each week with new opportunities in these categories.
           label: What types of opportunities are you interested in?
         title: Sign up as a vendor
   view_filter: View filter
