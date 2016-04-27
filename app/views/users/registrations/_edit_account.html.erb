@@ -1,7 +1,7 @@
 <% content_for(:page_title, 'Your account') %>
 <% content_for(:main_container_class, 'container_tiny') %>
 
-<div class='page_header'>
+<div class='page_header page_header_simple'>
   <h2>Your account</h2>
 </div>
 
@@ -20,10 +20,11 @@
   <%= f.input :email, required: true %>
 
   <%= f.input :password, hint: false do %>
-    <a href='<%= edit_user_registration_path(type: 'password') %>'>Change password</a>
+    <span class='password_shim'>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+    <a href='<%= edit_user_registration_path(type: 'password') %>' class='button mini'>Change</a>
   <% end %>
 
-  <%= f.button :button, class: 'primary' %>
+  <%= f.button :button, t('save_changes'), class: 'primary' %>
 <% end %>
 
 <%= render 'account_saved_searches' %>
