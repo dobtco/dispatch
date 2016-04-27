@@ -20,7 +20,6 @@ en:
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
   department: Department
-  description: Description
   destroy: Delete
   edit: Edit
   edit_answer: Edit answer
@@ -95,7 +94,6 @@ en:
   pending_opportunities: Pending opportunities
   phone: Phone
   post_an_opportunity: Post an opportunity
-  posted_time_ago: Posted %{time_ago}
   public_contact_info: Public contact information
   publish_your_answer: Publish your answer
   question_text: Question text
@@ -154,8 +152,8 @@ en:
       short: "%-m/%d/%y"
   title: Title
   unanswered_questions:
-    one: 1 unanswered question
-    other: "%{count} unanswered questions"
+    one: Answer 1 question
+    other: "Answer %{count} questions"
   unapprove: Un-approve
   users:
     registrations:
