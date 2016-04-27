@@ -1,28 +1,23 @@
 <% content_for(:page_title, t('.title')) %>
 <% content_for(:main_container_class, 'container_tiny') %>
 
-<div class='page_header'>
+<div class='page_header page_header_simple'>
   <h2><%= t('.title') %></h2>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <input type='hidden' name='type' value='vendor' />
 
-  <div class='page_subheader'><h3><%= t('.business_header') %></h3></div>
-
-  <%= f.input :business_name, required: true %>
-
   <%= f.simple_fields_for :business_data, OpenStruct.new(f.object.business_data) do |f| %>
     <%= render partial: 'business_data', locals: { f: f } %>
   <% end %>
 
-  <div class='page_subheader'><h3><%= t('.login_header') %></h3></div>
 
   <%= f.input :name %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
+  <%= f.input :business_name %>
 
-  <div class='page_subheader'><h3><%= t('.notifications_header') %></h3></div>
 
   <%= f.input :subscribe_to_category_ids, label: t('.select_categories.label'), hint: t('.select_categories.hint'), as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 

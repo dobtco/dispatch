@@ -16,7 +16,7 @@ en:
   clear_filters: Clear filters
   confirm_alert: Are you sure?
   contact_info: Contact info
-  create_account: Create account
+  create_account: Sign up
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
   department: Department
@@ -120,8 +120,6 @@ en:
         submission_adapter_data:
           embed_token: Create a project on Screendoor and paste its embed token here.
       user:
-        business_name: Leave this blank if it's not relevant to you
-        name: Your full name, please!
         password: Make it at least 8 characters.
     labels:
       opportunity:
@@ -132,9 +130,20 @@ en:
           submit_to: Send proposals to…
         submission_adapter_name: Accept submissions through…
         submission_dates: Submission period from…
+      opportunity_filters:
+        text: I'm searching for...
+        status: That are...
+        category_ids: Under the category...
+      user:
+        business_name: The name of your business (optional)
+        name: Your full name
+        email: Your email address
     placeholders:
       opportunity:
         title: RFP for Integrated Library System
+      opportunity_filters:
+        text: Enter a word or phrase
+        category_ids: Type in a category
   submit_proposal: Submit proposal
   subscribe: Subscribe to updates
   subscribed: Subscribed to updates
@@ -158,15 +167,12 @@ en:
         title: Please confirm your account
       new_staff:
         email_domain_hint: To post opportunities, you must have an email account that ends with %{domains}.
-        title: City staff sign up
+        title: Sign up as %{agency} staff
       new_vendor:
-        business_header: Tell us about your business
-        login_header: Create a login
-        notifications_header: Choose notifications
         select_categories:
           hint: We'll send you a weekly digest with results that match these categories.
           label: What types of opportunities are you interested in?
-        title: Vendor sign up
+        title: Sign up as a vendor
   view_opportunity: View opportunity
   view_proposals: View proposals
   view_search: View search

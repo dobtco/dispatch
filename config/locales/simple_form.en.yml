@@ -10,15 +10,6 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please fix the errors below."
-    labels:
-      opportunity_filters:
-        text: I'm searching for...
-        status: That are...
-        category_ids: Under the category...
-    placeholders:
-      opportunity_filters:
-        text: Enter a word or phrase
-        category_ids: Type in a category
     # Examples
     # labels:
     #   defaults:
