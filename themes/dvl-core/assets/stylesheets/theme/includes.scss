@@ -11,6 +11,9 @@ $fontFamilyDisplay: 'Passion One', 'Helvetica Neue', Arial, sans-serif;
 $fontFamilyDefault: 'Roboto', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
 $fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace;
 
+$fontLineHeightH1: $rhythm * 8;
+$fontLineHeightH2: $rhythm * 5;
+
 h3 {
   @include fontDisplay;
 }
