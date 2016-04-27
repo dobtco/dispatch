@@ -1,19 +1,19 @@
-<div class='page_subheader'>
-  <h3><%= t('.title') %></h3>
-  <div class='page_subheader_actions'>
-    <a href='<%= opportunities_path %>' class='page_subheader_link'><%= t('.browse_all') %> &rarr;</a>
-  </div>
-</div>
-
-<% if @recent_opportunities.present? %>
-  <ul class='formatted_list'>
+<div class='recent_opps'>
+  <h2><%= t('.title') %></h2>
+  <% if @recent_opportunities.present? %>
+  <ul>
     <% @recent_opportunities.each do |opportunity| %>
       <li>
-        <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
-        <div class='none'><%= t('posted_time_ago', time_ago: relative_timestamp(opportunity.posted_at)).html_safe %></div>
+        <a href='<%= opportunity_path(opportunity) %>'>
+          <span><%= opportunity.title %></span>
+          <%= relative_timestamp(opportunity.posted_at) %>
+        </a>
       </li>
     <% end %>
   </ul>
+
+   <p class="recent_opps_more"><a href='<%= opportunities_path %>' class='button_uppercase'><%= t('.browse_all') %> &rarr;</a></p>
 <% else %>
   <p><%= t('no_opportunities_found') %></p>
 <% end %>
+</div>

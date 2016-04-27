@@ -10,3 +10,55 @@ body.index {
     @include font_smoothing;
   }
 }
+
+.recent_opps {
+  width: 90%;
+  margin: 0 10%;
+  @media screen and (min-width: $lapWidth) {
+    width: 35rem;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+  }
+  li {
+    margin-bottom: $rhythm * 4;
+    &:last-of-type {
+      margin-bottom: $rhythm *2;
+    }
+    a {
+      display: block;
+      border: 1px solid $gray;
+      box-shadow: 0 1px 0 rgba(#000,0.06);
+      border-radius: $radius;
+      padding: ($rhythm * 2) ($rhythm * 3);
+      transition: background-color 0.15s ease-out;
+      &:hover,
+      &:focus,
+      &:active  {
+        text-decoration: none;
+        outline: 0;
+      }
+      &:hover,
+      &:focus {
+        background: $lighterGray;
+      }
+    }
+    span {
+      color: $primaryColor;
+      font-size: 1.2rem;
+      @include font_smoothing;
+    }
+    time {
+      color: $darkerGray;
+      font-size: $fontSmall;
+      display: block;
+    }
+  }
+}
+
+
+.recent_opps_more {
+  text-align: center;
+  margin-bottom: $rhythm * 5;
+}

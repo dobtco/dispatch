@@ -4,11 +4,11 @@
   @include container;
 
   &.container_small {
-    max-width: 50rem;
+    max-width: 35rem;
   }
 
   &.container_tiny {
-    max-width: 40rem;
+    max-width: 25rem;
   }
 }
 
