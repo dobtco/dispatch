@@ -19,5 +19,5 @@
 
   <%= f.input :subscribe_to_category_ids, label: t('.select_categories.label'), hint: t('.select_categories.hint'), as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
 
-  <%= f.button :button, t('create_account'), class: 'primary' %>
+  <%= f.button :button, t('sign_up'), class: 'primary' %>
 <% end %>

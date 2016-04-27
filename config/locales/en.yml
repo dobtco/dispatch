@@ -19,7 +19,6 @@ en:
   clear: Clear
   confirm_alert: Are you sure?
   contact: Contact
-  create_account: Sign up
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
   department: Department
@@ -50,7 +49,7 @@ en:
       hint_signed_in: New opportunities are being added every day!
       title: Win contracts with the City of Philadelphia
     recent_opportunities:
-      see_more: See more...
+      see_more: See more…
       title: The latest opportunities
   keep_editing: Keep editing
   mailer:
@@ -119,12 +118,13 @@ en:
   save_changes: Save changes
   search_for_opportunities: Search for opportunities
   sign_in: Sign in
+  sign_up: Sign up
   sign_out: Sign out
   simple_form:
     hints:
       opportunity:
         category_ids: |-
-          Your choice of categories will affect the vendors that see your opportunity.
+          Your choice of categories will affect the types of vendors that find your opportunity.
           Try to choose accurately!
         description: Keep it short and sweet. You can upload your full RFP later.
         publish_at: We won't show your opportunity in the listings until this date.
@@ -136,11 +136,11 @@ en:
       opportunity:
         category_ids: Categories
         publish_at: Publish on…
-        question_dates: Accept questions between...
+        question_dates: Accept questions between…
         submission_adapter_data:
           submit_to: Send proposals to…
-        submission_adapter_name: Submissions should be sent through...
-        submission_dates: Accept submissions between...
+        submission_adapter_name: Submissions should be sent through…
+        submission_dates: Accept submissions between…
       opportunity_filters:
         category_ids: 'And the categories:'
         status: 'With the status:'
