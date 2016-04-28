@@ -1,26 +1,30 @@
 <% content_for(:page_key, 'opportunities-pending') %>
-<% content_for(:page_title, pending_opportunities_page_title) %>
+<% content_for(:page_title, t('approve')) %>
 <% content_for(:main_container_class, 'container_small') %>
 
-<% if @pending_approval_opportunities.present? %>
-  <div class='page_header'>
-    <h2><%= t('.pending_approval.title') %> (<%= @pending_approval_opportunities.length %>)</h2>
-  </div>
+<div class='page_header'>
+  <h2><%= t('.pending_approval.title') %> (<%= @pending_approval_opportunities.length %>)</h2>
+</div>
 
+<% if @pending_approval_opportunities.present? %>
   <ul class='formatted_list'>
     <% @pending_approval_opportunities.each do |opportunity| %>
       <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
     <% end %>
   </ul>
+<% else %>
+  <div class='blank_slate'>
+    <i class='fa fa-check'></i>
+    <h4><%= t('.pending_approval.none.title') %></h4>
+    <span><%= t('.pending_approval.none.hint') %></span>
+  </div>
 <% end %>
 
-<div class='page_header'>
+<div class='page_header page_header_pending_opportunities'>
   <h2><%= t('.pending_publish.title') %></h2>
 </div>
 
 <% if @pending_publish_opportunities.present? %>
-  <p><%= t('.pending_publish.hint') %></p>
-
   <ul class='formatted_list'>
     <% @pending_publish_opportunities.each do |opportunity| %>
       <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
@@ -29,6 +33,7 @@
 <% else %>
   <div class='blank_slate'>
     <i class='fa fa-file-text'></i>
-    <h4><%= t('.pending_publish.none') %></h4>
+    <h4><%= t('.pending_publish.none.title') %></h4>
+    <span><%= t('.pending_publish.none.hint') %></span>
   </div>
 <% end %>

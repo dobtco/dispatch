@@ -39,5 +39,9 @@ module SubmissionAdapters
     def to_param
       self.class.to_param
     end
+
+    def valid?
+      true
+    end
   end
 end

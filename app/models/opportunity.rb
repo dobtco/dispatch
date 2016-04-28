@@ -72,6 +72,10 @@ class Opportunity < ActiveRecord::Base
     order('GREATEST(publish_at, approved_at) DESC')
   end
 
+  scope :order_by_recently_updated, -> do
+    order('updated_at DESC')
+  end
+
   scope :submissions_open, -> do
     where('submissions_close_at IS NULL OR submissions_close_at > ?', Time.now)
   end
@@ -106,6 +110,7 @@ class Opportunity < ActiveRecord::Base
 
   validates :title, presence: true
   validates :created_by_user, presence: true
+  validate :ensure_submission_adapter_is_valid
 
   delegate :submission_page,
            :view_proposals_url,
@@ -115,7 +120,7 @@ class Opportunity < ActiveRecord::Base
            :submittable?,
            to: :submission_adapter
 
-  before_create :set_default_submission_adapter_name,
+  before_create :set_default_submission_adapter_params,
                 :set_default_contact_info
 
   def self.with_any_category(category_ids)
@@ -217,18 +222,50 @@ class Opportunity < ActiveRecord::Base
     contact_phone.present?
   end
 
+  # @return [Symbol] one of the following:
+  # :not_approved, :submitted_for_approval, :not_published,
+  # :open_for_submissions, :closed
+  def status_key
+    if !approved?
+      if submitted_for_approval?
+        :pending_approval
+      else
+        :draft
+      end
+    elsif !posted?
+      :not_published
+    elsif open_for_submissions?
+      :open
+    else
+      :closed
+    end
+  end
+
   private
 
   def blank_submission_adapter
     SubmissionAdapters::None.new(self)
   end
 
-  def set_default_submission_adapter_name
+  def set_default_submission_adapter_params
     self.submission_adapter_name ||= 'Email'
+
+    if submission_adapter_name == 'Email'
+      self.submission_adapter_data = {
+        'email' => created_by_user.email,
+        'name' => created_by_user.name
+      }
+    end
   end
 
   def set_default_contact_info
     self.contact_name ||= created_by_user.name
     self.contact_email ||= created_by_user.email
+  end
+
+  def ensure_submission_adapter_is_valid
+    unless submission_adapter.valid?
+      errors.add(:submission_adapter, :invalid)
+    end
   end
 end

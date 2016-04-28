@@ -9,6 +9,11 @@ module SubmissionAdapters
       ).squish.html_safe
     end
 
+    def valid?
+      submit_to_email.present? &&
+      submit_to_name.present?
+    end
+
     private
 
     def submit_to_email
