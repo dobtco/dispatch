@@ -473,7 +473,7 @@ DEPENDENCIES
   binding_of_caller
   brakeman
   capybara
-  capybara-webkit
+  capybara-webkit (= 1.10.1)
   carrierwave
   carrierwave-aws
   codeclimate-test-reporter
