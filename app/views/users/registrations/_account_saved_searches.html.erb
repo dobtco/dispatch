@@ -3,11 +3,11 @@
     <h3><%= t('filter_subscriptions') %></h3>
   </div>
 
-  <ul class='formatted_list'>
+  <ul class='formatted_list account_saved_searches'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
         <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
-        <div>
+        <div class='account_saved_searches_actions'>
           <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_filter') %></a>
           <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('destroy') %></a>
         </div>
