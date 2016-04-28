@@ -1,7 +1,7 @@
-Developing the Dispatch "Core Application"
+Developing Dispatch Core
 ---
 
-> Developing the Dispatch Core Application is much different than [customizing](customization.md) your instance of Dispatch. Before making changes to the core application, check to see if your use case is covered in our [customization docs](customization.md) first.
+> Developing "Dispatch Core" is different than [customizing](customization.md) your instance of Dispatch. Before making changes to the core application, check to see if your use case is covered in our [customization docs](customization.md) first.
 
 ## Some general rules of thumb
 
