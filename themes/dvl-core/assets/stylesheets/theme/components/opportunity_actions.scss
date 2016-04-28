@@ -1,11 +1,22 @@
 @import 'theme/includes';
 
-// Less gutter
-.grid.opportunity_actions {
-  margin-bottom: 1rem;
-  margin-left: - 1rem;
-
-  .item {
-    padding-left: 1rem;
+.opportunity_actions {
+  margin-left: - $rhythm;
+  font-size: 0;
+  li {
+    font-size: 100%;
+    display: inline-block;
+    padding-left: $rhythm;
+    position: relative;
+    width: 50%;
+    @media screen and (min-width: $lapWidth) {
+      width: 100%;
+    }
+    @media screen and (min-width: $maxWidth) {
+      width: 50%;
+    }
+  }
+  a {
+    margin-bottom: $rhythm;
   }
 }
