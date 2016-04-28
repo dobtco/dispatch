@@ -17,14 +17,14 @@
             <% if opportunity.department %>
               <%= opportunity.department.name %>
             <% else %>
-              <span class='none'><%= t('no_department') %></span>
+              <span class='none'><%= t('none') %></span>
             <% end %>
           </td>
           <td>
             <% if opportunity.submissions_close_at %>
               <%= long_timestamp(opportunity.submissions_close_at) %>
             <% else %>
-              <span class='none'><%= t('no_deadline') %></span>
+              <span class='none'><%= t('none') %></span>
             <% end %>
           </td>
         </tr>

@@ -59,10 +59,24 @@ describe 'Users' do
         expect(page).to_not have_field :user_business_name
 
         fill_in :user_name, with: 'Joe Shmo'
-        fill_in :user_email, with: 'joe@foobar.biz'
+        fill_in :user_email, with: 'joe@dispatch.gov'
         fill_in :user_password, with: 'password'
         expect { find('#new_user button').click }.
           to change { User.count }.by(1)
+      end
+
+      it 'errors on invalid domain' do
+        visit new_user_registration_path(type: 'staff')
+
+        expect(page).to_not have_field :user_business_name
+
+        fill_in :user_name, with: 'Joe Shmo'
+        fill_in :user_email, with: 'joe@foobar.biz'
+        fill_in :user_password, with: 'password'
+        expect { find('#new_user button').click }.to_not change { User.count }
+        expect(page).to have_text(
+          t('activerecord.errors.messages.invalid_staff_domain')
+        )
       end
     end
   end
@@ -83,7 +97,7 @@ describe 'Users' do
       it 'allows for deleting the search' do
         login_as user
         visit edit_user_registration_path
-        expect { find('.js-destroy-saved-search').click }.
+        expect { click_link t('destroy') }.
           to change { user.saved_searches.count }.by(-1)
       end
     end

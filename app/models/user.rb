@@ -64,6 +64,9 @@ class User < ActiveRecord::Base
   attr_accessor :subscribe_to_category_ids
   after_create :create_saved_search_from_category_ids
 
+  attr_accessor :signup_type
+  validate :ensure_email_matches_staff_domain
+
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -76,13 +79,26 @@ class User < ActiveRecord::Base
   private
 
   def set_staff_if_email_matches_staff_domain
-    if email_domain.in?(DispatchConfiguration.staff_domains)
+    if email_matches_staff_domain?
       self.permission_level = 'staff'
     end
   end
 
+  def email_matches_staff_domain?
+    email_domain.in?(DispatchConfiguration.staff_domains)
+  end
+
   def email_domain
     email.split('@').last
+  end
+
+  def ensure_email_matches_staff_domain
+    if signup_type == :staff && !email_matches_staff_domain?
+      errors.add(
+        :email,
+        I18n.t('activerecord.errors.messages.invalid_staff_domain')
+      )
+    end
   end
 
   def create_saved_search_from_category_ids

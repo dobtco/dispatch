@@ -1,0 +1,27 @@
+@import 'theme/includes';
+
+.page_header_simple h2 {
+  text-align: center;
+  float: none;
+  margin: 0 0 ($rhythm * 1.5);
+}
+
+.page_header_action {
+  display: table;
+  padding-bottom: $rhythm * 1.5;
+  h2, .page_header_action_button {
+    float: none;
+    display: table-cell;
+  }
+  h2 {
+    width: 100%;
+    padding-right: $rhythm * 2;
+  }
+  .page_header_action_button {
+    width: 1px;
+    .button {
+      position: relative;
+      top: $rhythm;
+    }
+  }
+}

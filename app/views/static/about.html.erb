@@ -1,11 +1,15 @@
 <% content_for(:page_title, 'About this site') %>
-<% content_for(:main_container_class, 'container_small') %>
+<% content_for(:main_container_class, 'container_tiny') %>
 
-<div class='page_header'>
+<div class='page_header page_header_simple'>
   <h2>About this site</h2>
 </div>
 
 <p>
   <%= DispatchConfiguration.site_title %> is a website that lists contracting opportunities
-  from <%= DispatchConfiguration.agency_name %>.
+  from <%= DispatchConfiguration.agency_name %>. If you're a business, you can <a href='<%= opportunities_path %>'>browse opportunities</a> that have been posted. <a href='<%= new_user_registration_path(type: 'vendor') %>'>Creating an account</a> also lets you receive email notifications of new opportunities that are a good fit for your business.
+</p>
+
+<p>
+  If you're a government worker, you can <a href='<%= new_user_registration_path(type: 'staff') %>'>create an account</a> to post new opportunities, and approve submitted opportunities.
 </p>

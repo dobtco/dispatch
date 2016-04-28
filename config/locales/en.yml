@@ -1,52 +1,59 @@
 ---
 en:
   access_denied: Sorry, you are not allowed to access that page.
+  activerecord:
+    errors:
+      messages:
+        invalid_staff_domain: Please enter an address with a valid domain.
   admin: Admin
-  allow_vendors_to_ask_questions: Allow vendors to ask questions publicly about this opportunity
+  allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user_at_time: Answered by %{user} on %{timestamp}
+  answered_by_user_at_time: Answered by %{user} at %{timestamp}
   approve: Approve
-  approve_opportunities: Approve opportunities
   ask: Ask
   ask_question: Ask question
-  asked_by_user_at_time: Asked by %{user} on %{timestamp}
   attachments: Attachments
+  browse: Browse
   browse_opportunities: Browse opportunities
-  clear_filters: Clear filters
-  confirm_alert: Are you sure?
-  contact_info: Contact info
-  create_account: Create account
+  business_name: Business name
+  clear: Clear
+  confirm_delete_opportunity: Are you sure you want to delete this opportunity?
+  confirm_delete_question: Are you sure you want to delete this question?
+  contact: Contact
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
   department: Department
-  description: Description
-  destroy: Destroy
-  destroy_opportunity: Destroy opportunity
+  destroy: Delete
   edit: Edit
   edit_answer: Edit answer
-  edit_opportunity: Edit opportunity
   edit_opportunity_steps:
     description:
       title: Description
     questions:
       title: Questions
     submissions:
-      title: Submissions
-    title:
-      title: Title
+      title: How to Submit
   email: Email
+  email_me: Email me with new search results
+  filter: Filter
+  filter_destroyed: Your filter has been removed.
   filter_opportunities: Filter opportunities
+  filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
+  filter_subscribed_at_time: Filter subscribed to on %{timestamp}
+  filter_subscriptions: Filter subscriptions
+  from_user: 'From %{user}:'
+  full_name: Full name
   get_started: Get started
   home:
     hero:
-      cta: Subscribe for business opportunities
-      hint: Sign up to be notified when new projects are posted
+      cta: Sign up today
+      hint: Browse new business opportunities, and get notified when new ones are posted.
       hint_signed_in: New opportunities are being added every day!
       title: Win contracts with the City of Philadelphia
     recent_opportunities:
-      browse_all: Browse all
-      title: Recent opportunities
+      see_more: See more…
+      title: The latest opportunities
   keep_editing: Keep editing
   mailer:
     approval_request:
@@ -64,19 +71,25 @@ en:
       body_html: The deadline for questions about <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for questions about %{opportunity}
     search_results:
-      body: There are new results that match your saved searches.
+      body: There are new results that match your subscriptions.
       subject: New search results on %{site_title}
     submission_deadline:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
   name: Name
-  no_deadline: No deadline
-  no_department: No department
-  no_description: No description
-  no_opportunities_found: No opportunities found
+  no_description: There is no description for this opportunity.
   no_results: No results
-  no_saved_searches: No saved searches
+  no_submission_adapter_warning: |-
+    Make sure you explain how to submit proposals in your description!
+    Otherwise, vendors won't know&nbsp;how.
+  none: None
+  num_opportunities:
+    one: 1 opportunity
+    other: "%{count} opportunities"
+  num_results:
+    one: 1 search result
+    other: "%{count} search results"
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?
@@ -89,66 +102,79 @@ en:
         title: Pending opportunities
   opportunity_status:
     not_approved: If everything looks good, submit this opportunity for approval.
-    pending_approval: This opportunity won't go live until you approve it.
+    pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
     posted: This opportunity is posted and viewable to the public.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
+  password_hint: Make it at least 8 characters.
   pending_opportunities: Pending opportunities
   phone: Phone
-  post_opportunity: Post opportunity
-  posted_time_ago: Posted %{time_ago}
+  post_an_opportunity: Post an opportunity
+  public_contact_info: Public contact information
+  publish_your_answer: Publish your answer
+  question_destroyed: The question was destroyed.
   question_text: Question text
   questions: Questions
+  remind_me: Remind me
+  reminded: You'll be reminded
+  rename: Rename
   request_approval: Request approval
-  rss_for_search: RSS Feed for this search
+  rss: RSS
   save_and_continue: Save and continue
-  save_search: Save this search
-  saved_searches: Saved searches
-  search_saved: This search has been saved. We'll email you with any new results.
-  search_saved_at_time: Search saved on %{timestamp}
+  save_changes: Save changes
+  search_for_opportunities: Search for opportunities
   sign_in: Sign in
   sign_out: Sign out
+  sign_up: Sign up
   simple_form:
     hints:
       opportunity:
         category_ids: |-
-          Vendors who subscribe to these categories will be notified of your opportunity.
-          Choose these carefully!
-        contact_info: This information will be publicly displayed on your opportunity page
+          Your choice of categories will affect the types of vendors that find your opportunity.
+          Try to choose accurately!
         description: Keep it short and sweet. You can upload your full RFP later.
-        publish_at: Your opportunity will be hidden from the public until this date
+        publish_at: We won't show your opportunity in the listings until this date.
         submission_adapter_data:
           embed_token: Create a project on Screendoor and paste its embed token here.
-      user:
-        business_name: Leave this blank if it's not relevant to you
-        email: We'll send a confirmation email to this address before you can log in
-        name: Your full name, please!
-        password: Make it at least 8 characters
     labels:
       opportunity:
-        category_ids: Categorize as…
+        category_ids: Categories
         publish_at: Publish on…
-        question_dates: Question period from…
+        question_dates: Accept questions between…
         submission_adapter_data:
-          submit_to: Send proposals to…
-        submission_adapter_name: Accept submissions through…
-        submission_dates: Submission period from…
+          submit_to: Email proposals to…
+        submission_adapter_name: Submissions should be sent through…
+        submission_dates: Accept submissions between…
+      opportunity_filters:
+        category_ids: 'And the categories:'
+        department_id: 'From the department:'
+        status: 'With the status:'
+        text: 'I''m looking for:'
+      user:
+        email: Email address
+        name: Your full name
     placeholders:
       opportunity:
         title: RFP for Integrated Library System
-  submit_proposal: Submit proposal
-  subscribe: Subscribe to updates
-  subscribed: Subscribed to updates
+      opportunity_filters:
+        text: Enter a word or phrase
+  submit_proposal: Submit a proposal
   subscribed_success: You will be reminded of deadlines for this opportunity
   time:
     formats:
       long: "%b %-e, %Y at %-l:%M%P"
       long_no_year: "%b %-e at %-l:%M%P"
       short: "%-m/%d/%y"
+  timeline:
+    publish_at: Posted
+    questions_close_at: Questions close
+    questions_open_at: Questions open
+    submissions_close_at: Submissions close
+    submissions_open_at: Submissions open
   title: Title
   unanswered_questions:
-    one: 1 unanswered question
-    other: "%{count} unanswered questions"
+    one: Answer 1 question
+    other: Answer %{count} questions
   unapprove: Un-approve
   users:
     registrations:
@@ -158,24 +184,23 @@ en:
           Please click the link in order to confirm your account.
         title: Please confirm your account
       new_staff:
-        email_domain_hint: To post opportunities, you must have an email account that ends with %{domains}.
-        title: City staff sign up
+        email: Your %{domain} email address
+        name: Your full name
+        password: Create a password
+        title: Sign up as %{agency} staff
       new_vendor:
-        business_header: Tell us about your business
-        login_header: Create a login
-        notifications_header: Choose notifications
+        business_name:
+          hint: Skip this if it doesn't apply.
+          label: What's the name of your business?
+        email: What's your email address?
+        name: What's your full name?
+        password: Create a password.
         select_categories:
-          hint: We'll send you a weekly digest with results that match these categories.
+          hint: We'll email you each week with new opportunities in these categories.
           label: What types of opportunities are you interested in?
-        title: Vendor sign up
-  view_opportunity: View opportunity
+        title: Sign up as a vendor
+  view_filter: View filter
+  view_opportunity: View
   view_proposals: View proposals
-  view_search: View search
   write_an_answer: Write an answer…
   write_your_question: Write your question…
-  timeline:
-    publish_at: Posted
-    submissions_open_at: Submissions open
-    submissions_close_at: Submissions close
-    questions_open_at: Questions open
-    questions_close_at: Questions close

@@ -1,0 +1,3 @@
+<% if policy(@opportunity).submit? && @opportunity.submission_adapter.submit_proposals_instructions %>
+  <p class='microcopy'><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
+<% end %>

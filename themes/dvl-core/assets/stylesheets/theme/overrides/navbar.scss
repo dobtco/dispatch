@@ -1,0 +1,12 @@
+@import 'theme/includes';
+
+.navbar_brand {
+  font-family: $fontFamilyDisplay;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: $deskWidth) {
+  .navbar .button {
+    margin-left: $rhythm * 2;
+  }
+}

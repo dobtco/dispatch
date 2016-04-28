@@ -1,15 +1,15 @@
 @import 'theme/includes';
 
 .hero {
-  background: url(asset-path('hero.png')) no-repeat center;
+  background: $primaryColor url(asset-path('hero.jpg')) no-repeat center;
+  background-size: cover;
   text-align: center;
-
+  padding-top: $lineHeight * 5;
+  h1 {
+    margin: 0 0 ($rhythm * 2);
+  }
   p {
-    margin: 0 auto;
-    max-width: none;
-
-    &:first-of-type {
-      margin-bottom: $rhythm * 2;
-    }
+    margin: 0 auto $lineHeight;
+    max-width: 30rem;
   }
 }

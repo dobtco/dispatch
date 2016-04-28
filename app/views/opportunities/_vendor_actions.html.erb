@@ -1,29 +1,10 @@
-<% if policy(@opportunity).submit? || policy(@opportunity).ask_question? || @opportunity.contact_info? %>
-  <div class='sidebar_box'>
-    <ul class='sidebar_button_actions'>
-      <%= render('opportunities/actions/ask_question') %>
-      <%= render('opportunities/actions/submit') %>
-    </ul>
-
-    <% if @opportunity.contact_info? %>
-      <ul class='sidebar_data'>
-        <li>
-          <div class='sidebar_data_icon'><i class='fa fa-user'></i></div>
-          <div class='sidebar_data_text'>
-            <div class='sidebar_data_label'><%= t('contact_info') %></div>
-            <div class='sidebar_data_value'>
-              <%= @opportunity.contact_name || @opportunity.contact_email %>
-            </div>
-            <div class='sidebar_data_details'>
-              <%= @opportunity.contact_email %>
-              <% if @opportunity.contact_phone.present? %>
-                /
-                <%= @opportunity.contact_phone %>
-              <% end %>
-            </div>
-          </div>
-        </li>
-      </ul>
-    <% end %>
+<% if policy(@opportunity).submit? || policy(@opportunity).ask_question? %>
+  <div class='opportunity_actions grid'>
+    <%= render('opportunities/actions/submit') %>
+    <%= render('opportunities/actions/ask_question') %>
   </div>
+
+  <%= render('opportunities/actions/submission_instructions') %>
 <% end %>
+
+<%= render('opportunities/contact_info') %>

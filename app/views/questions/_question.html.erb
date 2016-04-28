@@ -1,13 +1,13 @@
 <div id="<%= dom_id(question) %>" class='question'>
   <div class='question_asked_by'>
-    <%= t('asked_by_user_at_time', user: question.asked_by_user.try(:name) || 'Unknown', timestamp: long_timestamp(question.created_at)).html_safe %>
+    <%= t('from_user', user: question.asked_by_user.try(:name) || 'Unknown') %>
   </div>
-  <div class='question_question_text'><%= format_textarea_input(question.question_text) %></div>
+  <blockquote class='question_question_text'><%= format_textarea_input(question.question_text) %></blockquote>
 
   <% if policy(@opportunity).answer_questions? %>
     <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
       <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_an_answer')  %>
-      <%= f.button :button %>
+      <%= f.button :button,  t('publish_your_answer'), class: 'primary' %>
     <% end %>
   <% end %>
 
@@ -31,7 +31,7 @@
       <% end %>
 
       <li>
-        <a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_alert') %>'>
+        <a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_delete_question') %>'>
           <%= t('destroy') %>
         </a>
       </li>

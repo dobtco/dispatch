@@ -20,6 +20,18 @@ describe 'Opportunity creation' do
     expect(page).to have_text 'newopp'
   end
 
+  it 'renames the opportunity', js: true do
+    visit new_opportunity_path
+    fill_in :opportunity_title, with: 'newopp'
+    find('#new_opportunity button').click
+
+    find('[data-toggle-visible="[data-toggle-opportunity-rename]"]').click
+    fill_in :opportunity_title, with: 'newname'
+    click_button t('rename')
+    expect(page).to have_text 'newname'
+    expect(page).to_not have_text 'newopp'
+  end
+
   it 'allows for uploading and destroying attachments', js: true do
     visit edit_opportunity_path(opportunity, step: 'description')
     show_hidden_file_inputs

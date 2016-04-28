@@ -1,0 +1,57 @@
+@import 'theme/includes';
+
+.info_box {
+  border: 1px solid $gray;
+  border-radius: $radius;
+  box-shadow: 0 1px 0 rgba($black,0.06);
+  margin-bottom: $lineHeight;
+  h4 {
+    margin: 0;
+  }
+}
+
+.info_box_header {
+  display: block;
+  background: $lightestGray;
+  @include border_top_radius($radius);
+  position: relative;
+}
+
+// When header is a link...
+a.info_box_header {
+  text-decoration: none;
+
+  &:hover {
+    background: $lighterGray;
+  }
+}
+
+.info_box_header,
+.info_box_body {
+  padding: $rhythm ($rhythm * 2);
+}
+
+.info_box_body {
+  margin-top: $rhythm;
+  font-size: $fontSmall;
+  input {
+    font-size: $fontSmall;
+  }
+  p:last-child,
+  .input_group {
+    margin-bottom: $rhythm;
+  }
+}
+
+.info_box_contact {
+  strong, span {
+    display: block;
+  }
+  strong {
+    font-weight: $weightBold;
+  }
+  span {
+    color: $darkerGray;
+    margin-bottom: $rhythm / 2;
+  }
+}

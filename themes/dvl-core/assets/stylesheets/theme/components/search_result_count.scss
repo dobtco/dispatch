@@ -1,0 +1,12 @@
+@import 'theme/includes';
+
+.search_result_count {
+  display: block;
+  background: $lightestGray;
+  font-size: $fontSmaller;
+  white-space: nowrap;
+  padding: $rhythm ($rhythm * 2);
+  border-radius: $radius;
+  position: relative;
+  top: $rhythm / -2;
+}

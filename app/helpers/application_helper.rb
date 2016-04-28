@@ -39,7 +39,7 @@ module ApplicationHelper
     ) do
       (name +
       (if filterer.sort == key
-         ' ' +
+         '&nbsp'.html_safe +
          tag(
            :i,
            class: if filterer.direction == 'asc'

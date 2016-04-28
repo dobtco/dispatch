@@ -7,12 +7,12 @@ class SavedSearchesController < ApplicationController
 
   def create
     current_user.saved_searches.create(search_params: saved_search_params)
-    redirect_to :back, success: t('search_saved')
+    redirect_to :back, success: t('filter_saved')
   end
 
   def destroy
     @saved_search.destroy
-    head :no_content
+    redirect_to :back, info: t('filter_destroyed')
   end
 
   private

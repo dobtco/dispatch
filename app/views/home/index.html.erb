@@ -1,14 +1,11 @@
 <% content_for(:page_title, t('home.hero.title')) %>
+<% content_for(:page_key, 'index') %>
 
 <% content_for(:before_container) do %>
   <%= render('hero') %>
 <% end %>
 
-<div class='grid'>
-  <div class='item lap_six_columns'>
-    <%= render('recent_opportunities') %>
-  </div>
-  <div class='item lap_six_columns'>
-    <%= render('about') %>
-  </div>
+<div class='recent_opps'>
+  <%= render('recent_opportunities') %>
+  <%= render('about') %>
 </div>

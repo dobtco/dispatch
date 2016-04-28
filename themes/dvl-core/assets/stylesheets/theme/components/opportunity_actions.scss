@@ -1,0 +1,11 @@
+@import 'theme/includes';
+
+// Less gutter
+.grid.opportunity_actions {
+  margin-bottom: 1rem;
+  margin-left: - 1rem;
+
+  .item {
+    padding-left: 1rem;
+  }
+}

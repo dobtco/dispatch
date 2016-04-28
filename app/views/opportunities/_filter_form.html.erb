@@ -1,26 +1,35 @@
-<%= simple_form_for :opportunity_filters, action: url_for, method: :get do |f| %>
-  <input type='hidden' name='sort' value='<%= @opportunities.filterer.sort %>' />
-  <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
+<div class="info_box">
+  <div class="info_box_header">
+    <h4><%=  t('filter_opportunities') %></h4>
+    <% if filtered? %>
+      <a href='<%= url_for(pick(params, :sort, :direction)) %>' class='filter_clear'><%= t('clear') %></a>
+    <% end %>
+  </div>
+  <div class="info_box_body">
+    <%= simple_form_for :opportunity_filters, action: url_for, method: :get do |f| %>
+      <input type='hidden' name='sort' value='<%= @opportunities.filterer.sort %>' />
+      <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
 
-  <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
-  <%= f.input :status, required: false, as: :select, collection: [['Open', 'open'], ['Closed', 'closed'], ['All', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status], input_html: { 'data-width' => 'full' } %>
-  <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
+      <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
+      <%= f.input :status, required: false, as: :select, collection: [['Open for submissions', 'open'], ['Closed for submissions', 'closed'], ['Open or closed', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status], input_html: { 'data-width' => 'full' } %>
+      <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
+      <%= f.input :department_id, required: false, as: :select, collection: Department.all, selected: @opportunities.filterer.params[:department_id], include_blank: true %>
 
-  <%= f.button :button, t('filter_opportunities'), class: 'primary' %>
-<% end %>
-
+      <%= f.button :button, t('filter'), class: 'primary' %>
+    <% end %>
+  </div>
+</div>
 
 <% if filtered? %>
   <ul class='sidebar_sub_actions'>
-    <li><a href='<%= url_for(pick(params, :sort, :direction)) %>'><%= t('clear_filters') %></a></li>
-    <li><a href='<%= feed_opportunities_path(current_filter_params.merge(format: :xml)) %>'><%= t('rss_for_search') %></a></li>
-
     <li>
       <% if signed_in? %>
-        <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('save_search') %></a>
+        <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('email_me') %></a>
       <% else %>
-        <a href='<%= new_user_session_path %>'><%= t('save_search') %></a>
+        <a href='<%= new_user_session_path %>'><%= t('email_me') %></a>
       <% end %>
     </li>
+
+    <li><a href='<%= feed_opportunities_path(current_filter_params.merge(format: :xml)) %>'><%= t('rss') %></a></li>
   </ul>
 <% end %>

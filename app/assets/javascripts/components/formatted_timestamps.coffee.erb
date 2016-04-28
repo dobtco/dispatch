@@ -62,5 +62,5 @@ $.fn.extend formattedTimestamps: ->
       return $(@).timeago()
 
     stamp = new Date(Date.parse($(@).attr('datetime')))
-    formatted = strftime stamp, $(@).attr('format')
+    formatted = strftime stamp, $(@).data('format')
     $(@).text formatted

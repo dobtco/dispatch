@@ -8,7 +8,7 @@
   }
 
   &.container_tiny {
-    max-width: 40rem;
+    max-width: 35rem;
   }
 }
 
@@ -30,4 +30,9 @@
 
 .footer {
   margin-top: $lineHeight * 2;
+}
+
+th a {
+  color: $darkerGray;
+  white-space: nowrap;
 }

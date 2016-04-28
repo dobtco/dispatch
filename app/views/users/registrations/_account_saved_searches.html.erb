@@ -1,22 +1,17 @@
-<div class='page_subheader page_subheader_saved_searches'>
-  <h3><%= t('saved_searches') %></h3>
-</div>
-
 <% if current_user.saved_searches.present? %>
-  <ul class='formatted_list'>
+  <div class='page_subheader page_subheader_saved_searches'>
+    <h3><%= t('filter_subscriptions') %></h3>
+  </div>
+
+  <ul class='formatted_list account_saved_searches'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <%= t('search_saved_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
-        <div>
-          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_search') %></a>
-          <a href='<%= saved_search_path(saved_search) %>' data-method='delete' data-remote class='js-destroy-saved-search'><%= t('destroy') %></a>
+        <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
+        <div class='account_saved_searches_actions'>
+          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_filter') %></a>
+          <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('destroy') %></a>
         </div>
       </li>
     <% end %>
   </ul>
-<% else %>
-  <div class='blank_slate'>
-    <i class='fa fa-search'></i>
-    <h4><%= t('no_saved_searches') %></h4>
-  </div>
 <% end %>

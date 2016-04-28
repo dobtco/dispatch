@@ -1,7 +1,7 @@
 <%= f.input :department_id, as: :select, collection: Department.all %>
 <%= f.input :description %>
 
-<%= f.input :contact_info do %>
+<%= f.input :contact_info, label: t('public_contact_info') do %>
   <%= f.input :contact_name, label: t('name'), wrapper: :vertical %>
   <%= f.input :contact_email, label: t('email'), wrapper: :vertical %>
   <%= f.input :contact_phone, label: t('phone'), wrapper: :vertical %>

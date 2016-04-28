@@ -1,13 +1,11 @@
 <% if policy(@opportunity).submit? %>
-  <li>
-    <% if @opportunity.submission_adapter.submission_page %>
-      <a class='button block info' href='<%= submit_opportunity_path %>'><%= t('submit_proposal') %></a>
-    <% elsif @opportunity.submission_adapter.submit_proposals_url %>
-      <a class='button block info' href='<%= @opportunity.submission_adapter.submit_proposals_url %>'><%= t('submit_proposal') %></a>
-    <% end %>
-
-    <% if @opportunity.submission_adapter.submit_proposals_instructions %>
-      <p><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
-    <% end %>
-  </li>
+  <% if @opportunity.submission_adapter.submission_page %>
+    <li class='item six_columns'>
+      <a class='button small block primary' href='<%= submit_opportunity_path %>'><%= t('submit_proposal') %></a>
+    </li>
+  <% elsif @opportunity.submission_adapter.submit_proposals_url %>
+    <li class='item six_columns'>
+      <a class='button small block primary' href='<%= @opportunity.submission_adapter.submit_proposals_url %>'><%= t('submit_proposal') %></a>
+    </li>
+  <% end %>
 <% end %>

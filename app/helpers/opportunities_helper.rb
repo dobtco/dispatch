@@ -2,7 +2,8 @@ module OpportunitiesHelper
   def filtered?
     @opportunities.filterer.params[:text].present? ||
     @opportunities.filterer.params[:status] != 'open' ||
-    @opportunities.filterer.params[:category_ids].present?
+    @opportunities.filterer.params[:category_ids].present? ||
+    @opportunities.filterer.params[:department_id].present?
   end
 
   def current_filter_params
@@ -26,7 +27,6 @@ module OpportunitiesHelper
 
   def edit_opportunity_steps
     %w(
-      title
       description
       questions
       submissions
@@ -39,7 +39,7 @@ module OpportunitiesHelper
 
   def pending_opportunities_page_title
     if policy(:opportunity).approve?
-      t('approve_opportunities')
+      t('approve')
     else
       t('pending_opportunities')
     end

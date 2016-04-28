@@ -1,7 +1,7 @@
 module SubmissionAdapters
   class Base
     # The adapter's name. This will be displayed when posting an opportunity
-    class_attribute :name
+    class_attribute :select_text
 
     # If true, we'll display a submission page and look for a template in ...
     class_attribute :submission_page

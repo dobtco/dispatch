@@ -1,12 +1,5 @@
 module SubmissionAdapters
   class None < SubmissionAdapters::Base
-    self.name = 'None'
-
-    def submit_proposals_instructions
-      %(
-        Look at the opportunity description for details on submitting
-        a proposal.
-      ).squish
-    end
+    self.select_text = 'None of the above'
   end
 end

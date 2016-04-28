@@ -31,5 +31,11 @@ module Users
     def set_edit_type
       @edit_type = params[:type] == 'password' ? :password : :account
     end
+
+    def sign_up_params
+      super.tap do |h|
+        h[:signup_type] = @signup_type
+      end
+    end
   end
 end

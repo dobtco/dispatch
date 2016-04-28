@@ -7,3 +7,31 @@
 .opportunity_contact_name {
   margin-top: $rhythm;
 }
+
+.styled_select_wrapper + .microcopy {
+  margin-top: $rhythm;
+}
+
+.opportunity_rename_form {
+  margin-bottom: $rhythm;
+  div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  input {
+    @include fontDisplay;
+    font-size: $fontSizeH2;
+    @include font_smoothing;
+    height: $fontSizeH2 + ($inputPadding * 2);
+    color: $black;
+  }
+}
+
+.opportunity_rename_input {
+  width: 100%;
+}
+
+.opportunity_rename_button {
+  width: 1px;
+  padding-left: $rhythm * 2;
+}

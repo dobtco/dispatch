@@ -13,7 +13,7 @@ FactoryGirl.define do
     sequence(:name) do |i|
       names = [
         'Office of Management and Budget',
-        'Office of Technology and Innovation',
+        'Office of Innovation and Technology',
         "Mayor's Office"
       ]
 

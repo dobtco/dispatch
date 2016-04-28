@@ -1,6 +1,6 @@
 module SubmissionAdapters
   class Screendoor < SubmissionAdapters::Base
-    self.name = 'Screendoor'
+    self.select_text = 'Screendoor'
     self.submission_page = true
 
     def view_proposals_url
@@ -9,11 +9,7 @@ module SubmissionAdapters
     end
 
     def view_proposals_link_text
-      'Review submissions on Screendoor'
-    end
-
-    def submit_proposals_instructions
-      'Submissions are accepted online.'
+      "Review submissions <i class='fa fa-external-link'></i>".html_safe
     end
   end
 end

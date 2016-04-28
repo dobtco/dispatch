@@ -1,20 +1,19 @@
-<% content_for(:page_title, t('.title')) %>
+<% content_for(:page_title, t('.title', agency: DispatchConfiguration.agency_name)) %>
 <% content_for(:main_container_class, 'container_tiny') %>
 
-<div class='page_header'>
-  <h2><%= t('.title') %></h2>
+<div class='page_header page_header_simple'>
+  <h2><%= t('.title', agency: DispatchConfiguration.agency_name) %></h2>
 </div>
 
 <p>
-  <%= t('.email_domain_hint', domains: DispatchConfiguration.staff_domains.map { |x| "<strong>@#{x}</strong>" }.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ', or ')).html_safe %>
 </p>
 
 <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
   <input type='hidden' name='type' value='staff' />
 
-  <%= f.input :name %>
-  <%= f.input :email, required: true %>
-  <%= f.input :password, required: true %>
+  <%= f.input :name, label: t('.name') %>
+  <%= f.input :email, label: t('.email', domain: DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ', or ')).html_safe, required: true %>
+  <%= f.input :password, label: t('.password'), hint: t('password_hint'), required: true %>
 
-  <%= f.button :button, t('create_account'), class: 'primary' %>
+  <%= f.button :button, t('sign_up'), class: 'primary' %>
 <% end %>

@@ -1,10 +1,10 @@
 module SubmissionAdapters
   class Email < SubmissionAdapters::Base
-    self.name = 'Email'
+    self.select_text = 'Email'
 
     def submit_proposals_instructions
       %(
-        Submissions for this opportunity should be sent via email to
+        Proposals for this opportunity should be sent by email to
         <a href='mailto:#{submit_to_email}'>#{submit_to_name}</a>.
       ).squish.html_safe
     end

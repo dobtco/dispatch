@@ -2,9 +2,9 @@ module SubmissionAdapters
   class << self
     mattr_accessor :all_adapters do
       [
-        SubmissionAdapters::None,
+        SubmissionAdapters::Email,
         SubmissionAdapters::Screendoor,
-        SubmissionAdapters::Email
+        SubmissionAdapters::None
       ]
     end
   end

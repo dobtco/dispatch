@@ -1,8 +1,19 @@
 @import 'dvl/core/includes';
 
-// dvl/core overrides
-$navBackground: #000;
 
-$fontFamilyDefault: 'Helvetica Neue', Arial, sans-serif !default;
-$fontFamilyDisplay: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif !default;
-$fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace !default;
+// dvl/core overrides
+$navBackground: #2E2334;
+
+$primaryColor: #2E2334;
+$secondaryColor: #ED8442;
+
+$fontFamilyDisplay: 'Passion One', 'Helvetica Neue', Arial, sans-serif;
+$fontFamilyDefault: 'Roboto', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+$fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace;
+
+$fontLineHeightH1: $rhythm * 8;
+$fontLineHeightH2: $rhythm * 5;
+
+h3 {
+  @include fontDisplay;
+}
