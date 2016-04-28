@@ -1,4 +1,4 @@
-Dispatch [![Circle CI](https://circleci.com/gh/dobtco/dispatch.svg?style=shield)](https://circleci.com/gh/dobtco/dispatch) [![Code Climate](https://codeclimate.com/github/dobtco/dispatch/badges/gpa.svg)](https://codeclimate.com/github/dobtco/dispatch) [![Test Coverage](https://codeclimate.com/github/dobtco/dispatch/badges/coverage.svg)](https://codeclimate.com/github/dobtco/dispatch/coverage)
+Dispatch [![Circle CI](https://circleci.com/gh/dobtco/dispatch.svg?style=shield)](https://circleci.com/gh/dobtco/dispatch) [![Code Climate](https://codeclimate.com/github/dobtco/dispatch/badges/gpa.svg)](https://codeclimate.com/github/dobtco/dispatch) [![Test Coverage](https://codeclimate.com/github/dobtco/dispatch/badges/coverage.svg)](https://codeclimate.com/github/dobtco/dispatch/coverage) [![Dependency Status](https://gemnasium.com/badges/github.com/dobtco/dispatch.svg)](https://gemnasium.com/github.com/dobtco/dispatch)
 ====
 
 ![screenshot of Dispatch home page](docs/screenshot.png)

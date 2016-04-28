@@ -4,7 +4,11 @@ ruby '2.3.0'
 
 gem 'rails'
 
-gem 'administrate'
+# Derp: https://github.com/thoughtbot/administrate/pull/560
+gem 'administrate',
+    github: 'yujinakayama/administrate',
+    branch: 'fix-load-error'
+
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',
     branch: 'bundle-process'
