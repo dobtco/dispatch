@@ -29,9 +29,9 @@ en:
   edit_answer: Edit answer
   edit_opportunity_steps:
     description:
-      title: Description
-    questions:
-      title: Questions
+      title: About
+    contact:
+      title: Contact Info
     submissions:
       title: How to Submit
   email: Email
