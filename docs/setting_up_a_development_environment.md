@@ -1,4 +1,4 @@
-Developing Dispatch
+Setting up a development environment
 ----
 
 ## Installation
