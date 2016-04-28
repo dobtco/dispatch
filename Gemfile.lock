@@ -16,6 +16,23 @@ GIT
       coffee-script
       sass
 
+GIT
+  remote: git://github.com/yujinakayama/administrate.git
+  revision: a16bcfa73c7d334cfd5518f18e9bc14dd8a10ada
+  branch: fix-load-error
+  specs:
+    administrate (0.2.0)
+      autoprefixer-rails (~> 6.0)
+      datetime_picker_rails (~> 0.0.7)
+      jquery-rails (~> 4.0)
+      kaminari (~> 0.16)
+      momentjs-rails (~> 2.8)
+      neat (~> 1.1)
+      normalize-rails (~> 3.0)
+      rails (~> 4.2)
+      sass-rails (~> 5.0)
+      selectize-rails (~> 0.6)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -56,17 +73,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    administrate (0.1.5)
-      autoprefixer-rails (~> 6.0)
-      datetime_picker_rails (~> 0.0.7)
-      jquery-rails (~> 4.0)
-      kaminari (~> 0.16)
-      momentjs-rails (~> 2.8)
-      neat (~> 1.1)
-      normalize-rails (~> 3.0)
-      rails (~> 4.2)
-      sass-rails (~> 5.0)
-      selectize-rails (~> 0.6)
     annotate (2.7.0)
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
@@ -118,7 +124,7 @@ GEM
       aws-sdk (~> 2.0)
       carrierwave (~> 0.7)
     chronic (0.10.2)
-    codeclimate-test-reporter (0.4.8)
+    codeclimate-test-reporter (0.5.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -134,7 +140,7 @@ GEM
     css_parser (1.4.1)
       addressable
     daemons (1.2.3)
-    database_cleaner (1.5.2)
+    database_cleaner (1.5.3)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     debug_inspector (0.0.2)
@@ -143,12 +149,11 @@ GEM
     delayed_job_active_record (4.1.0)
       activerecord (>= 3.0, < 5)
       delayed_job (>= 3.0, < 5)
-    devise (3.5.6)
+    devise (4.0.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
+      railties (>= 4.1.0, < 5.1)
       responders
-      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
@@ -240,9 +245,7 @@ GEM
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (3.0)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
+    mime-types (1.25.1)
     mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -253,7 +256,7 @@ GEM
       bourbon (>= 4.0)
       sass (>= 3.3)
     nenv (0.3.0)
-    newrelic_rpm (3.15.1.316)
+    newrelic_rpm (3.15.2.317)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (3.0.3)
@@ -447,7 +450,7 @@ GEM
       activesupport
     warden (1.2.6)
       rack (>= 1.0)
-    webmock (1.24.3)
+    webmock (2.0.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -455,13 +458,15 @@ GEM
       chronic (>= 0.6.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-    yomu (0.1.5)
+    yomu (0.2.4)
+      json (~> 1.8)
+      mime-types (~> 1.23)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  administrate
+  administrate!
   annotate
   autoprefixer-rails!
   better_errors
