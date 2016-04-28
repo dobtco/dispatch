@@ -4,7 +4,7 @@ body.index {
   .navbar {
     background: transparent;
     position: absolute;
-    top: $rhythm;
+    top: 0;
     left: 0;
     width: 100%;
     @include font_smoothing;
