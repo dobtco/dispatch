@@ -12,7 +12,7 @@
   <input type='hidden' name='type' value='staff' />
 
   <%= f.input :name, label: t('.name') %>
-  <%= f.input :email, label: t('.email', domain: DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ', or ')).html_safe,required: true %>
+  <%= f.input :email, label: t('.email', domain: DispatchConfiguration.staff_domains.map { |x| "@#{x}" }.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ', or ')).html_safe, required: true %>
   <%= f.input :password, label: t('.password'), hint: t('password_hint'), required: true %>
 
   <%= f.button :button, t('sign_up'), class: 'primary' %>
