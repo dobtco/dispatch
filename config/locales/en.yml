@@ -18,7 +18,8 @@ en:
   browse_opportunities: Browse opportunities
   business_name: Business name
   clear: Clear
-  confirm_delete: Are you sure you want to delete this %{thing}?
+  confirm_delete_opportunity: Are you sure you want to delete this opportunity?
+  confirm_delete_question: Are you sure you want to delete this question?
   contact: Contact
   created_by_user_at_time: Created by %{user} on %{timestamp}
   deadline: Deadline
@@ -83,13 +84,12 @@ en:
     Make sure you explain how to submit proposals in your description!
     Otherwise, vendors won't know&nbsp;how.
   none: None
-  num_results:
-    one: 1 search result
-    other: "%{count} search results"
   num_opportunities:
     one: 1 opportunity
     other: "%{count} opportunities"
-  opportunity: opportunity
+  num_results:
+    one: 1 search result
+    other: "%{count} search results"
   opportunities:
     new:
       whats_the_title: What's the title of your opportunity?
@@ -113,7 +113,6 @@ en:
   public_contact_info: Public contact information
   publish_your_answer: Publish your answer
   question_destroyed: The question was destroyed.
-  question: question
   question_text: Question text
   questions: Questions
   remind_me: Remind me
@@ -185,17 +184,17 @@ en:
           Please click the link in order to confirm your account.
         title: Please confirm your account
       new_staff:
-        name: Your full name
         email: Your %{domain} email address
+        name: Your full name
         password: Create a password
         title: Sign up as %{agency} staff
       new_vendor:
-        name: What's your full name?
-        email: What's your email address?
-        password: Create a password.
         business_name:
           hint: Skip this if it doesn't apply.
           label: What's the name of your business?
+        email: What's your email address?
+        name: What's your full name?
+        password: Create a password.
         select_categories:
           hint: We'll email you each week with new opportunities in these categories.
           label: What types of opportunities are you interested in?

@@ -1,11 +1,10 @@
 <%= f.input :submission_adapter_name do %>
-  <%= f.input_field :submission_adapter_name, as: :select, collection: SubmissionAdapters.all_adapters, include_blank: false, value_method: :to_adapter_name %>
+  <%= f.input_field :submission_adapter_name, as: :select, collection: SubmissionAdapters.all_adapters, include_blank: false, value_method: :to_adapter_name, label_method: :select_text %>
 
   <div class='microcopy' data-show-if-selected="#opportunity_submission_adapter_name|None"<% unless f.object.submission_adapter_name == 'None' %> style='display:none'<% end %>>
     <%= t('no_submission_adapter_warning').html_safe %>
   </div>
 <% end %>
-
 
 <%= render partial: 'opportunities/edit/submission_adapter_inputs', locals: { f: f } %>
 

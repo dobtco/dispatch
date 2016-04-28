@@ -1,5 +1,5 @@
 module SubmissionAdapters
   class None < SubmissionAdapters::Base
-    self.name = 'None of the above'
+    self.select_text = 'None of the above'
   end
 end

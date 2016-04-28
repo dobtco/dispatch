@@ -1,6 +1,6 @@
 module SubmissionAdapters
   class Screendoor < SubmissionAdapters::Base
-    self.name = 'Screendoor'
+    self.select_text = 'Screendoor'
     self.submission_page = true
 
     def view_proposals_url

@@ -1,6 +1,6 @@
 module SubmissionAdapters
   class Email < SubmissionAdapters::Base
-    self.name = 'Email'
+    self.select_text = 'Email'
 
     def submit_proposals_instructions
       %(

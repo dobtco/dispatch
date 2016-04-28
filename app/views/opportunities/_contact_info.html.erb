@@ -1,0 +1,20 @@
+<% if @opportunity.contact_info? %>
+  <div class="info_box info_box_contact">
+    <div class="info_box_header">
+      <h4><%= t('contact') %></h4>
+    </div>
+    <div class="info_box_body">
+      <strong><%= @opportunity.contact_name || @opportunity.contact_email %></strong>
+      <span>
+        <% if @opportunity.contact_email.present? %>
+          <a href='mailto:<%= @opportunity.contact_email %>'><%= @opportunity.contact_email %></a>
+        <% end %>
+
+        <% if @opportunity.contact_phone.present? %>
+          /
+          <%= @opportunity.contact_phone %>
+        <% end %>
+      </span>
+    </div>
+  </div>
+<% end %>

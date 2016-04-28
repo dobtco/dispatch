@@ -1,16 +1,11 @@
 @import 'theme/includes';
 
-.opportunity_actions {
-  display: table;
-  width: 100%;
-  margin-bottom: $lineHeight;
-  li {
-    display: table-cell;
-    text-align: center;
-    width: 100%;
-    ~ li {
-      width: 50%;
-      padding: 0 5%;
-    }
+// Less gutter
+.grid.opportunity_actions {
+  margin-bottom: 1rem;
+  margin-left: - 1rem;
+
+  .item {
+    padding-left: 1rem;
   }
 }
