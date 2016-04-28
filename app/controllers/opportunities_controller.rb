@@ -19,16 +19,14 @@ class OpportunitiesController < ApplicationController
   end
 
   def pending
-    authorize_staff
+    authorize :opportunity, :approve?
 
     @pending_approval_opportunities = Opportunity.
-                                        not_approved.
-                                        select { |opp| policy(opp).show? }
+                                        not_approved
 
     @pending_publish_opportunities = Opportunity.
                                       not_published.
-                                      approved.
-                                      select { |opp| policy(opp).show? }
+                                      approved
   end
 
   def new

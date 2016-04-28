@@ -95,10 +95,14 @@ en:
       whats_the_title: What's the title of your opportunity?
     pending:
       pending_approval:
+        none:
+          hint: When a staff member creates an opportunity, it will appear here for your approval.
+          title: No opportunities to approve
         title: Opportunities awaiting approval
       pending_publish:
-        hint: The following opportunities have been approved, and will go live on their publish date.
-        none: No pending opportunities
+        none:
+          hint: Opportunities that have been approved but are set to publish in the future will appear here.
+          title: No pending opportunities
         title: Pending opportunities
   opportunity_status:
     not_approved: If everything looks good, submit this opportunity for approval.
@@ -107,7 +111,6 @@ en:
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   password_hint: Make it at least 8 characters.
-  pending_opportunities: Pending opportunities
   phone: Phone
   post_an_opportunity: Post an opportunity
   public_contact_info: Public contact information
@@ -202,5 +205,6 @@ en:
   view_filter: View filter
   view_opportunity: View
   view_proposals: View proposals
+  will_publish_at_time: Will be published on %{timestamp}
   write_an_answer: Write an answer…
   write_your_question: Write your question…

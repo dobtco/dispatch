@@ -37,14 +37,6 @@ module OpportunitiesHelper
     "submission_adapters/#{adapter_class.to_param}/edit"
   end
 
-  def pending_opportunities_page_title
-    if policy(:opportunity).approve?
-      t('approve')
-    else
-      t('pending_opportunities')
-    end
-  end
-
   def opportunity_timeline_events
     pick(
       @opportunity,

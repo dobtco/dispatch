@@ -11,10 +11,10 @@
             <a href='<%= opportunities_path %>'><%= t('browse') %></a>
           </li>
 
-          <% if policy(:opportunity).approve? || policy(:opportunity).create? %>
+          <% if policy(:opportunity).approve? %>
             <li <% if content_for(:page_key) == 'opportunities-pending' %>class='active'<% end %>>
               <a href='<%= pending_opportunities_path %>'>
-                <%= pending_opportunities_page_title %>
+                <%= t('approve') %>
 
                 <% if policy(:opportunity).approve? && Opportunity.not_approved.count > 0 %>
                   <span class='navbar_badge'><%= Opportunity.not_approved.count %></span>
