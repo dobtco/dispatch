@@ -1,24 +1,3 @@
 @import 'dvl/core/includes';
-
-// dvl/core overrides
-$navBackground: #2E2334;
-
-$primaryColor: #2E2334;
-$secondaryColor: #ED8442;
-
-$fontFamilyDisplay: 'Passion One', 'Helvetica Neue', Arial, sans-serif;
-$fontFamilyDefault: 'Roboto', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
-$fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace;
-
-$fontLineHeightH1: $rhythm * 8;
-$fontLineHeightH2: $rhythm * 5;
-
-h3 {
-  @include fontDisplay;
-}
-
-@media screen and (max-width: $lapWidth) {
-  h2, h3 {
-    font-family: $fontFamilyDisplay;
-  }
-}
+@import 'branding';
+@import 'typography_overrides';
