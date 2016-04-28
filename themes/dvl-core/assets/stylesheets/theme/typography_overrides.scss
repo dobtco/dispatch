@@ -1,0 +1,12 @@
+$fontLineHeightH1: $rhythm * 8;
+$fontLineHeightH2: $rhythm * 5;
+
+h3 {
+  @include fontDisplay;
+}
+
+@media screen and (max-width: $lapWidth) {
+  h2, h3 {
+    font-family: $fontFamilyDisplay;
+  }
+}

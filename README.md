@@ -27,7 +27,7 @@ Government officials truly want to make it easier for you to do business with th
 
 Dispatch is a Rails application, backed by a PostgreSQL database. It does not have any other significant dependencies, which makes it easy to deploy and maintain.
 
-[Read more about developing Dispatch &rarr;](docs/development.md)
+[Read more about developing Dispatch &rarr;](docs/setting_up_a_development_environment.md)
 
 ## List of Deployments
 
