@@ -101,6 +101,16 @@ describe 'Users' do
           to change { user.saved_searches.count }.by(-1)
       end
     end
+
+    context 'with a created opportunity' do
+      let!(:opportunity) { create(:opportunity, created_by_user: user) }
+
+      it 'shows the opportunity' do
+        login_as user
+        visit edit_user_registration_path
+        expect(page).to have_link opportunity.title
+      end
+    end
   end
 
   describe 'Changing your password' do

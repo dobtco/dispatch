@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
   # Used for "Subscribe to this opportunity"
   has_and_belongs_to_many :opportunities
 
+  has_many :created_opportunities,
+           foreign_key: :created_by_user_id,
+           class_name: 'Opportunity',
+           dependent: :nullify
+
   has_many :saved_searches, dependent: :destroy
   has_many :audits, dependent: :destroy
 

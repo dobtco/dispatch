@@ -72,6 +72,10 @@ class Opportunity < ActiveRecord::Base
     order('GREATEST(publish_at, approved_at) DESC')
   end
 
+  scope :order_by_recently_updated, -> do
+    order('updated_at DESC')
+  end
+
   scope :submissions_open, -> do
     where('submissions_close_at IS NULL OR submissions_close_at > ?', Time.now)
   end
@@ -215,6 +219,25 @@ class Opportunity < ActiveRecord::Base
     contact_name.present? ||
     contact_email.present? ||
     contact_phone.present?
+  end
+
+  # @return [Symbol] one of the following:
+  # :not_approved, :submitted_for_approval, :not_published,
+  # :open_for_submissions, :closed
+  def status_key
+    if !approved?
+      if submitted_for_approval?
+        :pending_approval
+      else
+        :draft
+      end
+    elsif !posted?
+      :not_published
+    elsif open_for_submissions?
+      :open
+    else
+      :closed
+    end
   end
 
   private

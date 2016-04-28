@@ -77,6 +77,7 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
+  my_opportunities: My opportunities
   name: Name
   no_description: There is no description for this opportunity.
   no_results: No results
@@ -104,12 +105,18 @@ en:
           hint: Opportunities that have been approved but are set to publish in the future will appear here.
           title: No pending opportunities
         title: Pending opportunities
-  opportunity_status:
+  opportunity_admin_status:
     not_approved: If everything looks good, submit this opportunity for approval.
     pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
     posted: This opportunity is posted and viewable to the public.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
+  opportunity_status_short:
+    draft: Draft
+    pending_approval: Pending approval
+    not_published: Not published
+    open: Accepting submissions
+    closed: Closed
   password_hint: Make it at least 8 characters.
   phone: Phone
   post_an_opportunity: Post an opportunity
