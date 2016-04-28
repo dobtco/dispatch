@@ -9,7 +9,39 @@
       "line": 4,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
       "code": "t(\"opportunity_status.waiting_for_publish_date\", :timestamp => long_timestamp(Opportunity.find(params[:id]).publish_at))",
-      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "OpportunitiesController",
+          "method": "show",
+          "line": 89,
+          "file": "app/controllers/opportunities_controller.rb"
+        },
+        {
+          "type": "template",
+          "name": "opportunities/show",
+          "line": 4,
+          "file": "app/views/opportunities/show.html.erb"
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "opportunities/_admin_status"
+      },
+      "user_input": "Opportunity.find(params[:id]).publish_at",
+      "confidence": "Weak",
+      "note": "timestamp"
+    },
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "c337af095d4895b641b708c31453301871f414c149353dd9fb3698a1fb75d28b",
+      "message": "Unescaped model attribute",
+      "file": "app/views/opportunities/_admin_status.html.erb",
+      "line": 4,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"opportunity_admin_status.waiting_for_publish_date\", :timestamp => long_timestamp(Opportunity.find(params[:id]).publish_at))",
+      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":91,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",
         "template": "opportunities/_admin_status"
@@ -27,7 +59,39 @@
       "line": 24,
       "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
       "code": "t(\"opportunity_status.submitted_for_approval\", :timestamp => long_timestamp(Opportunity.find(params[:id]).submitted_at))",
-      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":89,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "OpportunitiesController",
+          "method": "show",
+          "line": 89,
+          "file": "app/controllers/opportunities_controller.rb"
+        },
+        {
+          "type": "template",
+          "name": "opportunities/show",
+          "line": 4,
+          "file": "app/views/opportunities/show.html.erb"
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "opportunities/_admin_status"
+      },
+      "user_input": "Opportunity.find(params[:id]).submitted_at",
+      "confidence": "Weak",
+      "note": "timestamp"
+    },
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "f3fd7a9e818e3021d314fc66c0c25c3329466054b23809e78ef38e905e584c75",
+      "message": "Unescaped model attribute",
+      "file": "app/views/opportunities/_admin_status.html.erb",
+      "line": 24,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"opportunity_admin_status.submitted_for_approval\", :timestamp => long_timestamp(Opportunity.find(params[:id]).submitted_at))",
+      "render_path": [{"type":"controller","class":"OpportunitiesController","method":"show","line":91,"file":"app/controllers/opportunities_controller.rb"},{"type":"template","name":"opportunities/show","line":4,"file":"app/views/opportunities/show.html.erb"}],
       "location": {
         "type": "template",
         "template": "opportunities/_admin_status"
@@ -37,6 +101,6 @@
       "note": "timestamp"
     }
   ],
-  "updated": "2016-04-22 17:16:17 -0400",
+  "updated": "2016-04-28 10:52:53 -0400",
   "brakeman_version": "3.2.1"
 }

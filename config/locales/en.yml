@@ -99,7 +99,7 @@ en:
         none:
           hint: When a staff member creates an opportunity, it will appear here for your approval.
           title: No opportunities to approve
-        title: Opportunities awaiting approval
+        title: Opportunities to approve
       pending_publish:
         none:
           hint: Opportunities that have been approved but are set to publish in the future will appear here.
@@ -108,7 +108,6 @@ en:
   opportunity_admin_status:
     not_approved: If everything looks good, submit this opportunity for approval.
     pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
-    posted: This opportunity is posted and viewable to the public.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   opportunity_status_short:

@@ -37,7 +37,14 @@ describe 'Opportunities - Show' do
   end
 
   context 'Screendoor submissions' do
-    before { opportunity.update(submission_adapter_name: 'Screendoor') }
+    before do
+      opportunity.update(
+        submission_adapter_name: 'Screendoor',
+        submission_adapter_data: {
+          'embed_token' => 'xxx'
+        }
+      )
+    end
 
     it 'renders the submission page' do
       visit opportunity_path(opportunity)
@@ -51,7 +58,8 @@ describe 'Opportunities - Show' do
       opportunity.update(
         submission_adapter_name: 'Email',
         submission_adapter_data: {
-          'name' => 'FoobarBaz'
+          'name' => 'FoobarBaz',
+          'email' => 'uh'
         }
       )
     end

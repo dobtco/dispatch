@@ -110,6 +110,7 @@ class Opportunity < ActiveRecord::Base
 
   validates :title, presence: true
   validates :created_by_user, presence: true
+  validate :ensure_submission_adapter_is_valid
 
   delegate :submission_page,
            :view_proposals_url,
@@ -119,7 +120,7 @@ class Opportunity < ActiveRecord::Base
            :submittable?,
            to: :submission_adapter
 
-  before_create :set_default_submission_adapter_name,
+  before_create :set_default_submission_adapter_params,
                 :set_default_contact_info
 
   def self.with_any_category(category_ids)
@@ -246,12 +247,25 @@ class Opportunity < ActiveRecord::Base
     SubmissionAdapters::None.new(self)
   end
 
-  def set_default_submission_adapter_name
+  def set_default_submission_adapter_params
     self.submission_adapter_name ||= 'Email'
+
+    if submission_adapter_name == 'Email'
+      self.submission_adapter_data = {
+        'email' => created_by_user.email,
+        'name' => created_by_user.name
+      }
+    end
   end
 
   def set_default_contact_info
     self.contact_name ||= created_by_user.name
     self.contact_email ||= created_by_user.email
+  end
+
+  def ensure_submission_adapter_is_valid
+    unless submission_adapter.valid?
+      errors.add(:submission_adapter, :invalid)
+    end
   end
 end

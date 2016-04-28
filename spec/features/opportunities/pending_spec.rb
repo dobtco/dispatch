@@ -31,7 +31,6 @@ describe 'Opportunities - Pending' do
     end
   end
 
-
   context 'as an approver' do
     before { user.approver! }
 
