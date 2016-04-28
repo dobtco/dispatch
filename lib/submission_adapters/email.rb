@@ -4,7 +4,7 @@ module SubmissionAdapters
 
     def submit_proposals_instructions
       %(
-        Proposals for this opportunity should be sent over email to
+        Proposals for this opportunity should be sent by email to
         <a href='mailto:#{submit_to_email}'>#{submit_to_name}</a>.
       ).squish.html_safe
     end
