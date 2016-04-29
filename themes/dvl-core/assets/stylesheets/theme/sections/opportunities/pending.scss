@@ -3,3 +3,13 @@
 .page_header_pending_opportunities {
   padding-top: $rhythm * 2;
 }
+
+.approval_hint {
+  background: $lightestGray;
+  text-align: center;
+  display: block;
+  color: $darkestGray;
+  @include font_smoothing;
+  padding: $rhythm ($rhythm * 1.5);
+  border-radius: $radius;
+}

@@ -4,9 +4,6 @@
 
 @mixin opportunity {
   margin-bottom: $rhythm * 4;
-  &:last-of-type {
-    margin-bottom: $rhythm *2;
-  }
   a {
     display: block;
     border: 1px solid $gray;
