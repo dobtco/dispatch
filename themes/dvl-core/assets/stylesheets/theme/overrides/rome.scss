@@ -3,7 +3,90 @@
 @import 'theme/includes';
 
 .rd-container {
+  margin: $rhythm 0 ($rhythm * 2);
+  border-color: $gray;
+  border-radius: $radius;
+  padding: 0 0 $rhythm * 1.5;
+  font-size: $fontSmall;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
   td {
-    padding: $rhythm;
+    padding: $rhythm / 2;
   }
+}
+
+.rd-month-label {
+  background: $lightestGray;
+  @include border_top_radius($radius - 1);
+  padding: $rhythm ($rhythm * 2);
+}
+
+.rd-back,
+.rd-next {
+  margin: $rhythm ($rhythm) 0;
+  &:before {
+    font-family: 'FontAwesome';
+    font-size: 100%;
+    color: $darkerGray;
+    @include font_smoothing;
+  }
+}
+
+.rd-days {
+  padding: 0 ($rhythm * 2);
+  margin-bottom: $rhythm;
+  width: 100%;
+}
+
+.rd-days-head {
+  th {
+    padding: ($rhythm / 2) ($rhythm * 1.5);
+    font-size: $fontSmallest;
+    color: $darkerGray;
+    @include font_smoothing;
+    background: $lightestGray;
+    border-bottom-color: $gray;
+  }
+  th:first-child {
+    padding-left: $rhythm;
+  }
+  th:last-child {
+    padding-right: $rhythm;
+  }
+}
+
+.rd-days td {
+  padding: $rhythm ($rhythm * 1.5);
+  @include font_smoothing
+}
+
+.rd-back:before {
+  content: '\f060';
+}
+
+.rd-next:before {
+  content: '\f061';
+}
+
+.rd-day-selected,
+.rd-time-selected {
+  background: $primaryColor;
+  @include font_smoothing;
+}
+
+.rd-time-selected {
+  border-radius: $radius;
+}
+
+.rd-time-list {
+  color: $darkestGray;
+  @include border-bottom_radius($radius);
+  border: 1px solid $gray;
+  border-top: 0;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  margin-bottom: $rhythm * 2;
+}
+
+.rd-time-option:hover {
+  background: rgba($primaryColor,0.2);
+  color: $darkestGray;
 }
