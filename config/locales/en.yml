@@ -124,6 +124,7 @@ en:
   password_hint: Make it at least 8 characters.
   phone: Phone
   post_an_opportunity: Post an opportunity
+  preview: Preview
   public_contact_info: Public contact information
   publish_your_answer: Publish your answer
   question_destroyed: The question was destroyed.
@@ -215,7 +216,7 @@ en:
           label: What types of opportunities are you interested in?
         title: Sign up as a vendor
   view_filter: View filter
-  view_opportunity: View
+  view: View
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
   write_an_answer: Write an answer…

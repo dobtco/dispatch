@@ -20,7 +20,14 @@
     </div>
   <% end %>
 
-  <a class='button primary' href='<%= opportunity_path %>' data-toggle-opportunity-rename><%= t('view_opportunity') %> &rarr;</a>
+  <a class='button primary icon_r' href='<%= opportunity_path %>' data-toggle-opportunity-rename>
+    <% if @opportunity.posted? %>
+     <%= t('view') %>
+    <% else %>
+      <%= t('preview') %>
+    <% end %>
+    <i>&rarr;</i>
+  </a>
 </div>
 
 <ul class='tabs'>
