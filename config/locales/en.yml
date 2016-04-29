@@ -38,10 +38,10 @@ en:
   email: Email
   email_me: Email me with new search results
   filter: Filter
-  filter_destroyed: Your filter has been removed.
+  filter_destroyed: You are no longer subscribed to this filter.
   filter_opportunities: Filter opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
-  filter_subscribed_at_time: Filter subscribed to on %{timestamp}
+  filter_subscribed_at_time: Subscribed to on %{timestamp}
   filter_subscriptions: Filters you have subscribed to
   from_user: 'From %{user}:'
   full_name: Full name
@@ -189,6 +189,7 @@ en:
     one: Answer 1 question
     other: Answer %{count} questions
   unapprove: Un-approve
+  unsubscribe: Unsubscribe
   users:
     registrations:
       confirm:
