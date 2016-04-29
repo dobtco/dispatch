@@ -196,7 +196,7 @@ en:
         email: Your %{domain} email address
         name: Your full name
         password: Create a password
-        title: Sign up as %{agency} staff
+        title: Government sign up
       new_vendor:
         business_name:
           hint: Skip this if it doesn't apply.
