@@ -48,3 +48,9 @@
     margin-top: 0;
   }
 }
+
+@media screen and (min-width: $lapWidth) {
+  .embed_token_hint {
+    margin-left: 25%;
+  }
+}
