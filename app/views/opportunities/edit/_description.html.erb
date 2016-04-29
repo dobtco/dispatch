@@ -1,4 +1,4 @@
-<%= f.input :department_id, as: :select, collection: Department.all %>
+<%= f.input :department_id, as: :select, collection: Department.all, include_blank: t('choose_a_department') %>
 <%= f.input :description %>
 
 <%= f.input :publish_at, as: :datetime_picker %>
@@ -15,7 +15,7 @@
 </div>
 
 <%= f.input :attachments do %>
-  <ul class='js-attachments-list formatted_list'>
+  <ul class='js-attachments-list attachment_list'>
     <% @opportunity.attachments.each do |attachment| %>
       <%= render partial: 'edit_attachment', locals: { attachment: attachment } %>
     <% end %>
