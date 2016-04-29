@@ -99,7 +99,7 @@ en:
     pending:
       pending_approval:
         none:
-          hint: When a staff member creates an opportunity, it will appear here for your review.
+          hint: When a staff member creates an opportunity, it will appear here for you to review.
           title: No opportunities to approve yet!
         title:
           one: "One opportunity needs your approval."
