@@ -8,3 +8,34 @@
   top: $rhythm * 1.5;
   text-transform: uppercase;
 }
+
+.opportunities-index .info_box.is_hidden {
+  @include hidden;
+}
+
+
+
+.filter_button_mobile {
+  color: $darkerGray;
+  background: transparent;
+  font-size: $lineHeight;
+  padding: $rhythm;
+  border: 0;
+  border-radius: $radius;
+  &:focus,
+  &:hover {
+    outline: 0;
+    background: rgba($primaryColor,0.25);
+    color: $primaryColor;
+  }
+  span {
+    @include hidden;
+  }
+  &.is_active {
+    background: $primaryColor;
+    color: $white;
+  }
+  @media screen and (min-width: $lapWidth) {
+    display: none;
+  }
+}

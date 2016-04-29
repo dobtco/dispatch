@@ -4,13 +4,20 @@
 <div class='page_header page_header_action'>
   <h2><%= t('browse_opportunities') %></h2>
 
-  <span class='search_result_count'>
-    <% if filtered? %>
-      <%= t('num_results', count: @opportunities.total_count) %>
-    <% else %>
-      <%= t('num_opportunities', count: @opportunities.total_count) %>
-    <% end %>
-  </span>
+  <div class='page_header_action_button'>
+    <span class='search_result_count'>
+      <% if filtered? %>
+        <%= t('num_results', count: @opportunities.total_count) %>
+      <% else %>
+        <%= t('num_opportunities', count: @opportunities.total_count) %>
+      <% end %>
+    </span>
+
+    <button class="filter_button_mobile" id="filter_mobile">
+      <i class="fa fa-search"></i>
+      <span>Filter</span>
+    </button>
+  </div>
 </div>
 
 <div class='grid'>

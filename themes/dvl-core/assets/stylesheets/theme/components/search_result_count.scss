@@ -9,4 +9,7 @@
   border-radius: $radius;
   position: relative;
   top: $rhythm / -2;
+  @media screen and (max-width: $lapWidth - 1) {
+    display: none;
+  }
 }
