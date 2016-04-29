@@ -1,13 +1,13 @@
 <% content_for(:page_key, 'opportunities-pending') %>
 <% content_for(:page_title, t('approve')) %>
-<% content_for(:main_container_class, 'container_small') %>
+<% content_for(:main_container_class, 'container_tiny') %>
 
 <div class='page_header'>
   <h2><%= t('.pending_approval.title') %> (<%= @pending_approval_opportunities.length %>)</h2>
 </div>
 
 <% if @pending_approval_opportunities.present? %>
-  <ul class='formatted_list'>
+  <ul class='opportunities'>
     <% @pending_approval_opportunities.each do |opportunity| %>
       <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
     <% end %>

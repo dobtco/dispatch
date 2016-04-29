@@ -42,7 +42,7 @@ en:
   filter_opportunities: Filter opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
   filter_subscribed_at_time: Filter subscribed to on %{timestamp}
-  filter_subscriptions: Filter subscriptions
+  filter_subscriptions: Filters you have subscribed to
   from_user: 'From %{user}:'
   full_name: Full name
   get_started: Get started
@@ -78,7 +78,7 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
-  my_opportunities: My opportunities
+  my_opportunities: Your posted opportunities
   name: Name
   no_description: There is no description for this opportunity.
   no_results: No results
