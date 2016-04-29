@@ -8,7 +8,7 @@
     <h2><%= t('.pending_approval.title', count: @pending_approval_opportunities.length) %></h2>
   </div>
 
-  <p class="approval_hint"> <%= t('.pending_approval.hint') %></p>
+  <p class="simple_alert"> <%= t('.pending_approval.hint') %></p>
 
   <ul class='opportunities'>
     <% @pending_approval_opportunities.each do |opportunity| %>

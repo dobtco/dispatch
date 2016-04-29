@@ -196,9 +196,8 @@ en:
     registrations:
       confirm:
         body: |-
-          We sent you an email containing a confirmation link.
-          Please click the link in order to confirm your account.
-        title: Please confirm your account
+          We just sent you an email. Click the button inside it confirm your email address and sign in.
+        title: Almost there!
       new_staff:
         email: Your %{domain} email address
         name: Your full name
