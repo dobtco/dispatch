@@ -1,6 +1,8 @@
 $fontLineHeightH1: $rhythm * 8;
 $fontLineHeightH2: $rhythm * 5;
 
+$weightBold: 700;
+
 h3 {
   @include fontDisplay;
 }
