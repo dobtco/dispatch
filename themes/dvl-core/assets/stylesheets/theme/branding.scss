@@ -6,3 +6,10 @@ $secondaryColor: #ED8442;
 $fontFamilyDisplay: 'Passion One', 'Helvetica Neue', Arial, sans-serif;
 $fontFamilyDefault: 'Roboto', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
 $fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace;
+
+// Smooth text looks best against our $primaryColor
+
+.navbar a,
+.button.primary {
+  @include font_smoothing;
+}
