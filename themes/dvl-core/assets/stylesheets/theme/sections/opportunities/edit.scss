@@ -8,7 +8,8 @@
   margin-top: $rhythm;
 }
 
-.styled_select_wrapper + .microcopy {
+.styled_select_wrapper + .microcopy,
+input[type=text] + .microcopy {
   margin-top: $rhythm;
 }
 
@@ -46,11 +47,5 @@
 
   .form_error {
     margin-top: 0;
-  }
-}
-
-@media screen and (min-width: $lapWidth) {
-  .embed_token_hint {
-    margin-left: 25%;
   }
 }
