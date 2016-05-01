@@ -9,7 +9,7 @@
 
   <p class="simple_alert"> <%= t('.pending_approval.hint') %></p>
 
-  <ul class='opportunities'>
+  <ul>
     <% @pending_approval_opportunities.each do |opportunity| %>
       <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
     <% end %>
@@ -27,7 +27,7 @@
     <h2><%= t('.pending_publish.title', count: @pending_publish_opportunities.length) %></h2>
   </div>
 
-  <ul class='opportunities'>
+  <ul>
     <% @pending_publish_opportunities.each do |opportunity| %>
       <%= render partial: 'pending_item', locals: { opportunity: opportunity } %>
     <% end %>
