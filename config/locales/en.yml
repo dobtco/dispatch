@@ -103,7 +103,7 @@ en:
         hint: Click on a listing to review and approve it.
         none:
           hint: When a staff member creates an opportunity, it will appear here for you to review.
-          title: No opportunities to approve yet!
+          title: No opportunities to approve!
         title:
           one: One opportunity needs your approval.
           other: "%{count} opportunities need your approval."
