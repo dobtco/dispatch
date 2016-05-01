@@ -17,8 +17,8 @@ en:
   browse: Browse
   browse_opportunities: Browse opportunities
   business_name: Business name
-  clear: Clear
   choose_a_department: Choose a department
+  clear: Clear
   confirm_delete_opportunity: Are you sure you want to delete this opportunity?
   confirm_delete_question: Are you sure you want to delete this question?
   contact: Contact
@@ -29,15 +29,15 @@ en:
   edit: Edit
   edit_answer: Edit answer
   edit_opportunity_steps:
-    description:
-      title: Description
     contact:
       title: Contact Info
+    description:
+      title: Description
     submissions:
       title: How to Submit
   email: Email
   email_me: Email me with new search results
-  embed_token_hint: To find your embed token, create a project on Screendoor and choose 'Embed on your own site' on the Share page. Then, find your embed token on the Settings page, under 'Advanced'.
+  embed_token_hint: To find your embed token, create a project on Screendoor and choose "Embed on your own site" on the Share page. Then, find your embed token on the Settings page, under "Advanced".
   filter: Filter
   filter_destroyed: You are no longer subscribed to this filter.
   filter_opportunities: Filter opportunities
@@ -98,16 +98,16 @@ en:
       whats_the_title: What's the title of your opportunity?
     pending:
       pending_approval:
+        hint: Click on a listing to review and approve it.
         none:
           hint: When a staff member creates an opportunity, it will appear here for you to review.
           title: No opportunities to approve yet!
         title:
-          one: "One opportunity needs your approval."
+          one: One opportunity needs your approval.
           other: "%{count} opportunities need your approval."
-        hint: Click on a listing to review and approve it.
       pending_publish:
         title:
-          one: "One opportunity hasn't been published yet."
+          one: One opportunity hasn't been published yet.
           two: "%{count} opportunities haven't been published yet."
   opportunity_admin_status:
     not_approved: If everything looks good, submit this opportunity for approval.
@@ -115,11 +115,11 @@ en:
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   opportunity_status_short:
+    closed: Closed
     draft: Draft
-    pending_approval: Pending approval
     not_published: Not published
     open: Accepting submissions
-    closed: Closed
+    pending_approval: Pending approval
   password_hint: Make it at least 8 characters.
   phone: Phone
   post_an_opportunity: Post an opportunity
@@ -153,8 +153,8 @@ en:
         publish_at: Publish on…
         question_dates: Accept questions between…
         submission_adapter_data:
-          submit_to: Email proposals to…
           embed_token: Your Screendoor project's embed token
+          submit_to: Email proposals to…
         submission_adapter_name: Submissions should be sent through…
         submission_dates: Accept submissions between…
       opportunity_filters:
@@ -192,8 +192,7 @@ en:
   users:
     registrations:
       confirm:
-        body: |-
-          We just sent you an email. Click the button inside it confirm your email address and sign in.
+        body: We just sent you an email. Click the button inside it confirm your email address and sign in.
         title: Almost there!
       new_staff:
         email: Your %{domain} email address
@@ -211,9 +210,9 @@ en:
           hint: We'll email you each week with new opportunities in these categories.
           label: What types of opportunities are you interested in?
         title: Sign up as a vendor
+  view: View
   view_filter: View filter
   view_opportunity: View opportunity
-  view: View
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
   write_an_answer: Write an answer…
