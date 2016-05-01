@@ -20,6 +20,8 @@
   <%= f.button :submit, t('sign_in'), class: 'primary' %>
 <% end %>
 
-  <%- if devise_mapping.confirmable? %>
-    <p class="signin_link"><%= link_to "Resend confirmation email", new_confirmation_path(resource_name) %></p>
-  <% end -%>
+<% if devise_mapping.confirmable? %>
+  <div class="sign_in_link">
+    <%= link_to "Resend confirmation email", new_confirmation_path(resource_name) %>
+  </div>
+<% end %>
