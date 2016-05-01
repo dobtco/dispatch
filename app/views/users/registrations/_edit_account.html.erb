@@ -19,10 +19,6 @@
   <%= f.input :name, label: t('full_name') %>
   <%= f.input :email, required: true %>
 
-  <%- if devise_mapping.confirmable? %>
-    <%= link_to "Resend confirmation email", new_confirmation_path(resource_name) %>
-  <% end -%>
-
   <%= f.input :password, hint: false do %>
     <span class='password_shim'>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
     <a href='<%= edit_user_registration_path(type: 'password') %>' class='button mini'>Change</a>
@@ -31,6 +27,5 @@
   <%= f.button :button, t('save_changes'), class: 'primary' %>
 <% end %>
 
-<%= render 'my_opportunities' %>
-
 <%= render 'saved_searches' %>
+<%= render 'my_opportunities' %>
