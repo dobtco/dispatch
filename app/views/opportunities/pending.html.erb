@@ -23,7 +23,7 @@
 <% end %>
 
 <% if @pending_publish_opportunities.present? %>
-  <div class='page_header page_header_simple'>
+  <div class='page_header page_header_simple page_header_pending_opportunities'>
     <h2><%= t('.pending_publish.title', count: @pending_publish_opportunities.length) %></h2>
   </div>
 
