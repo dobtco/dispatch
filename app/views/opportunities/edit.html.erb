@@ -33,7 +33,7 @@
 <ul class='tabs'>
   <% edit_opportunity_steps.each do |x| %>
     <li<% if params[:step] == x %> class='active'<% end %>>
-      <a href='<%= url_for(step: x) %>'><%= t("edit_opportunity_steps.#{x}.title") %></a>
+      <a href='<%= edit_opportunity_path(step: x) %>'><%= t("edit_opportunity_steps.#{x}.title") %></a>
     </li>
   <% end %>
 </ul>
