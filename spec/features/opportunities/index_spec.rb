@@ -27,12 +27,20 @@ describe 'Opportunities - Index' do
   context 'when signed in' do
     before { login_as vendor }
 
-    it 'saved a search' do
+    it 'saves a search' do
       visit opportunities_path
+
+      # No links without filter
+      expect(page).to_not have_link t('unsubscribe_from_search')
+      expect(page).to_not have_link t('email_me')
+
       fill_in :opportunity_filters_text, with: 'nothingmatchesthis'
       find('.opportunity_filters button').click
       expect { click_link t('email_me') }.
         to change { vendor.saved_searches.count }.by(1)
+
+      expect { click_link t('unsubscribe_from_search') }.
+        to change { vendor.saved_searches.count }.by(-1)
     end
   end
 end

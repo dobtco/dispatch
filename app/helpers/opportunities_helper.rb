@@ -6,6 +6,21 @@ module OpportunitiesHelper
     @opportunities.filterer.params[:department_id].present?
   end
 
+  def existing_saved_search
+    current_user &&
+    filtered? &&
+    current_user.saved_searches.detect do |saved_search|
+      normalize_search_params(saved_search.search_params) ==
+        normalize_search_params(current_filter_params)
+    end
+  end
+
+  def normalize_search_params(search_params)
+    search_params.stringify_keys.select do |_, v|
+      v.present?
+    end
+  end
+
   def current_filter_params
     pick(@opportunities.filterer.params, *SavedSearch::PERMITTED_SEARCH_PARAMS)
   end
