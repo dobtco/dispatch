@@ -9,8 +9,16 @@
   text-transform: uppercase;
 }
 
-.opportunities-index .info_box.is_hidden {
-  @include hidden;
+.info_box_filters {
+  display: none;
+
+  &.is_active {
+    display: block;
+  }
+
+  @media screen and (min-width: $lapWidth) {
+    display: block;
+  }
 }
 
 .filter_button_mobile {
