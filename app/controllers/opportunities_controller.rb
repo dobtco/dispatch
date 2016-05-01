@@ -83,7 +83,14 @@ class OpportunitiesController < ApplicationController
   def destroy
     authorize @opportunity, :destroy?
     @opportunity.trash!
-    redirect_to root_path
+
+    redirect_to(
+      if policy(:opportunity).approve?
+        pending_opportunities_path
+      else
+        root_path
+      end
+    )
   end
 
   def show
