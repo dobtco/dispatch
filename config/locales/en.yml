@@ -45,7 +45,6 @@ en:
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
   filter_subscribed_at_time: Filter subscribed to on %{timestamp}
   filter_subscriptions: Filter subscriptions
-  from_user: 'From %{user}:'
   full_name: Full name
   get_started: Get started
   home:
