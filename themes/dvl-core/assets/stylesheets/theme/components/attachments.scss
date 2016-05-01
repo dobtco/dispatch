@@ -1,5 +1,49 @@
 @import 'theme/includes';
 
+// Attachment preview list
+
+.attachment_list {
+  li {
+    position: relative;
+    border: 1px solid $gray;
+    border-radius: $radius;
+    box-shadow: 0 1px 0 rgba(#000,0.06);
+    @include font_smoothing;
+    padding: $rhythm ($rhythm * 5) $rhythm ($rhythm * 6);
+    width: 16rem;
+    margin-bottom: $rhythm * 2;
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f016';
+      color: $darkGray;
+      position: absolute;
+      top: $rhythm;
+      left: $rhythm;
+      font-size: $rhythm * 3;
+      line-height: 1;
+    }
+  }
+}
+
+.remove_attachment {
+  position: absolute;
+  line-height: 1;
+  top: 1px; // optical alignment
+  right: $rhythm;
+  color: $darkerGray;
+  font-size: $rhythm * 4;
+  font-family: 'HelveticaNeue-UltraLight', 'HelveticaNeue', Arial, sans-serif;
+  font-weight: 100;
+  span {
+    @include hidden;
+  }
+  &:hover,
+  &:focus {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
 // Match dimensions of .fa.fa-file-o.3x
 
 $attachmentIconWidth: $rhythm * 7;

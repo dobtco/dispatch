@@ -13,7 +13,7 @@ module OpportunitiesHelper
   def edit_opportunity_steps
     %w(
       description
-      questions
+      contact
       submissions
     )
   end

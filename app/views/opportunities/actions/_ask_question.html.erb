@@ -1,9 +1,9 @@
 <% if policy(@opportunity).ask_question? %>
-  <li class='item six_columns'>
+  <li>
     <a class='button block small icon_l' href='#new_question'><i class='fa fa-question-circle'></i> <%= t('ask_question') %></a>
   </li>
 <% elsif OpportunityPolicy.new(User.new, @opportunity).ask_question? %>
-  <li class='item six_columns'>
+  <li>
     <a class='button block small' href='<%= new_user_session_path %>'><i class='fa fa-question-circle'></i> <%= t('ask_question') %></a>
   </li>
 <% end %>

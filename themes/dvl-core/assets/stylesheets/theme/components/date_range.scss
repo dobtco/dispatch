@@ -3,7 +3,12 @@
 .date_range {
   input {
     display: inline;
-    width: 10rem;
+    width: 11rem;
+  }
+
+  span {
+    font-size: $fontSmaller;
+    color: $darkerGray;
   }
 
   input, span {

@@ -7,6 +7,7 @@
   margin-bottom: $lineHeight;
   h4 {
     margin: 0;
+    font-weight: $weightNormal;
   }
 }
 
@@ -46,9 +47,8 @@ a.info_box_header {
 .info_box_contact {
   strong, span {
     display: block;
-  }
-  strong {
-    font-weight: $weightBold;
+    color: $darkerGray;
+    @include font_smoothing;
   }
   span {
     color: $darkerGray;

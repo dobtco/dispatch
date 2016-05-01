@@ -1,0 +1,11 @@
+@import 'theme/includes';
+
+.simple_alert {
+  background: $lightestGray;
+  text-align: center;
+  display: block;
+  color: $darkestGray;
+  @include font_smoothing;
+  padding: $rhythm ($rhythm * 1.5);
+  border-radius: $radius;
+}

@@ -1,1 +1,4 @@
-<%= f.input :embed_token, required: true %>
+<%= f.input :embed_token, required: true do %>
+  <%= f.input_field :embed_token %>
+  <div class='microcopy embed_token_hint'> <%= t('embed_token_hint') %> </div>
+<% end %>

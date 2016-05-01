@@ -1,15 +1,21 @@
 <% if current_user.saved_searches.present? %>
-  <div class='page_subheader page_subheader_saved_searches'>
+  <div class='page_subheader page_subheader_simple'>
     <h3><%= t('filter_subscriptions') %></h3>
   </div>
 
-  <ul class='formatted_list account_saved_searches'>
+  <ul class='saved_filters'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
-        <div class='account_saved_searches_actions'>
-          <a href='<%= opportunities_path(saved_search.search_params) %>'><%= t('view_filter') %></a>
-          <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('destroy') %></a>
+        <a href='<%= opportunities_path(saved_search.search_params) %>'>
+          <span>
+            <%= t('view_filter') =%>
+          </span>
+          <em>
+            <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
+          </em>
+          </span>
+        <div class='saved_filter_actions'>
+          <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('unsubscribe') %></a>
         </div>
       </li>
     <% end %>

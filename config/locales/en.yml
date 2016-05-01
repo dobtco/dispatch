@@ -11,12 +11,14 @@ en:
   answer_text: Answer text
   answered_by_user_at_time: Answered by %{user} at %{timestamp}
   approve: Approve
+  approved_success: You have approved the opportunity
   ask: Ask
   ask_question: Ask question
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
   business_name: Business name
+  choose_a_department: Choose a department
   clear: Clear
   confirm_delete_opportunity: Are you sure you want to delete this opportunity?
   confirm_delete_question: Are you sure you want to delete this question?
@@ -28,20 +30,22 @@ en:
   edit: Edit
   edit_answer: Edit answer
   edit_opportunity_steps:
+    contact:
+      title: Contact Info
     description:
       title: Description
-    questions:
-      title: Questions
     submissions:
       title: How to Submit
   email: Email
   email_me: Email me with new search results
+  embed_token_hint: To find your embed token, create a project on Screendoor and choose "Embed on your own site" on the Share page. Then, find your embed token on the Settings page, under "Advanced".
   filter: Filter
-  filter_destroyed: Your filter has been removed.
+  filter_destroyed: You are no longer subscribed to this filter.
   filter_opportunities: Filter opportunities
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
-  filter_subscribed_at_time: Filter subscribed to on %{timestamp}
-  filter_subscriptions: Filter subscriptions
+  filter_subscribed_at_time: Subscribed to on %{timestamp}
+  filter_subscriptions: Filters you have subscribed to
+  forgot: Forgot?
   from_user: 'From %{user}:'
   full_name: Full name
   get_started: Get started
@@ -77,7 +81,7 @@ en:
       body_html: The deadline for submissions to <a href='%{href}'>%{title}</a> is coming up.
       subject: Deadline reminder for submissions to %{opportunity}
     subscription_preferences: Change subscription preferences
-  my_opportunities: My opportunities
+  my_opportunities: Your posted opportunities
   name: Name
   no_description: There is no description for this opportunity.
   no_results: No results
@@ -96,30 +100,32 @@ en:
       whats_the_title: What's the title of your opportunity?
     pending:
       pending_approval:
+        hint: Click on a listing to review and approve it.
         none:
-          hint: When a staff member creates an opportunity, it will appear here for your approval.
-          title: No opportunities to approve
-        title: Opportunities to approve
+          hint: When a staff member creates an opportunity, it will appear here for you to review.
+          title: No opportunities to approve!
+        title:
+          one: One opportunity needs your approval.
+          other: "%{count} opportunities need your approval."
       pending_publish:
-        none:
-          hint: Opportunities that have been approved but are set to publish in the future will appear here.
-          title: No pending opportunities
-        title: Pending opportunities
+        title:
+          one: One opportunity hasn't been published yet.
+          other: "%{count} opportunities haven't been published yet."
   opportunity_admin_status:
     not_approved: If everything looks good, submit this opportunity for approval.
     pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
     submitted_for_approval: You submitted this opportunity for approval on %{timestamp}.
     waiting_for_publish_date: This opportunity will be posted on %{timestamp}.
   opportunity_status_short:
+    closed: Closed
     draft: Draft
-    pending_approval: Pending approval
     not_published: Not published
     open: Accepting submissions
-    closed: Closed
+    pending_approval: Pending approval
   password_hint: Make it at least 8 characters.
   phone: Phone
   post_an_opportunity: Post an opportunity
-  public_contact_info: Public contact information
+  preview: Preview
   publish_your_answer: Publish your answer
   question_destroyed: The question was destroyed.
   question_text: Question text
@@ -133,6 +139,7 @@ en:
   save_changes: Save changes
   search_for_opportunities: Search for opportunities
   sign_in: Sign in
+  sign_in_reg_hint_html: Don't have an account? Sign up as a <a href='%{vendor_href}'>vendor</a> or a <a href='%{staff_href}'>government employee</a>.
   sign_out: Sign out
   sign_up: Sign up
   simple_form:
@@ -143,14 +150,13 @@ en:
           Try to choose accurately!
         description: Keep it short and sweet. You can upload your full RFP later.
         publish_at: We won't show your opportunity in the listings until this date.
-        submission_adapter_data:
-          embed_token: Create a project on Screendoor and paste its embed token here.
     labels:
       opportunity:
         category_ids: Categories
         publish_at: Publish on…
         question_dates: Accept questions between…
         submission_adapter_data:
+          embed_token: Your Screendoor project's embed token
           submit_to: Email proposals to…
         submission_adapter_name: Submissions should be sent through…
         submission_dates: Accept submissions between…
@@ -185,13 +191,12 @@ en:
     one: Answer 1 question
     other: Answer %{count} questions
   unapprove: Un-approve
+  unsubscribe: Unsubscribe
   users:
     registrations:
       confirm:
-        body: |-
-          We sent you an email containing a confirmation link.
-          Please click the link in order to confirm your account.
-        title: Please confirm your account
+        body: We just sent you an email. Click the button inside it confirm your email address and sign in.
+        title: Almost there!
       new_staff:
         email: Your %{domain} email address
         name: Your full name
@@ -208,8 +213,9 @@ en:
           hint: We'll email you each week with new opportunities in these categories.
           label: What types of opportunities are you interested in?
         title: Sign up as a vendor
+  view: View
   view_filter: View filter
-  view_opportunity: View
+  view_opportunity: View opportunity
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
   write_an_answer: Write an answer…

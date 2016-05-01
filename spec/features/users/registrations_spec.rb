@@ -97,7 +97,7 @@ describe 'Users' do
       it 'allows for deleting the search' do
         login_as user
         visit edit_user_registration_path
-        expect { click_link t('destroy') }.
+        expect { click_link t('unsubscribe') }.
           to change { user.saved_searches.count }.by(-1)
       end
     end
