@@ -11,6 +11,7 @@ en:
   answer_text: Answer text
   answered_by_user_at_time: Answered by %{user} at %{timestamp}
   approve: Approve
+  approved_success: You have approved the opportunity
   ask: Ask
   ask_question: Ask question
   attachments: Attachments
