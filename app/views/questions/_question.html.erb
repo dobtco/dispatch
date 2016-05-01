@@ -10,18 +10,28 @@
 
   <div class="question_answer">
     <% if policy(@opportunity).answer_questions? %>
-      <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
-        <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_an_answer')  %>
-        <%= f.button :button,  t('publish_your_answer'), class: 'primary small block' %>
-      <% end %>
+      <div class="question_answer_form">
+        <%= simple_form_for [@opportunity, question], html: { style: 'display:none', 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
+          <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_your_answer_here')  %>
+          <% if question.answered? %>
+            <%= f.button :button,  t('save_changes'), class: 'primary small block' %>
+          <% else %>
+            <%= f.button :button,  t('publish'), class: 'primary small block' %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% unless question.answered? %>
+      <a href='#' class='button primary block' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'><%= t('write_an_answer') %></a>
     <% end %>
 
     <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
       <% if question.answered? %>
-        <div class='question_answered_by'>
-          <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
-        </div>
-        <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
+          <div class='question_answered_by'>
+            <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
+          </div>
+          <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
       <% end %>
     </div>
 

@@ -83,6 +83,13 @@ $questionAnswerText: $primaryColor;
 
 .question_answer {
   margin-top: $rhythm;
+  .button {
+    @include button_color($questionAnswerBg,$questionAnswerText);
+    @include font_smoothing;
+  }
+}
+
+.question_answer_form {
   textarea, button {
     text-align: right;
   }
@@ -90,12 +97,10 @@ $questionAnswerText: $primaryColor;
     margin-bottom: 0;
     border-radius: $rhythm $rhythm 0 0;
     @include font_smoothing;
-    min-height: $lineHeight * 6;
+    min-height: $lineHeight * 3;
     padding: $rhythm ($rhythm * 2);
   }
   .button {
-    @include button_color($questionAnswerBg,$questionAnswerText);
-    @include font_smoothing;
     border-radius: 0 0 $rhythm $rhythm;
   }
 }

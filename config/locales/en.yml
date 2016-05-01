@@ -123,7 +123,7 @@ en:
   phone: Phone
   post_an_opportunity: Post an opportunity
   public_contact_info: Public contact information
-  publish_your_answer: Publish your answer
+  publish: Publish
   question_destroyed: The question was destroyed.
   question_text: Question text
   questions: Questions
@@ -215,5 +215,6 @@ en:
   view_opportunity: View
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
-  write_an_answer: Write your answer here
+  write_an_answer: Write an answer
+  write_your_answer_here: Write your answer here
   write_your_question: Write your question here
