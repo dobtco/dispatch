@@ -60,7 +60,7 @@ describe 'Questions' do
           question
         ).and_return(OpenStruct.new(perform: nil))
 
-        within '.edit_question' do
+        within '.question_answer_form' do
           fill_in :question_answer_text, with: 'answertext'
           find('button').click
         end
@@ -78,7 +78,7 @@ describe 'Questions' do
           # Sends a notification
           expect(Mailer).to_not receive(:question_answered)
 
-          within '.edit_question' do
+          within '.question_answer_form' do
             fill_in :question_answer_text, with: 'answertext'
             find('button').click
           end
@@ -90,7 +90,7 @@ describe 'Questions' do
       it 'can delete a question' do
         visit opportunity_path(opportunity)
         expect(page).to have_text(question.question_text)
-        find('.questions').click_link t('destroy')
+        find('.questions').click_link t('destroy_question')
         expect(page).to_not have_text(question.question_text)
       end
     end
