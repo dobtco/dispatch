@@ -44,6 +44,7 @@ en:
   filter_saved: We'll email you with any new results for this filter. You can unsubscribe by clicking your name in the top navigation bar.
   filter_subscribed_at_time: Subscribed to on %{timestamp}
   filter_subscriptions: Filters you have subscribed to
+  forgot: Forgot?
   from_user: 'From %{user}:'
   full_name: Full name
   get_started: Get started
