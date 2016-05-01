@@ -76,8 +76,8 @@ describe 'Opportunities - Show' do
     it 'can approve and un-approve the opportunity' do
       visit opportunity_path(opportunity)
       click_link t('unapprove')
+      visit opportunity_path(opportunity)
       click_link t('approve')
-      expect(page).to have_link t('unapprove')
     end
 
     it 'can destroy the opportunity' do
