@@ -6,7 +6,9 @@
   <h2><%= t('sign_in') %></h2>
 </div>
 
-<p class='simple_alert'>Don't have an account? Sign up as a <a href='<%= new_user_registration_path(type: 'vendor') %>'>vendor</a> or a <a href='<%= new_user_registration_path(type: 'staff') %>'>government worker</a>.</p>
+<p class='simple_alert'>
+  <%= t('sign_in_reg_hint_html', vendor_href: new_user_registration_path(type: 'vendor'), staff_href: new_user_registration_path(type: 'staff')) %>
+</p>
 
 <%= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
   <%= f.input :email, required: false, autofocus: true %>

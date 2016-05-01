@@ -137,6 +137,7 @@ en:
   save_changes: Save changes
   search_for_opportunities: Search for opportunities
   sign_in: Sign in
+  sign_in_reg_hint_html: Don't have an account? Sign up as a <a href='%{vendor_href}'>vendor</a> or a <a href='%{staff_href}'>government employee</a>.
   sign_out: Sign out
   sign_up: Sign up
   simple_form:
