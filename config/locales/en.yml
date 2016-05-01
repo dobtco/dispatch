@@ -109,7 +109,7 @@ en:
       pending_publish:
         title:
           one: One opportunity hasn't been published yet.
-          two: "%{count} opportunities haven't been published yet."
+          other: "%{count} opportunities haven't been published yet."
   opportunity_admin_status:
     not_approved: If everything looks good, submit this opportunity for approval.
     pending_approval: Vendors can't see this opportunity yet. It will only be published after you approve it.
