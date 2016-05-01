@@ -3,17 +3,25 @@
 
 .saved_filters li {
   position: relative;
-  padding-left: $rhythm * 6;
-  padding-right: $rhythm * 3;
   margin-bottom: $rhythm * 5;
+}
+
+.saved_filter_view {
+  display: block;
+  width: 100%;
+  position: relative;
+  border: 1px solid $gray;
+  border-radius: $radius;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  padding: $rhythm ($rhythm * 2) $rhythm ($rhythm * 8);
   &:before {
     position: absolute;
     font-family: 'FontAwesome';
     content: '\f002';
     color: $darkGray;
     font-size: $rhythm * 4;
-    top: 0;
-    left: 0;
+    top: $rhythm;
+    left: $rhythm * 1.5;
     transition: color 0.2s ease-out;
   }
   span,
@@ -32,9 +40,7 @@
   }
   &:hover,
   &:focus {
-    a {
-      text-decoration: none;
-    }
+    text-decoration: none;
     &:before {
       color: $black;
     }
@@ -46,5 +52,16 @@
   font-size: $fontSmall;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 100%;
+  margin-top: $rhythm;
+}
+
+@media screen and (min-width: $lapWidth) {
+  .saved_filter_view {
+    width: 80%;
+  }
+  .saved_filter_actions {
+    top: 0;
+    margin-top: 0;
+  }
 }
