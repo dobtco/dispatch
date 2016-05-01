@@ -2,6 +2,11 @@
   <div class='opportunity_section'>
     <div class='page_subheader'>
       <h4 id='questions'><i class='fa fa-comments'></i> <%= t('questions') %></h4>
+      <% if policy(@opportunity).ask_question? %>
+        <div class='page_subheader_actions'>
+          <a href="#ask_question" class='page_subheader_link'>  <%= t('ask_question') %></a>
+        </div>
+      <% end %>
     </div>
     <div class='questions'>
       <%= render @opportunity.questions.unanswered_first %>
@@ -10,9 +15,14 @@
 <% end %>
 
 <% if policy(@opportunity).ask_question? %>
-  <div class='opportunity_section'>
+  <div class='opportunity_section' id="ask_question">
     <div class='page_subheader'>
-      <h4><i class='fa fa-comment'></i> <%= t('ask_question') %></h4>
+      <h4>
+        <% unless @opportunity.questions.unanswered_first.present? %>
+          <i class='fa fa-comments'></i>
+        <% end %>
+        <%= t('ask_a_new_question') %>
+      </h4>
     </div>
     <%= simple_form_for [@opportunity, @opportunity.questions.build] do |f| %>
       <%= f.input_field :question_text, placeholder: t('write_your_question'), 'aria-label' => t('question_text') %>

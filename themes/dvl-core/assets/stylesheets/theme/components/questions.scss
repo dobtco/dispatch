@@ -1,5 +1,14 @@
 @import 'theme/includes';
 
+$questionQuestionBg: lighten($secondaryColor,30%);
+$questionQuestionText: darken($secondaryColor,40%);
+$questionAnswerBg: desaturate(lighten($primaryColor,60%),5%);
+$questionAnswerText: $primaryColor;
+
+#ask_question .page_subheader {
+  margin-bottom: $rhythm;
+}
+
 .edit_question,
 .edit_question textarea,
 .new_question textarea,
@@ -9,12 +18,86 @@
 }
 
 .question {
+  padding: ($rhythm * 2) 0;
+  border-bottom: 1px solid $gray;
+  @include cf;
+}
+
+.question_question,
+.question_answer {
+  width: 60%;
+  clear: both;
+}
+
+.question_question {
+  float: left;
+}
+
+.question_answer {
+  float: right;
+  text-align: right;
+}
+
+.question_question_text,
+.question_answer_text {
+  font-style: normal;
+  border: 0;
+  border-radius: $rhythm;
+  width: 100%;
+  padding: $rhythm ($rhythm * 2);
+  @include font_smoothing;
+  position: relative;
+  &:after {
+    content: '';
+    width: $rhythm * 2;
+    height: $rhythm * 2;
+    position: absolute;
+    border-radius: $radius;
+    top: 100%;
+    margin-top: $rhythm * -1.5;
+    transform: rotate(45deg);
+  }
+}
+
+.question_question_text {
+  background: $questionQuestionBg;
+  &:after {
+    background: $questionQuestionBg;
+    left: $rhythm * 2;
+  }
+  color: $questionQuestionText;
+}
+
+.question_answer_text {
+  background: $questionAnswerBg;
+  &:after {
+    background: $questionAnswerBg;
+    right: $rhythm * 2;
+  }
+  color: $questionAnswerText;
+}
+
+.question {
   margin-bottom: $rhythm * 3;
 }
 
 .question_answer {
-  padding-left: $rhythm * 2;
-  border-left: 5px solid $lightGray;
+  margin-top: $rhythm;
+  textarea, button {
+    text-align: right;
+  }
+  textarea {
+    margin-bottom: 0;
+    border-radius: $rhythm $rhythm 0 0;
+    @include font_smoothing;
+    min-height: $lineHeight * 6;
+    padding: $rhythm ($rhythm * 2);
+  }
+  .button {
+    @include button_color($questionAnswerBg,$questionAnswerText);
+    @include font_smoothing;
+    border-radius: 0 0 $rhythm $rhythm;
+  }
 }
 
 .question_asked_by,
@@ -22,15 +105,13 @@
   font-weight: $weightBold;
   font-size: $fontSmall;
   color: $darkerGray;
+  margin-bottom: $rhythm / 2;
   @include font_smoothing;
-  margin-bottom: $rhythm;
 }
 
 .question_admin_links {
   font-size: $fontSmall;
-
-  li {
-    display: inline;
-    margin-right: $rhythm;
-  }
+  clear: both;
+  text-align: right;
+  margin-top: $lineHeight;
 }

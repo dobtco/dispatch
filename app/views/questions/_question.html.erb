@@ -1,40 +1,46 @@
 <div id="<%= dom_id(question) %>" class='question'>
-  <div class='question_asked_by'>
-    <%= t('from_user', user: question.asked_by_user.try(:name) || 'Unknown') %>
-  </div>
-  <blockquote class='question_question_text'><%= format_textarea_input(question.question_text) %></blockquote>
-
-  <% if policy(@opportunity).answer_questions? %>
-    <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
-      <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_an_answer')  %>
-      <%= f.button :button,  t('publish_your_answer'), class: 'primary' %>
-    <% end %>
-  <% end %>
-
-  <% if question.answered? %>
-    <div class='question_answer' data-toggle='edit-answer-<%= question.id %>'>
-      <div class='question_answered_by'>
-        <%= t('answered_by_user_at_time', user: question.answered_by_user.try(:name) || 'Unknown', timestamp: long_timestamp(question.answered_at)).html_safe %>
-      </div>
-      <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
+  <div class='question_question'>
+    <div class='question_asked_by'>
+      <%= t('asked_by_user_at_time', user: question.asked_by_user.try(:name) || 'Unknown', timestamp: long_timestamp(question.created_at)).html_safe %>
     </div>
-  <% end %>
+    <blockquote class='question_question_text'><%= format_textarea_input(question.question_text) %></blockquote>
+  </div>
 
-  <% if policy(@opportunity).answer_questions? %>
-    <ul class='question_admin_links'>
+
+
+  <div class="question_answer">
+    <% if policy(@opportunity).answer_questions? %>
+      <%= simple_form_for [@opportunity, question], html: { style: question.answered? ? 'display:none' : nil, 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
+        <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_an_answer')  %>
+        <%= f.button :button,  t('publish_your_answer'), class: 'primary small block' %>
+      <% end %>
+    <% end %>
+
+    <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
       <% if question.answered? %>
+        <div class='question_answered_by'>
+          <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
+        </div>
+        <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
+      <% end %>
+    </div>
+
+    <% if policy(@opportunity).answer_questions? %>
+      <ul class='question_admin_links'>
+        <% if question.answered? %>
+          <li>
+            <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
+              <%= t('edit_answer') %>
+            </a>
+          </li>
+        <% end %>
+
         <li>
-          <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
-            <%= t('edit_answer') %>
+          <a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_delete_question') %>'>
+            <%= t('destroy_question') %>
           </a>
         </li>
-      <% end %>
-
-      <li>
-        <a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_delete_question') %>'>
-          <%= t('destroy') %>
-        </a>
-      </li>
-    </ul>
-  <% end %>
+      </ul>
+    <% end %>
+  </div>
 </div>

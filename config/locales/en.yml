@@ -7,12 +7,14 @@ en:
         invalid_staff_domain: Please enter an address with a valid domain.
   admin: Admin
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
+  asked_by_user_at_time: "On %{timestamp}, %{user} asked:"
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user_at_time: Answered by %{user} at %{timestamp}
+  answered_by_user: "%{user} answered:"
   approve: Approve
   ask: Ask
   ask_question: Ask question
+  ask_a_new_question: Ask a new question
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
@@ -25,8 +27,9 @@ en:
   deadline: Deadline
   department: Department
   destroy: Delete
+  destroy_question: Delete this question
   edit: Edit
-  edit_answer: Edit answer
+  edit_answer: Edit your answer
   edit_opportunity_steps:
     description:
       title: Description
@@ -182,8 +185,8 @@ en:
     submissions_open_at: Submissions open
   title: Title
   unanswered_questions:
-    one: Answer 1 question
-    other: Answer %{count} questions
+    one: View one unanswered question
+    other: View %{count} unanswered questions
   unapprove: Un-approve
   users:
     registrations:
@@ -212,5 +215,5 @@ en:
   view_opportunity: View
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
-  write_an_answer: Write an answer…
-  write_your_question: Write your question…
+  write_an_answer: Write your answer here
+  write_your_question: Write your question here
