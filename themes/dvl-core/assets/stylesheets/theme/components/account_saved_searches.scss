@@ -1,7 +1,50 @@
 @import 'theme/includes';
 
-.account_saved_searches_actions {
-  a {
-    margin-right: $rhythm;
+
+.saved_filters li {
+  position: relative;
+  padding-left: $rhythm * 6;
+  padding-right: $rhythm * 3;
+  margin-bottom: $rhythm * 5;
+  &:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    color: $darkGray;
+    font-size: $rhythm * 4;
+    top: 0;
+    left: 0;
+    transition: color 0.2s ease-out;
   }
+  span,
+  em {
+    display: block;
+    @include font_smoothing;
+  }
+  span {
+    font-size: 1.2rem;
+    color: $darkestGray;
+  }
+  em {
+    font-style: normal;
+    font-size: $fontSmall;
+    color: $darkerGray;
+  }
+  &:hover,
+  &:focus {
+    a {
+      text-decoration: none;
+    }
+    &:before {
+      color: $black;
+    }
+  }
+}
+
+.saved_filter_actions {
+  position: absolute;
+  font-size: $fontSmall;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

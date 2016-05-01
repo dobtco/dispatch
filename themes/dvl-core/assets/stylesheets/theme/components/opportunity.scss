@@ -1,0 +1,34 @@
+@import 'theme/includes';
+
+.opportunity {
+  margin-bottom: $rhythm * 4;
+  a {
+    display: block;
+    border: 1px solid $gray;
+    box-shadow: 0 1px 0 rgba(#000,0.06);
+    border-radius: $radius;
+    padding: ($rhythm * 2) ($rhythm * 3);
+    transition: background-color 0.15s ease-out;
+    &:hover,
+    &:focus,
+    &:active  {
+      text-decoration: none;
+      outline: 0;
+    }
+    &:hover,
+    &:focus {
+      background: $lighterGray;
+    }
+  }
+  span {
+    color: $primaryColor;
+    font-size: 1.2rem;
+    @include font_smoothing;
+  }
+  em {
+    font-style: normal;
+    color: $darkerGray;
+    font-size: $fontSmall;
+    display: block;
+  }
+}

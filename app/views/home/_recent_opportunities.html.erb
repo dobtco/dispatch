@@ -3,10 +3,10 @@
     <h2><%= t('.title') %></h2>
     <ul>
       <% @recent_opportunities.each do |opportunity| %>
-        <li>
+        <li class='opportunity'>
           <a href='<%= opportunity_path(opportunity) %>'>
             <span><%= opportunity.title %></span>
-            <%= relative_timestamp(opportunity.posted_at) %>
+            <em><%= relative_timestamp(opportunity.posted_at) %></em>
           </a>
         </li>
       <% end %>

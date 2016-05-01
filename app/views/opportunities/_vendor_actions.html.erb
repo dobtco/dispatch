@@ -1,5 +1,5 @@
 <% if policy(@opportunity).submit? || policy(@opportunity).ask_question? %>
-  <div class='opportunity_actions grid'>
+  <div class='opportunity_actions'>
     <%= render('opportunities/actions/submit') %>
     <%= render('opportunities/actions/ask_question') %>
   </div>

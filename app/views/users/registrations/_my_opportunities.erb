@@ -1,13 +1,15 @@
 <% if (opps = current_user.created_opportunities.order_by_recently_updated).present? %>
-  <div class='page_subheader page_subheader_my_opportunities'>
+  <div class='page_subheader page_subheader_simple'>
     <h3><%= t('my_opportunities') %></h3>
   </div>
 
-  <ul class='formatted_list'>
+  <ul class='opportunities'>
     <% opps.each do |opportunity| %>
       <li>
-        <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
-        <div class='none'><%= t("opportunity_status_short.#{opportunity.status_key}") %></div>
+        <a href='<%= opportunity_path(opportunity) %>'>
+          <span><%= opportunity.title %></span>
+          <em><%= t("opportunity_status_short.#{opportunity.status_key}") %></em>
+        </a>
       </li>
     <% end %>
   </ul>

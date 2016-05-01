@@ -99,7 +99,8 @@ class OpportunitiesController < ApplicationController
       @opportunity.approve!
     end
 
-    redirect_to :back
+    redirect_to pending_opportunities_path,
+                success: t('approved_success')
   end
 
   def subscribe
