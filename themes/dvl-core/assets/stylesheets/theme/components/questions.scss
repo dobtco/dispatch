@@ -44,7 +44,7 @@ $questionAnswerText: $primaryColor;
   border: 0;
   border-radius: $rhythm;
   width: 100%;
-  padding: $rhythm ($rhythm * 2);
+  padding: ($rhythm * 1.5) ($rhythm * 3);
   @include font_smoothing;
   position: relative;
   &:after {
