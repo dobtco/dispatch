@@ -3,9 +3,9 @@
     <h3><%= t('my_opportunities') %></h3>
   </div>
 
-  <ul class='opportunities'>
+  <ul>
     <% opps.each do |opportunity| %>
-      <li>
+      <li class='opportunity'>
         <a href='<%= opportunity_path(opportunity) %>'>
           <span><%= opportunity.title %></span>
           <em><%= t("opportunity_status_short.#{opportunity.status_key}") %></em>
