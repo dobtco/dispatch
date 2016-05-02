@@ -87,24 +87,18 @@ $questionAnswerText: $primaryColor;
 }
 
 .question_answer_form {
-  textarea, button {
-    text-align: right;
-  }
   textarea {
     margin-bottom: 0;
-    border-radius: $rhythm $rhythm 0 0;
     @include font_smoothing;
     min-height: $lineHeight * 3;
     padding: $rhythm ($rhythm * 2);
-  }
-  .button {
-    border-radius: 0 0 $rhythm $rhythm;
+    margin-bottom: $rhythm;
   }
 }
 
 .question_asked_by,
 .question_answered_by {
-  font-weight: $weightBold;
+  font-weight: $weightNormal;
   font-size: $fontSmall;
   color: $darkerGray;
   margin-bottom: $rhythm / 2;

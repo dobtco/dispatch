@@ -14,16 +14,12 @@
         <%= simple_form_for [@opportunity, question], html: { style: 'display:none', 'data-toggle' => "edit-answer-#{question.id}" } do |f| %>
           <%= f.input_field :answer_text, 'aria-label' => t('answer_text'), placeholder: t('write_your_answer_here')  %>
           <% if question.answered? %>
-            <%= f.button :button,  t('save_changes'), class: 'primary small block' %>
+            <%= f.button :button,  t('save_changes'), class: 'primary small' %>
           <% else %>
-            <%= f.button :button,  t('publish'), class: 'primary small block' %>
+            <%= f.button :button,  t('publish'), class: 'primary small' %>
           <% end %>
         <% end %>
       </div>
-    <% end %>
-
-    <% unless question.answered? %>
-      <a href='#' class='button primary block' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'><%= t('write_an_answer') %></a>
     <% end %>
 
     <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
@@ -37,13 +33,15 @@
 
     <% if policy(@opportunity).answer_questions? %>
       <ul class='question_admin_links'>
-        <% if question.answered? %>
-          <li>
-            <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
+        <li>
+          <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
+            <% if question.answered? %>
               <%= t('edit_answer') %>
-            </a>
-          </li>
-        <% end %>
+            <% else %>
+              <%= t('write_an_answer') %>
+            <% end %>
+          </a>
+        </li>
 
         <li>
           <a href='<%= opportunity_question_path(@opportunity, question) %>' data-method='delete' data-confirm='<%= t('confirm_delete_question') %>'>

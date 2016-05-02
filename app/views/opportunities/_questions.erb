@@ -2,11 +2,6 @@
   <div class='opportunity_section'>
     <div class='page_subheader'>
       <h4 id='questions'><i class='fa fa-comments'></i> <%= t('questions') %></h4>
-      <% if policy(@opportunity).ask_question? %>
-        <div class='page_subheader_actions'>
-          <a href="#ask_question" class='page_subheader_link'>  <%= t('ask_question') %></a>
-        </div>
-      <% end %>
     </div>
     <div class='questions'>
       <%= render @opportunity.questions.unanswered_first %>
