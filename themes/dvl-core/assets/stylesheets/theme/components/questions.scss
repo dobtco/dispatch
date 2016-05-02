@@ -5,7 +5,7 @@ $questionQuestionText: darken($secondaryColor,40%);
 $questionAnswerBg: desaturate(lighten($primaryColor,60%),5%);
 $questionAnswerText: $primaryColor;
 
-#ask_question .page_subheader {
+.opportunity_section_ask .page_subheader {
   margin-bottom: $rhythm;
 }
 
