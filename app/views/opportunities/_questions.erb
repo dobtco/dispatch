@@ -1,10 +1,22 @@
-<% if @opportunity.questions.unanswered_first.present? %>
+<% if @questions.present? %>
   <div class='opportunity_section'>
     <div class='page_subheader'>
       <h4 id='questions'><i class='fa fa-comments'></i> <%= t('questions') %></h4>
     </div>
     <div class='questions'>
-      <%= render @opportunity.questions.unanswered_first %>
+      <% unanswered_questions = @questions.reject(&:answered?) %>
+      <% if unanswered_questions.present? %>
+        <div class='unanswered_questions_wrapper'>
+          <h5><%= t('unanswered_alert', count: unanswered_questions.length) %></h5>
+          <% @questions.reject(&:answered?).each do |question| %>
+            <%= render question %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% @questions.select(&:answered?).each do |question| %>
+        <%= render question %>
+      <% end %>
     </div>
   </div>
 <% end %>
@@ -13,7 +25,7 @@
   <div class='opportunity_section' id="ask_question">
     <div class='page_subheader'>
       <h4>
-        <% unless @opportunity.questions.unanswered_first.present? %>
+        <% unless @questions.present? %>
           <i class='fa fa-comments'></i>
         <% end %>
         <%= t('ask_a_new_question') %>
