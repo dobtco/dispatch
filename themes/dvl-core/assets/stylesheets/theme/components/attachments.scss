@@ -10,7 +10,8 @@
     box-shadow: 0 1px 0 rgba(#000,0.06);
     @include font_smoothing;
     padding: $rhythm ($rhythm * 5) $rhythm ($rhythm * 6);
-    width: 16rem;
+    width: 20rem;
+    max-width: 100%;
     margin-bottom: $rhythm * 2;
     &:before {
       font-family: 'FontAwesome';

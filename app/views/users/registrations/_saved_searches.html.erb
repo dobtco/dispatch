@@ -6,7 +6,7 @@
   <ul class='saved_filters'>
     <% current_user.saved_searches.each do |saved_search| %>
       <li>
-        <a href='<%= opportunities_path(saved_search.search_params) %>'>
+        <a class='saved_filter_view' href='<%= opportunities_path(saved_search.search_params) %>'>
           <span>
             <%= t('view_filter') =%>
           </span>
@@ -14,6 +14,7 @@
             <%= t('filter_subscribed_at_time', timestamp: long_timestamp(saved_search.created_at)).html_safe %>
           </em>
           </span>
+        </a>
         <div class='saved_filter_actions'>
           <a href='<%= saved_search_path(saved_search) %>' data-method='delete'><%= t('unsubscribe') %></a>
         </div>

@@ -194,6 +194,7 @@ en:
     other: View %{count} unanswered questions
   unapprove: Un-approve
   unsubscribe: Unsubscribe
+  unsubscribe_from_search: Unsubscribe from these search results
   users:
     registrations:
       confirm:

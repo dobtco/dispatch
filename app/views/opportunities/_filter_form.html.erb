@@ -24,7 +24,11 @@
   <ul class='sidebar_sub_actions'>
     <li>
       <% if signed_in? %>
-        <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('email_me') %></a>
+        <% if existing_saved_search %>
+          <a href='<%= saved_search_path(existing_saved_search) %>' data-method='delete'><%= t('unsubscribe_from_search') %></a>
+        <% else %>
+          <a href='<%= saved_searches_path(current_filter_params) %>' data-method='post'><%= t('email_me') %></a>
+        <% end %>
       <% else %>
         <a href='<%= new_user_session_path %>'><%= t('email_me') %></a>
       <% end %>

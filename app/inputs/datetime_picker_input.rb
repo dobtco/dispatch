@@ -6,5 +6,7 @@ class DatetimePickerInput < SimpleForm::Inputs::StringInput
     if object && (value = object.send(attribute_name))
       input_html_options[:value] = value.iso8601
     end
+
+    input_html_options[:placeholder] = 'MM/DD/YYYY'
   end
 end
