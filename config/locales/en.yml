@@ -10,7 +10,7 @@ en:
   asked_by_user_at_time: "On %{timestamp}, %{user} asked:"
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user: "%{user} answered:"
+  answered_by_user_at_time: "On %{timestamp}, %{user} answered:"
   approve: Approve
   approved_success: You have approved the opportunity
   ask: Ask

@@ -23,7 +23,7 @@
     <% if question.answered? %>
       <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
         <div class='question_answered_by'>
-          <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
+          <%= t('answered_by_user_at_time', user: question.answered_by_user.try(:name) || 'Unknown', timestamp: long_timestamp(question.answered_at)).html_safe %>
         </div>
         <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
       </div>
