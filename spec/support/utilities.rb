@@ -24,3 +24,10 @@ def wait_for_ajax
     page.evaluate_script('$.active') == 0
   end
 end
+
+def with_invisible_elements
+  original_config_val = Capybara.ignore_hidden_elements
+  Capybara.ignore_hidden_elements = false
+  yield
+  Capybara.ignore_hidden_elements = original_config_val
+end
