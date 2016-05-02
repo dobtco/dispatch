@@ -20,19 +20,19 @@
       </div>
     <% end %>
 
-    <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
-      <% if question.answered? %>
-          <div class='question_answered_by'>
-            <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
-          </div>
-          <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
-      <% end %>
-    </div>
+    <% if question.answered? %>
+      <div class='question_answer_text_wrapper' data-toggle='edit-answer-<%= question.id %>'>
+        <div class='question_answered_by'>
+          <%= t('answered_by_user', user: question.answered_by_user.try(:name) || 'Unknown') %>
+        </div>
+        <div class='question_answer_text'><%= format_textarea_input(question.answer_text) %></div>
+      </div>
+    <% end %>
 
     <% if policy(@opportunity).answer_questions? %>
       <ul class='question_admin_links'>
         <li>
-          <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]'>
+          <a href='#' data-toggle-visible='[data-toggle=edit-answer-<%= question.id %>]' data-toggle-text='<%= t('cancel') %>'>
             <% if question.answered? %>
               <%= t('edit_answer') %>
             <% else %>
