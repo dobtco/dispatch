@@ -10,7 +10,7 @@
 <% end %>
 
 <% if policy(@opportunity).ask_question? %>
-  <div class='opportunity_section' id="ask_question">
+  <div class='opportunity_section'>
     <div class='page_subheader'>
       <h4>
         <% unless @opportunity.questions.unanswered_first.present? %>
