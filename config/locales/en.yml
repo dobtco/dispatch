@@ -7,19 +7,20 @@ en:
         invalid_staff_domain: Please enter an address with a valid domain.
   admin: Admin
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
-  asked_by_user_at_time: "On %{timestamp}, %{user} asked:"
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user: "%{user} answered:"
+  answered_by_user_at_time: 'On %{timestamp}, %{user} answered:'
   approve: Approve
   approved_success: You have approved the opportunity
   ask: Ask
-  ask_question: Ask question
   ask_a_new_question: Ask a new question
+  ask_question: Ask question
+  asked_by_user_at_time: 'On %{timestamp}, %{user} asked:'
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
   business_name: Business name
+  cancel: Cancel
   choose_a_department: Choose a department
   clear: Clear
   confirm_delete_opportunity: Are you sure you want to delete this opportunity?
@@ -189,6 +190,9 @@ en:
     submissions_close_at: Submissions close
     submissions_open_at: Submissions open
   title: Title
+  unanswered_alert:
+    one: You need to answer one question.
+    other: You need to answer %{count} questions.
   unanswered_questions:
     one: View one unanswered question
     other: View %{count} unanswered questions

@@ -95,6 +95,10 @@ class OpportunitiesController < ApplicationController
 
   def show
     authorize @opportunity, :show?
+
+    if @opportunity.enable_questions?
+      @questions = @opportunity.questions.unanswered_first
+    end
   end
 
   def approve
