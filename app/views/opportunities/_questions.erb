@@ -7,7 +7,7 @@
       <% unanswered_questions = @questions.reject(&:answered?) %>
       <% if unanswered_questions.present? %>
         <div class='unanswered_questions_wrapper'>
-          <h5><%= t('unanswered_alert', count: unanswered_questions.length) %></h5>
+          <header><h4><%= t('unanswered_alert', count: unanswered_questions.length) %></h4></header>
           <% @questions.reject(&:answered?).each do |question| %>
             <%= render question %>
           <% end %>

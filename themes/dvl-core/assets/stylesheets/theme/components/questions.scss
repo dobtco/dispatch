@@ -111,3 +111,28 @@ $questionAnswerText: $primaryColor;
   text-align: right;
   margin-top: $lineHeight;
 }
+
+.unanswered_questions_wrapper {
+  border-radius: $radius;
+  border: 1px solid $lightGray;
+  margin-bottom: $lineHeight;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  header {
+    background: $lightestGray;
+    @include border_top_radius($radius - 1px);
+    padding: $rhythm ($rhythm * 2);
+  }
+  h4 {
+    font-weight: $weightNormal;
+    margin-bottom: 0;
+  }
+  .question {
+    padding-left: $rhythm * 2;
+    padding-right: $rhythm * 2;
+    margin-bottom: 0;
+    &:last-child {
+      border: 0;
+      padding-bottom: 0;
+    }
+  }
+}
