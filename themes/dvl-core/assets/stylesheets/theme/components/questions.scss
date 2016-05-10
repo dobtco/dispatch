@@ -1,11 +1,77 @@
 @import 'theme/includes';
 
-.edit_question,
-.edit_question textarea,
-.new_question textarea,
+$questionQuestionBg: lighten($secondaryColor,30%);
+$questionQuestionText: darken($secondaryColor,40%);
+$questionAnswerBg: desaturate(lighten($primaryColor,60%),5%);
+$questionAnswerText: $primaryColor;
+
+.opportunity_section_ask .page_subheader {
+  margin-bottom: $rhythm;
+}
+
 .question_answer,
 .question_question_text {
   margin-bottom: $rhythm * 2;
+}
+
+.question {
+  padding: ($rhythm * 2) 0;
+  border-bottom: 1px solid $gray;
+  @include cf;
+}
+
+.question_question,
+.question_answer {
+  width: 60%;
+  clear: both;
+}
+
+.question_question {
+  float: left;
+}
+
+.question_answer {
+  float: right;
+  text-align: right;
+}
+
+.question_question_text,
+.question_answer_text {
+  font-style: normal;
+  border: 0;
+  border-radius: $rhythm;
+  width: 100%;
+  padding: ($rhythm * 1.5) ($rhythm * 3);
+  @include font_smoothing;
+  position: relative;
+  &:after {
+    content: '';
+    width: $rhythm * 2;
+    height: $rhythm * 2;
+    position: absolute;
+    border-radius: $radius;
+    top: 100%;
+    margin-top: $rhythm * -1.5;
+    transform: rotate(45deg);
+  }
+}
+
+.question_question_text {
+  background: $questionQuestionBg;
+  &:after {
+    background: $questionQuestionBg;
+    left: $rhythm * 2;
+  }
+  color: $questionQuestionText;
+}
+
+.question_answer_text {
+  background: $questionAnswerBg;
+  &:after {
+    background: $questionAnswerBg;
+    right: $rhythm * 2;
+  }
+  color: $questionAnswerText;
 }
 
 .question {
@@ -13,24 +79,60 @@
 }
 
 .question_answer {
-  padding-left: $rhythm * 2;
-  border-left: 5px solid $lightGray;
+  margin-top: $rhythm;
+  .button {
+    @include button_color($questionAnswerBg,$questionAnswerText);
+    @include font_smoothing;
+  }
+}
+
+.question_answer_form {
+  textarea {
+    margin-bottom: 0;
+    @include font_smoothing;
+    min-height: $lineHeight * 3;
+    padding: $rhythm * 1.5;
+    margin-bottom: $rhythm;
+  }
 }
 
 .question_asked_by,
 .question_answered_by {
-  font-weight: $weightBold;
+  font-weight: $weightNormal;
   font-size: $fontSmall;
   color: $darkerGray;
+  margin-bottom: $rhythm / 2;
   @include font_smoothing;
-  margin-bottom: $rhythm;
 }
 
 .question_admin_links {
   font-size: $fontSmall;
+  clear: both;
+  text-align: right;
+  margin-top: $lineHeight;
+}
 
-  li {
-    display: inline;
-    margin-right: $rhythm;
+.unanswered_questions_wrapper {
+  border-radius: $radius;
+  border: 1px solid $lightGray;
+  margin-bottom: $lineHeight;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  header {
+    background: $lightestGray;
+    @include border_top_radius($radius - 1px);
+    padding: $rhythm ($rhythm * 2);
+  }
+  h4 {
+    font-weight: $weightNormal;
+    margin-bottom: 0;
+  }
+  .question {
+    padding-left: $rhythm * 2;
+    padding-right: $rhythm * 2;
+    margin-bottom: 0;
+    &:last-child {
+      border: 0;
+      padding-bottom: 0;
+    }
   }
 }

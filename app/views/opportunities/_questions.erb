@@ -1,21 +1,40 @@
-<% if @opportunity.questions.unanswered_first.present? %>
+<% if @questions.present? %>
   <div class='opportunity_section'>
     <div class='page_subheader'>
       <h4 id='questions'><i class='fa fa-comments'></i> <%= t('questions') %></h4>
     </div>
     <div class='questions'>
-      <%= render @opportunity.questions.unanswered_first %>
+      <% unanswered_questions = @questions.reject(&:answered?) %>
+      <% if unanswered_questions.present? %>
+        <div class='unanswered_questions_wrapper'>
+          <header><h4><%= t('unanswered_alert', count: unanswered_questions.length) %></h4></header>
+          <% @questions.reject(&:answered?).each do |question| %>
+            <%= render question %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% @questions.select(&:answered?).each do |question| %>
+        <%= render question %>
+      <% end %>
     </div>
   </div>
 <% end %>
 
 <% if policy(@opportunity).ask_question? %>
-  <div class='opportunity_section'>
+  <div class='opportunity_section opportunity_section_ask'>
     <div class='page_subheader'>
-      <h4><i class='fa fa-comment'></i> <%= t('ask_question') %></h4>
+      <h4>
+        <% unless @questions.present? %>
+          <i class='fa fa-comments'></i>
+        <% end %>
+        <%= t('ask_a_new_question') %>
+      </h4>
     </div>
     <%= simple_form_for [@opportunity, @opportunity.questions.build] do |f| %>
-      <%= f.input_field :question_text, placeholder: t('write_your_question'), 'aria-label' => t('question_text') %>
+      <div class='form_item'>
+        <%= f.input_field :question_text, 'aria-label' => t('question_text') %>
+      </div>
       <%= f.button :button, t('ask'), class: 'primary' %>
     <% end %>
   </div>

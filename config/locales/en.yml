@@ -9,15 +9,18 @@ en:
   allow_vendors_to_ask_questions: Let vendors ask public questions about this opportunity
   answer_question: Answer question
   answer_text: Answer text
-  answered_by_user_at_time: Answered by %{user} at %{timestamp}
+  answered_by_user_at_time: 'On %{timestamp}, %{user} answered:'
   approve: Approve
   approved_success: You have approved the opportunity
   ask: Ask
+  ask_a_new_question: Ask a new question
   ask_question: Ask question
+  asked_by_user_at_time: 'On %{timestamp}, %{user} asked:'
   attachments: Attachments
   browse: Browse
   browse_opportunities: Browse opportunities
   business_name: Business name
+  cancel: Cancel
   choose_a_department: Choose a department
   clear: Clear
   confirm_delete_opportunity: Are you sure you want to delete this opportunity?
@@ -27,8 +30,9 @@ en:
   deadline: Deadline
   department: Department
   destroy: Delete
+  destroy_question: Delete this question
   edit: Edit
-  edit_answer: Edit answer
+  edit_answer: Edit your answer
   edit_opportunity_steps:
     contact:
       title: Contact Info
@@ -46,7 +50,6 @@ en:
   filter_subscribed_at_time: Subscribed to on %{timestamp}
   filter_subscriptions: Filters you have subscribed to
   forgot: Forgot?
-  from_user: 'From %{user}:'
   full_name: Full name
   get_started: Get started
   home:
@@ -126,7 +129,7 @@ en:
   phone: Phone
   post_an_opportunity: Post an opportunity
   preview: Preview
-  publish_your_answer: Publish your answer
+  publish: Publish
   question_destroyed: The question was destroyed.
   question_text: Question text
   questions: Questions
@@ -187,9 +190,12 @@ en:
     submissions_close_at: Submissions close
     submissions_open_at: Submissions open
   title: Title
+  unanswered_alert:
+    one: One question needs an answer.
+    other: "%{count} questions need an answer."
   unanswered_questions:
-    one: Answer 1 question
-    other: Answer %{count} questions
+    one: View one unanswered question
+    other: View %{count} unanswered questions
   unapprove: Un-approve
   unsubscribe: Unsubscribe
   unsubscribe_from_search: Unsubscribe from these search results
@@ -219,5 +225,5 @@ en:
   view_opportunity: View opportunity
   view_proposals: View proposals
   will_publish_at_time: Will be published on %{timestamp}
-  write_an_answer: Write an answer…
-  write_your_question: Write your question…
+  write_an_answer: Write an answer
+  write_your_answer_here: Write your answer here
