@@ -191,8 +191,8 @@ en:
     submissions_open_at: Submissions open
   title: Title
   unanswered_alert:
-    one: You need to answer one question.
-    other: You need to answer %{count} questions.
+    one: One question needs an answer.
+    other: "%{count} questions need an answer."
   unanswered_questions:
     one: View one unanswered question
     other: View %{count} unanswered questions
