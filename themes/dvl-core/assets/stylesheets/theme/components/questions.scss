@@ -91,7 +91,7 @@ $questionAnswerText: $primaryColor;
     margin-bottom: 0;
     @include font_smoothing;
     min-height: $lineHeight * 3;
-    padding: $rhythm ($rhythm * 2);
+    padding: $rhythm * 1.5;
     margin-bottom: $rhythm;
   }
 }
