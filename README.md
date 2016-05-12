@@ -5,7 +5,7 @@ Dispatch [![Circle CI](https://circleci.com/gh/dobtco/dispatch.svg?style=shield)
 
 Dispatch is an application for cities to advertise their contract opportunities. It was inspired by Beacon, a Code for America 2015 fellowship project, but it has been completely rewritten from the ground-up for solidity and [customizability](docs/customization.md). Its initial development has been financed by a contract with the City of Philadelphia.
 
-Dispatch is developed by [The Department of Better Technology](https://www.dobt.co/screendoor/), the creators of [Screendoor](https://www.dobt.co/screendoor/), a cloud-hosted solution for government forms and workflows. Dispatch integrates with Screendoor for proposal review, but this integration is not required in order to use Dispatch.
+Dispatch is developed by [The Department of Better Technology](https://www.dobt.co/screendoor/), the creators of [Screendoor](https://www.dobt.co/screendoor/), a cloud-hosted solution for government forms and workflows. Dispatch integrates with Screendoor for proposal submission and review, but this integration is not required in order to use Dispatch.
 
 ## For governments
 
