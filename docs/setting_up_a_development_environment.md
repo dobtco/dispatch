@@ -10,6 +10,7 @@ You'll need to first install the following:
 - node.js
 - Postgres
 - imagemagick
+- qt
 
 Then, run `script/bootstrap` to install gems and seed your database.
 
