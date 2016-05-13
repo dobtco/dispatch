@@ -29,7 +29,7 @@ class Question < ActiveRecord::Base
   scope :answered, -> { where('answered_at IS NOT NULL') }
 
   scope :unanswered_first, -> {
-    order('CASE WHEN answered_at IS NULL THEN 0 ELSE 1 END')
+    order('answered_at DESC NULLS FIRST, created_at ASC')
   }
 
   validates :opportunity, presence: true
