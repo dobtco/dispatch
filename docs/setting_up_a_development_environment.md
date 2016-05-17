@@ -5,7 +5,7 @@ Setting up a development environment
 
 You'll need to first install the following:
 
-- Ruby 2.3.0
+- Ruby 2.3.1
 - Bundler
 - node.js
 - Postgres
