@@ -7,7 +7,7 @@ experimental:
 machine:
   environment:
     GEMNASIUM_TESTSUITE: 'script/cibuild'
-    GEMNASIUM_PROJECT_SLUG: 'dobtco/dispatch'
+    GEMNASIUM_PROJECT_SLUG: 'github.com/dobtco/dispatch'
 
 dependencies:
   cache_directories:
