@@ -213,7 +213,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     json_pure (1.8.3)
-    kaminari (0.16.3)
+    kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.4.3)
@@ -416,7 +416,7 @@ GEM
     thor (0.19.1)
     thread (0.2.2)
     thread_safe (0.3.5)
-    tilt (2.0.2)
+    tilt (2.0.4)
     tins (1.10.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -443,7 +443,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  administrate (= 0.2.2)
+  administrate
   annotate
   autoprefixer-rails!
   better_errors

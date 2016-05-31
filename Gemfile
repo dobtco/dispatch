@@ -4,9 +4,7 @@ ruby '2.3.1'
 
 gem 'rails'
 
-# Derp: https://github.com/thoughtbot/administrate/pull/560
-gem 'administrate', '0.2.2'
-
+gem 'administrate'
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',
     branch: 'bundle-process'
