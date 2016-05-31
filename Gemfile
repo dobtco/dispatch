@@ -5,9 +5,7 @@ ruby '2.3.1'
 gem 'rails'
 
 # Derp: https://github.com/thoughtbot/administrate/pull/560
-gem 'administrate',
-    github: 'yujinakayama/administrate',
-    branch: 'fix-load-error'
+gem 'administrate', '0.2.2'
 
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',

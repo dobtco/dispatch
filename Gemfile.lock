@@ -16,23 +16,6 @@ GIT
       coffee-script
       sass
 
-GIT
-  remote: git://github.com/yujinakayama/administrate.git
-  revision: a16bcfa73c7d334cfd5518f18e9bc14dd8a10ada
-  branch: fix-load-error
-  specs:
-    administrate (0.2.0)
-      autoprefixer-rails (~> 6.0)
-      datetime_picker_rails (~> 0.0.7)
-      jquery-rails (~> 4.0)
-      kaminari (~> 0.16)
-      momentjs-rails (~> 2.8)
-      neat (~> 1.1)
-      normalize-rails (~> 3.0)
-      rails (~> 4.2)
-      sass-rails (~> 5.0)
-      selectize-rails (~> 0.6)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -73,6 +56,17 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    administrate (0.2.2)
+      autoprefixer-rails (~> 6.0)
+      datetime_picker_rails (~> 0.0.7)
+      jquery-rails (~> 4.0)
+      kaminari (~> 0.16)
+      momentjs-rails (~> 2.8)
+      neat (~> 1.1)
+      normalize-rails (~> 3.0)
+      rails (~> 4.2)
+      sass-rails (~> 5.0)
+      selectize-rails (~> 0.6)
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
@@ -449,7 +443,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  administrate!
+  administrate (= 0.2.2)
   annotate
   autoprefixer-rails!
   better_errors
@@ -517,4 +511,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.4
+   1.12.5
