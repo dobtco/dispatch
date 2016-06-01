@@ -67,10 +67,7 @@ end
 group :test do
   gem 'brakeman', require: false
   gem 'capybara'
-
-  # https://github.com/thoughtbot/capybara-webkit/issues/909
-  gem 'capybara-webkit', '1.10.1'
-
+  gem 'capybara-webkit'
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'rspec-its'
