@@ -23,6 +23,7 @@
 #  business_data          :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  omniauth_uid           :string
 #
 # Indexes
 #
@@ -49,7 +50,9 @@ class User < ActiveRecord::Base
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable
+         :validatable,
+         :omniauthable,
+         omniauth_providers: [:google_oauth2]
 
   enum permission_level: [:user, :staff, :approver, :admin]
 
@@ -71,6 +74,33 @@ class User < ActiveRecord::Base
 
   attr_accessor :signup_type
   validate :ensure_email_matches_staff_domain
+
+  def self.from_omniauth(access_token)
+    provider_uid_string = "#{access_token.provider}|#{access_token.uid}"
+
+    if (user = User.find_by(omniauth_uid: provider_uid_string))
+      user
+    else
+      User.create!(
+        omniauth_uid: provider_uid_string,
+        email: access_token.info['email'],
+        name: access_token.info['name'],
+        password: Devise.friendly_token, # Alright, a random password, sure...
+        confirmed_at: Time.now
+      )
+    end
+  end
+
+  def omniauthed?
+    omniauth_uid.present?
+  end
+
+  def omniauth_provider_text
+    case omniauth_uid.split('|').first
+    when 'google_oauth2'
+      'Google'
+    end
+  end
 
   # https://github.com/plataformatec/devise/#activejob-integration
   def send_devise_notification(notification, *args)

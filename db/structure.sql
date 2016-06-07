@@ -374,7 +374,8 @@ CREATE TABLE users (
     business_name character varying,
     business_data character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    omniauth_uid character varying
 );
 
 
@@ -691,4 +692,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160418144427');
 INSERT INTO schema_migrations (version) VALUES ('20160418203004');
 
 INSERT INTO schema_migrations (version) VALUES ('20160425151213');
+
+INSERT INTO schema_migrations (version) VALUES ('20160607205731');
 

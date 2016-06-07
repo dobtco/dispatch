@@ -23,6 +23,7 @@
 #  business_data          :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  omniauth_uid           :string
 #
 # Indexes
 #

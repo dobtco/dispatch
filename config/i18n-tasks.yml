@@ -83,9 +83,9 @@ search:
 #   api_key: "AbC-dEf5"
 
 ## Do not consider these keys missing:
-# ignore_missing:
+ignore_missing:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
-# - '{devise,simple_form}.*'
+- '{devise,simple_form}.*'
 
 ## Consider these keys used:
 ignore_unused:

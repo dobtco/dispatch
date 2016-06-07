@@ -17,11 +17,16 @@
   <% end %>
 
   <%= f.input :name, label: t('full_name') %>
-  <%= f.input :email, required: true %>
 
-  <%= f.input :password, hint: false do %>
-    <span class='password_shim'>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
-    <a href='<%= edit_user_registration_path(type: 'password') %>' class='button mini'>Change</a>
+  <% if current_user.omniauthed? %>
+    <p>You are signed in with <%= current_user.omniauth_provider_text %>.</p>
+  <% else %>
+    <%= f.input :email, required: true %>
+
+    <%= f.input :password, hint: false do %>
+      <span class='password_shim'>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+      <a href='<%= edit_user_registration_path(type: 'password') %>' class='button mini'>Change</a>
+    <% end %>
   <% end %>
 
   <%= f.button :button, t('save_changes'), class: 'primary' %>
