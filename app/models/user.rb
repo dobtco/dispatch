@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :omniauthable,
-         omniauth_providers: [:google_oauth2]
+         omniauth_providers: [:google_oauth2, :ldap]
 
   enum permission_level: [:user, :staff, :approver, :admin]
 
@@ -99,6 +99,8 @@ class User < ActiveRecord::Base
     case omniauth_uid.split('|').first
     when 'google_oauth2'
       'Google'
+    when 'ldap'
+      'LDAP'
     end
   end
 

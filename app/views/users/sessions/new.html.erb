@@ -3,6 +3,7 @@
 <% content_for(:main_container_class, 'container_tiny') %>
 
 <a href='<%= user_google_oauth2_omniauth_authorize_path %>'>Sign in w/ Google</a>
+<a href='<%= user_ldap_omniauth_authorize_path %>'>Sign in w/ LDAP</a>
 
 <div class='page_header page_header_simple'>
   <h2><%= t('sign_in') %></h2>

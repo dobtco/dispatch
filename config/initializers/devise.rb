@@ -239,6 +239,15 @@ Devise.setup do |config|
                   ENV['GOOGLE_OAUTH_SECRET'],
                   {}
 
+  config.omniauth :ldap,
+                  host: '',
+                  port: 389,
+                  method: :plain,
+                  base: 'dc=planetexpress,dc=com',
+                  uid: 'uid',
+                  bind_dn: 'cn=admin,dc=planetexpress,dc=com',
+                  password: 'GoodNewsEveryone'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
