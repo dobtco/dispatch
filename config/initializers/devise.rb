@@ -240,7 +240,7 @@ Devise.setup do |config|
                   {}
 
   config.omniauth :ldap,
-                  host: '',
+                  host: '192.168.99.100',
                   port: 389,
                   method: :plain,
                   base: 'dc=planetexpress,dc=com',
