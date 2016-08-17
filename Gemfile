@@ -24,6 +24,11 @@ gem 'pg'
 gem 'pg_search'
 gem 'pundit'
 gem 'premailer-rails'
+
+# Locked for background bug:
+# https://dobt.slack.com/archives/dev/p1471449187000004
+gem 'css_parser', '1.4.2'
+
 gem 'rails_oneline_logging'
 gem 'rinku'
 gem 'sassc-rails'
