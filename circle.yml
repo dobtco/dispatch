@@ -38,5 +38,5 @@ test:
 deployment:
   demo:
     branch: master
-    heroku:
-      appname: dispatch-demo
+    commands:
+      - git remote add flynn http://:$FLYNN_TOKEN@git.xz47.flynnhub.com/dispatch.git && git push flynn master
