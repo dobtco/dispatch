@@ -33,7 +33,7 @@ Dispatch is a Rails application, backed by a PostgreSQL database. It does not ha
 
 | Name | Link | Repo |
 | --- | --- | --- |
-| Dispatch demo site | https://dispatch-demo.herokuapp.com | You're lookin' at it |
+| Dispatch demo site | https://dispatch-demo.dobt.co | You're lookin' at it |
 
 More soon! :wink:
 
