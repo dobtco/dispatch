@@ -82,7 +82,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.41.1', require: false
 end
 
 group :production do
