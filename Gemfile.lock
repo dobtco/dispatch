@@ -240,7 +240,7 @@ GEM
       bourbon (>= 4.0)
       sass (>= 3.3)
     nenv (0.3.0)
-    newrelic_rpm (3.16.3.323)
+    newrelic_rpm (3.17.0.325)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     normalize-rails (3.0.3)
@@ -511,4 +511,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.3
+   1.13.5
