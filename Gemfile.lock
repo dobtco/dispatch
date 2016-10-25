@@ -163,7 +163,7 @@ GEM
     ffi (1.9.14)
     filterer (2.0.0)
       rails (>= 4.0.0)
-    font-awesome-rails (4.6.3.1)
+    font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     globalid (0.3.7)
@@ -419,7 +419,7 @@ GEM
     tins (1.10.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.2)
+    uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.1.1)
     utf8-cleaner (0.2.5)
@@ -511,4 +511,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
