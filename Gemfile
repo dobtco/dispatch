@@ -4,7 +4,7 @@ ruby '2.3.1'
 
 gem 'rails', '4.2.7.1'
 
-gem 'administrate'
+gem 'administrate', '~> 0.2.2'
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',
     branch: 'bundle-process'
