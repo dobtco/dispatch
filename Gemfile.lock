@@ -1,11 +1,10 @@
 GIT
   remote: git://github.com/ajb/autoprefixer-rails.git
-  revision: 2d172c1e88b1c3941c43feb394ebe300e55ecc41
+  revision: 61b043c0b4480782d7791ab92318d3c8cccec6b5
   branch: bundle-process
   specs:
-    autoprefixer-rails (6.3.1)
+    autoprefixer-rails (6.4.0.1)
       execjs
-      json
 
 GIT
   remote: git://github.com/dobtco/dvl-core.git
@@ -55,7 +54,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     administrate (0.2.2)
       autoprefixer-rails (~> 6.0)
       datetime_picker_rails (~> 0.0.7)
@@ -85,10 +85,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bourbon (4.2.7)
-      sass (~> 3.4)
-      thor (~> 0.19)
-    brakeman (3.4.0)
+    brakeman (3.4.1)
     builder (3.2.2)
     capybara (2.7.1)
       addressable
@@ -195,7 +192,7 @@ GEM
     htmlentities (4.3.4)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
-    i18n-tasks (0.9.5)
+    i18n-tasks (0.9.6)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       easy_translate (>= 0.5.0)
@@ -206,7 +203,7 @@ GEM
       term-ansicolor (>= 1.3.2)
       terminal-table (>= 1.5.1)
     jmespath (1.3.1)
-    jquery-rails (4.1.1)
+    jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -233,12 +230,12 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
-    momentjs-rails (2.11.1)
+    momentjs-rails (2.15.1)
       railties (>= 3.1)
     multi_json (1.11.2)
-    neat (1.7.4)
-      bourbon (>= 4.0)
+    neat (1.8.0)
       sass (>= 3.3)
+      thor (~> 0.19)
     nenv (0.3.0)
     newrelic_rpm (3.17.0.325)
     nokogiri (1.6.8.1)
@@ -266,6 +263,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.3)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -361,8 +359,8 @@ GEM
     ruby_dep (1.4.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
-    sass-rails (5.0.4)
-      railties (>= 4.0.0, < 5.0)
+    sass-rails (5.0.6)
+      railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
@@ -378,7 +376,7 @@ GEM
       sprockets (> 2.11)
       sprockets-rails
       tilt
-    selectize-rails (0.12.1)
+    selectize-rails (0.12.3)
     shellany (0.0.1)
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
@@ -386,9 +384,9 @@ GEM
     simple_form_legend (0.0.1)
       rails (>= 4.0)
       simple_form (>= 3.0)
-    simplecov (0.11.2)
+    simplecov (0.12.0)
       docile (~> 1.1.0)
-      json (~> 1.8)
+      json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
@@ -405,9 +403,10 @@ GEM
       sprockets (>= 3.0.0)
     storage_unit (0.2.0)
       rails (>= 4.1.0)
-    term-ansicolor (1.3.2)
+    term-ansicolor (1.4.0)
       tins (~> 1.0)
-    terminal-table (1.5.2)
+    terminal-table (1.7.3)
+      unicode-display_width (~> 1.1.1)
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -416,7 +415,7 @@ GEM
     thread (0.2.2)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    tins (1.10.1)
+    tins (1.12.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.3)
@@ -442,7 +441,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  administrate
+  administrate (~> 0.2.2)
   annotate
   autoprefixer-rails!
   better_errors
@@ -452,7 +451,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   carrierwave-aws
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 0.6)
   coffee-rails
   css_parser (= 1.4.2)
   database_cleaner
