@@ -2,12 +2,16 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.2
+-- Dumped by pg_dump version 9.5.2
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -30,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: attachments; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE attachments (
@@ -67,7 +71,7 @@ ALTER SEQUENCE attachments_id_seq OWNED BY attachments.id;
 
 
 --
--- Name: audits; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: audits; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE audits (
@@ -100,7 +104,7 @@ ALTER SEQUENCE audits_id_seq OWNED BY audits.id;
 
 
 --
--- Name: categories; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: categories; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE categories (
@@ -131,7 +135,7 @@ ALTER SEQUENCE categories_id_seq OWNED BY categories.id;
 
 
 --
--- Name: categories_opportunities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: categories_opportunities; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE categories_opportunities (
@@ -141,7 +145,7 @@ CREATE TABLE categories_opportunities (
 
 
 --
--- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE delayed_jobs (
@@ -180,7 +184,7 @@ ALTER SEQUENCE delayed_jobs_id_seq OWNED BY delayed_jobs.id;
 
 
 --
--- Name: departments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: departments; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE departments (
@@ -211,7 +215,7 @@ ALTER SEQUENCE departments_id_seq OWNED BY departments.id;
 
 
 --
--- Name: opportunities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: opportunities; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE opportunities (
@@ -262,7 +266,7 @@ ALTER SEQUENCE opportunities_id_seq OWNED BY opportunities.id;
 
 
 --
--- Name: opportunities_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: opportunities_users; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE opportunities_users (
@@ -272,7 +276,7 @@ CREATE TABLE opportunities_users (
 
 
 --
--- Name: questions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: questions; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE questions (
@@ -309,7 +313,7 @@ ALTER SEQUENCE questions_id_seq OWNED BY questions.id;
 
 
 --
--- Name: saved_searches; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: saved_searches; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE saved_searches (
@@ -341,7 +345,7 @@ ALTER SEQUENCE saved_searches_id_seq OWNED BY saved_searches.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
@@ -350,7 +354,7 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE users (
@@ -461,7 +465,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- Name: attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY attachments
@@ -469,7 +473,7 @@ ALTER TABLE ONLY attachments
 
 
 --
--- Name: audits_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: audits_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY audits
@@ -477,7 +481,7 @@ ALTER TABLE ONLY audits
 
 
 --
--- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY categories
@@ -485,7 +489,7 @@ ALTER TABLE ONLY categories
 
 
 --
--- Name: delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY delayed_jobs
@@ -493,7 +497,7 @@ ALTER TABLE ONLY delayed_jobs
 
 
 --
--- Name: departments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: departments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY departments
@@ -501,7 +505,7 @@ ALTER TABLE ONLY departments
 
 
 --
--- Name: opportunities_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: opportunities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY opportunities
@@ -509,7 +513,7 @@ ALTER TABLE ONLY opportunities
 
 
 --
--- Name: questions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: questions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY questions
@@ -517,7 +521,7 @@ ALTER TABLE ONLY questions
 
 
 --
--- Name: saved_searches_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: saved_searches_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY saved_searches
@@ -525,7 +529,7 @@ ALTER TABLE ONLY saved_searches
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -533,84 +537,84 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX delayed_jobs_priority ON delayed_jobs USING btree (priority, run_at);
 
 
 --
--- Name: index_attachments_on_opportunity_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_attachments_on_opportunity_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_attachments_on_opportunity_id ON attachments USING btree (opportunity_id);
 
 
 --
--- Name: index_audits_on_event; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_audits_on_event; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_audits_on_event ON audits USING btree (event);
 
 
 --
--- Name: index_audits_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_audits_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_audits_on_user_id ON audits USING btree (user_id);
 
 
 --
--- Name: index_audits_on_user_id_and_event; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_audits_on_user_id_and_event; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_audits_on_user_id_and_event ON audits USING btree (user_id, event);
 
 
 --
--- Name: index_opportunities_on_department_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_opportunities_on_department_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_opportunities_on_department_id ON opportunities USING btree (department_id);
 
 
 --
--- Name: index_questions_on_opportunity_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_questions_on_opportunity_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_questions_on_opportunity_id ON questions USING btree (opportunity_id);
 
 
 --
--- Name: index_saved_searches_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_saved_searches_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_saved_searches_on_user_id ON saved_searches USING btree (user_id);
 
 
 --
--- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_users_on_confirmation_token ON users USING btree (confirmation_token);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -684,7 +688,7 @@ ALTER TABLE ONLY attachments
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "$user", public;
 
 INSERT INTO schema_migrations (version) VALUES ('20160418144427');
 

@@ -6,8 +6,9 @@ gem 'rails', '4.2.7.1'
 
 gem 'administrate', '~> 0.2.2'
 gem 'autoprefixer-rails',
-    github: 'ajb/autoprefixer-rails',
+    git: 'https://github.com/ajb/autoprefixer-rails.git',
     branch: 'bundle-process'
+gem 'bourbon'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'coffee-rails'
@@ -41,7 +42,7 @@ gem 'utf8-cleaner'
 gem 'whenever', require: false
 gem 'yomu'
 
-gem 'dvl-core', github: 'dobtco/dvl-core'
+gem 'dvl-core', git: 'https://github.com/dobtco/dvl-core.git'
 gem 'dvl-kaminari-views'
 
 source 'https://rails-assets.org' do

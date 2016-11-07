@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/ajb/autoprefixer-rails.git
+  remote: https://github.com/ajb/autoprefixer-rails.git
   revision: 61b043c0b4480782d7791ab92318d3c8cccec6b5
   branch: bundle-process
   specs:
@@ -7,7 +7,7 @@ GIT
       execjs
 
 GIT
-  remote: git://github.com/dobtco/dvl-core.git
+  remote: https://github.com/dobtco/dvl-core.git
   revision: 43828fd0ba46e648a5903bcd97951a9bacee44c2
   specs:
     dvl-core (0.1.0)
@@ -85,6 +85,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
     brakeman (3.4.1)
     builder (3.2.2)
     capybara (2.7.1)
@@ -446,6 +449,7 @@ DEPENDENCIES
   autoprefixer-rails!
   better_errors
   binding_of_caller
+  bourbon
   brakeman
   capybara
   capybara-webkit
