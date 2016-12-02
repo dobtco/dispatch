@@ -73,7 +73,7 @@ group :test do
   gem 'brakeman', require: false
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'codeclimate-test-reporter', '~> 0.6', require: false
+  gem 'codeclimate-test-reporter', '~> 0.6.0', require: false
   gem 'database_cleaner'
   gem 'rspec-its'
   gem 'webmock'
