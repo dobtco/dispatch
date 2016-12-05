@@ -190,7 +190,7 @@ GEM
     guard-rubocop (1.2.0)
       guard (~> 2.0)
       rubocop (~> 0.20)
-    hashdiff (0.3.0)
+    hashdiff (0.3.1)
     highline (1.7.8)
     htmlentities (4.3.4)
     http_parser.rb (0.6.0)
@@ -230,7 +230,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mimemagic (0.3.2)
-    mini_magick (4.5.1)
+    mini_magick (4.6.0)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     momentjs-rails (2.15.1)
@@ -428,7 +428,7 @@ GEM
       activesupport
     warden (1.2.6)
       rack (>= 1.0)
-    webmock (2.1.0)
+    webmock (2.3.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
