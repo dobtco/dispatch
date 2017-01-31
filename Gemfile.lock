@@ -384,7 +384,7 @@ GEM
     simple_form_legend (0.0.1)
       rails (>= 4.0)
       simple_form (>= 3.0)
-    simplecov (0.12.0)
+    simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
@@ -414,7 +414,7 @@ GEM
     thor (0.19.4)
     thread (0.2.2)
     thread_safe (0.3.5)
-    tilt (2.0.5)
+    tilt (2.0.6)
     tins (1.13.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -511,4 +511,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.14.2
+   1.14.3
