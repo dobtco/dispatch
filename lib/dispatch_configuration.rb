@@ -12,7 +12,7 @@ module DispatchConfiguration
     private
 
     def read_configuration
-      @configuration ||= YAML.load(File.read(config_file))
+      @configuration ||= YAML.safe_load(File.read(config_file))
     end
 
     def config_file
