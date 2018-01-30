@@ -20,6 +20,48 @@ Documentation:
 IfUnlessModifier:
   Enabled: false
 
+# Disabling cops that came with an upgraded version of Rubocop -- feel free
+# to fix and re-enable these in the future, pending preference.
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/For:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/MethodMissing:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
 # Using explicit #freeze seems to not get picked up by this cop?
 FrozenStringLiteralComment:
   Enabled: false
